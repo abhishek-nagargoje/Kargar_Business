@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { useStaggerReveal } from '@/hooks/animations';
@@ -19,6 +20,17 @@ export function ServicesSection() {
           eyebrow="What We Offer"
           title="Our Integrated Facility Management Services"
         />
+
+        <p className="-mt-8 mb-16 max-w-3xl mx-auto text-center text-gray-600">
+          From HVAC and plumbing to{' '}
+          <Link
+            to="/services/hard-services/electrical-maintenance"
+            className="font-semibold text-orange-600 hover:text-orange-700 underline underline-offset-2"
+          >
+            Electrical Maintenance Services in Pune
+          </Link>
+          , our integrated facility teams keep enterprise sites running safely and reliably.
+        </p>
 
         <div
           ref={containerRef}

@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "tsx --tsconfig scripts/tsconfig.seo.json scripts/seo/index.ts",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run prerender",
+    "prerender": "tsx --tsconfig scripts/tsconfig.seo.json scripts/seo/prerender.ts",
     "postbuild": "tsx --tsconfig scripts/tsconfig.seo.json scripts/seo/postbuild.ts",
     "seo": "tsx --tsconfig scripts/tsconfig.seo.json scripts/seo/index.ts",
     "lint": "eslint src/",

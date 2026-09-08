@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { REDIRECTS } from './seo.config';
+import { REDIRECTS, routeToStaticFile } from './seo.config';
 import { buildRouteInventory } from './route-inventory';
 
 interface VercelRewrite {
@@ -17,23 +17,22 @@ interface VercelConfig {
 export function mergeRedirects(existing: VercelConfig): VercelConfig {
   const inventory = buildRouteInventory();
 
-  const rewriteSources = new Set<string>();
-
-  // Extract every valid static, category, and service route from the SEO route inventory
-  for (const page of inventory) {
-    rewriteSources.add(page.path);
-  }
-
-  // Include parameter patterns for dynamic category/service routes and admin portal
-  rewriteSources.add('/services/:categoryId');
-  rewriteSources.add('/services/:categoryId/:serviceId');
-  rewriteSources.add('/admin');
-  rewriteSources.add('/admin/(.*)');
-
-  const rewrites: VercelRewrite[] = Array.from(rewriteSources).map((source) => ({
-    source,
-    destination: '/index.html',
+  // Every route in the SEO route inventory is prerendered at build time (see prerender.ts),
+  // so it gets its own static HTML file — served directly instead of the SPA shell, giving
+  // crawlers complete title/meta/canonical/H1/body/JSON-LD without executing JavaScript.
+  const rewrites: VercelRewrite[] = inventory.map((page) => ({
+    source: page.path,
+    destination: `/${routeToStaticFile(page.path)}`,
   }));
+
+  // Parameter patterns for any future dynamic category/service route not yet in the
+  // inventory, and the admin portal, fall back to the CSR shell (client-side routed).
+  rewrites.push(
+    { source: '/services/:categoryId', destination: '/index.html' },
+    { source: '/services/:categoryId/:serviceId', destination: '/index.html' },
+    { source: '/admin', destination: '/index.html' },
+    { source: '/admin/(.*)', destination: '/index.html' },
+  );
 
   return {
     ...existing,

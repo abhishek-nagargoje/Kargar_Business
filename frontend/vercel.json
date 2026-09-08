@@ -1,6 +1,6 @@
 {
   "framework": "vite",
-  "installCommand": "npm install && npx playwright install chromium",
+  "installCommand": "npm install",
   "buildCommand": "npm run build",
   "devCommand": "vite",
   "outputDirectory": "dist",

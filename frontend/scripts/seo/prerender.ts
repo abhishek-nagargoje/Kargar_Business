@@ -7,7 +7,7 @@
  * (see `generate-redirects.ts`), so crawlers get complete title/meta/canonical/H1/body/JSON-LD
  * in the initial HTTP response without executing JavaScript.
  */
-import { chromium } from 'playwright';
+import { chromium, type Browser } from 'playwright-core';
 import { preview, type PreviewServer } from 'vite';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -23,7 +23,29 @@ const ROOT_DIR = resolve('../..');
 const DIST_DIR = resolve('../../dist');
 const NOT_FOUND_PROBE_PATH = '/__prerender-404-probe__';
 
-async function waitForHydration(page: import('playwright').Page): Promise<void> {
+/**
+ * Vercel's build container is a minimal Amazon-Linux-based image with no `apt`, so
+ * Playwright's own downloaded Chromium fails to launch there (missing shared libraries
+ * like libnspr4.so — there's no `--with-deps` equivalent without apt). `@sparticuz/chromium`
+ * ships a Chromium build specifically compiled for exactly this class of minimal serverless/
+ * build environment, so it's used only when `VERCEL=1` (set automatically during Vercel
+ * builds). Everywhere else (local dev, other CI), the Chromium installed via
+ * `npx playwright install chromium` — which works fine on a normal OS — is used unchanged.
+ */
+async function launchBrowser(): Promise<Browser> {
+  if (process.env.VERCEL === '1') {
+    const sparticuzChromium = (await import('@sparticuz/chromium')).default;
+    console.log('[prerender] Running on Vercel — launching @sparticuz/chromium.');
+    return chromium.launch({
+      args: sparticuzChromium.args,
+      executablePath: await sparticuzChromium.executablePath(),
+      headless: true,
+    });
+  }
+  return chromium.launch({ headless: true });
+}
+
+async function waitForHydration(page: import('playwright-core').Page): Promise<void> {
   // The SPA shell has no <h1>; every real page renders exactly one after hydration.
   await page.waitForSelector('h1', { timeout: 15000 });
   // react-helmet-async commits title/meta/JSON-LD in a post-render effect — give it a beat.
@@ -32,7 +54,7 @@ async function waitForHydration(page: import('playwright').Page): Promise<void> 
 }
 
 async function prerenderRoute(
-  page: import('playwright').Page,
+  page: import('playwright-core').Page,
   baseUrl: string,
   routePath: string,
   outFile: string,
@@ -59,7 +81,7 @@ async function main() {
   }
 
   let previewServer: PreviewServer | undefined;
-  const browser = await chromium.launch();
+  const browser = await launchBrowser();
 
   try {
     previewServer = await preview({

@@ -12,51 +12,51 @@
     },
     {
       "source": "/services",
-      "destination": "/index.html"
+      "destination": "/services.html"
     },
     {
       "source": "/sectors",
-      "destination": "/index.html"
+      "destination": "/sectors.html"
     },
     {
       "source": "/company-profile",
-      "destination": "/index.html"
+      "destination": "/company-profile.html"
     },
     {
       "source": "/support",
-      "destination": "/index.html"
+      "destination": "/support.html"
     },
     {
       "source": "/contact-us",
-      "destination": "/index.html"
+      "destination": "/contact-us.html"
     },
     {
       "source": "/privacy-policy",
-      "destination": "/index.html"
+      "destination": "/privacy-policy.html"
     },
     {
       "source": "/services/hard-services",
-      "destination": "/index.html"
+      "destination": "/services/hard-services.html"
     },
     {
       "source": "/services/soft-services",
-      "destination": "/index.html"
+      "destination": "/services/soft-services.html"
     },
     {
       "source": "/services/hard-services/electrical-maintenance",
-      "destination": "/index.html"
+      "destination": "/services/hard-services/electrical-maintenance.html"
     },
     {
       "source": "/services/hard-services/hvac-maintenance",
-      "destination": "/index.html"
+      "destination": "/services/hard-services/hvac-maintenance.html"
     },
     {
       "source": "/services/soft-services/housekeeping",
-      "destination": "/index.html"
+      "destination": "/services/soft-services/housekeeping.html"
     },
     {
       "source": "/services/soft-services/security-services",
-      "destination": "/index.html"
+      "destination": "/services/soft-services/security-services.html"
     },
     {
       "source": "/services/:categoryId",

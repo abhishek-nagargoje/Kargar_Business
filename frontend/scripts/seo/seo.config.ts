@@ -69,3 +69,14 @@ export function buildCanonicalUrl(path: string): string {
   const normalizedPath = path === '/' ? '' : path.replace(/\/+$/, '');
   return `${SITE_URL}${normalizedPath || '/'}`;
 }
+
+/**
+ * Maps a route path to the static HTML file the prerenderer writes it to under `dist/`.
+ * '/' -> 'index.html' (the build's own entry file); every other route -> '<path>.html'
+ * so Vercel rewrites can serve real prerendered markup instead of the SPA shell.
+ * Shared by `prerender.ts` (writes the files) and `generate-redirects.ts` (points rewrites at them).
+ */
+export function routeToStaticFile(path: string): string {
+  if (path === '/') return 'index.html';
+  return `${path.replace(/^\/+/, '').replace(/\/+$/, '')}.html`;
+}

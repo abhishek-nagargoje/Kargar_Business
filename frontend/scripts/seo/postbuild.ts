@@ -16,8 +16,15 @@ function postbuild() {
     process.exit(1);
   }
 
-  copyFileSync(indexPath, path404);
-  console.log('[postbuild] Verified and copied dist/index.html -> dist/404.html');
+  // `prerender.ts` (runs as part of `npm run build`, after `vite build`) writes a real,
+  // fully-rendered dist/404.html from the app's actual NotFoundPage. Only fall back to
+  // copying the SPA shell if that step didn't run (e.g. `vite build` invoked directly).
+  if (existsSync(path404)) {
+    console.log('[postbuild] dist/404.html already prerendered — leaving it as-is.');
+  } else {
+    copyFileSync(indexPath, path404);
+    console.log('[postbuild] dist/404.html missing (prerender did not run) — fell back to copying dist/index.html.');
+  }
 
   if (!existsSync(vercelJsonPath)) {
     console.error('[postbuild] ERROR: vercel.json not found!');

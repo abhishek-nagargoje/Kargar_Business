@@ -186,13 +186,8 @@ export function Header({ activePath }: { activePath: string }) {
               <div className="kb-menu__item" key={item.label}>
                 <Link
                   className={isActiveRoute(activePath, item.href) ? 'is-active' : undefined}
-                  to={item.href === '/contact-us' ? buildContactUrl({ source: 'header_nav' }) : item.href}
-                  onClick={(e) => {
-                    setIsOpen(false);
-                    if (item.href === '/contact-us') {
-                      navigateToContact({ source: 'header_nav' }, e);
-                    }
-                  }}
+                  to={item.href}
+                  onClick={() => { setIsOpen(false); }}
                 >
                   {item.label}
                 </Link>
@@ -654,13 +649,13 @@ export function Footer() {
               href="https://fazier.com/launches/www.kargarbusinessservices.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Kargar Business Services on Fazier"
+              aria-label="KARGAR Facility Management on Fazier"
               className="inline-block transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded shrink-0"
             >
               <img
                 src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light"
                 width="200"
-                alt="Kargar Business Services on Fazier"
+                alt="KARGAR Facility Management on Fazier"
                 loading="lazy"
                 decoding="async"
                 className="max-w-[180px] sm:max-w-[200px] w-full h-auto flex-shrink-0"
@@ -680,7 +675,11 @@ export function Footer() {
         {/* Centered Copyright Section */}
         <div className="pt-4 text-center text-xs text-gray-400 tracking-wide">
           <p>
-            &copy; {new Date().getFullYear()} <span className="text-orange-500 font-medium">Kargar Business Services</span>. All rights reserved.
+            &copy; {new Date().getFullYear()} <span className="text-orange-500 font-medium">KARGAR Facility Management</span>. All rights reserved.
+            {' '}
+            <Link to="/privacy-policy" className="underline underline-offset-2 hover:text-gray-200 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500">
+              Privacy Policy
+            </Link>
           </p>
         </div>
       </div>
@@ -751,7 +750,7 @@ function CompanyProfilePage() {
         eyebrow="Company Profile"
         heading="Trusted Facility Management,"
         headingAccent="Built Over 10+ Years"
-        description="Kargar Business Services is a facility management company based in Baner, Pune, delivering integrated housekeeping, security, and maintenance services for corporate offices and commercial facilities. Our track record spans 10+ years of experience, 10,000+ clients served, and 50+ sites managed to date."
+        description="KARGAR Facility Management is a facility management company based in Baner, Pune, delivering integrated housekeeping, security, and maintenance services for corporate offices and commercial facilities. Our track record spans 10+ years of experience, 10,000+ clients served, and 50+ sites managed to date."
         image="/images/page/contact-building.webp"
       />
       <CompanyProfileSection />

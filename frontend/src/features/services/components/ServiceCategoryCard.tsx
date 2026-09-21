@@ -83,7 +83,12 @@ export const ServiceCategoryCard = memo(function ServiceCategoryCard({
               {displayServices.map((service) => (
                 <li key={service.id} className="flex items-start text-navy-900 text-sm font-medium">
                   <span className="mr-2 text-orange-500 font-bold mt-0.5">✓</span>
-                  {service.title}
+                  <Link
+                    to={`/services/${category.slug}/${service.slug}`}
+                    className="hover:text-orange-600 hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                  >
+                    {service.title}
+                  </Link>
                 </li>
               ))}
             </ul>

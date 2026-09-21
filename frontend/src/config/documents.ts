@@ -38,7 +38,7 @@ export const documentRegistry: Record<DocumentKey, DocumentDefinition> = {
   companyProfile: {
     id: "company-profile",
     title: "Company Profile",
-    description: "Professional overview of Kargar Business Services, our history, services, and capabilities.",
+    description: "Professional overview of KARGAR Facility Management, our history, services, and capabilities.",
     filename: "Company Profile.pdf",
     file: "/assets/documents/Company%20Profile.pdf",
     fileSize: "2.4 MB",

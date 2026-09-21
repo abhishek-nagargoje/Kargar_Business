@@ -2,6 +2,7 @@ import { useParams, Navigate } from 'react-router';
 import { useServices } from '../hooks/useServices';
 import { ServiceLayout } from '../layouts/ServiceLayout';
 import { SEO } from '@/components/seo/SEO';
+import { Header, Footer } from '@/pages/KargarSinglePage';
 import { config } from '@/config';
 import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { buildServiceBreadcrumbs } from '@/lib/seo/breadcrumbs';
@@ -21,13 +22,14 @@ export function ServicePage() {
 
   const relatedServices = getRelatedServices(service.id);
   const heroImage = serviceImages[service.imageKey];
+  const path = `/services/${category.slug}/${service.slug}`;
 
   return (
-    <>
+    <div className="kargar-site kb-site">
       <SEO
         title={service.seo.title}
         description={service.seo.description}
-        canonicalUrl={buildCanonicalUrl(`/services/${category.slug}/${service.slug}`)}
+        canonicalUrl={buildCanonicalUrl(path)}
         ogImage={heroImage ? `${config.siteUrl}${heroImage.src}` : undefined}
         breadcrumbItems={buildServiceBreadcrumbs(service)}
         schema={[
@@ -35,11 +37,15 @@ export function ServicePage() {
           ...(service.faqs && service.faqs.length > 0 ? [buildFAQSchema(service.faqs)] : []),
         ]}
       />
-      <ServiceLayout
-        service={service}
-        category={category}
-        relatedServices={relatedServices}
-      />
-    </>
+      <Header activePath={path} />
+      <main>
+        <ServiceLayout
+          service={service}
+          category={category}
+          relatedServices={relatedServices}
+        />
+      </main>
+      <Footer />
+    </div>
   );
 }

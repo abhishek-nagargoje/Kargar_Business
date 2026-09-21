@@ -1,5 +1,5 @@
 /**
- * Official social media configuration for Kargar Business Services.
+ * Official social media configuration for KARGAR Facility Management.
  * Centralized social URLs and accessibility metadata.
  */
 

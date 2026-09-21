@@ -22,12 +22,33 @@ export function ServicesSection() {
         />
 
         <p className="-mt-8 mb-16 max-w-3xl mx-auto text-center text-gray-600">
-          From HVAC and plumbing to{' '}
+          From{' '}
+          <Link
+            to="/services/hard-services/hvac-maintenance"
+            className="font-semibold text-orange-600 hover:text-orange-700 underline underline-offset-2"
+          >
+            HVAC maintenance
+          </Link>{' '}
+          and{' '}
           <Link
             to="/services/hard-services/electrical-maintenance"
             className="font-semibold text-orange-600 hover:text-orange-700 underline underline-offset-2"
           >
-            Electrical Maintenance Services in Pune
+            electrical maintenance
+          </Link>{' '}
+          to{' '}
+          <Link
+            to="/services/soft-services/housekeeping"
+            className="font-semibold text-orange-600 hover:text-orange-700 underline underline-offset-2"
+          >
+            housekeeping
+          </Link>{' '}
+          and{' '}
+          <Link
+            to="/services/soft-services/security-services"
+            className="font-semibold text-orange-600 hover:text-orange-700 underline underline-offset-2"
+          >
+            security services
           </Link>
           , our integrated facility teams keep enterprise sites running safely and reliably.
         </p>

@@ -82,6 +82,7 @@ export const HeroSection = memo(function HeroSection({ entity, block }: ServiceB
           src={image?.src ?? ''}
           alt={image?.alt ?? title}
           className="w-full h-full object-cover opacity-20"
+          priority
         />
         <div className="absolute inset-0 bg-linear-to-r from-navy-900 via-navy-900/90 to-transparent" />
       </div>

@@ -46,7 +46,7 @@ export default function AdminLoginPage() {
             <Shield className="h-8 w-8 text-orange-500" />
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-navy-900">Admin Portal</h1>
-          <p className="mt-2 text-sm text-gray-500">Secure access to Kargar FM management</p>
+          <p className="mt-2 text-sm text-gray-500">Secure access to KARGAR FM management</p>
         </div>
 
         <Card className="p-8 shadow-2xl border-0 ring-1 ring-gray-100">
@@ -89,7 +89,7 @@ export default function AdminLoginPage() {
         </Card>
         
         <p className="mt-6 text-left md:text-center text-xs text-gray-400">
-          &copy; {new Date().getFullYear()} Kargar Facility Management. All rights reserved.
+          &copy; {new Date().getFullYear()} KARGAR Facility Management. All rights reserved.
         </p>
       </div>
     </div>

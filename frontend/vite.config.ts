@@ -35,6 +35,21 @@ export default defineConfig({
     target: 'es2022',
     cssMinify: true,
     chunkSizeWarningLimit: 650,
+    rollupOptions: {
+      output: {
+        // The single ~2MB bundle was shipping GSAP/Swiper/Framer Motion/Supabase/React Query
+        // to every route, including simple pages that never touch them. Splitting vendor code
+        // by library lets the browser cache each independently and only fetch what a given
+        // page's code-split chunks actually import — no behavior change, smaller initial payload.
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router'],
+          'vendor-animation': ['gsap', '@gsap/react', 'framer-motion'],
+          'vendor-swiper': ['swiper'],
+          'vendor-data': ['@tanstack/react-query', '@supabase/supabase-js'],
+          'vendor-forms': ['react-hook-form', '@hookform/resolvers', 'zod'],
+        },
+      },
+    },
   },
   server: {
     port: 5173,

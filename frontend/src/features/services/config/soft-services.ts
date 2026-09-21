@@ -8,7 +8,7 @@ export const softServices: Record<string, Service> = {
     slug: 'housekeeping',
     title: 'Housekeeping Services',
     shortDescription: 'Professional housekeeping services in Pune for corporate offices and commercial facilities.',
-    overview: 'Kargar Business Services provides professional housekeeping services in Pune for corporate offices, commercial facilities, and workplaces. We deliver comprehensive cleaning solutions tailored to each facility\'s needs, from daily janitorial housekeeping to specialized deep cleaning. Our trained housekeeping staff uses industry-leading equipment and eco-friendly products, backed by regular supervision, to maintain consistently high standards of cleanliness and hygiene. Based in Baner, Pune, our team supports office housekeeping for IT parks and corporate campuses, commercial housekeeping for retail and hospitality spaces, and industrial housekeeping for manufacturing plants and warehouses, with consistent standards across every environment. We serve facilities across Pune and the wider Pune Metropolitan Region, including PCMC.',
+    overview: 'KARGAR Facility Management provides professional housekeeping services in Pune for corporate offices, commercial facilities, and workplaces. We deliver comprehensive cleaning solutions tailored to each facility\'s needs, from daily janitorial housekeeping to specialized deep cleaning. Our trained housekeeping staff uses industry-leading equipment and eco-friendly products, backed by regular supervision, to maintain consistently high standards of cleanliness and hygiene. Based in Baner, Pune, our team supports office housekeeping for IT parks and corporate campuses, commercial housekeeping for retail and hospitality spaces, and industrial housekeeping for manufacturing plants and warehouses, with consistent standards across every environment. We serve facilities across Pune and the wider Pune Metropolitan Region, including PCMC.',
     iconKey: 'sparkles',
     imageKey: 'housekeeping',
     seo: {
@@ -62,7 +62,7 @@ export const softServices: Record<string, Service> = {
       { title: 'Manufacturing', iconKey: 'factory' }
     ],
     faqs: [
-      { question: 'Does Kargar provide housekeeping services in Pune?', answer: 'Yes. Kargar Business Services is based in Baner, Pune, and provides professional housekeeping services for corporate offices and commercial facilities across the city.' },
+      { question: 'Does Kargar provide housekeeping services in Pune?', answer: 'Yes. KARGAR Facility Management is based in Baner, Pune, and provides professional housekeeping services for corporate offices and commercial facilities across the city.' },
       { question: 'Does Kargar provide housekeeping staff for corporate offices?', answer: 'Yes, we provide trained housekeeping staff for corporate offices, commercial facilities, and workplace environments, with regular supervision and quality checks.' },
       { question: 'What is included in daily housekeeping?', answer: 'Tasks include emptying trash, vacuuming, mopping, cleaning restrooms, and wiping surfaces.' },
       { question: 'Do you use eco-friendly cleaning products?', answer: 'Yes, we prioritize the use of environmentally friendly and non-toxic cleaning solutions.' },

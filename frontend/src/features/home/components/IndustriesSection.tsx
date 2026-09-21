@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { Container } from '@/components/ui/Container';
 import { Building2, Factory, Plane, Home, PlusSquare, ShoppingBag, Package, Bed, ArrowRight } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/animations';
@@ -8,48 +9,56 @@ const sectors = [
     icon: Building2,
     description: 'High-performance facility services for modern IT campuses.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80',
+    href: '/services',
   },
   {
     name: 'Manufacturing',
     icon: Factory,
     description: 'Safe, efficient & reliable support for industrial operations.',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80',
+    href: '/services/hard-services',
   },
   {
     name: 'Airport Lounges',
     icon: Plane,
     description: 'Premium housekeeping and facility management for airport spaces.',
     image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80',
+    href: '/services/soft-services/housekeeping',
   },
   {
     name: 'Corporate Offices',
     icon: Home,
     description: 'Smart, professional & seamless facility management for offices.',
     image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80',
+    href: '/services/hard-services/hvac-maintenance',
   },
   {
     name: 'Healthcare',
     icon: PlusSquare,
     description: 'Hygienic, safe & compliant facility solutions for hospitals.',
     image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80',
+    href: '/services/soft-services/housekeeping',
   },
   {
     name: 'Retail & Malls',
     icon: ShoppingBag,
     description: 'Clean, customer-friendly environments that elevate experience.',
     image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800',
+    href: '/services/soft-services/security-services',
   },
   {
     name: 'Warehouses',
     icon: Package,
     description: 'Efficient operations with organized and safe facility support.',
     image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=800',
+    href: '/services/hard-services',
   },
   {
     name: 'Hotels & Hospitality',
     icon: Bed,
     description: 'Exceptional housekeeping and guest experience support.',
     image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
+    href: '/services/soft-services/housekeeping',
   },
 ];
 
@@ -69,11 +78,12 @@ export function IndustriesSection() {
           {sectors.map((sector, index) => {
             const Icon = sector.icon;
             return (
-              <div 
+              <Link
+                to={sector.href}
                 key={index}
                 data-gsap-reveal="zoom-in"
                 data-gsap-delay={index * 0.1}
-                className="group relative flex flex-col justify-end h-[320px] rounded-[16px] overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative flex flex-col justify-end h-[320px] rounded-[16px] overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
               >
                 {/* Background Image */}
                 <div 
@@ -88,7 +98,7 @@ export function IndustriesSection() {
                 <div className="relative z-10 p-6 flex flex-col h-full justify-end">
                   <div className="flex flex-col flex-1 justify-end">
                     {/* Icon Box */}
-                    <div className="bg-white w-12 h-12 rounded-[8px] flex items-center justify-center mb-5 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                    <div className="bg-white w-12 h-12 rounded-[8px] flex items-center justify-center mb-5 shadow-sm transition-transform duration-300 group-hover:scale-105" aria-hidden="true">
                       <Icon className="w-6 h-6 text-[#ff5a0a]" strokeWidth={2.5} />
                     </div>
                     
@@ -102,11 +112,11 @@ export function IndustriesSection() {
                   </div>
 
                   {/* Bottom Action Row (Arrow only, active clients removed) */}
-                  <div className="flex items-center justify-end mt-auto pt-4 border-t border-white/10">
+                  <div className="flex items-center justify-end mt-auto pt-4 border-t border-white/10" aria-hidden="true">
                     <ArrowRight className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

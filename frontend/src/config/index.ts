@@ -31,7 +31,7 @@ export const config = {
   siteUrl: getEnvVar('VITE_SITE_URL', 'https://www.kargarbusinessservices.com'),
 
   /** Site name */
-  siteName: getEnvVar('VITE_SITE_NAME', 'Kargar Facility Management'),
+  siteName: getEnvVar('VITE_SITE_NAME', 'KARGAR Facility Management'),
 
   /** Analytics — empty string means disabled */
   analytics: {

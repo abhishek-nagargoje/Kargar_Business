@@ -55,7 +55,7 @@ export const seoRegistry: Record<string, RouteSEOEntry> = {
     path: '/company-profile',
     title: 'Trusted Facility Management',
     description:
-      'Kargar Business Services is a professional, trusted facility management company with 10+ years of experience serving 10,000+ clients across 50+ sites in India.',
+      'KARGAR Facility Management is a trusted facility management company with 10+ years of experience serving 10,000+ clients across 50+ sites in India.',
     keywords: ['Trusted Facility Management Company', 'Professional Facility Management Company'],
   },
   '/support': {
@@ -76,7 +76,7 @@ export const seoRegistry: Record<string, RouteSEOEntry> = {
     path: '/privacy-policy',
     title: 'Website Privacy Policy',
     description:
-      'Privacy Policy for Kargar Business Services explaining how user enquiry and contact information submitted through this website is collected and protected.',
+      'Privacy Policy for KARGAR Facility Management explaining how user enquiry and contact information submitted through this website is collected and protected.',
     keywords: ['Privacy Policy'],
   },
   '/404': {

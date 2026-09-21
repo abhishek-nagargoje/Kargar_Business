@@ -95,7 +95,7 @@ export function Navbar() {
           <button
             onClick={() => { handleNavClick('hero'); }}
             className="group flex w-36 items-center focus-ring rounded-sm sm:w-44"
-            aria-label="Kargar FM Home"
+            aria-label="KARGAR FM Home"
           >
             <BrandLogo imageClassName="transition-transform duration-300 group-hover:scale-[1.02]" />
           </button>

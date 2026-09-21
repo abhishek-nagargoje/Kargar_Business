@@ -39,7 +39,7 @@ export function PrivacyPolicyPage() {
               Website Privacy Policy
             </h1>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-              At Kargar Business Services, we value your privacy and are committed to protecting any personal or organizational information you share with us when using our website or requesting facility management services.
+              At KARGAR Facility Management, we value your privacy and are committed to protecting any personal or organizational information you share with us when using our website or requesting facility management services.
             </p>
           </div>
 

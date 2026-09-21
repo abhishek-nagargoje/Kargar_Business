@@ -17,7 +17,7 @@ export const BLUR_PLACEHOLDER =
 export const heroImages: Record<string, ImageConfig> = {
   background: {
     src: '/images/hero-bg.jpg',
-    alt: 'Modern corporate facility managed by Kargar FM',
+    alt: 'Modern corporate facility managed by KARGAR FM',
     width: 1920,
     height: 1080,
     blurDataUrl: BLUR_PLACEHOLDER,
@@ -30,7 +30,7 @@ export const heroImages: Record<string, ImageConfig> = {
 export const aboutImages: Record<string, ImageConfig> = {
   office: {
     src: '/images/about-office.jpg',
-    alt: 'Kargar Facility Management headquarters',
+    alt: 'KARGAR Facility Management headquarters',
     width: 800,
     height: 600,
     blurDataUrl: BLUR_PLACEHOLDER,

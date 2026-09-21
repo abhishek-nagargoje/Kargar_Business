@@ -26,7 +26,7 @@ export function CompanyProfileSection() {
             keep operations moving
           </h2>
           <p className="text-[18px] md:text-[18px] font-[400] text-[#4B5563] leading-relaxed">
-            Kargar Business Services delivers integrated facility management across
+            KARGAR Facility Management delivers integrated facility management across
             soft services,{' '}
             <Link to="/services/hard-services" className="text-[#A74423] font-[600] underline underline-offset-2 hover:text-[#8a3319] rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-[#A74423]">
               hard services

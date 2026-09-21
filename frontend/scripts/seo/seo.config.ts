@@ -11,7 +11,20 @@
 export const SITE_URL = 'https://www.kargarbusinessservices.com';
 
 /** Static routes that render pages and are covered by `src/features/seo/registry.ts`. */
-export const STATIC_ROUTES = ['/', '/services', '/sectors', '/company-profile', '/support', '/contact-us', '/privacy-policy'];
+export const STATIC_ROUTES = [
+  '/',
+  '/services',
+  '/sectors',
+  '/company-profile',
+  '/support',
+  '/contact-us',
+  '/privacy-policy',
+  '/housekeeping-services-pune',
+  '/security-services-pune',
+  '/electrical-maintenance-services-pune',
+  '/hvac-maintenance-services-pune',
+  '/facility-management-company-pune',
+];
 
 /** Route prefixes that must never appear in the sitemap and must be disallowed in robots.txt. */
 export const DISALLOWED_PREFIXES = ['/admin'];
@@ -62,6 +75,26 @@ export const PAGE_IMAGES: Record<string, { src: string; alt: string }> = {
   '/services/soft-services/security-services': {
     src: '/images/services/security-services.webp',
     alt: 'Corporate security and manned guarding',
+  },
+  '/housekeeping-services-pune': {
+    src: '/images/services/housekeeping-services.webp',
+    alt: 'Housekeeping staff cleaning a corporate office in Pune',
+  },
+  '/security-services-pune': {
+    src: '/images/services/security-services.webp',
+    alt: 'Trained security guard on duty at a Pune corporate facility',
+  },
+  '/electrical-maintenance-services-pune': {
+    src: '/images/services/hard-services.webp',
+    alt: 'Electrical maintenance technician servicing an LT panel in Pune',
+  },
+  '/hvac-maintenance-services-pune': {
+    src: '/images/services/hard-services.webp',
+    alt: 'HVAC technician servicing a commercial cooling system in Pune',
+  },
+  '/facility-management-company-pune': {
+    src: '/images/page/hero-building.webp',
+    alt: 'KARGAR Facility Management office building in Baner, Pune',
   },
 };
 

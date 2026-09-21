@@ -2,9 +2,9 @@ import { Users, Building2, MapPin, Clock } from 'lucide-react';
 
 export function CompanyStatsList() {
   const stats = [
-    { icon: Users, value: "150+", label: "Expert Workforce" },
-    { icon: Building2, value: "100+", label: "Happy Clients" },
-    { icon: MapPin, value: "25+", label: "Cities Covered" },
+    { icon: Users, value: "2,000+", label: "Expert Workforce" },
+    { icon: Building2, value: "10,000+", label: "Happy Clients" },
+    { icon: MapPin, value: "5+", label: "Cities Covered" },
     { icon: Clock, value: "10+", label: "Years of Excellence" },
   ];
 

@@ -38,6 +38,7 @@ import { Link } from 'react-router';
 import { SEO } from '@/components/seo/SEO';
 import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { getSeoEntry } from '@/features/seo/registry';
+import { PuneServicesLinksSection } from '@/features/pune-landing/components/PuneServicesLinksSection';
 import { trackEvent } from '@/types/analytics';
 
 const CountUp =
@@ -693,6 +694,7 @@ function HomePage() {
       <HomeHero />
       <ClientStrip />
       <ServicesSection />
+      <PuneServicesLinksSection />
       <CompanyProfileSection />
       <IndustriesSection />
       <ReviewsSection />
@@ -706,6 +708,7 @@ function ServicesPage() {
     <>
       <ServicesHero />
       <ServicesSection />
+      <PuneServicesLinksSection />
       <StatsBand />
     </>
   );
@@ -750,7 +753,13 @@ function CompanyProfilePage() {
         eyebrow="Company Profile"
         heading="Trusted Facility Management,"
         headingAccent="Built Over 10+ Years"
-        description="KARGAR Facility Management is a facility management company based in Baner, Pune, delivering integrated housekeeping, security, and maintenance services for corporate offices and commercial facilities. Our track record spans 10+ years of experience, 10,000+ clients served, and 50+ sites managed to date."
+        description={
+          <>
+            KARGAR Facility Management is a{' '}
+            <Link to="/facility-management-company-pune" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>facility management company based in Pune</Link>
+            , delivering integrated housekeeping, security, and maintenance services for corporate offices and commercial facilities. Our track record spans 10+ years of experience, 10,000+ clients served, and 50+ sites managed to date.
+          </>
+        }
         image="/images/page/contact-building.webp"
       />
       <CompanyProfileSection />
@@ -773,7 +782,11 @@ function SectorsPage() {
             <Link to="/services" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>facility management solutions</Link>{' '}
             across IT parks, manufacturing plants, corporate offices, healthcare facilities, retail spaces, and more, including{' '}
             <Link to="/services/soft-services/housekeeping" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>corporate and industrial housekeeping services</Link>{' '}
-            — each supported with sector-specific service standards.
+            — each supported with sector-specific service standards. See our{' '}
+            <Link to="/housekeeping-services-pune" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>housekeeping services in Pune</Link>{' '}
+            or{' '}
+            <Link to="/security-services-pune" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>security services in Pune</Link>{' '}
+            for local coverage details.
           </>
         }
         image="/images/page/services-hero.webp"

@@ -2,22 +2,28 @@
 import { memo, useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Container } from '@/components/ui/Container';
+import { usePrefersReducedMotion } from '@/components/ui/logos/hooks/usePrefersReducedMotion';
 import type { ServiceBlockProps } from '../registry/BlockRenderer';
 
 const AnimatedCounter = ({ value, label }: { value: string; label: string }) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   // Extract number and suffix (e.g., "500+" -> num: 500, suffix: "+")
   const match = /^([\d,.]+)(.*)$/.exec(value);
   const targetNum = match?.[1] ? parseFloat(match[1].replace(/,/g, '')) : 0;
   const suffix = match?.[2] ?? value;
   const isNumber = match !== null;
 
-  const [count, setCount] = useState(0);
+  // Start at the real target value so prerendered/no-JS/crawler-visible HTML always shows the
+  // correct number — only reset to 0 and count up once the animation actually triggers in a
+  // real browser (see effect below).
+  const [count, setCount] = useState(isNumber ? targetNum : 0);
 
   useEffect(() => {
-    if (isInView && isNumber) {
+    if (isInView && isNumber && !prefersReducedMotion) {
+      setCount(0);
       const start = 0;
       const end = targetNum;
       // Duration in ms
@@ -39,7 +45,7 @@ const AnimatedCounter = ({ value, label }: { value: string; label: string }) => 
       
       window.requestAnimationFrame(step);
     }
-  }, [isInView, isNumber, targetNum]);
+  }, [isInView, isNumber, targetNum, prefersReducedMotion]);
 
   const displayValue = isNumber ? (
     Number.isInteger(targetNum) ? Math.floor(count).toString() : count.toFixed(1)

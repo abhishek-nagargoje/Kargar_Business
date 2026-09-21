@@ -35,6 +35,26 @@
       "destination": "/privacy-policy.html"
     },
     {
+      "source": "/housekeeping-services-pune",
+      "destination": "/housekeeping-services-pune.html"
+    },
+    {
+      "source": "/security-services-pune",
+      "destination": "/security-services-pune.html"
+    },
+    {
+      "source": "/electrical-maintenance-services-pune",
+      "destination": "/electrical-maintenance-services-pune.html"
+    },
+    {
+      "source": "/hvac-maintenance-services-pune",
+      "destination": "/hvac-maintenance-services-pune.html"
+    },
+    {
+      "source": "/facility-management-company-pune",
+      "destination": "/facility-management-company-pune.html"
+    },
+    {
       "source": "/services/hard-services",
       "destination": "/services/hard-services.html"
     },

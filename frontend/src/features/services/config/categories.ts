@@ -19,7 +19,7 @@ export const serviceCategories: Record<string, Category> = {
     priority: 1,
     layoutPreset: 'categoryDefault',
     statistics: [
-      { value: '25+', label: 'Years Experience' },
+      { value: '10+', label: 'Years Experience' },
       { value: '150+', label: 'Engineers' },
       { value: '99%', label: 'SLA Compliance' },
     ],
@@ -48,7 +48,7 @@ export const serviceCategories: Record<string, Category> = {
     priority: 2,
     layoutPreset: 'categoryDefault',
     statistics: [
-      { value: '500+', label: 'Trained Staff' },
+      { value: '2,000+', label: 'Trained Staff' },
       { value: '5M+', label: 'Sq. Ft. Managed' },
       { value: '24/7', label: 'Support Available' },
     ],

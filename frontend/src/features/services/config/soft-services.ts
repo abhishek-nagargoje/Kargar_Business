@@ -12,9 +12,9 @@ export const softServices: Record<string, Service> = {
     iconKey: 'sparkles',
     imageKey: 'housekeeping',
     seo: {
-      title: 'Housekeeping Services in Pune',
+      title: 'Corporate Housekeeping Service',
       description: 'Professional housekeeping services in Pune for corporate offices and commercial facilities, with trained staff, eco-friendly cleaning, and reliable supervision.',
-      keywords: ['Housekeeping Services in Pune', 'Corporate Housekeeping Services Pune', 'Office Housekeeping Services Pune', 'Commercial Housekeeping Pune', 'Industrial Housekeeping Pune', 'Housekeeping Company Pune']
+      keywords: ['Corporate Housekeeping Service', 'Office Housekeeping Services Pune', 'Commercial Housekeeping Pune', 'Industrial Housekeeping Pune', 'Housekeeping Company Pune']
     },
     serviceType: 'cleaning',
     layoutPreset: 'enterpriseCleaning',

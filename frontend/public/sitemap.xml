@@ -51,6 +51,56 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.kargarbusinessservices.com/housekeeping-services-pune</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.kargarbusinessservices.com/images/services/housekeeping-services.webp</image:loc>
+      <image:title>Housekeeping staff cleaning a corporate office in Pune</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/security-services-pune</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.kargarbusinessservices.com/images/services/security-services.webp</image:loc>
+      <image:title>Trained security guard on duty at a Pune corporate facility</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/electrical-maintenance-services-pune</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.kargarbusinessservices.com/images/services/hard-services.webp</image:loc>
+      <image:title>Electrical maintenance technician servicing an LT panel in Pune</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/hvac-maintenance-services-pune</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.kargarbusinessservices.com/images/services/hard-services.webp</image:loc>
+      <image:title>HVAC technician servicing a commercial cooling system in Pune</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/facility-management-company-pune</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.kargarbusinessservices.com/images/page/hero-building.webp</image:loc>
+      <image:title>KARGAR Facility Management office building in Baner, Pune</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.kargarbusinessservices.com/services/hard-services</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>

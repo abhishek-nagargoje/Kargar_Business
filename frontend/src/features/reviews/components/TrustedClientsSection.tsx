@@ -55,7 +55,7 @@ export function TrustedClientsSection() {
             <UsersRound size={18} aria-hidden="true" /> Trusted By
           </p>
           <h2 id="trusted-clients-heading" className="text-4xl md:text-5xl lg:text-[54px] font-black text-[#061736] mb-4 tracking-tight leading-none">
-            500+ Businesses
+            10,000+ Businesses
           </h2>
           <p className="text-[#1d2d4d] max-w-2xl mx-auto text-[17px] leading-[1.8]">
             Trusted across real estate, healthcare, education, manufacturing, and corporate workplaces.

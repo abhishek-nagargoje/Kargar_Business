@@ -13,14 +13,14 @@ const homeEntry: RouteSEOEntry = {
   path: '/',
   title: 'Facility Management Company',
   description:
-    'Kargar is a trusted integrated facility management company delivering housekeeping, security, and maintenance services for corporate offices across India.',
+    'KARGAR is a trusted integrated facility management company delivering housekeeping, security, and maintenance services for corporate offices across India.',
   keywords: ['Facility Management Company', 'Integrated Facility Management', 'Housekeeping and Security Services'],
 };
 
 const adminEntry: RouteSEOEntry = {
   path: '/admin',
   title: 'Admin',
-  description: 'Kargar internal admin console.',
+  description: 'KARGAR internal admin console.',
   robots: { index: false, follow: false },
 };
 
@@ -36,14 +36,14 @@ export const seoRegistry: Record<string, RouteSEOEntry> = {
     path: '/services',
     title: 'Facility Management Services',
     description:
-      'Explore Kargar facility management services: soft services like housekeeping and security, plus hard services like electrical and HVAC maintenance.',
+      'Explore KARGAR facility management services: soft services like housekeeping and security, plus hard services like electrical and HVAC maintenance.',
     keywords: ['Facility Management Services', 'Soft Services', 'Hard Services'],
   },
   '/sectors': {
     path: '/sectors',
     title: 'Facility Management by Sector',
     description:
-      'Kargar delivers commercial facility management, industrial facility management, and corporate facility management solutions for manufacturing plants.',
+      'KARGAR delivers commercial facility management, industrial facility management, and corporate facility management solutions for manufacturing plants.',
     keywords: [
       'Commercial Facility Management',
       'Industrial Facility Management',
@@ -62,14 +62,14 @@ export const seoRegistry: Record<string, RouteSEOEntry> = {
     path: '/support',
     title: 'Facility Support Services',
     description:
-      'Get fast response and expert coordination from Kargar support team for facility management, housekeeping, security, and maintenance service requests nationwide.',
+      'Get fast response and expert coordination from KARGAR support team for facility management, housekeeping, security, and maintenance service requests nationwide.',
     keywords: ['Facility Support Services', 'Workplace Management Services'],
   },
   '/contact-us': {
     path: '/contact-us',
     title: 'Get Facility Management Quote',
     description:
-      'Contact Kargar, a facility management company for corporate offices in Pune, Baner. Request a proposal for housekeeping, security, or maintenance services.',
+      'Contact KARGAR, a facility management company for corporate offices in Pune, Baner. Request a proposal for housekeeping, security, or maintenance services.',
     keywords: ['Facility Management Company for Corporate Offices'],
   },
   '/privacy-policy': {
@@ -82,7 +82,7 @@ export const seoRegistry: Record<string, RouteSEOEntry> = {
   '/404': {
     path: '/404',
     title: 'Page Not Found',
-    description: 'The page you are looking for could not be found. Return to our services page to keep browsing Kargar facility management solutions.',
+    description: 'The page you are looking for could not be found. Return to our services page to keep browsing KARGAR facility management solutions.',
     robots: { index: false, follow: false },
   },
   '/admin': adminEntry,

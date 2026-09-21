@@ -8,7 +8,7 @@ type BrandLogoProps = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'> & {
 };
 
 export function BrandLogo({
-  alt = 'Kargar - Window to a Cleaner World',
+  alt = 'KARGAR - Window to a Cleaner World',
   className,
   imageClassName,
   loading = 'eager',

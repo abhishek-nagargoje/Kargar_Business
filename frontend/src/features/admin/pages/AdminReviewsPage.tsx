@@ -387,7 +387,7 @@ export default function AdminReviewsPage() {
               <div>
                 <h3 className="text-sm font-semibold uppercase text-gray-500">Recommendation</h3>
                 <p className="mt-2 text-sm text-navy-900">
-                  {selectedReview.recommend ? 'Would recommend Kargar' : 'Would not recommend Kargar'}
+                  {selectedReview.recommend ? 'Would recommend KARGAR' : 'Would not recommend KARGAR'}
                 </p>
                 <p className="text-sm text-gray-500">
                   {selectedReview.featured ? 'Featured on public pages' : 'Not featured'}

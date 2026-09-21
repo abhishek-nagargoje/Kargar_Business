@@ -45,7 +45,7 @@ export function DocumentShowcaseCard({
                     <div className="border-[2px] border-[#3B82F6]" />
                     <div className="border-[2px] border-[#3B82F6]" />
                   </div>
-                  <span className="text-[#A74423] font-bold text-[18px]">Kargar</span>
+                  <span className="text-[#A74423] font-bold text-[18px]">KARGAR</span>
                 </div>
                 <span className="text-[7px] text-[#3B82F6] font-medium mt-1">Window to a Cleaner World</span>
              </div>

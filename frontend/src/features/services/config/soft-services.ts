@@ -62,13 +62,13 @@ export const softServices: Record<string, Service> = {
       { title: 'Manufacturing', iconKey: 'factory' }
     ],
     faqs: [
-      { question: 'Does Kargar provide housekeeping services in Pune?', answer: 'Yes. KARGAR Facility Management is based in Baner, Pune, and provides professional housekeeping services for corporate offices and commercial facilities across the city.' },
-      { question: 'Does Kargar provide housekeeping staff for corporate offices?', answer: 'Yes, we provide trained housekeeping staff for corporate offices, commercial facilities, and workplace environments, with regular supervision and quality checks.' },
+      { question: 'Does KARGAR provide housekeeping services in Pune?', answer: 'Yes. KARGAR Facility Management is based in Baner, Pune, and provides professional housekeeping services for corporate offices and commercial facilities across the city.' },
+      { question: 'Does KARGAR provide housekeeping staff for corporate offices?', answer: 'Yes, we provide trained housekeeping staff for corporate offices, commercial facilities, and workplace environments, with regular supervision and quality checks.' },
       { question: 'What is included in daily housekeeping?', answer: 'Tasks include emptying trash, vacuuming, mopping, cleaning restrooms, and wiping surfaces.' },
       { question: 'Do you use eco-friendly cleaning products?', answer: 'Yes, we prioritize the use of environmentally friendly and non-toxic cleaning solutions.' },
       { question: 'Are your housekeeping staff background-checked?', answer: 'Absolutely. All our personnel undergo thorough police verification and background checks.' },
       { question: 'How can I request housekeeping services in Pune?', answer: 'You can request a housekeeping service quote through our contact page, and our team will follow up to understand your facility\'s requirements.' },
-      { question: 'Does Kargar provide commercial and industrial housekeeping services?', answer: 'Yes. Beyond corporate offices, our housekeeping teams support commercial facilities such as retail spaces and hotels, as well as industrial environments including manufacturing plants and warehouses.' },
+      { question: 'Does KARGAR provide commercial and industrial housekeeping services?', answer: 'Yes. Beyond corporate offices, our housekeeping teams support commercial facilities such as retail spaces and hotels, as well as industrial environments including manufacturing plants and warehouses.' },
       { question: 'Do you provide housekeeping services in PCMC and other parts of the Pune metropolitan region?', answer: 'Yes. Operating out of Baner, Pune, we serve corporate and industrial facilities across Pune and the wider Pune Metropolitan Region, including PCMC.' },
       { question: 'What information do you need to prepare a housekeeping services proposal?', answer: 'Typically your facility type, site size, operating hours, and current staffing needs. Share these through our contact page and our team will follow up with a tailored proposal.' }
     ],

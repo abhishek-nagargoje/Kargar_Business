@@ -177,7 +177,7 @@ export function Header({ activePath }: { activePath: string }) {
 
       <div className="kb-nav">
         <div className="kb-container kb-nav__inner">
-          <a className="kb-logo" href="/" aria-label="Kargar home">
+          <a className="kb-logo" href="/" aria-label="KARGAR Facility Management home">
             <BrandLogo />
           </a>
 
@@ -325,7 +325,7 @@ function StatsOverlay({ stats }: { stats: StatItem[] }) {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
-    <div className="kb-hero-stats" ref={ref} role="list" aria-label="Kargar operational performance statistics">
+    <div className="kb-hero-stats" ref={ref} role="list" aria-label="KARGAR operational performance statistics">
       {stats.map(({ value, countTo, suffix, label, icon: Icon }, index) => (
         <article key={label} role="listitem" aria-label={`${value} ${label}`}>
           <span className="kb-hero-stat-card__icon" aria-hidden="true">
@@ -460,7 +460,7 @@ function ContactPage() {
               <p>Reach out to us using any of the following channels.</p>
               <OptimizedImage
                 src="/images/page/contact-building.webp"
-                alt="Modern Kargar office building"
+                alt="Modern KARGAR office building"
                 showBlur={false}
               />
             </div>
@@ -640,7 +640,7 @@ export function Footer() {
             <div
               onDoubleClick={() => navigate('/admin/login')}
               className="cursor-pointer select-none max-w-[220px] sm:max-w-[250px] w-full bg-white p-2.5 rounded-lg shadow-sm"
-              aria-label="Kargar Admin Portal Trigger"
+              aria-label="KARGAR Admin Portal Trigger"
             >
               <BrandLogo className="w-full h-auto" />
             </div>
@@ -769,7 +769,7 @@ function SectorsPage() {
         headingAccent="Across Diverse Sectors"
         description={
           <>
-            Kargar delivers{' '}
+            KARGAR delivers{' '}
             <Link to="/services" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>facility management solutions</Link>{' '}
             across IT parks, manufacturing plants, corporate offices, healthcare facilities, retail spaces, and more, including{' '}
             <Link to="/services/soft-services/housekeeping" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>corporate and industrial housekeeping services</Link>{' '}

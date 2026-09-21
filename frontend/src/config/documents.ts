@@ -45,7 +45,7 @@ export const documentRegistry: Record<DocumentKey, DocumentDefinition> = {
     fileType: "PDF",
     category: "company",
     available: true,
-    downloadName: "Kargar-Company-Profile.pdf",
+    downloadName: "KARGAR-Company-Profile.pdf",
     content: {
       version: "v1.2",
       lastUpdated: "2026-07-15",
@@ -65,7 +65,7 @@ export const documentRegistry: Record<DocumentKey, DocumentDefinition> = {
     fileType: "PDF",
     category: "company",
     available: true,
-    downloadName: "Kargar-Company-Brochure.pdf",
+    downloadName: "KARGAR-Company-Brochure.pdf",
     content: {
       version: "v1.0",
       lastUpdated: "2026-07-15",

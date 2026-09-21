@@ -22,7 +22,7 @@ function ReviewEmptyState({ onOpenForm }: { onOpenForm: () => void }) {
         <PenLine size={32} />
       </div>
       <h3 className="text-xl font-bold text-(--text-primary) mb-2">Be our first verified client</h3>
-      <p className="text-(--text-secondary) mb-8">Share your experience with Kargar's facility management services.</p>
+      <p className="text-(--text-secondary) mb-8">Share your experience with KARGAR's facility management services.</p>
       <button
         onClick={onOpenForm}
         className="px-6 py-3 bg-(--text-accent) text-white rounded-full font-semibold hover:bg-orange-600 transition-colors shadow-sm"

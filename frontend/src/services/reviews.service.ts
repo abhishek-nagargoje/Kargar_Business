@@ -45,7 +45,7 @@ function mapActiveReview(row: ActiveReviewRow): PublicReview {
   return {
     id: row.id ?? '',
     customerName: row.customer_name ?? '',
-    companyName: row.company_name ?? 'Kargar client',
+    companyName: row.company_name ?? 'KARGAR client',
     serviceName: row.service_name ?? 'Facility Management',
     location: row.location ?? '',
     rating: row.rating ?? 5,

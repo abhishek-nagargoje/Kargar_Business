@@ -32,7 +32,7 @@ export const CTASection = memo(function CTASection({ entity }: ServiceBlockProps
           {headline}
         </h2>
         <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-          Partner with Kargar to ensure your enterprise operations run smoothly, safely, and efficiently. Our experts are ready to design a tailored solution for your specific needs.
+          Partner with KARGAR to ensure your enterprise operations run smoothly, safely, and efficiently. Our experts are ready to design a tailored solution for your specific needs.
         </p>
         <Link
           className={buttonVariants({ variant: 'primary', size: 'lg', className: 'shadow-lg hover:shadow-orange-500/20 px-8 py-4 text-lg' })}

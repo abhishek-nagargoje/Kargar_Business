@@ -16,7 +16,7 @@ export const OFFICIAL_SOCIAL_LINKS: readonly SocialPlatform[] = [
     id: 'instagram',
     name: 'Instagram',
     url: 'https://www.instagram.com/kargar.facility/',
-    ariaLabel: 'Follow Kargar on Instagram',
+    ariaLabel: 'Follow KARGAR on Instagram',
     title: 'Instagram',
   },
   {
@@ -24,21 +24,21 @@ export const OFFICIAL_SOCIAL_LINKS: readonly SocialPlatform[] = [
     name: 'Facebook',
     // Verified Kargar Facebook profile URL found in the codebase repository schema:
     url: 'https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/',
-    ariaLabel: 'Follow Kargar on Facebook',
+    ariaLabel: 'Follow KARGAR on Facebook',
     title: 'Facebook',
   },
   {
     id: 'linkedin',
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/?viewAsMember=true',
-    ariaLabel: 'Follow Kargar on LinkedIn',
+    ariaLabel: 'Follow KARGAR on LinkedIn',
     title: 'LinkedIn',
   },
   {
     id: 'x',
     name: 'X',
     url: 'https://x.com/Kargar_Business',
-    ariaLabel: 'Follow Kargar on X',
+    ariaLabel: 'Follow KARGAR on X',
     title: 'X',
   },
 ] as const;

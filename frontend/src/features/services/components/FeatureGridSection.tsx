@@ -32,7 +32,7 @@ export const FeatureGridSection = memo(function FeatureGridSection({ entity, blo
   switch (block.id) {
     case 'why-us':
       items = serviceEntity.whyChooseUs || [];
-      title = 'Why Choose Kargar';
+      title = 'Why Choose KARGAR';
       eyebrow = 'The Enterprise Advantage';
       break;
     case 'challenges':

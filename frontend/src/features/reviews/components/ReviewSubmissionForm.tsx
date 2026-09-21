@@ -463,7 +463,7 @@ export function ReviewSubmissionForm() {
             </div>
             <div>
               <p className="text-sm font-medium text-navy-900 mb-0.5">I grant permission to use this review</p>
-              <p className="text-xs text-gray-500">I allow Kargar Construction to use my review and media for marketing purposes on their website and social media.</p>
+              <p className="text-xs text-gray-500">I allow KARGAR Facility Management to use my review and media for marketing purposes on their website and social media.</p>
               {errors.permissionToDisplay && (
                 <p className="mt-1.5 text-xs font-medium text-red-500 flex items-center gap-1">
                   ⚠ {errors.permissionToDisplay.message}

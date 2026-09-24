@@ -24,6 +24,25 @@ export function acceptAttributeFor(mediaType: MediaType): string {
   return (mediaType === 'video' ? VIDEO_MIME_TYPES : IMAGE_MIME_TYPES).join(',');
 }
 
+/** Accept attribute for a picker that takes both images and videos at once (batch upload). */
+export const BATCH_ACCEPT = [...IMAGE_MIME_TYPES, ...VIDEO_MIME_TYPES].join(',');
+
+/** Media type implied by a file's MIME type, or `null` if it matches neither allowed set. */
+export function detectMediaType(file: File): MediaType | null {
+  if (IMAGE_MIME_TYPES.includes(file.type)) return 'image';
+  if (VIDEO_MIME_TYPES.includes(file.type)) return 'video';
+  return null;
+}
+
+/** Client-side pre-check for a batch-selected file, before any network call. `null` means valid. */
+export function batchValidationError(file: File): string | null {
+  const mediaType = detectMediaType(file);
+  if (!mediaType) return 'Unsupported type — use JPEG, PNG, WebP, MP4, or WebM.';
+  const max = maxBytesFor(mediaType);
+  if (file.size > max) return `Exceeds the ${Math.round(max / (1024 * 1024))} MB limit for ${mediaType}s.`;
+  return null;
+}
+
 export interface UploadedMedia {
   bucket: string;
   storagePath: string;

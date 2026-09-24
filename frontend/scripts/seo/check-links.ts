@@ -31,6 +31,7 @@ function buildKnownPaths(): Set<string> {
   known.add('/admin/update-password');
   known.add('/admin/reviews');
   known.add('/admin/contacts');
+  known.add('/admin/media');
   for (const page of buildRouteInventory()) known.add(page.path);
   return known;
 }

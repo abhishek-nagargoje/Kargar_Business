@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { Link } from 'react-router';
 import { Container } from '@/components/ui/Container';
 import { Button, buttonVariants } from '@/components/ui/Button';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import { ManagedImage } from '@/features/media/components/ManagedImage';
 import { Breadcrumb } from './Breadcrumb';
 import { useContactNavigation } from '../hooks/useContactNavigation';
 import { useDocument } from '../../../shared/hooks/useDocument';
@@ -78,11 +78,14 @@ export const HeroSection = memo(function HeroSection({ entity, block }: ServiceB
     <section id={block.id} className="relative bg-navy-900 overflow-hidden py-16 md:py-24">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <OptimizedImage
-          src={image?.src ?? ''}
-          alt={image?.alt ?? title}
+        <ManagedImage
+          placement="hero"
+          serviceSlug={isService ? entity.slug : undefined}
+          fallbackSrc={image?.src ?? ''}
+          fallbackAlt={image?.alt ?? title}
           className="w-full h-full object-cover opacity-20"
           priority
+          decorative
         />
         <div className="absolute inset-0 bg-linear-to-r from-navy-900 via-navy-900/90 to-transparent" />
       </div>

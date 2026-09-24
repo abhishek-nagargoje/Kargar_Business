@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router';
-import { 
-  LayoutDashboard, 
-  MessageSquare, 
-  Star, 
-  LogOut, 
+import {
+  LayoutDashboard,
+  MessageSquare,
+  Star,
+  Image as ImageIcon,
+  LogOut,
   Menu,
   X,
   ExternalLink
@@ -20,6 +21,7 @@ const ADMIN_NAV = [
   { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   { label: 'Contacts', href: '/admin/contacts', icon: MessageSquare },
   { label: 'Reviews', href: '/admin/reviews', icon: Star },
+  { label: 'Media Library', href: '/admin/media', icon: ImageIcon },
 ];
 
 export function AdminLayout() {

@@ -158,6 +158,56 @@ export interface AdminReview extends PublicReview {
   displayOrder: number;
 }
 
+/** Where a media image is allowed to be placed on the site. */
+export type MediaPlacement = 'hero' | 'gallery' | 'homepage' | 'service-card' | 'section';
+
+export type MediaStatus = 'draft' | 'published' | 'archived';
+
+/** Whether a media_images row is a photograph or a video file. */
+export type MediaType = 'image' | 'video';
+
+/** A single placement of a media image on a page (media_image_assignments row). */
+export interface MediaImageAssignment {
+  id: string;
+  mediaImageId: string;
+  placement: MediaPlacement;
+  /** Null = usable anywhere for this placement/service; set = scoped to exactly one page. */
+  pagePath: string | null;
+  displayOrder: number;
+}
+
+/**
+ * A real KARGAR service photograph or video managed by admins (media_images row).
+ * `mediaType` distinguishes the two — most fields apply to both; `width`/`height` are
+ * image-only, and `thumbnailPath`/`thumbnailUrl` hold an optional video poster image.
+ */
+export interface MediaImage {
+  id: string;
+  mediaType: MediaType;
+  /** Storage bucket this file lives in — 'service-images' or 'service-videos'. */
+  bucket: string;
+  storagePath: string;
+  publicUrl: string;
+  thumbnailPath: string | null;
+  /** Resolved public URL for the poster/thumbnail image (video only). */
+  thumbnailUrl: string | null;
+  title: string;
+  altText: string;
+  caption: string | null;
+  description: string | null;
+  serviceId: string | null;
+  mimeType: string;
+  fileSize: number;
+  width: number | null;
+  height: number | null;
+  status: MediaStatus;
+  isFeatured: boolean;
+  displayOrder: number;
+  createdAt: string;
+  updatedAt: string;
+  assignments: MediaImageAssignment[];
+}
+
 /** Admin dashboard summary */
 export interface AdminDashboardSummary {
   totalReviews: number;

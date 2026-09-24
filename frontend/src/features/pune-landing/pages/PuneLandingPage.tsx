@@ -5,7 +5,7 @@ import { Header, Footer } from '@/pages/KargarSinglePage';
 import { SEO } from '@/components/seo/SEO';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import { ManagedImage } from '@/features/media/components/ManagedImage';
 import { buttonVariants } from '@/components/ui/Button';
 import { Breadcrumb, type BreadcrumbItem } from '@/features/services/components/Breadcrumb';
 import { useContactNavigation } from '@/features/services/hooks/useContactNavigation';
@@ -27,6 +27,11 @@ export function PuneLandingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   if (!content) return <Navigate to="/404" replace />;
+
+  // e.g. "/services/soft-services/housekeeping" -> "housekeeping"; "/services" -> undefined
+  // (the facility-management-company-pune page links to the general hub, not one specific service).
+  const detailSegments = content.serviceDetailLink.href.split('/').filter(Boolean);
+  const serviceSlug = detailSegments.length === 3 ? detailSegments[2] : undefined;
 
   const breadcrumbItems: BreadcrumbItem[] = [{ label: content.breadcrumbLabel, href: '#' }];
 
@@ -55,7 +60,16 @@ export function PuneLandingPage() {
         {/* Hero */}
         <section className="relative bg-navy-950 text-white overflow-hidden">
           <div className="absolute inset-0">
-            <OptimizedImage src={content.heroImage.src} alt={content.heroImage.alt} className="w-full h-full object-cover opacity-20" priority decorative />
+            <ManagedImage
+              placement="hero"
+              serviceSlug={serviceSlug}
+              pagePath={content.path}
+              fallbackSrc={content.heroImage.src}
+              fallbackAlt={content.heroImage.alt}
+              className="w-full h-full object-cover opacity-20"
+              priority
+              decorative
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/90 to-navy-950/70" />
           </div>
           <Container size="lg" className="relative z-10 pt-8 pb-20 lg:pb-28">

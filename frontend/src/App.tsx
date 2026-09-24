@@ -14,6 +14,7 @@ const UpdatePasswordPage = lazy(() => import('@/features/admin/pages/UpdatePassw
 const AdminDashboardPage = lazy(() => import('@/features/admin/pages/AdminDashboardPage'));
 const AdminReviewsPage = lazy(() => import('@/features/admin/pages/AdminReviewsPage'));
 const AdminContactsPage = lazy(() => import('@/features/admin/pages/AdminContactsPage'));
+const AdminMediaLibraryPage = lazy(() => import('@/features/admin/pages/AdminMediaLibraryPage'));
 import { AdminLayout } from '@/features/admin/components/AdminLayout';
 
 import { AuthProvider } from '@/contexts/AuthProvider';
@@ -60,6 +61,7 @@ export default function App() {
             <Route index element={<AdminDashboardPage />} />
             <Route path="reviews" element={<AdminReviewsPage />} />
             <Route path="contacts" element={<AdminContactsPage />} />
+            <Route path="media" element={<AdminMediaLibraryPage />} />
           </Route>
 
           <Route path="*" element={<NotFoundPage />} />

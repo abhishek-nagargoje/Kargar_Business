@@ -36,28 +36,52 @@ export function Modal({
 }: ModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const lastFocusedRef = useRef<HTMLElement | null>(null);
 
-  // Handle escape key
+  // Handle escape key + Tab-cycle focus trap
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
+      if (!isOpen) return;
+
+      if (e.key === 'Escape') {
         onClose();
+        return;
+      }
+
+      if (e.key === 'Tab' && contentRef.current) {
+        const focusable = contentRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), video[controls], [tabindex]:not([tabindex="-1"])',
+        );
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (!first || !last) return;
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => { window.removeEventListener('keydown', handleKeyDown); };
   }, [isOpen, onClose]);
 
-  // Lock body scroll when open
+  // Lock body scroll when open; move focus into the dialog on open and back to the
+  // triggering element on close, so keyboard/screen-reader users never lose their place.
   useEffect(() => {
     if (isOpen) {
+      lastFocusedRef.current = document.activeElement as HTMLElement | null;
       document.body.style.overflow = 'hidden';
-      // Focus management: focus the modal content when it opens
       setTimeout(() => {
         contentRef.current?.focus();
       }, 100);
     } else {
       document.body.style.overflow = '';
+      lastFocusedRef.current?.focus();
+      lastFocusedRef.current = null;
     }
     return () => {
       document.body.style.overflow = '';

@@ -516,6 +516,131 @@ export type Database = {
         }
         Relationships: []
       }
+      media_image_assignments: {
+        Row: {
+          created_at: string
+          display_order: number
+          id: string
+          media_image_id: string
+          page_path: string | null
+          placement: string
+        }
+        Insert: {
+          created_at?: string
+          display_order?: number
+          id?: string
+          media_image_id: string
+          page_path?: string | null
+          placement: string
+        }
+        Update: {
+          created_at?: string
+          display_order?: number
+          id?: string
+          media_image_id?: string
+          page_path?: string | null
+          placement?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "media_image_assignments_media_image_id_fkey"
+            columns: ["media_image_id"]
+            isOneToOne: false
+            referencedRelation: "media_images"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      media_images: {
+        Row: {
+          alt_text: string
+          bucket: string
+          caption: string | null
+          created_at: string
+          created_by: string | null
+          description: string | null
+          display_order: number
+          file_size: number
+          height: number | null
+          id: string
+          is_featured: boolean
+          media_type: Database["public"]["Enums"]["media_type"]
+          mime_type: string
+          public_url: string
+          service_id: string | null
+          status: Database["public"]["Enums"]["media_status"]
+          storage_path: string
+          thumbnail_path: string | null
+          thumbnail_url: string | null
+          title: string
+          updated_at: string
+          width: number | null
+        }
+        Insert: {
+          alt_text: string
+          bucket?: string
+          caption?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          display_order?: number
+          file_size: number
+          height?: number | null
+          id?: string
+          is_featured?: boolean
+          media_type?: Database["public"]["Enums"]["media_type"]
+          mime_type: string
+          public_url: string
+          service_id?: string | null
+          status?: Database["public"]["Enums"]["media_status"]
+          storage_path: string
+          thumbnail_path?: string | null
+          thumbnail_url?: string | null
+          title: string
+          updated_at?: string
+          width?: number | null
+        }
+        Update: {
+          alt_text?: string
+          bucket?: string
+          caption?: string | null
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          display_order?: number
+          file_size?: number
+          height?: number | null
+          id?: string
+          is_featured?: boolean
+          media_type?: Database["public"]["Enums"]["media_type"]
+          mime_type?: string
+          public_url?: string
+          service_id?: string | null
+          status?: Database["public"]["Enums"]["media_status"]
+          storage_path?: string
+          thumbnail_path?: string | null
+          thumbnail_url?: string | null
+          title?: string
+          updated_at?: string
+          width?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "media_images_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "admin_users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "media_images_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "services"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       newsletter: {
         Row: {
           created_at: string
@@ -1523,6 +1648,8 @@ export type Database = {
         | "blog_image"
         | "document"
         | "general"
+      media_status: "draft" | "published" | "archived"
+      media_type: "image" | "video"
       notification_type: "info" | "warning" | "success" | "error" | "system"
       priority_level: "low" | "medium" | "high" | "urgent"
       quote_request_status:
@@ -1675,6 +1802,8 @@ export const Constants = {
         "document",
         "general",
       ],
+      media_status: ["draft", "published", "archived"],
+      media_type: ["image", "video"],
       notification_type: ["info", "warning", "success", "error", "system"],
       priority_level: ["low", "medium", "high", "urgent"],
       quote_request_status: [

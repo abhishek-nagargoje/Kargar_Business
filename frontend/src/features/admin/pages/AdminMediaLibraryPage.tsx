@@ -19,11 +19,32 @@ import {
   type ServiceOption,
 } from '@/services/media.service';
 import { acceptAttributeFor, maxBytesFor } from '@/repositories/media.repository';
+import { serviceCategories, allServices, SERVICES_PAGE_PATH } from '@/features/services/config';
+import { punePageList } from '@/features/pune-landing/config/punePages';
 import type { MediaImage, MediaPlacement, MediaStatus, MediaType } from '@/types';
 
 const PLACEMENTS: MediaPlacement[] = ['hero', 'gallery', 'homepage', 'service-card', 'section'];
 const STATUSES: MediaStatus[] = ['draft', 'published', 'archived'];
 const MEDIA_TYPES: MediaType[] = ['image', 'video'];
+
+/** Where each placement appears on the public site — shown to admins when assigning. */
+const PLACEMENT_HELP: Record<MediaPlacement, string> = {
+  hero: 'Hero media at the top of a service page (or Pune landing page). A video here replaces the hero image.',
+  gallery: '"Real Service Work" gallery on the service page. Images and videos, in display order.',
+  'service-card': `Service card on the Services page (${SERVICES_PAGE_PATH}).`,
+  homepage: 'Reserved for homepage sections.',
+  section: 'Reserved for other page sections.',
+};
+
+/** Real public page paths an assignment can be scoped to, derived from the route registries. */
+const PAGE_PATH_SUGGESTIONS: string[] = [
+  SERVICES_PAGE_PATH,
+  ...Object.values(allServices).flatMap((service) => {
+    const category = Object.values(serviceCategories).find((c) => c.id === service.categoryId);
+    return category ? [`/services/${category.slug}/${service.slug}`] : [];
+  }),
+  ...punePageList.map((p) => p.path),
+];
 
 function statusVariant(status: MediaStatus): 'default' | 'success' | 'warning' {
   if (status === 'published') return 'success';
@@ -548,6 +569,8 @@ function EditModal({
     serviceId: image.serviceId ?? '',
     status: image.status,
   });
+  const [isFeatured, setIsFeatured] = useState(image.isFeatured);
+  const [displayOrder, setDisplayOrder] = useState(String(image.displayOrder));
   const [newPlacement, setNewPlacement] = useState<MediaPlacement>('hero');
   const [newPagePath, setNewPagePath] = useState('');
   const assignmentsHeadingRef = useRef<HTMLHeadingElement>(null);
@@ -560,6 +583,8 @@ function EditModal({
         caption: form.caption || null,
         serviceId: form.serviceId || null,
         status: form.status,
+        isFeatured,
+        displayOrder: Number.parseInt(displayOrder, 10) || 0,
       }),
     onSuccess: () => {
       toast.success('Image updated.');
@@ -613,6 +638,30 @@ function EditModal({
 
         <MediaMetadataFields form={form} setForm={setForm} services={services} mediaType={image.mediaType} />
 
+        <div className="grid grid-cols-2 gap-3">
+          <label className="block text-sm">
+            <span className="mb-1 block font-medium text-navy-900">Display order</span>
+            <input
+              type="number"
+              min={0}
+              value={displayOrder}
+              onChange={(e) => { setDisplayOrder(e.target.value); }}
+              aria-describedby="media-order-help"
+              className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm"
+            />
+            <span id="media-order-help" className="mt-1 block text-xs text-gray-500">Lower numbers show first.</span>
+          </label>
+          <label className="flex items-center gap-2 self-start pt-7 text-sm font-medium text-navy-900">
+            <input
+              type="checkbox"
+              checked={isFeatured}
+              onChange={(e) => { setIsFeatured(e.target.checked); }}
+              className="h-4 w-4 rounded border-gray-300"
+            />
+            Featured (preferred when several items share a placement)
+          </label>
+        </div>
+
         <div>
           <h3 ref={assignmentsHeadingRef} tabIndex={-1} className="mb-2 text-sm font-semibold text-navy-900">Assignments</h3>
           {image.assignments.length === 0 ? (
@@ -651,14 +700,23 @@ function EditModal({
               type="text"
               value={newPagePath}
               onChange={(e) => { setNewPagePath(e.target.value); }}
-              placeholder="Page path (optional, e.g. /housekeeping-services-pune)"
+              placeholder="Page path (optional, e.g. /services/soft-services/housekeeping)"
               aria-label="Page path (optional)"
+              list="media-page-path-suggestions"
               className="min-w-[220px] flex-1 rounded-lg border border-gray-200 px-2 py-1.5 text-xs"
             />
+            <datalist id="media-page-path-suggestions">
+              {PAGE_PATH_SUGGESTIONS.map((path) => (
+                <option key={path} value={path} />
+              ))}
+            </datalist>
             <Button size="sm" variant="outline" disabled={assignMutation.isPending} onClick={() => { assignMutation.mutate(); }}>
               Add
             </Button>
           </div>
+          <p className="mt-2 text-xs text-gray-500">
+            {PLACEMENT_HELP[newPlacement]} Leave the page path blank to use it on every matching page for this service.
+          </p>
         </div>
 
         <div className="flex justify-end gap-3 pt-2">

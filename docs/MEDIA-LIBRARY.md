@@ -103,3 +103,40 @@ supabase gen types typescript --linked > src/supabase/types.ts
 - **Duplicate-upload detection** (Phase 39 of the brief) — flagged as low-priority/optional there; not built.
 - **Automated tests** — this project has no test runner configured (confirmed earlier this session, `package.json` has no `test` script). Adding one would be a separate, larger decision, not something to slip into this feature's scope.
 - **Homepage/sector/category-hub image integration** — infrastructure is ready (§5); not wired yet since there's no content-quality reason to force it in before real photos exist to differentiate placements.
+
+## 9. Services page & service-detail media (added 2026-09-24)
+
+The Media Library now drives the Services listing and every service-detail page. No new tables, buckets, hooks or admin pages were added — everything reuses `media_images` / `media_image_assignments`, `fetchPublishedImages`, and the existing admin UI.
+
+### Where each placement appears
+
+| Placement | Page path to assign | Where it renders | Fallback when nothing is published |
+|---|---|---|---|
+| `service-card` | `/services` (or blank) | Service card on `/services` (`ServiceCard.tsx`) — image **or** video | Existing static service image |
+| `hero` | the service page path (or blank) | Framed hero media on the service page (`HeroSection.tsx`) — a hero **video** takes precedence over a hero image | Existing static hero image |
+| `gallery` | the service page path (or blank) | "Real Service Work" section (`ServiceMediaSection.tsx` → `ServiceMediaGallery.tsx`) — mixed images/videos, thumbnails, lightbox | Section is hidden (static images are illustrative, so they are never presented as "real work") |
+
+The same media item can hold several assignments, so one real photo can serve the card, the hero and the gallery.
+
+### Selection priority
+
+`fetchPublishedImages` now orders results: (1) assignment scoped to the exact page path, (2) page-agnostic assignment, then featured, then assignment display order, then media display order. A media item assigned twice to one placement appears once. Only `published` media is ever returned (RLS).
+
+### Service slug mapping (bug fix)
+
+The `services` table's slugs do not all match the URL slugs (`housekeeping` ↔ `housekeeping-services`, `electrical-maintenance` ↔ `electrical-systems-maintenance`). Before this change, managed media for Housekeeping and Electrical could never resolve. Each registry service now declares `catalogSlug` (its `services`-table slug) and every media lookup — service pages, cards and Pune landing pages — uses it.
+
+Category hub pages (`/services/hard-services`, `/services/soft-services`) no longer query the Media Library: without a service filter, the lookup matched *any* service's hero media.
+
+### Admin additions
+
+The Edit modal now exposes **Display order** and **Featured**, suggests real page paths (Services page, the 4 service pages, the 5 Pune pages) in the page-path field, and explains where the selected placement renders.
+
+### Performance
+
+Lookups go through React Query (`useManagedMediaList`), so identical lookups share one request. Galleries mount only the active video; thumbnails are posters/images. Card videos use `preload="none"` when a poster exists, otherwise `preload="metadata"`. Nothing autoplays.
+
+### Still manual
+
+- Poster images can only be attached at upload time (no "replace poster" on edit yet).
+- Real KARGAR videos have not been uploaded yet — the video paths were verified with a local test file only; nothing was published.

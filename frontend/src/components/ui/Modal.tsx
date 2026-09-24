@@ -106,7 +106,7 @@ export function Modal({
   const modalContent = (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6">
           {/* Backdrop */}
           <motion.div
             ref={overlayRef}
@@ -155,7 +155,7 @@ export function Modal({
                 variant="ghost"
                 size="icon"
                 onClick={onClose}
-                className="ml-auto -mr-2 text-gray-400 hover:text-gray-600 rounded-full"
+                className="ml-auto -mr-2 text-gray-600 hover:text-gray-900 rounded-full"
                 aria-label="Close modal"
               >
                 <X className="h-5 w-5" />

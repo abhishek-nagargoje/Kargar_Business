@@ -31,6 +31,7 @@ import { submitContactMessage } from '@/services/contact.service';
 import { ReviewsSection } from '@/features/reviews/components/ReviewsSection';
 import { TrustedClientsSection } from '@/features/reviews/components/TrustedClientsSection';
 import { ServicesSection } from '@/features/home/components/ServicesSection';
+import { ServiceCatalogSection } from '@/features/services/components/ServiceCatalogSection';
 import { CompanyProfileSection } from '@/features/home/components/CompanyProfile';
 import { IndustriesSection } from '@/features/home/components/IndustriesSection';
 import { useContactNavigation } from '@/features/services/hooks/useContactNavigation';
@@ -707,7 +708,7 @@ function ServicesPage() {
   return (
     <>
       <ServicesHero />
-      <ServicesSection />
+      <ServiceCatalogSection />
       <PuneServicesLinksSection />
       <StatsBand />
     </>

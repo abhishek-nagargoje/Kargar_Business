@@ -10,9 +10,14 @@ interface ManagedImageProps {
   fallbackSrc: string;
   fallbackAlt: string;
   className?: string;
+  /** Classes for OptimizedImage's wrapper div (e.g. `h-full` when the image must fill a sized box). */
+  containerClassName?: string;
+  sizes?: string;
   priority?: boolean;
   /** Passed through to OptimizedImage — true for purely atmospheric background images. */
   decorative?: boolean;
+  /** False renders the fallback without querying the Media Library. */
+  enabled?: boolean;
 }
 
 /**
@@ -27,16 +32,21 @@ export function ManagedImage({
   fallbackSrc,
   fallbackAlt,
   className,
+  containerClassName,
+  sizes,
   priority,
   decorative,
+  enabled,
 }: ManagedImageProps) {
-  const managed = useManagedImage({ placement, serviceSlug, pagePath });
+  const managed = useManagedImage({ placement, serviceSlug, pagePath, enabled });
 
   return (
     <OptimizedImage
       src={managed?.publicUrl ?? fallbackSrc}
       alt={managed?.altText ?? fallbackAlt}
       className={className}
+      containerClassName={containerClassName}
+      sizes={sizes}
       priority={priority}
       decorative={decorative}
     />

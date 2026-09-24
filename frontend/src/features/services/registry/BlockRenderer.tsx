@@ -13,6 +13,7 @@ import {
   CTASection,
   GallerySection,
   TestimonialSection,
+  ServiceMediaSection,
 } from '../components';
 
 export interface ServiceBlockProps<
@@ -41,6 +42,7 @@ const blockRegistryManifest: Record<string, RegistryEntry> = {
   [BlockType.Collection]: { component: CollectionSection, lazy: true },
   [BlockType.Gallery]: { component: GallerySection, lazy: true },
   [BlockType.Testimonial]: { component: TestimonialSection, lazy: true },
+  [BlockType.Media]: { component: ServiceMediaSection, lazy: true },
 };
 
 export const BlockRenderer = <T extends BaseEntity>({ 

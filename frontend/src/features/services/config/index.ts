@@ -8,3 +8,6 @@ export const allServices = {
 };
 
 export { serviceCategories, hardServices, softServices };
+
+/** The Services listing page — the page_path admins scope `service-card` media to. */
+export const SERVICES_PAGE_PATH = '/services';

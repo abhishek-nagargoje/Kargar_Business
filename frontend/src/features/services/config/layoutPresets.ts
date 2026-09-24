@@ -21,6 +21,7 @@ export const layoutPresets: Record<string, PageBlock[]> = {
   ],
   enterpriseTechnical: [
     { id: 'hero', type: BlockType.Hero, order: 10, schemaVersion: 1, lazy: false, priority: 1, analytics: { name: 'hero' } },
+    { id: 'media', type: BlockType.Media, order: 15, schemaVersion: 1, background: BackgroundIntent.Light, lazy: true, analytics: { name: 'service-media' } },
     { id: 'overview', type: BlockType.Overview, order: 20, schemaVersion: 1, background: BackgroundIntent.White, lazy: true },
     { id: 'scope', type: BlockType.FeatureGrid, variant: FeatureGridVariant.List, order: 30, schemaVersion: 1, background: BackgroundIntent.Light, lazy: true, condition: (entity) => !!entity.operations?.scopeOfWork },
     { id: 'equipment', type: BlockType.Collection, variant: CollectionVariant.Equipment, order: 40, schemaVersion: 1, background: BackgroundIntent.White, lazy: true, condition: (entity) => !!entity.operations?.equipmentMaintained },
@@ -36,6 +37,7 @@ export const layoutPresets: Record<string, PageBlock[]> = {
   ],
   enterpriseCleaning: [
     { id: 'hero', type: BlockType.Hero, order: 10, schemaVersion: 1, lazy: false, priority: 1, analytics: { name: 'hero' } },
+    { id: 'media', type: BlockType.Media, order: 15, schemaVersion: 1, background: BackgroundIntent.Light, lazy: true, analytics: { name: 'service-media' } },
     { id: 'overview', type: BlockType.Overview, order: 20, schemaVersion: 1, background: BackgroundIntent.White, lazy: true },
     { id: 'scope', type: BlockType.FeatureGrid, variant: FeatureGridVariant.Checklist, order: 30, schemaVersion: 1, background: BackgroundIntent.Light, lazy: true, condition: (entity) => !!entity.operations?.scopeOfWork },
     { id: 'deliverables', type: BlockType.FeatureGrid, variant: FeatureGridVariant.Cards, order: 40, schemaVersion: 1, background: BackgroundIntent.White, lazy: true, condition: (entity) => !!entity.operations?.deliverables },

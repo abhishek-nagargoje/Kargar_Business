@@ -9,6 +9,7 @@ import { ManagedImage } from '@/features/media/components/ManagedImage';
 import { buttonVariants } from '@/components/ui/Button';
 import { Breadcrumb, type BreadcrumbItem } from '@/features/services/components/Breadcrumb';
 import { useContactNavigation } from '@/features/services/hooks/useContactNavigation';
+import { useServices } from '@/features/services/hooks/useServices';
 import { config } from '@/config';
 import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { buildFAQSchema } from '@/lib/seo/schema';
@@ -24,14 +25,17 @@ export function PuneLandingPage() {
   const location = useLocation();
   const content = Object.values(punePages).find((p) => p.path === location.pathname);
   const { navigateToContact, buildContactUrl } = useContactNavigation();
+  const { getService } = useServices();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   if (!content) return <Navigate to="/404" replace />;
 
   // e.g. "/services/soft-services/housekeeping" -> "housekeeping"; "/services" -> undefined
   // (the facility-management-company-pune page links to the general hub, not one specific service).
+  // Media is tagged with the Supabase catalog slug, which can differ from the URL slug.
   const detailSegments = content.serviceDetailLink.href.split('/').filter(Boolean);
-  const serviceSlug = detailSegments.length === 3 ? detailSegments[2] : undefined;
+  const urlSlug = detailSegments.length === 3 ? detailSegments[2] : undefined;
+  const serviceSlug = urlSlug ? getService(urlSlug)?.catalogSlug : undefined;
 
   const breadcrumbItems: BreadcrumbItem[] = [{ label: content.breadcrumbLabel, href: '#' }];
 

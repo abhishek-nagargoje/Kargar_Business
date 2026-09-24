@@ -91,10 +91,9 @@ export async function fetchServiceOptions(): Promise<ServiceOption[]> {
   return data;
 }
 
-// The frontend's service-page config (src/features/services/config/*.ts) and the database's
-// `services` table are two separate sources of truth that happen to share the same slugs
-// ('housekeeping', 'security-services', 'electrical-maintenance', 'hvac-maintenance'). This
-// short-lived in-memory cache avoids an extra round trip on every image lookup.
+// Media rows reference the database's `services` table, whose slugs do not all match the
+// frontend registry's URL slugs — callers pass the registry's `catalogSlug` (the DB slug), see
+// Service.catalogSlug. This in-memory cache avoids an extra round trip on every lookup.
 let serviceSlugToIdCache: Map<string, string> | null = null;
 
 async function resolveServiceIdBySlug(slug: string): Promise<string | undefined> {
@@ -137,7 +136,8 @@ export async function fetchPublishedImages(options: {
     .order('display_order');
 
   if (options.pagePath) {
-    query = query.or(`page_path.eq.${options.pagePath},page_path.is.null`);
+    // Quoted so path characters can never be parsed as PostgREST filter syntax.
+    query = query.or(`page_path.eq."${options.pagePath.replace(/"/g, '')}",page_path.is.null`);
   }
   if (options.serviceSlug) {
     const serviceId = await resolveServiceIdBySlug(options.serviceSlug);
@@ -152,10 +152,38 @@ export async function fetchPublishedImages(options: {
   const { data, error } = await query;
   throwSupabaseError(error, 'Images could not be loaded');
 
-  return data.map((row) => {
+  // Priority: an assignment scoped to this exact page beats a page-agnostic one, then featured
+  // media, then the assignment's display order, then the media's own display order.
+  const rank = (row: (typeof data)[number]) => {
     const image = row.media_images as unknown as MediaImageRow;
-    return mapMediaImage(image, [row]);
+    return [
+      options.pagePath && row.page_path === options.pagePath ? 0 : 1,
+      image.is_featured ? 0 : 1,
+      row.display_order,
+      image.display_order,
+    ];
+  };
+  const sorted = [...data].sort((a, b) => {
+    const ra = rank(a);
+    const rb = rank(b);
+    for (let i = 0; i < ra.length; i++) {
+      const diff = (ra[i] ?? 0) - (rb[i] ?? 0);
+      if (diff !== 0) return diff;
+    }
+    return 0;
   });
+
+  // The same media can hold both a page-scoped and a page-agnostic assignment for one
+  // placement — keep only its highest-priority row so galleries never show it twice.
+  const seen = new Set<string>();
+  const results: MediaImage[] = [];
+  for (const row of sorted) {
+    const image = row.media_images as unknown as MediaImageRow;
+    if (seen.has(image.id)) continue;
+    seen.add(image.id);
+    results.push(mapMediaImage(image, [row]));
+  }
+  return results;
 }
 
 export async function createMediaImage(payload: CreateMediaImagePayload): Promise<MediaImage> {

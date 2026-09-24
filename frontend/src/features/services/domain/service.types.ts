@@ -29,6 +29,7 @@ export const BlockType = {
   CTA: "cta",
   Gallery: "gallery",
   Testimonial: "testimonial",
+  Media: "media",
 } as const;
 export type BlockType = typeof BlockType[keyof typeof BlockType];
 
@@ -186,6 +187,13 @@ export interface ExtendedEntity extends BaseEntity {
 
 export interface Service extends BaseEntity {
   categoryId: string;
+  /**
+   * Slug of the matching row in the Supabase `services` table. The Media Library tags media
+   * with that table's IDs, and two of its slugs differ from this registry's URL slugs
+   * (e.g. `housekeeping` here vs `housekeeping-services` there), so managed-media lookups
+   * must use this rather than `slug`.
+   */
+  catalogSlug: string;
   serviceType: ServiceType;
   shortDescription: string;
   overview: string;

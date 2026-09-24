@@ -21,6 +21,7 @@ import {
 import { BATCH_ACCEPT, batchValidationError, detectMediaType } from '@/repositories/media.repository';
 import { serviceCategories, allServices, SERVICES_PAGE_PATH } from '@/features/services/config';
 import { punePageList } from '@/features/pune-landing/config/punePages';
+import type { Service } from '@/features/services/domain/service.types';
 import type { MediaImage, MediaPlacement, MediaStatus, MediaType } from '@/types';
 
 const PLACEMENTS: MediaPlacement[] = ['hero', 'gallery', 'homepage', 'service-card', 'section'];
@@ -32,9 +33,70 @@ const PLACEMENT_HELP: Record<MediaPlacement, string> = {
   hero: 'Hero media at the top of a service page (or Pune landing page). A video here replaces the hero image.',
   gallery: '"Real Service Work" gallery on the service page. Images and videos, in display order.',
   'service-card': `Service card on the Services page (${SERVICES_PAGE_PATH}).`,
-  homepage: 'Reserved for homepage sections.',
-  section: 'Reserved for other page sections.',
+  homepage: 'Not currently read by any page — no homepage section queries this placement yet.',
+  section: 'Not currently read by any page — no section component queries this placement yet.',
 };
+
+function registryServiceForCatalogSlug(catalogSlug: string | undefined): Service | undefined {
+  if (!catalogSlug) return undefined;
+  return Object.values(allServices).find((s) => s.catalogSlug === catalogSlug);
+}
+
+/** The real public URL for a registry service's detail page, e.g. /services/soft-services/housekeeping. */
+function registryServiceUrlPath(service: Service): string | null {
+  const category = Object.values(serviceCategories).find((c) => c.id === service.categoryId);
+  return category ? `/services/${category.slug}/${service.slug}` : null;
+}
+
+/**
+ * Friendly, human-readable destinations for "where should this media appear?" — each maps to
+ * the exact (placement, page_path) pair the matching public component actually queries, so an
+ * admin can never pick a destination that silently does nothing (the bug this replaces: the
+ * old raw "homepage" placement value was never read by any page).
+ */
+type DestinationKey = 'homepage-card' | 'service-hero' | 'service-gallery' | 'pune-hero' | 'advanced';
+
+const DESTINATION_LABELS: Record<DestinationKey, string> = {
+  'homepage-card': 'Homepage → Service Card',
+  'service-hero': 'Service Page → Hero',
+  'service-gallery': 'Service Page → Gallery ("Real Service Work")',
+  'pune-hero': 'Pune Landing Page → Hero',
+  advanced: 'Advanced (choose placement and page manually)',
+};
+
+/** Resolves a friendly destination + the media's selected service into a real (placement, page_path). */
+function resolveDestination(
+  destination: DestinationKey,
+  registryService: Service | undefined,
+  punePath: string,
+): { placement: MediaPlacement; pagePath: string | null } | null {
+  switch (destination) {
+    case 'homepage-card':
+      return { placement: 'service-card', pagePath: SERVICES_PAGE_PATH };
+    case 'service-hero':
+      return registryService ? { placement: 'hero', pagePath: registryServiceUrlPath(registryService) } : null;
+    case 'service-gallery':
+      return registryService ? { placement: 'gallery', pagePath: registryServiceUrlPath(registryService) } : null;
+    case 'pune-hero':
+      return punePath ? { placement: 'hero', pagePath: punePath } : null;
+    default:
+      return null;
+  }
+}
+
+/** Human label for an existing (placement, page_path) assignment, for the "Used on" summary. */
+function friendlyLocationLabel(placement: MediaPlacement, pagePath: string | null): string {
+  if (pagePath === SERVICES_PAGE_PATH && placement === 'service-card') return 'Homepage & Services page → Service card';
+  const pune = punePageList.find((p) => p.path === pagePath);
+  if (pune) return `${pune.breadcrumbLabel} → ${placement === 'hero' ? 'Hero' : placement}`;
+  const service = Object.values(allServices).find((s) => registryServiceUrlPath(s) === pagePath);
+  if (service) {
+    const where = placement === 'hero' ? 'Hero' : placement === 'gallery' ? 'Gallery' : placement === 'service-card' ? 'Service card' : placement;
+    return `${service.title} page → ${where}`;
+  }
+  if (!pagePath) return `${placement} (any matching page)`;
+  return `${placement} — ${pagePath}`;
+}
 
 /** Real public page paths an assignment can be scoped to, derived from the route registries. */
 const PAGE_PATH_SUGGESTIONS: string[] = [
@@ -368,8 +430,8 @@ function UploadModal({
   const [items, setItems] = useState<BatchItem[]>([]);
   const [serviceId, setServiceId] = useState('');
   const [status, setStatus] = useState<MediaStatus>('draft');
-  const [placement, setPlacement] = useState<MediaPlacement | ''>('');
-  const [pagePath, setPagePath] = useState('');
+  const [destination, setDestination] = useState<DestinationKey | ''>('');
+  const [punePath, setPunePath] = useState(punePageList[0]?.path ?? '');
   const [isDragging, setIsDragging] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -416,6 +478,10 @@ function UploadModal({
   const validItems = items.filter((it) => !it.validationError);
   const canSubmit = validItems.length > 0 && validItems.every((it) => it.title.trim() && it.altText.trim()) && !isSubmitting;
 
+  const selectedServiceSlug = services.find((s) => s.id === serviceId)?.slug;
+  const registryService = registryServiceForCatalogSlug(selectedServiceSlug);
+  const resolved = destination ? (destination === 'advanced' ? null : resolveDestination(destination, registryService, punePath)) : null;
+
   const uploadAll = async () => {
     setIsSubmitting(true);
     let succeeded = 0;
@@ -434,8 +500,8 @@ function UploadModal({
           serviceId: serviceId || null,
           status,
         });
-        if (placement) {
-          await assignMediaImage({ mediaImageId: created.id, placement, pagePath: pagePath.trim() || null });
+        if (resolved) {
+          await assignMediaImage({ mediaImageId: created.id, placement: resolved.placement, pagePath: resolved.pagePath });
         }
         updateItem(item.id, { status: 'done' });
         succeeded += 1;
@@ -620,42 +686,46 @@ function UploadModal({
               </select>
             </label>
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <label className="block text-sm">
+            <span className="mb-1 block font-medium text-navy-900">Where should these appear? (optional — you can also assign each item later)</span>
+            <select
+              value={destination}
+              onChange={(e) => { setDestination(e.target.value as DestinationKey | ''); }}
+              disabled={isSubmitting}
+              className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm"
+            >
+              <option value="">Don&apos;t assign yet</option>
+              {(Object.keys(DESTINATION_LABELS) as DestinationKey[])
+                .filter((key) => key !== 'advanced')
+                .map((key) => (
+                  <option key={key} value={key}>{DESTINATION_LABELS[key]}</option>
+                ))}
+            </select>
+          </label>
+
+          {destination === 'pune-hero' && (
             <label className="block text-sm">
-              <span className="mb-1 block font-medium text-navy-900">Placement (optional)</span>
+              <span className="mb-1 block font-medium text-navy-900">Which Pune page?</span>
               <select
-                value={placement}
-                onChange={(e) => { setPlacement(e.target.value as MediaPlacement | ''); }}
+                value={punePath}
+                onChange={(e) => { setPunePath(e.target.value); }}
                 disabled={isSubmitting}
                 className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm"
               >
-                <option value="">Don&apos;t assign yet</option>
-                {PLACEMENTS.map((p) => (
-                  <option key={p} value={p}>{p}</option>
+                {punePageList.map((p) => (
+                  <option key={p.path} value={p.path}>{p.breadcrumbLabel}</option>
                 ))}
               </select>
             </label>
-            <label className="block text-sm">
-              <span className="mb-1 block font-medium text-navy-900">Page (optional)</span>
-              <input
-                type="text"
-                value={pagePath}
-                onChange={(e) => { setPagePath(e.target.value); }}
-                placeholder="e.g. /services/soft-services/housekeeping"
-                list="media-page-path-suggestions"
-                disabled={isSubmitting || !placement}
-                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm disabled:bg-gray-50"
-              />
-              <datalist id="media-page-path-suggestions">
-                {PAGE_PATH_SUGGESTIONS.map((path) => (
-                  <option key={path} value={path} />
-                ))}
-              </datalist>
-            </label>
-          </div>
-          {placement && (
-            <p className="text-xs text-gray-500">
-              {PLACEMENT_HELP[placement]} Leave the page blank to use it on every matching page for the chosen service.
+          )}
+
+          {(destination === 'service-hero' || destination === 'service-gallery') && !registryService && (
+            <p id="upload-destination-warning" role="status" className="text-xs font-medium text-amber-700">⚠ Pick a Service above first — this destination needs it.</p>
+          )}
+
+          {resolved && (
+            <p id="upload-destination-preview" role="status" className="rounded-md bg-orange-50 px-3 py-2 text-xs text-orange-800">
+              Every uploaded file will appear at: <strong>{friendlyLocationLabel(resolved.placement, resolved.pagePath)}</strong>
             </p>
           )}
         </div>
@@ -765,9 +835,24 @@ function EditModal({
   });
   const [isFeatured, setIsFeatured] = useState(image.isFeatured);
   const [displayOrder, setDisplayOrder] = useState(String(image.displayOrder));
-  const [newPlacement, setNewPlacement] = useState<MediaPlacement>('hero');
-  const [newPagePath, setNewPagePath] = useState('');
+  const [destination, setDestination] = useState<DestinationKey>('homepage-card');
+  const [punePath, setPunePath] = useState(punePageList[0]?.path ?? '');
+  const [advancedPlacement, setAdvancedPlacement] = useState<MediaPlacement>('hero');
+  const [advancedPagePath, setAdvancedPagePath] = useState('');
   const assignmentsHeadingRef = useRef<HTMLHeadingElement>(null);
+
+  const selectedServiceSlug = services.find((s) => s.id === form.serviceId)?.slug;
+  const registryService = registryServiceForCatalogSlug(selectedServiceSlug);
+  const resolved =
+    destination === 'advanced'
+      ? { placement: advancedPlacement, pagePath: advancedPagePath.trim() || null }
+      : resolveDestination(destination, registryService, punePath);
+  const destinationWarningShown =
+    destination !== 'advanced' && destination !== 'homepage-card' && !registryService && destination !== 'pune-hero';
+  const destinationDescribedBy =
+    [destinationWarningShown ? 'edit-destination-warning' : null, resolved ? 'edit-destination-preview' : null]
+      .filter(Boolean)
+      .join(' ') || undefined;
 
   const saveMutation = useMutation({
     mutationFn: () =>
@@ -790,12 +875,14 @@ function EditModal({
   });
 
   const assignMutation = useMutation({
-    mutationFn: () =>
-      assignMediaImage({ mediaImageId: image.id, placement: newPlacement, pagePath: newPagePath.trim() || null }),
+    mutationFn: () => {
+      if (!resolved) throw new Error('Choose a destination first.');
+      return assignMediaImage({ mediaImageId: image.id, placement: resolved.placement, pagePath: resolved.pagePath });
+    },
     onSuccess: () => {
-      setNewPagePath('');
-      toast.success('Placement added.');
+      toast.success('Placement added — the change is live immediately.');
       void queryClient.invalidateQueries({ queryKey: ['admin-media-library'] });
+      void queryClient.invalidateQueries({ queryKey: ['managed-media'] });
     },
     onError: (error: Error) => {
       toast.error(error.message || 'Unable to assign this placement.');
@@ -857,21 +944,21 @@ function EditModal({
         </div>
 
         <div>
-          <h3 ref={assignmentsHeadingRef} tabIndex={-1} className="mb-2 text-sm font-semibold text-navy-900">Assignments</h3>
+          <h3 ref={assignmentsHeadingRef} tabIndex={-1} className="mb-2 text-sm font-semibold text-navy-900">
+            Used on {image.assignments.length > 0 && <span className="font-normal text-gray-500">({image.assignments.length} {image.assignments.length === 1 ? 'location' : 'locations'})</span>}
+          </h3>
           {image.assignments.length === 0 ? (
-            <p className="text-xs text-gray-500">Not assigned to any page yet.</p>
+            <p className="text-xs text-gray-500">Not assigned to any page yet — it won&apos;t appear anywhere on the public site until you add a destination below.</p>
           ) : (
             <ul className="mb-3 space-y-1.5">
               {image.assignments.map((a) => (
-                <li key={a.id} className="flex items-center justify-between rounded-md bg-gray-50 px-3 py-1.5 text-xs">
-                  <span>
-                    <strong>{a.placement}</strong>{a.pagePath ? ` — ${a.pagePath}` : ' — any page'}
-                  </span>
+                <li key={a.id} className="flex items-center justify-between rounded-md bg-green-50 px-3 py-1.5 text-xs text-green-900">
+                  <span>✓ {friendlyLocationLabel(a.placement, a.pagePath)}</span>
                   <button
                     type="button"
                     onClick={() => { unassignMutation.mutate(a.id); }}
-                    className="text-gray-400 hover:text-red-600"
-                    aria-label={`Remove ${a.placement} assignment`}
+                    className="text-green-700/60 hover:text-red-600"
+                    aria-label={`Remove from ${friendlyLocationLabel(a.placement, a.pagePath)}`}
                   >
                     <X className="h-3.5 w-3.5" />
                   </button>
@@ -879,38 +966,85 @@ function EditModal({
               ))}
             </ul>
           )}
-          <div className="flex flex-wrap items-center gap-2">
+
+          <label className="mb-2 block text-sm">
+            <span className="mb-1 block font-medium text-navy-900">Add a destination — where should this appear?</span>
             <select
-              value={newPlacement}
-              onChange={(e) => { setNewPlacement(e.target.value as MediaPlacement); }}
-              aria-label="Placement"
-              className="rounded-lg border border-gray-200 px-2 py-1.5 text-xs"
+              value={destination}
+              onChange={(e) => { setDestination(e.target.value as DestinationKey); }}
+              className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm"
             >
-              {PLACEMENTS.map((p) => (
-                <option key={p} value={p}>{p}</option>
+              {(Object.keys(DESTINATION_LABELS) as DestinationKey[]).map((key) => (
+                <option key={key} value={key}>{DESTINATION_LABELS[key]}</option>
               ))}
             </select>
-            <input
-              type="text"
-              value={newPagePath}
-              onChange={(e) => { setNewPagePath(e.target.value); }}
-              placeholder="Page path (optional, e.g. /services/soft-services/housekeeping)"
-              aria-label="Page path (optional)"
-              list="media-page-path-suggestions"
-              className="min-w-[220px] flex-1 rounded-lg border border-gray-200 px-2 py-1.5 text-xs"
-            />
-            <datalist id="media-page-path-suggestions">
-              {PAGE_PATH_SUGGESTIONS.map((path) => (
-                <option key={path} value={path} />
-              ))}
-            </datalist>
-            <Button size="sm" variant="outline" disabled={assignMutation.isPending} onClick={() => { assignMutation.mutate(); }}>
-              Add
-            </Button>
-          </div>
-          <p className="mt-2 text-xs text-gray-500">
-            {PLACEMENT_HELP[newPlacement]} Leave the page path blank to use it on every matching page for this service.
-          </p>
+          </label>
+
+          {destinationWarningShown && (
+            <p id="edit-destination-warning" role="status" className="mb-2 text-xs font-medium text-amber-700">⚠ Select a Service above first — this destination needs to know which service page to use.</p>
+          )}
+
+          {destination === 'pune-hero' && (
+            <label className="mb-2 block text-sm">
+              <span className="mb-1 block font-medium text-navy-900">Which Pune page?</span>
+              <select
+                value={punePath}
+                onChange={(e) => { setPunePath(e.target.value); }}
+                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm"
+              >
+                {punePageList.map((p) => (
+                  <option key={p.path} value={p.path}>{p.breadcrumbLabel}</option>
+                ))}
+              </select>
+            </label>
+          )}
+
+          {destination === 'advanced' && (
+            <div className="mb-2 flex flex-wrap items-center gap-2">
+              <select
+                value={advancedPlacement}
+                onChange={(e) => { setAdvancedPlacement(e.target.value as MediaPlacement); }}
+                aria-label="Placement"
+                aria-describedby="advanced-placement-help"
+                className="rounded-lg border border-gray-200 px-2 py-1.5 text-xs"
+              >
+                {PLACEMENTS.map((p) => (
+                  <option key={p} value={p}>{p}</option>
+                ))}
+              </select>
+              <input
+                type="text"
+                value={advancedPagePath}
+                onChange={(e) => { setAdvancedPagePath(e.target.value); }}
+                placeholder="Page path (optional, e.g. /services/soft-services/housekeeping)"
+                aria-label="Page path (optional)"
+                list="media-page-path-suggestions"
+                className="min-w-[220px] flex-1 rounded-lg border border-gray-200 px-2 py-1.5 text-xs"
+              />
+              <datalist id="media-page-path-suggestions">
+                {PAGE_PATH_SUGGESTIONS.map((path) => (
+                  <option key={path} value={path} />
+                ))}
+              </datalist>
+              <p id="advanced-placement-help" className="w-full text-xs text-gray-500">{PLACEMENT_HELP[advancedPlacement]}</p>
+            </div>
+          )}
+
+          {resolved && (
+            <p id="edit-destination-preview" role="status" className="mb-2 rounded-md bg-orange-50 px-3 py-2 text-xs text-orange-800">
+              Will appear at: <strong>{friendlyLocationLabel(resolved.placement, resolved.pagePath)}</strong>
+            </p>
+          )}
+
+          <Button
+            size="sm"
+            variant="outline"
+            disabled={!resolved || assignMutation.isPending}
+            aria-describedby={destinationDescribedBy}
+            onClick={() => { assignMutation.mutate(); }}
+          >
+            {assignMutation.isPending ? 'Adding…' : 'Add this destination'}
+          </Button>
         </div>
 
         <div className="flex justify-end gap-3 pt-2">

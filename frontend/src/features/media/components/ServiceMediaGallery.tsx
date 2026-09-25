@@ -133,14 +133,20 @@ export function ServiceMediaGallery({ items, label }: ServiceMediaGalleryProps) 
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        <div className="aspect-video w-full">
+        {/*
+          Bounded height, not a forced aspect-ratio box: object-contain lets each photo keep its
+          own aspect ratio (portrait, square, ultra-wide, …) instead of being cropped to fit a
+          fixed 16:9 frame. Cards/thumbnails elsewhere are allowed to crop for a tidy grid; this
+          "real service work" preview and the lightbox below must always show the whole photo.
+        */}
+        <div className="flex max-h-[60vh] min-h-[16rem] w-full items-center justify-center">
           {active.mediaType === 'video' ? (
-            <GalleryVideo item={active} className="h-full w-full bg-black object-contain" />
+            <GalleryVideo item={active} className="max-h-[60vh] w-full bg-black object-contain" />
           ) : (
             <button
               type="button"
               onClick={() => { setLightboxOpen(true); }}
-              className="group relative block h-full w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-orange-600"
+              className="group relative flex max-h-[60vh] w-full self-stretch items-center justify-center cursor-zoom-in focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-orange-600"
               aria-label={`View larger: ${mediaLabel(active)}`}
             >
               <img
@@ -150,7 +156,7 @@ export function ServiceMediaGallery({ items, label }: ServiceMediaGalleryProps) 
                 width={active.width ?? undefined}
                 height={active.height ?? undefined}
                 loading="lazy"
-                className="h-full w-full object-cover"
+                className="max-h-[60vh] w-auto max-w-full object-contain"
               />
               <span className="absolute right-3 top-3 flex items-center gap-1.5 rounded-md bg-navy-900/80 px-2.5 py-1.5 text-xs font-semibold text-white opacity-90 group-hover:opacity-100">
                 <Expand className="h-3.5 w-3.5" aria-hidden="true" /> View larger
@@ -185,7 +191,9 @@ export function ServiceMediaGallery({ items, label }: ServiceMediaGalleryProps) 
       {count > 1 && (
         <ul className="-mx-1 flex snap-x gap-3 overflow-x-auto px-1 pb-2" aria-label={`${label} media thumbnails`}>
           {items.map((item, i) => {
-            const thumbSrc = item.mediaType === 'video' ? item.thumbnailUrl : item.publicUrl;
+            // Video: poster only (no fallback — the video file itself isn't a valid image source).
+            // Image: the small auto-generated preview, else the full photo.
+            const thumbSrc = item.mediaType === 'video' ? item.thumbnailUrl : (item.thumbnailUrl ?? item.publicUrl);
             const isActive = i === safeIndex;
             return (
               <li key={item.id} className="shrink-0 snap-start">

@@ -51,7 +51,16 @@ export interface UploadedMedia {
   fileSize: number;
   width: number | null;
   height: number | null;
+  /** A small preview image generated for the original, or null if generation failed/not applicable. */
+  thumbnailPath: string | null;
+  thumbnailUrl: string | null;
 }
+
+// Longer side of the auto-generated preview used for cards/thumbnails — the real photo (`publicUrl`)
+// is always used for the hero, the gallery's main image, and the lightbox, which must never crop
+// or show a downscaled image. This keeps thumbnail contexts fast without touching the originals.
+const THUMBNAIL_MAX_DIMENSION = 480;
+const THUMBNAIL_QUALITY = 0.8;
 
 function validateFile(file: File, mediaType: MediaType): void {
   const allowed = mediaType === 'video' ? VIDEO_MIME_TYPES : IMAGE_MIME_TYPES;
@@ -91,6 +100,36 @@ function buildStoragePath(serviceSlug: string | null, file: File): string {
 }
 
 /**
+ * Downscales an image client-side (canvas) to a small JPEG preview for card/thumbnail contexts.
+ * Returns null on any failure — a missing thumbnail must never block the real upload, callers
+ * fall back to the full image. Flattened to a white background (thumbnails don't need PNG
+ * transparency); the original file uploaded to storage is never touched or recompressed.
+ */
+function generateThumbnail(file: File, maxDimension: number, quality: number): Promise<Blob | null> {
+  return new Promise((resolve) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      const { naturalWidth: w, naturalHeight: h } = img;
+      if (!w || !h) { resolve(null); return; }
+      const scale = Math.min(1, maxDimension / Math.max(w, h));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.max(1, Math.round(w * scale));
+      canvas.height = Math.max(1, Math.round(h * scale));
+      const ctx = canvas.getContext('2d');
+      if (!ctx) { resolve(null); return; }
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      canvas.toBlob((blob) => { resolve(blob); }, 'image/jpeg', quality);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); resolve(null); };
+    img.src = url;
+  });
+}
+
+/**
  * MediaRepository
  *
  * The exclusive layer for Supabase Storage operations on the `service-images` and
@@ -118,6 +157,25 @@ export const MediaRepository = {
 
     const { data } = supabase.storage.from(bucket).getPublicUrl(storagePath);
 
+    let thumbnailPath: string | null = null;
+    let thumbnailUrl: string | null = null;
+    if (mediaType === 'image') {
+      const thumbBlob = await generateThumbnail(file, THUMBNAIL_MAX_DIMENSION, THUMBNAIL_QUALITY);
+      if (thumbBlob) {
+        const thumbPath = storagePath.replace(/\.[^./]+$/, '-thumb.jpg');
+        const { error: thumbError } = await supabase.storage.from(IMAGE_BUCKET).upload(thumbPath, thumbBlob, {
+          contentType: 'image/jpeg',
+          cacheControl: '31536000',
+          upsert: false,
+        });
+        // A failed thumbnail never blocks the real upload — pages fall back to the full image.
+        if (!thumbError) {
+          thumbnailPath = thumbPath;
+          thumbnailUrl = supabase.storage.from(IMAGE_BUCKET).getPublicUrl(thumbPath).data.publicUrl;
+        }
+      }
+    }
+
     return {
       bucket,
       storagePath,
@@ -126,6 +184,8 @@ export const MediaRepository = {
       fileSize: file.size,
       width: dimensions?.width ?? null,
       height: dimensions?.height ?? null,
+      thumbnailPath,
+      thumbnailUrl,
     };
   },
 

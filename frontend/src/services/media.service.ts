@@ -93,15 +93,17 @@ export async function fetchServiceOptions(): Promise<ServiceOption[]> {
 
 // Media rows reference the database's `services` table, whose slugs do not all match the
 // frontend registry's URL slugs — callers pass the registry's `catalogSlug` (the DB slug), see
-// Service.catalogSlug. This in-memory cache avoids an extra round trip on every lookup.
-let serviceSlugToIdCache: Map<string, string> | null = null;
+// Service.catalogSlug. Caching the in-flight *promise* (not just the resolved map) means the
+// several managed-media lookups a single page fires (hero, gallery, service card, …) all await
+// one shared request instead of each racing to fire their own duplicate `services` fetch before
+// the first one resolves — that race was real, observed as multiple concurrent identical
+// requests on service-detail pages.
+let serviceSlugToIdPromise: Promise<Map<string, string>> | null = null;
 
 async function resolveServiceIdBySlug(slug: string): Promise<string | undefined> {
-  if (!serviceSlugToIdCache) {
-    const options = await fetchServiceOptions();
-    serviceSlugToIdCache = new Map(options.map((s) => [s.slug, s.id]));
-  }
-  return serviceSlugToIdCache.get(slug);
+  serviceSlugToIdPromise ??= fetchServiceOptions().then((options) => new Map(options.map((s) => [s.slug, s.id])));
+  const map = await serviceSlugToIdPromise;
+  return map.get(slug);
 }
 
 /** Admin: every image regardless of status, with its assignments, for the Media Library. */
@@ -211,8 +213,11 @@ export async function createMediaImage(payload: CreateMediaImagePayload): Promis
     bucket: uploaded.bucket,
     storage_path: uploaded.storagePath,
     public_url: uploaded.publicUrl,
-    thumbnail_path: poster?.storagePath ?? null,
-    thumbnail_url: poster?.publicUrl ?? null,
+    // Video: the admin-supplied poster. Image: the auto-generated small preview used for
+    // cards/thumbnails — the full `public_url` is still what the hero, gallery main image, and
+    // lightbox render, so real photos are never served downscaled or cropped there.
+    thumbnail_path: poster?.storagePath ?? uploaded.thumbnailPath,
+    thumbnail_url: poster?.publicUrl ?? uploaded.thumbnailUrl,
     title: payload.title,
     alt_text: payload.altText,
     caption: payload.caption ?? null,
@@ -234,6 +239,7 @@ export async function createMediaImage(payload: CreateMediaImagePayload): Promis
     // Roll back the uploaded file(s) so we don't leave orphaned storage objects behind.
     await MediaRepository.deleteMedia(uploaded.bucket, uploaded.storagePath).catch(() => {});
     if (poster) await MediaRepository.deleteMedia('service-images', poster.storagePath).catch(() => {});
+    if (uploaded.thumbnailPath) await MediaRepository.deleteMedia('service-images', uploaded.thumbnailPath).catch(() => {});
     throw new Error(`Media could not be saved: ${error.message}`);
   }
 

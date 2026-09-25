@@ -53,7 +53,9 @@ export const ServiceCard = memo(function ServiceCard({ service, category, headin
           />
         ) : (
           <OptimizedImage
-            src={media?.publicUrl ?? fallback?.src ?? ''}
+            // The small auto-generated preview keeps card grids fast; the full photo is what
+            // opens in the hero/lightbox elsewhere, so nothing is ever shown downscaled there.
+            src={media?.thumbnailUrl ?? media?.publicUrl ?? fallback?.src ?? ''}
             alt={media?.altText ?? fallback?.alt ?? service.title}
             sizes="(min-width: 768px) 50vw, 100vw"
             containerClassName="h-full w-full"

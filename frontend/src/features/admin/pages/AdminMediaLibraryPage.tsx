@@ -273,7 +273,7 @@ export default function AdminMediaLibraryPage() {
                     </div>
                   )
                 ) : (
-                  <img src={image.publicUrl} alt={image.altText} className="h-full w-full object-cover" loading="lazy" />
+                  <img src={image.thumbnailUrl ?? image.publicUrl} alt={image.altText} className="h-full w-full object-cover" loading="lazy" />
                 )}
                 {image.mediaType === 'video' && (
                   <span className="absolute right-2 top-2 flex items-center gap-1 rounded-full bg-black/60 px-2 py-0.5 text-[10px] font-medium text-white">

@@ -44,6 +44,8 @@ export function ManagedImage({
     <OptimizedImage
       src={managed?.publicUrl ?? fallbackSrc}
       alt={managed?.altText ?? fallbackAlt}
+      width={managed?.width ?? undefined}
+      height={managed?.height ?? undefined}
       className={className}
       containerClassName={containerClassName}
       sizes={sizes}

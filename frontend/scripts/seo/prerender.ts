@@ -60,7 +60,10 @@ async function prerenderRoute(
   outFile: string,
 ): Promise<void> {
   const url = `${baseUrl}${routePath}`;
-  await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+  // 60s, not 30s: pages with several unthumbnailed real photos in a "Real Service Work"
+  // gallery can legitimately take longer to reach networkidle over a real network than a
+  // page with only a few small assets — this is not a hang, just more bytes to fetch.
+  await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
   await waitForHydration(page);
   const html = await page.content();
   mkdirSync(dirname(outFile), { recursive: true });

@@ -84,6 +84,15 @@ function resolveDestination(
   }
 }
 
+/** The 3 destinations common enough to show as a checklist rather than a pick-one-then-Add flow. */
+const STANDARD_DESTINATION_KEYS = ['homepage-card', 'service-hero', 'service-gallery'] as const satisfies readonly DestinationKey[];
+type StandardDestinationKey = (typeof STANDARD_DESTINATION_KEYS)[number];
+const STANDARD_DESTINATION_SUBLABEL: Record<StandardDestinationKey, string> = {
+  'homepage-card': 'Shown on the homepage and the Services page.',
+  'service-hero': 'The large image/video at the top of the service page.',
+  'service-gallery': 'The "Real Service Work" photo/video gallery on the service page.',
+};
+
 /** Human label for an existing (placement, page_path) assignment, for the "Used on" summary. */
 function friendlyLocationLabel(placement: MediaPlacement, pagePath: string | null): string {
   if (pagePath === SERVICES_PAGE_PATH && placement === 'service-card') return 'Homepage & Services page → Service card';
@@ -835,7 +844,7 @@ function EditModal({
   });
   const [isFeatured, setIsFeatured] = useState(image.isFeatured);
   const [displayOrder, setDisplayOrder] = useState(String(image.displayOrder));
-  const [destination, setDestination] = useState<DestinationKey>('homepage-card');
+  const [destination, setDestination] = useState<'pune-hero' | 'advanced'>('pune-hero');
   const [punePath, setPunePath] = useState(punePageList[0]?.path ?? '');
   const [advancedPlacement, setAdvancedPlacement] = useState<MediaPlacement>('hero');
   const [advancedPagePath, setAdvancedPagePath] = useState('');
@@ -843,20 +852,43 @@ function EditModal({
 
   const selectedServiceSlug = services.find((s) => s.id === form.serviceId)?.slug;
   const registryService = registryServiceForCatalogSlug(selectedServiceSlug);
-  const resolved =
-    destination === 'advanced'
-      ? { placement: advancedPlacement, pagePath: advancedPagePath.trim() || null }
-      : resolveDestination(destination, registryService, punePath);
-  const destinationWarningShown =
-    destination !== 'advanced' && destination !== 'homepage-card' && !registryService && destination !== 'pune-hero';
-  const destinationDescribedBy =
-    [destinationWarningShown ? 'edit-destination-warning' : null, resolved ? 'edit-destination-preview' : null]
-      .filter(Boolean)
-      .join(' ') || undefined;
+
+  // "Where should this appear?" as a checklist for the 3 common destinations — checked reflects
+  // whether a matching assignment exists right now; toggling just changes local UI state until
+  // Save Changes persists the diff in one action (no separate "Add" step to get lost in).
+  const [checkedKeys, setCheckedKeys] = useState<Set<(typeof STANDARD_DESTINATION_KEYS)[number]>>(() => {
+    const initialRegistryService = registryServiceForCatalogSlug(services.find((s) => s.id === image.serviceId)?.slug);
+    const set = new Set<(typeof STANDARD_DESTINATION_KEYS)[number]>();
+    for (const key of STANDARD_DESTINATION_KEYS) {
+      const r = resolveDestination(key, initialRegistryService, '');
+      if (r && image.assignments.some((a) => a.placement === r.placement && a.pagePath === r.pagePath)) {
+        set.add(key);
+      }
+    }
+    return set;
+  });
+
+  const standardDestinations = STANDARD_DESTINATION_KEYS.map((key) => {
+    const resolved = resolveDestination(key, registryService, '');
+    const existingAssignment = resolved
+      ? (image.assignments.find((a) => a.placement === resolved.placement && a.pagePath === resolved.pagePath) ?? null)
+      : null;
+    return { key, resolved, existingAssignment, checked: checkedKeys.has(key) };
+  });
+
+  // Assignments that aren't one of the 3 standard destinations (e.g. Pune hero, or anything set
+  // up via Advanced) — shown separately with their own immediate remove, since they don't fit a
+  // fixed checklist.
+  const otherAssignments = image.assignments.filter(
+    (a) => !standardDestinations.some((d) => d.resolved && d.resolved.placement === a.placement && d.resolved.pagePath === a.pagePath),
+  );
+
+  const resolved = destination === 'advanced' ? { placement: advancedPlacement, pagePath: advancedPagePath.trim() || null } : (punePath ? { placement: 'hero' as MediaPlacement, pagePath: punePath } : null);
+  const destinationDescribedBy = resolved ? 'edit-destination-preview' : undefined;
 
   const saveMutation = useMutation({
-    mutationFn: () =>
-      updateMediaImage(image.id, {
+    mutationFn: async () => {
+      await updateMediaImage(image.id, {
         title: form.title,
         altText: form.altText,
         caption: form.caption || null,
@@ -864,13 +896,29 @@ function EditModal({
         status: form.status,
         isFeatured,
         displayOrder: Number.parseInt(displayOrder, 10) || 0,
-      }),
-    onSuccess: () => {
-      toast.success('Image updated.');
+      });
+
+      const toAdd = standardDestinations
+        .filter((d): d is typeof d & { resolved: NonNullable<(typeof d)['resolved']> } => d.checked && !d.existingAssignment && d.resolved !== null);
+      const toRemove = standardDestinations
+        .filter((d): d is typeof d & { existingAssignment: NonNullable<(typeof d)['existingAssignment']> } => !d.checked && d.existingAssignment !== null);
+      await Promise.all([
+        ...toAdd.map((d) => assignMediaImage({ mediaImageId: image.id, placement: d.resolved.placement, pagePath: d.resolved.pagePath })),
+        ...toRemove.map((d) => unassignMediaImage(d.existingAssignment.id)),
+      ]);
+      return { addedCount: toAdd.length, removedCount: toRemove.length };
+    },
+    onSuccess: ({ addedCount, removedCount }) => {
+      const parts = ['Saved.'];
+      if (addedCount > 0) parts.push(`Now shown ${addedCount === 1 ? 'in 1 more place' : `in ${addedCount} more places`}.`);
+      if (removedCount > 0) parts.push(`Removed from ${removedCount === 1 ? '1 place' : `${removedCount} places`}.`);
+      toast.success(parts.join(' '));
+      void queryClient.invalidateQueries({ queryKey: ['admin-media-library'] });
+      void queryClient.invalidateQueries({ queryKey: ['managed-media'] });
       onSaved();
     },
     onError: (error: Error) => {
-      toast.error(error.message || 'Unable to update image. Please try again.');
+      toast.error(error.message || 'Unable to save changes. Please try again.');
     },
   });
 
@@ -894,6 +942,7 @@ function EditModal({
     onSuccess: () => {
       toast.success('Placement removed.');
       void queryClient.invalidateQueries({ queryKey: ['admin-media-library'] });
+      void queryClient.invalidateQueries({ queryKey: ['managed-media'] });
       assignmentsHeadingRef.current?.focus();
     },
     onError: () => {
@@ -945,111 +994,135 @@ function EditModal({
 
         <div>
           <h3 ref={assignmentsHeadingRef} tabIndex={-1} className="mb-2 text-sm font-semibold text-navy-900">
-            Used on {image.assignments.length > 0 && <span className="font-normal text-gray-500">({image.assignments.length} {image.assignments.length === 1 ? 'location' : 'locations'})</span>}
+            Where should this appear?
           </h3>
-          {image.assignments.length === 0 ? (
-            <p className="text-xs text-gray-500">Not assigned to any page yet — it won&apos;t appear anywhere on the public site until you add a destination below.</p>
-          ) : (
-            <ul className="mb-3 space-y-1.5">
-              {image.assignments.map((a) => (
-                <li key={a.id} className="flex items-center justify-between rounded-md bg-green-50 px-3 py-1.5 text-xs text-green-900">
-                  <span>✓ {friendlyLocationLabel(a.placement, a.pagePath)}</span>
-                  <button
-                    type="button"
-                    onClick={() => { unassignMutation.mutate(a.id); }}
-                    className="text-green-700/60 hover:text-red-600"
-                    aria-label={`Remove from ${friendlyLocationLabel(a.placement, a.pagePath)}`}
+          {!registryService && (
+            <p id="media-destination-disabled-hint" className="mb-2 text-xs font-medium text-amber-700">⚠ Select a Service above to enable these destinations.</p>
+          )}
+          <ul className="mb-4 space-y-1">
+            {standardDestinations.map((d) => (
+              <li key={d.key}>
+                <label className={`flex items-start gap-3 rounded-md px-3 py-2 text-sm ${d.resolved ? 'cursor-pointer hover:bg-gray-50' : 'cursor-not-allowed opacity-50'}`}>
+                  <input
+                    type="checkbox"
+                    checked={d.checked}
+                    disabled={!d.resolved}
+                    aria-describedby={!d.resolved ? 'media-destination-disabled-hint' : undefined}
+                    onChange={(e) => {
+                      setCheckedKeys((prev) => {
+                        const next = new Set(prev);
+                        if (e.target.checked) next.add(d.key); else next.delete(d.key);
+                        return next;
+                      });
+                    }}
+                    className="mt-0.5 h-4 w-4 rounded border-gray-300"
+                  />
+                  <span>
+                    <span className="block font-medium text-navy-900">{DESTINATION_LABELS[d.key]}</span>
+                    <span className="block text-xs text-gray-500">{STANDARD_DESTINATION_SUBLABEL[d.key]}</span>
+                  </span>
+                </label>
+              </li>
+            ))}
+          </ul>
+
+          {otherAssignments.length > 0 && (
+            <>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-gray-500">Also used on</p>
+              <ul className="mb-3 space-y-1.5">
+                {otherAssignments.map((a) => (
+                  <li key={a.id} className="flex items-center justify-between rounded-md bg-green-50 px-3 py-1.5 text-xs text-green-900">
+                    <span>✓ {friendlyLocationLabel(a.placement, a.pagePath)}</span>
+                    <button
+                      type="button"
+                      onClick={() => { unassignMutation.mutate(a.id); }}
+                      className="text-green-700/60 hover:text-red-600"
+                      aria-label={`Remove from ${friendlyLocationLabel(a.placement, a.pagePath)}`}
+                    >
+                      <X className="h-3.5 w-3.5" />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          <details className="rounded-md border border-gray-100">
+            <summary className="cursor-pointer px-3 py-2 text-xs font-medium text-gray-600">More destinations (Pune landing page, or advanced)</summary>
+            <div className="space-y-2 p-3 pt-0">
+              <div className="flex gap-2" role="group" aria-label="More destination type">
+                <button type="button" onClick={() => { setDestination('pune-hero'); }} aria-pressed={destination === 'pune-hero'} className={`rounded-lg border px-3 py-1.5 text-xs font-medium ${destination === 'pune-hero' ? 'border-orange-500 bg-orange-50 text-orange-700' : 'border-gray-200 text-gray-600'}`}>Pune Landing Page</button>
+                <button type="button" onClick={() => { setDestination('advanced'); }} aria-pressed={destination === 'advanced'} className={`rounded-lg border px-3 py-1.5 text-xs font-medium ${destination === 'advanced' ? 'border-orange-500 bg-orange-50 text-orange-700' : 'border-gray-200 text-gray-600'}`}>Advanced</button>
+              </div>
+
+              {destination === 'pune-hero' && (
+                <label className="block text-sm">
+                  <span className="mb-1 block font-medium text-navy-900">Which Pune page?</span>
+                  <select
+                    value={punePath}
+                    onChange={(e) => { setPunePath(e.target.value); }}
+                    className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm"
                   >
-                    <X className="h-3.5 w-3.5" />
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
+                    {punePageList.map((p) => (
+                      <option key={p.path} value={p.path}>{p.breadcrumbLabel}</option>
+                    ))}
+                  </select>
+                </label>
+              )}
 
-          <label className="mb-2 block text-sm">
-            <span className="mb-1 block font-medium text-navy-900">Add a destination — where should this appear?</span>
-            <select
-              value={destination}
-              onChange={(e) => { setDestination(e.target.value as DestinationKey); }}
-              className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm"
-            >
-              {(Object.keys(DESTINATION_LABELS) as DestinationKey[]).map((key) => (
-                <option key={key} value={key}>{DESTINATION_LABELS[key]}</option>
-              ))}
-            </select>
-          </label>
+              {destination === 'advanced' && (
+                <div className="flex flex-wrap items-center gap-2">
+                  <select
+                    value={advancedPlacement}
+                    onChange={(e) => { setAdvancedPlacement(e.target.value as MediaPlacement); }}
+                    aria-label="Placement"
+                    aria-describedby="advanced-placement-help"
+                    className="rounded-lg border border-gray-200 px-2 py-1.5 text-xs"
+                  >
+                    {PLACEMENTS.map((p) => (
+                      <option key={p} value={p}>{p}</option>
+                    ))}
+                  </select>
+                  <input
+                    type="text"
+                    value={advancedPagePath}
+                    onChange={(e) => { setAdvancedPagePath(e.target.value); }}
+                    placeholder="Page path (optional, e.g. /services/soft-services/housekeeping)"
+                    aria-label="Page path (optional)"
+                    list="media-page-path-suggestions"
+                    className="min-w-[220px] flex-1 rounded-lg border border-gray-200 px-2 py-1.5 text-xs"
+                  />
+                  <datalist id="media-page-path-suggestions">
+                    {PAGE_PATH_SUGGESTIONS.map((path) => (
+                      <option key={path} value={path} />
+                    ))}
+                  </datalist>
+                  <p id="advanced-placement-help" className="w-full text-xs text-gray-500">{PLACEMENT_HELP[advancedPlacement]}</p>
+                </div>
+              )}
 
-          {destinationWarningShown && (
-            <p id="edit-destination-warning" role="status" className="mb-2 text-xs font-medium text-amber-700">⚠ Select a Service above first — this destination needs to know which service page to use.</p>
-          )}
+              {resolved && (
+                <p id="edit-destination-preview" role="status" className="rounded-md bg-orange-50 px-3 py-2 text-xs text-orange-800">
+                  Will appear at: <strong>{friendlyLocationLabel(resolved.placement, resolved.pagePath)}</strong>
+                </p>
+              )}
 
-          {destination === 'pune-hero' && (
-            <label className="mb-2 block text-sm">
-              <span className="mb-1 block font-medium text-navy-900">Which Pune page?</span>
-              <select
-                value={punePath}
-                onChange={(e) => { setPunePath(e.target.value); }}
-                className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm"
+              <Button
+                size="sm"
+                variant="outline"
+                disabled={!resolved || assignMutation.isPending}
+                aria-describedby={destinationDescribedBy}
+                onClick={() => { assignMutation.mutate(); }}
               >
-                {punePageList.map((p) => (
-                  <option key={p.path} value={p.path}>{p.breadcrumbLabel}</option>
-                ))}
-              </select>
-            </label>
-          )}
-
-          {destination === 'advanced' && (
-            <div className="mb-2 flex flex-wrap items-center gap-2">
-              <select
-                value={advancedPlacement}
-                onChange={(e) => { setAdvancedPlacement(e.target.value as MediaPlacement); }}
-                aria-label="Placement"
-                aria-describedby="advanced-placement-help"
-                className="rounded-lg border border-gray-200 px-2 py-1.5 text-xs"
-              >
-                {PLACEMENTS.map((p) => (
-                  <option key={p} value={p}>{p}</option>
-                ))}
-              </select>
-              <input
-                type="text"
-                value={advancedPagePath}
-                onChange={(e) => { setAdvancedPagePath(e.target.value); }}
-                placeholder="Page path (optional, e.g. /services/soft-services/housekeeping)"
-                aria-label="Page path (optional)"
-                list="media-page-path-suggestions"
-                className="min-w-[220px] flex-1 rounded-lg border border-gray-200 px-2 py-1.5 text-xs"
-              />
-              <datalist id="media-page-path-suggestions">
-                {PAGE_PATH_SUGGESTIONS.map((path) => (
-                  <option key={path} value={path} />
-                ))}
-              </datalist>
-              <p id="advanced-placement-help" className="w-full text-xs text-gray-500">{PLACEMENT_HELP[advancedPlacement]}</p>
+                {assignMutation.isPending ? 'Adding…' : 'Add this destination'}
+              </Button>
             </div>
-          )}
-
-          {resolved && (
-            <p id="edit-destination-preview" role="status" className="mb-2 rounded-md bg-orange-50 px-3 py-2 text-xs text-orange-800">
-              Will appear at: <strong>{friendlyLocationLabel(resolved.placement, resolved.pagePath)}</strong>
-            </p>
-          )}
-
-          <Button
-            size="sm"
-            variant="outline"
-            disabled={!resolved || assignMutation.isPending}
-            aria-describedby={destinationDescribedBy}
-            onClick={() => { assignMutation.mutate(); }}
-          >
-            {assignMutation.isPending ? 'Adding…' : 'Add this destination'}
-          </Button>
+          </details>
         </div>
 
         <div className="flex justify-end gap-3 pt-2">
           <Button variant="outline" onClick={onClose}>Cancel</Button>
-          <Button disabled={saveMutation.isPending} onClick={() => { saveMutation.mutate(); }}>
+          <Button disabled={saveMutation.isPending} aria-busy={saveMutation.isPending} onClick={() => { saveMutation.mutate(); }}>
             {saveMutation.isPending ? 'Saving...' : 'Save Changes'}
           </Button>
         </div>

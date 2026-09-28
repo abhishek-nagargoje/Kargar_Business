@@ -148,9 +148,10 @@ export const punePages: Record<string, PuneLandingPageContent> = {
     whyChoose: {
       heading: 'Why Facility Managers in Pune Choose KARGAR',
       items: [
-        { title: 'Certified Technicians', description: 'Fully licensed and trained to current electrical safety standards.' },
-        { title: 'Rapid Response', description: '24/7 emergency support for critical electrical failures.' },
-        { title: 'Full Equipment Coverage', description: 'LT panels, HT panels, transformers, DG synchronization, cabling, and earthing.' },
+        { title: 'Preventive-First Scheduling', description: 'Inspections are scheduled to catch panel and generator issues before they cause downtime, not just after a failure is reported.' },
+        { title: 'Full Equipment Coverage', description: 'LT panels, HT panels, transformers, DG synchronization, cabling, and earthing — serviced by the same team.' },
+        { title: 'Certified, Site-Experienced Technicians', description: 'Licensed to current electrical safety standards, with hands-on experience across Pune\'s IT parks and industrial sites.' },
+        { title: '24/7 Backup Coverage', description: 'An emergency response team on call for the failures preventive maintenance can\'t rule out.' },
       ],
     },
     industries: {

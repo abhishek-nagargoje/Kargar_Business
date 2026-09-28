@@ -166,12 +166,12 @@ export function Header({ activePath }: { activePath: string }) {
           <div className="kb-topbar__left">
             <a href="mailto:bd@kargar.co.in"><Mail size={15} /> bd@kargar.co.in</a>
             <span aria-hidden="true" />
-            <a href="tel:+918788726752"><Phone size={15} /> {contactPage ? '+91 87887 26752' : '+91-8788726752'}</a>
+            <a href="tel:+917821844591"><Phone size={15} /> {contactPage ? '+91 78218 44591' : '+91-7821844591'}</a>
             <span aria-hidden="true" />
             {contactPage ? (
               <a href="#contact-form"><Clock size={15} /> Mon - Sat: 09:00 AM - 06:00 PM</a>
             ) : (
-              <a href="tel:+919226903010"><Phone size={15} /> +91-9226903010</a>
+              <a href="tel:+918788726752"><Phone size={15} /> +91-8788726752</a>
             )}
           </div>
         </div>
@@ -198,10 +198,10 @@ export function Header({ activePath }: { activePath: string }) {
           </nav>
 
           <div className="kb-nav__actions">
-            <a className="kb-call" href="tel:+918788726752">
+            <a className="kb-call" href="tel:+917821844591">
               <span><Phone size={24} /></span>
               <small>Call for More Information</small>
-              <strong>+91-8788726752</strong>
+              <strong>+91-7821844591</strong>
             </a>
             <Link 
               className="kb-btn kb-btn--primary"
@@ -468,7 +468,7 @@ function ContactPage() {
             </div>
             <div className="kb-info-list">
               <ContactInfo icon={MapPin} title="Our Office" text="301, 3rd Floor, Unity Commercial, Baner, Pune, Maharashtra 411045, India" />
-              <ContactInfo icon={Phone} title="Call Us" text="+91 87887 26752|Mon - Sat: 09:00 AM - 06:00 PM" />
+              <ContactInfo icon={Phone} title="Call Us" text="+91 78218 44591|Alternate: +91 87887 26752|Mon - Sat: 09:00 AM - 06:00 PM" />
               <ContactInfo icon={Mail} title="Email Us" text="bd@kargar.co.in|We'll reply as soon as possible" />
               <ContactInfo icon={Globe} title="Website" text="www.kargarbusinessservices.com|Visit our website for more information" />
             </div>

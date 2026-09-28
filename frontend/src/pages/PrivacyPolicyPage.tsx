@@ -110,7 +110,7 @@ export function PrivacyPolicyPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone size={18} className="text-amber-600 shrink-0" />
-                  <span><strong>Phone:</strong> <a href="tel:+918788726752" className="text-amber-600 hover:underline">+91 87887 26752</a></span>
+                  <span><strong>Phone:</strong> <a href="tel:+917821844591" className="text-amber-600 hover:underline">+91 78218 44591</a></span>
                 </div>
               </div>
             </section>

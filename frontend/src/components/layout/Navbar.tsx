@@ -210,9 +210,9 @@ export function Navbar() {
           <div className="mt-auto pt-8 border-t border-gray-100">
             <div className="mb-4">
               <p className="text-sm font-medium text-gray-500 mb-2">Need help immediately?</p>
-              <a href="tel:+919876543210" className="flex items-center gap-2 text-xl font-bold text-navy-900">
+              <a href="tel:+917821844591" className="flex items-center gap-2 text-xl font-bold text-navy-900">
                 <PhoneCall className="h-5 w-5 text-orange-500" />
-                +91-9876543210
+                +91-7821844591
               </a>
             </div>
             <Button

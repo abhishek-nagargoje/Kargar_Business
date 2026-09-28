@@ -1,0 +1,115 @@
+- generic [ref=f2e3]:
+  - banner [ref=f2e4]:
+    - generic [ref=f2e7]:
+      - link "bd@kargar.co.in" [ref=f2e8] [cursor=pointer]:
+        - /url: mailto:bd@kargar.co.in
+      - link "+91-7821844591" [ref=f2e13] [cursor=pointer]:
+        - /url: tel:+917821844591
+      - link "+91-8788726752" [ref=f2e17] [cursor=pointer]:
+        - /url: tel:+918788726752
+    - generic [ref=f2e21]:
+      - link "KARGAR Facility Management home" [ref=f2e22] [cursor=pointer]:
+        - /url: /
+        - img "KARGAR - Window to a Cleaner World" [ref=f2e24]
+      - navigation "Main navigation" [ref=f2e25]:
+        - link "Home" [ref=f2e27] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=f2e29] [cursor=pointer]:
+          - /url: /services
+        - link "Sectors" [ref=f2e31] [cursor=pointer]:
+          - /url: /sectors
+        - link "Company Profile" [ref=f2e33] [cursor=pointer]:
+          - /url: /company-profile
+        - link "Support" [ref=f2e35] [cursor=pointer]:
+          - /url: /support
+        - link "Contact Us" [ref=f2e37] [cursor=pointer]:
+          - /url: /contact-us
+      - generic [ref=f2e38]:
+        - link "Call for More Information +91-7821844591" [ref=f2e39] [cursor=pointer]:
+          - /url: tel:+917821844591
+          - generic [ref=f2e43]: Call for More Information
+          - strong [ref=f2e44]: +91-7821844591
+        - link "Request Proposal" [ref=f2e45] [cursor=pointer]:
+          - /url: /contact-us?source=header&cta_position=navbar#contact-form
+  - main [ref=f2e48]:
+    - generic [ref=f2e49]:
+      - generic [ref=f2e50]:
+        - link "Home" [ref=f2e51] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f2e52]: ›
+        - strong [ref=f2e53]: Privacy Policy
+      - generic [ref=f2e54]:
+        - generic [ref=f2e55]: Data Protection & Transparency
+        - heading "Website Privacy Policy" [level=1] [ref=f2e60]
+        - paragraph [ref=f2e61]: At KARGAR Facility Management, we value your privacy and are committed to protecting any personal or organizational information you share with us when using our website or requesting facility management services.
+      - generic [ref=f2e62]:
+        - generic [ref=f2e63]:
+          - heading "1. Information We Collect" [level=2] [ref=f2e64]
+          - paragraph [ref=f2e65]: "When you visit our website, interact with our services, or submit enquiries, we collect information necessary to respond to requests and deliver business services. This includes:"
+          - list [ref=f2e66]:
+            - listitem [ref=f2e67]:
+              - strong [ref=f2e68]: "Contact & Proposal Requests:"
+              - text: Full name, business email address, phone number, company name, subject, service interest, and any message content submitted through our online forms.
+            - listitem [ref=f2e69]:
+              - strong [ref=f2e70]: "Technical & Analytics Data:"
+              - text: IP address, browser type, device details, and site usage metrics collected automatically to improve performance and user experience.
+        - generic [ref=f2e71]:
+          - heading "2. How We Use Your Information" [level=2] [ref=f2e72]
+          - paragraph [ref=f2e73]: "The information collected on this website is used solely for legitimate business purposes:"
+          - list [ref=f2e74]:
+            - listitem [ref=f2e75]: To respond to your inquiries, service requests, and proposal submissions.
+            - listitem [ref=f2e76]: To coordinate integrated facility management, housekeeping, security, and maintenance operations.
+            - listitem [ref=f2e77]: To communicate relevant project updates, operational notices, or support responses.
+            - listitem [ref=f2e78]: To ensure site security, prevent fraud, and maintain compliance with technical standards.
+        - generic [ref=f2e79]:
+          - heading "3. Data Protection & Security" [level=2] [ref=f2e80]
+          - paragraph [ref=f2e81]: We implement technical and organizational measures to safeguard your information against unauthorized access, alteration, disclosure, or destruction. Access to personal and corporate data is restricted to authorized personnel who require it to perform operational duties.
+        - generic [ref=f2e82]:
+          - heading "4. Cookies & Web Analytics" [level=2] [ref=f2e83]
+          - paragraph [ref=f2e84]: Our website uses standard browser cookies and analytics software to enhance navigation, analyze aggregate visitor behavior, and optimize service delivery. You can configure your browser to decline cookies, though some features of the site may function with limited capabilities.
+        - generic [ref=f2e85]:
+          - heading "5. Third-Party Sharing" [level=2] [ref=f2e86]
+          - paragraph [ref=f2e87]: We do not sell, rent, or trade your personal information to third parties. Information may only be disclosed if required by applicable legal obligations, regulatory mandates, or to essential technology partners who assist in operating our secure infrastructure.
+        - generic [ref=f2e88]:
+          - heading "6. Contact Information & Data Inquiries" [level=2] [ref=f2e89]
+          - paragraph [ref=f2e93]: "If you have questions regarding this Privacy Policy or wish to update or review your submitted information, please reach out to us:"
+          - generic [ref=f2e94]:
+            - generic [ref=f2e99]:
+              - strong [ref=f2e100]: "Address:"
+              - text: 301, 3rd Floor, Unity Commercial, Baner, Pune, Maharashtra 411045, India
+            - generic [ref=f2e105]:
+              - strong [ref=f2e106]: "Email:"
+              - link "bd@kargar.co.in" [ref=f2e107] [cursor=pointer]:
+                - /url: mailto:bd@kargar.co.in
+            - generic [ref=f2e111]:
+              - strong [ref=f2e112]: "Phone:"
+              - link "+91 78218 44591" [ref=f2e113] [cursor=pointer]:
+                - /url: tel:+917821844591
+  - contentinfo [ref=f2e114]:
+    - generic [ref=f2e115]:
+      - generic [ref=f2e116]:
+        - generic [ref=f2e117]:
+          - generic "KARGAR Admin Portal Trigger" [ref=f2e118] [cursor=pointer]:
+            - img "KARGAR - Window to a Cleaner World" [ref=f2e120]
+          - link "KARGAR Facility Management on Fazier":
+            - /url: https://fazier.com/launches/www.kargarbusinessservices.com
+            - img "KARGAR Facility Management on Fazier"
+        - navigation "Social Media Links" [ref=f2e123]:
+          - generic [ref=f2e124]: FOLLOW US
+          - generic [ref=f2e127]:
+            - link "Follow KARGAR on Instagram" [ref=f2e128] [cursor=pointer]:
+              - /url: https://www.instagram.com/kargar.facility/
+              - generic [ref=f2e133]: Instagram
+            - link "Follow KARGAR on Facebook" [ref=f2e134] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/
+              - generic [ref=f2e138]: Facebook
+            - link "Follow KARGAR on LinkedIn" [ref=f2e139] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/?viewAsMember=true
+              - generic [ref=f2e143]: LinkedIn
+            - link "Follow KARGAR on X" [ref=f2e144] [cursor=pointer]:
+              - /url: https://x.com/Kargar_Business
+              - generic [ref=f2e148]: X
+      - paragraph [ref=f2e151]:
+        - text: © 2026 KARGAR Facility Management. All rights reserved.
+        - link "Privacy Policy" [ref=f2e152] [cursor=pointer]:
+          - /url: /privacy-policy

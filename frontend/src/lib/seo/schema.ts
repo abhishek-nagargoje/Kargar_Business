@@ -21,7 +21,7 @@ export function buildOrganizationSchema() {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91-8788726752',
+      telephone: '+91-7821844591',
       contactType: 'customer service',
     },
   };
@@ -34,7 +34,7 @@ export function buildLocalBusinessSchema() {
     name: config.siteName,
     url: config.siteUrl,
     image: LOGO_URL,
-    telephone: '+91-8788726752',
+    telephone: '+91-7821844591',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '301, 3rd Floor, Unity Commercial, Baner',

@@ -29,7 +29,7 @@ export function ReviewGallery({ images, companyName }: ReviewGalleryProps) {
               loading="lazy"
               decoding="async"
               className={clsx(
-                "object-cover w-full h-full",
+                "object-contain w-full h-full",
                 "transition-transform duration-300 group-hover:scale-105"
               )}
             />

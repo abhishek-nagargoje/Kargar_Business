@@ -10,7 +10,7 @@ export function ThumbnailPreview({ thumbnailUrl }: ThumbnailPreviewProps) {
       <img
         src={thumbnailUrl}
         alt="Video thumbnail"
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain"
         loading="lazy"
       />
       {/* Play icon overlay */}

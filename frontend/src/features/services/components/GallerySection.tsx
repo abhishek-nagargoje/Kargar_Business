@@ -37,7 +37,7 @@ export const GallerySection = memo(function GallerySection({ entity, block }: Se
                  <OptimizedImage 
                    src={src}
                    alt={`Gallery image ${i + 1}`}
-                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                  />
                  <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/20 transition-colors duration-300" />
                </div>

@@ -52,7 +52,10 @@ function OptimizedImageBase({
   className,
   containerClassName,
   showBlur = true,
-  objectFit = 'cover',
+  // Real content photographs must never be cropped by default — callers that genuinely need a
+  // filled rectangle (and have no cropping concern, e.g. a repeating decorative texture) opt
+  // into `objectFit="cover"` explicitly rather than the other way around.
+  objectFit = 'contain',
   decorative = false,
 }: OptimizedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);

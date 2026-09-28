@@ -49,7 +49,7 @@ export const ServiceCard = memo(function ServiceCard({ service, category, headin
             preload={media.thumbnailUrl ? 'none' : 'metadata'}
             playsInline
             aria-label={media.caption ?? media.altText}
-            className="relative z-10 h-full w-full bg-black object-cover"
+            className="relative z-10 h-full w-full bg-black object-contain"
           />
         ) : (
           <OptimizedImage
@@ -59,7 +59,7 @@ export const ServiceCard = memo(function ServiceCard({ service, category, headin
             alt={media?.altText ?? fallback?.alt ?? service.title}
             sizes="(min-width: 768px) 50vw, 100vw"
             containerClassName="h-full w-full"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
           />
         )}
         <span className="pointer-events-none absolute left-3 top-3 z-20 rounded-md bg-navy-900/90 px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-white">

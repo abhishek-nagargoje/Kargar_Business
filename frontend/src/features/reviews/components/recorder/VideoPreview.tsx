@@ -55,7 +55,7 @@ export function VideoPreview({
             <img
               src={thumbnailUrl}
               alt="Video thumbnail"
-              className="w-12 h-8 rounded object-cover border border-gray-700 ml-auto"
+              className="w-12 h-8 rounded object-contain border border-gray-700 ml-auto"
             />
           )}
         </div>

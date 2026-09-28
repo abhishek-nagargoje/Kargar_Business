@@ -16,6 +16,12 @@ interface ManagedImageProps {
   priority?: boolean;
   /** Passed through to OptimizedImage — true for purely atmospheric background images. */
   decorative?: boolean;
+  /**
+   * Overrides OptimizedImage's safe "show the whole photo" default. Only pass 'cover' for a
+   * genuinely decorative, non-content background (e.g. a low-opacity atmospheric backdrop behind
+   * a gradient and real text) — never for an image the visitor is meant to actually look at.
+   */
+  objectFit?: 'cover' | 'contain' | 'fill' | 'none';
   /** False renders the fallback without querying the Media Library. */
   enabled?: boolean;
 }
@@ -36,6 +42,7 @@ export function ManagedImage({
   sizes,
   priority,
   decorative,
+  objectFit,
   enabled,
 }: ManagedImageProps) {
   const managed = useManagedImage({ placement, serviceSlug, pagePath, enabled });
@@ -51,6 +58,7 @@ export function ManagedImage({
       sizes={sizes}
       priority={priority}
       decorative={decorative}
+      objectFit={objectFit}
     />
   );
 }

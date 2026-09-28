@@ -108,7 +108,7 @@ export function ImageUploadCard({ label, error, value, onChange, onTakePhoto, ma
             <div className="relative w-full h-full rounded-md overflow-hidden bg-white shadow-sm border border-gray-100 flex items-center justify-between p-3">
               <div className="flex items-center gap-3 overflow-hidden">
                 <div className="w-12 h-12 rounded overflow-hidden shrink-0 bg-gray-100 border border-gray-200/50">
-                  <img src={value.data} alt="Preview" className="w-full h-full object-cover" />
+                  <img src={value.data} alt="Preview" className="w-full h-full object-contain" />
                 </div>
                 <div className="flex flex-col truncate pr-2">
                   <span className="text-sm font-medium text-gray-900 truncate">{value.fileName}</span>

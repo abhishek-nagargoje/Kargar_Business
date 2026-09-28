@@ -208,7 +208,7 @@ export function ServiceMediaGallery({ items, label }: ServiceMediaGalleryProps) 
                   )}
                 >
                   {thumbSrc && (
-                    <img src={thumbSrc} alt="" aria-hidden="true" loading="lazy" className="h-full w-full object-cover" />
+                    <img src={thumbSrc} alt="" aria-hidden="true" loading="lazy" className="h-full w-full object-contain" />
                   )}
                   {item.mediaType === 'video' && (
                     <span className="absolute inset-0 flex items-center justify-center bg-navy-900/35" aria-hidden="true">

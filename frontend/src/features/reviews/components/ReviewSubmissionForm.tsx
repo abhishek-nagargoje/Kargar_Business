@@ -387,7 +387,7 @@ export function ReviewSubmissionForm() {
           <div className="flex flex-wrap gap-3 mb-4">
             {galleryImages.map((img: z.infer<typeof imageFileSchema>, idx: number) => (
               <div key={idx} className="relative w-24 h-24 rounded-md overflow-hidden border border-gray-200 bg-white group">
-                <img src={img.data} alt={`Gallery preview ${idx + 1}`} className="w-full h-full object-cover" />
+                <img src={img.data} alt={`Gallery preview ${idx + 1}`} className="w-full h-full object-contain" />
                 <button
                   type="button"
                   onClick={() => { removeGalleryImage(idx); }}

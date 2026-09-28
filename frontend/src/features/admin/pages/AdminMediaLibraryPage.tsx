@@ -266,14 +266,14 @@ export default function AdminMediaLibraryPage() {
               <div className="relative aspect-video w-full bg-gray-100">
                 {image.mediaType === 'video' ? (
                   image.thumbnailUrl ? (
-                    <img src={image.thumbnailUrl} alt={image.altText} className="h-full w-full object-cover" loading="lazy" />
+                    <img src={image.thumbnailUrl} alt={image.altText} className="h-full w-full object-contain" loading="lazy" />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center text-gray-400">
                       <VideoIcon className="h-10 w-10" aria-hidden="true" />
                     </div>
                   )
                 ) : (
-                  <img src={image.thumbnailUrl ?? image.publicUrl} alt={image.altText} className="h-full w-full object-cover" loading="lazy" />
+                  <img src={image.thumbnailUrl ?? image.publicUrl} alt={image.altText} className="h-full w-full object-contain" loading="lazy" />
                 )}
                 {image.mediaType === 'video' && (
                   <span className="absolute right-2 top-2 flex items-center gap-1 rounded-full bg-black/60 px-2 py-0.5 text-[10px] font-medium text-white">
@@ -583,9 +583,9 @@ function UploadModal({
                   <div className="flex items-start gap-3">
                     <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md bg-gray-100">
                       {item.mediaType === 'video' ? (
-                        <video src={item.preview} muted className="h-full w-full object-cover" />
+                        <video src={item.preview} muted className="h-full w-full object-contain" />
                       ) : (
-                        <img src={item.preview} alt="" aria-hidden="true" className="h-full w-full object-cover" />
+                        <img src={item.preview} alt="" aria-hidden="true" className="h-full w-full object-contain" />
                       )}
                     </div>
                     <div className="min-w-0 flex-1 space-y-2">
@@ -642,7 +642,7 @@ function UploadModal({
                       {!item.validationError && item.mediaType === 'video' && (
                         <div className="flex items-center gap-2">
                           {item.posterPreview && (
-                            <img src={item.posterPreview} alt="" aria-hidden="true" className="h-8 w-14 rounded border border-gray-200 object-cover" />
+                            <img src={item.posterPreview} alt="" aria-hidden="true" className="h-8 w-14 rounded border border-gray-200 object-contain" />
                           )}
                           <label className="cursor-pointer text-xs font-medium text-orange-700 hover:underline">
                             {item.posterPreview ? 'Change poster' : 'Choose poster image (optional)'}

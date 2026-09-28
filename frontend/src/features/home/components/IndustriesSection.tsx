@@ -83,12 +83,19 @@ export function IndustriesSection() {
                 key={index}
                 data-gsap-reveal="zoom-in"
                 data-gsap-delay={index * 0.1}
-                className="group relative flex flex-col justify-end h-[320px] rounded-[16px] overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
+                className="group relative flex flex-col justify-end h-[320px] rounded-[16px] overflow-hidden bg-[#06183a] transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
               >
-                {/* Background Image */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${sector.image})` }}
+                {/*
+                  Whole photo, never cropped: object-contain letterboxes against the card's own
+                  navy background instead of cutting off the edges of the sector photo to fill
+                  the fixed-height card.
+                */}
+                <img
+                  src={sector.image}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 group-hover:scale-110"
                 />
                 
                 {/* Gradient Overlay to ensure text readability */}

@@ -43,7 +43,7 @@ export function DraftRecoveryDialog({
       {/* Thumbnail preview if available */}
       {draft.thumbnail && (
         <div className="w-40 h-24 rounded-lg overflow-hidden mb-5 ring-1 ring-white/10">
-          <img src={draft.thumbnail} alt="Draft thumbnail" className="w-full h-full object-cover" />
+          <img src={draft.thumbnail} alt="Draft thumbnail" className="w-full h-full object-contain" />
         </div>
       )}
 

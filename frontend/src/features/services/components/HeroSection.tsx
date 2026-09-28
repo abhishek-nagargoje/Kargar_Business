@@ -112,7 +112,7 @@ export const HeroSection = memo(function HeroSection({ entity, block }: ServiceB
               preload="metadata"
               playsInline
               aria-label={heroVideo.caption ?? heroVideo.altText}
-              className="h-full w-full bg-black object-cover"
+              className="h-full w-full bg-black object-contain"
             />
           ) : (
             <ManagedImage
@@ -123,7 +123,7 @@ export const HeroSection = memo(function HeroSection({ entity, block }: ServiceB
               fallbackSrc={image?.src ?? ''}
               fallbackAlt={image?.alt ?? entity.title}
               containerClassName="h-full w-full"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain"
               sizes="(min-width: 1024px) 50vw, 100vw"
               priority
             />

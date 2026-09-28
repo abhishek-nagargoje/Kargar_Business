@@ -70,7 +70,7 @@ export function PuneLandingPage() {
               pagePath={content.path}
               fallbackSrc={content.heroImage.src}
               fallbackAlt={content.heroImage.alt}
-              className="w-full h-full object-cover opacity-20"
+              className="w-full h-full object-contain opacity-20"
               priority
               decorative
             />

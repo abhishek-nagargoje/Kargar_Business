@@ -1,4 +1,5 @@
 import { config } from '@/config';
+import { contactDetails } from '@/config/contact';
 import { buildCanonicalUrl } from './canonical';
 import type { BreadcrumbItem } from '@/features/services/components/Breadcrumb';
 import type { Category, Service, ServiceFAQ } from '@/features/services/domain/service.types';
@@ -21,7 +22,7 @@ export function buildOrganizationSchema() {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91-7821844591',
+      telephone: contactDetails.phone.e164,
       contactType: 'customer service',
     },
   };
@@ -34,7 +35,7 @@ export function buildLocalBusinessSchema() {
     name: config.siteName,
     url: config.siteUrl,
     image: LOGO_URL,
-    telephone: '+91-7821844591',
+    telephone: contactDetails.phone.e164,
     address: {
       '@type': 'PostalAddress',
       streetAddress: '301, 3rd Floor, Unity Commercial, Baner',

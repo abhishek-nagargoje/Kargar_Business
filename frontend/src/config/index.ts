@@ -36,6 +36,11 @@ export const config = {
   /** Analytics — empty string means disabled */
   analytics: {
     gaId: getEnvVar('VITE_GA_MEASUREMENT_ID', ''),
+    /** Google Ads tag ID — a public identifier, not a secret. Set the env var to empty to disable. */
+    googleAdsId: getEnvVar('VITE_GOOGLE_ADS_ID', 'AW-18494930780'),
+    /** Conversion labels from Google Ads → Goals → Conversions. Empty = conversion not sent. */
+    googleAdsPhoneConversionLabel: getEnvVar('VITE_GOOGLE_ADS_PHONE_CONVERSION_LABEL', ''),
+    googleAdsFormConversionLabel: getEnvVar('VITE_GOOGLE_ADS_FORM_CONVERSION_LABEL', ''),
     gtmId: getEnvVar('VITE_GTM_ID', ''),
     clarityId: getEnvVar('VITE_CLARITY_ID', ''),
     hotjarId: getEnvVar('VITE_HOTJAR_ID', ''),

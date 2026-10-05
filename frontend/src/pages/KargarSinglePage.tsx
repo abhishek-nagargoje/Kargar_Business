@@ -40,7 +40,7 @@ import { SEO } from '@/components/seo/SEO';
 import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { getSeoEntry } from '@/features/seo/registry';
 import { PuneServicesLinksSection } from '@/features/pune-landing/components/PuneServicesLinksSection';
-import { trackEvent } from '@/types/analytics';
+import { trackFormSubmission } from '@/lib/analytics';
 
 const CountUp =
   typeof CountUpModule === 'function'
@@ -559,8 +559,8 @@ function ContactForm() {
         toast.success('Proposal received successfully! Our team has your request.\nEmail notification is temporarily unavailable.', { duration: 5000 });
       }
 
-      // Track successful submission
-      trackEvent('contact_form_submit', {
+      // Track successful submission (only reached after the lead is saved)
+      trackFormSubmission({
         service: getFormString(formData, 'service'),
         source: getFormString(formData, 'source'),
         campaign: getFormString(formData, 'campaign'),

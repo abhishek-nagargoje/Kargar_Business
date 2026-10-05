@@ -6,6 +6,9 @@ interface ImportMetaEnv {
   readonly VITE_SITE_URL: string;
   readonly VITE_SITE_NAME: string;
   readonly VITE_GA_MEASUREMENT_ID?: string;
+  readonly VITE_GOOGLE_ADS_ID?: string;
+  readonly VITE_GOOGLE_ADS_PHONE_CONVERSION_LABEL?: string;
+  readonly VITE_GOOGLE_ADS_FORM_CONVERSION_LABEL?: string;
   readonly VITE_GTM_ID?: string;
   readonly VITE_CLARITY_ID?: string;
   readonly VITE_HOTJAR_ID?: string;

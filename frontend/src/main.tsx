@@ -5,7 +5,11 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
 import { BrowserRouter } from 'react-router';
 import App from './App';
+import { initGoogleTag } from '@/lib/analytics';
 import '@/styles/index.css';
+
+// Google tag (GA4 + Google Ads): loaded once per page load, before the first render.
+initGoogleTag();
 
 /**
  * TanStack Query client with sensible defaults for an enterprise application.

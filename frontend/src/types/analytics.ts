@@ -43,14 +43,12 @@ declare global {
 
 /**
  * Enterprise Event Tracking Utility
- * Safely queues events to Google Analytics 4.
+ * Sends an event to every configured Google destination (GA4, Google Ads).
+ * `window.gtag` is defined synchronously by initGoogleTag() (src/lib/analytics.ts) before the
+ * app renders whenever tracking is enabled; when it is disabled this is a no-op.
  */
 export function trackEvent(eventName: CustomEventNames | (string & {}), params?: GtagEventParams) {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', eventName, params);
-  } else if (typeof window !== 'undefined') {
-    // Fallback if gtag is not fully initialized but dataLayer exists
-    window.dataLayer = window.dataLayer ?? [];
-    window.dataLayer.push(['event', eventName, params]);
   }
 }

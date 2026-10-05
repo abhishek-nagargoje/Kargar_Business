@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router';
-import { config } from '@/config';
 import { trackEvent } from '@/types/analytics';
+import { isTrackingEnabled, trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
 
 export function Analytics() {
   const location = useLocation();
   useEffect(() => {
-    const shouldRun = config.isProd || config.analytics.forceAnalytics;
-    if (!shouldRun || !config.analytics.gaId) {
+    if (!isTrackingEnabled()) {
       return;
     }
 
@@ -19,12 +18,14 @@ export function Analytics() {
 
   // Global click tracker for tel:, mailto:, and whatsapp
   useEffect(() => {
-    const shouldRun = config.isProd || config.analytics.forceAnalytics;
-    if (!shouldRun || !config.analytics.gaId) {
+    if (!isTrackingEnabled()) {
       return;
     }
 
     const handleGlobalClick = (e: MouseEvent) => {
+      // Admin pages link to customers' numbers — staff calling a lead is not a lead.
+      if (window.location.pathname.startsWith('/admin')) return;
+
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
       if (!anchor) return;
@@ -33,11 +34,11 @@ export function Analytics() {
       if (!href) return;
 
       if (href.startsWith('tel:')) {
-        trackEvent('call_click', { link_url: href });
+        trackPhoneClick(href);
       } else if (href.startsWith('mailto:')) {
         trackEvent('email_click', { link_url: href });
       } else if (href.includes('wa.me') || href.includes('whatsapp.com')) {
-        trackEvent('whatsapp_click', { link_url: href });
+        trackWhatsAppClick(href);
       }
     };
 

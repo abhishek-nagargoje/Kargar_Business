@@ -16,6 +16,9 @@ export function buildOrganizationSchema() {
     name: config.siteName,
     url: config.siteUrl,
     logo: LOGO_URL,
+    // Documented in KARGAR's Company Profile (p.17). Plain text only — schema.org has no
+    // verifiable award type, and no other recognition is asserted here.
+    award: 'Punyashlok Ahilya Devi Holkar Woman Startup Award (2024)',
     sameAs: [
       'https://in.linkedin.com/company/kargar',
       'https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/',

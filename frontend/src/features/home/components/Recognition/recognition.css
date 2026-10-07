@@ -1,0 +1,561 @@
+/* ============================================
+   Recognition & Impact (homepage)
+   Uses the .kb-site tokens (--kb-navy, --kb-orange, --kb-line, --kb-bg).
+   Small orange text uses #a74423 (6:1 on white) — --kb-orange is reserved for rules/accents,
+   since it does not meet AA contrast as small text.
+   ============================================ */
+
+.kb-recognition {
+  --rec-accent-text: #a74423;
+  --rec-accent-on-navy: #ff8a4c;
+  --rec-radius: var(--card-radius, 20px);
+
+  position: relative;
+  padding-block: clamp(56px, 5vw, 76px);
+  background: var(--kb-bg);
+  border-top: 1px solid var(--kb-line);
+  border-bottom: 1px solid var(--kb-line);
+  scroll-margin-top: 96px;
+}
+
+/* ---------- Header ---------- */
+
+.kb-recognition__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px 64px;
+  align-items: end;
+  margin-bottom: clamp(32px, 3.5vw, 48px);
+}
+
+.kb-recognition__head h2 {
+  margin: 0;
+  max-width: 14ch;
+  color: var(--kb-text);
+  font-size: clamp(32px, 3.2vw, 48px);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.kb-recognition__intro > p {
+  margin: 0;
+  max-width: 560px;
+  color: var(--kb-muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.kb-recognition__markers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 0;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kb-recognition__markers li {
+  display: inline-flex;
+  align-items: center;
+  color: var(--kb-navy);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.kb-recognition__markers li + li::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  margin-inline: 14px;
+  border-radius: 50%;
+  background: var(--kb-orange);
+}
+
+/* ---------- Cards grid (asymmetric) ---------- */
+
+.kb-recognition__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.kb-recognition-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--rec-radius);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.kb-recognition-card--light {
+  border: 1px solid var(--kb-line);
+  background: #fff;
+  box-shadow: 0 12px 40px rgb(15 23 42 / 0.06);
+}
+
+.kb-recognition-card--navy {
+  color: #fff;
+  background: var(--kb-navy);
+  box-shadow: 0 18px 44px rgb(6 24 58 / 0.22);
+}
+
+/* Restrained accent: a short orange rule rather than a fill. */
+.kb-recognition-card--navy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: clamp(24px, 2.6vw, 40px);
+  width: 56px;
+  height: 3px;
+  background: var(--kb-orange);
+}
+
+@media (hover: hover) {
+  .kb-recognition-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .kb-recognition-card--light:hover {
+    box-shadow: 0 18px 48px rgb(15 23 42 / 0.1);
+  }
+}
+
+/* ---------- Evidence image ---------- */
+
+.kb-recognition-card__figure {
+  margin: 0;
+  padding: 12px 12px 0;
+}
+
+.kb-recognition-card__image-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: calc(var(--rec-radius) - 8px);
+  background: #e9eef6;
+}
+
+.kb-recognition-card__image-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1128 / 843;
+  object-fit: contain;
+}
+
+.kb-recognition-card__zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--kb-navy);
+  background: rgb(255 255 255 / 0.94);
+  box-shadow: 0 4px 14px rgb(6 24 58 / 0.18);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.kb-recognition-card__image-link:focus-visible {
+  outline: 3px solid var(--kb-orange);
+  outline-offset: 3px;
+}
+
+.kb-recognition-card__figure figcaption {
+  padding: 10px 4px 0;
+  color: var(--kb-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ---------- Card body ---------- */
+
+.kb-recognition-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: clamp(24px, 2.6vw, 40px);
+}
+
+.kb-recognition-card--media .kb-recognition-card__body {
+  padding-top: 20px;
+}
+
+/* Scoped under .kb-recognition so it outranks the `.kb-site * { letter-spacing: 0 }` reset. */
+.kb-recognition .kb-recognition-card__category {
+  margin: 0 0 12px;
+  color: var(--rec-accent-text);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.kb-recognition-card--navy .kb-recognition-card__category {
+  margin-top: 8px;
+  color: var(--rec-accent-on-navy);
+}
+
+.kb-recognition-card h3 {
+  margin: 0;
+  max-width: 22ch;
+  color: var(--kb-text);
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 850;
+  line-height: 1.18;
+}
+
+.kb-recognition-card--navy h3 {
+  color: #fff;
+}
+
+.kb-recognition-card__summary {
+  margin: 14px 0 0;
+  max-width: 60ch;
+  color: var(--kb-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.kb-recognition-card--navy .kb-recognition-card__summary {
+  color: rgb(255 255 255 / 0.84);
+}
+
+.kb-recognition-card__details {
+  display: grid;
+  gap: 0;
+  margin: auto 0 0;
+  padding-top: 24px;
+}
+
+.kb-recognition-card__details > div {
+  display: grid;
+  grid-template-columns: minmax(104px, 132px) minmax(0, 1fr);
+  gap: 16px;
+  padding-block: 12px;
+  border-top: 1px solid var(--kb-line);
+}
+
+.kb-recognition-card--navy .kb-recognition-card__details > div {
+  border-top-color: rgb(255 255 255 / 0.16);
+}
+
+.kb-recognition-card__details dt {
+  color: var(--kb-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.kb-recognition-card__details dd {
+  margin: 0;
+  color: var(--kb-text);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.kb-recognition-card--navy .kb-recognition-card__details dt {
+  color: rgb(255 255 255 / 0.68);
+}
+
+.kb-recognition-card--navy .kb-recognition-card__details dd {
+  color: #fff;
+}
+
+/* ---------- Bridge back into the business ---------- */
+
+.kb-recognition__bridge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 48px;
+  margin-top: clamp(32px, 3.5vw, 48px);
+  padding-top: 28px;
+  border-top: 1px solid var(--kb-line);
+}
+
+.kb-recognition__bridge p {
+  margin: 0;
+  max-width: 760px;
+  color: var(--kb-muted);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.kb-recognition__bridge strong {
+  color: var(--kb-text);
+  font-weight: 800;
+}
+
+.kb-recognition__bridge-link {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 4px;
+  color: var(--kb-navy);
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: var(--kb-orange);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.kb-recognition__bridge-link svg {
+  transition: transform 0.2s ease;
+}
+
+.kb-recognition__bridge-link:hover svg {
+  transform: translateX(3px);
+}
+
+.kb-recognition__bridge-link:focus-visible {
+  outline: 3px solid var(--rec-accent-text);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ---------- Hero credibility note ---------- */
+
+.kb-hero-recognition {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 22px;
+  color: var(--kb-navy);
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.kb-hero-recognition__item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.kb-hero-recognition__item::before {
+  content: "";
+  flex-shrink: 0;
+  width: 14px;
+  height: 2px;
+  transform: translateY(-4px);
+  background: var(--kb-orange);
+}
+
+.kb-hero-recognition:hover .kb-hero-recognition__item {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.kb-hero-recognition:focus-visible {
+  outline: 3px solid var(--kb-navy);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ---------- Reveal ----------
+   Content is visible by default (no JS, prerendered HTML, short viewports, high zoom). The fade-up
+   is a one-shot animation that only starts once the section's top edge is on screen, so the worst
+   failure mode is "no animation", never "invisible content". */
+
+@keyframes kb-recognition-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .kb-recognition[data-revealed="true"] [data-recognition-reveal] {
+    animation: kb-recognition-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms) backwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kb-recognition-card,
+  .kb-recognition__bridge-link svg {
+    transition: none;
+  }
+
+  .kb-recognition-card:hover,
+  .kb-recognition__bridge-link:hover svg {
+    transform: none;
+  }
+}
+
+/* ---------- Tablet & desktop (≥760px): full-width cards with side-by-side internals ----------
+   The evidence photo sits beside its claim; the government card becomes a wide navy band with its
+   facts on the right. Avoids the tall, half-empty column a 2-up grid produces with a 4:3 photo. */
+
+@media (max-width: 1079px) {
+  .kb-recognition__head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .kb-recognition__head h2 {
+    max-width: 20ch;
+  }
+}
+
+/* Photo beside its claim only when the photo can stay large enough to read the placards. */
+@media (min-width: 1024px) {
+  .kb-recognition-card--media {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .kb-recognition-card--media .kb-recognition-card__figure {
+    padding: 14px 0 14px 14px;
+  }
+
+  .kb-recognition-card--media .kb-recognition-card__body {
+    justify-content: center;
+    padding: clamp(24px, 3vw, 48px);
+  }
+
+  .kb-recognition-card--media .kb-recognition-card__details {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 760px) {
+  .kb-recognition-card--navy .kb-recognition-card__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "category details"
+      "title details"
+      "summary details";
+    grid-template-rows: auto auto 1fr;
+    gap: 0 clamp(32px, 4vw, 64px);
+    padding-block: clamp(32px, 3vw, 44px);
+  }
+
+  .kb-recognition-card--navy .kb-recognition-card__category { grid-area: category; }
+  .kb-recognition-card--navy h3 { grid-area: title; }
+  .kb-recognition-card--navy .kb-recognition-card__summary { grid-area: summary; }
+
+  .kb-recognition-card--navy .kb-recognition-card__details {
+    grid-area: details;
+    align-self: center;
+    margin: 0;
+    padding-top: 0;
+  }
+
+  .kb-recognition-card--navy .kb-recognition-card__details > div:last-child {
+    border-bottom: 1px solid rgb(255 255 255 / 0.16);
+  }
+}
+
+/* ---------- Mobile (<760px): single column, image first, comfortable reading measure ---------- */
+
+@media (max-width: 759px) {
+  .kb-recognition {
+    padding-block: 44px;
+    scroll-margin-top: 80px;
+  }
+
+  .kb-recognition__head h2 {
+    font-size: clamp(28px, 7.6vw, 34px);
+  }
+
+  .kb-recognition__intro > p,
+  .kb-recognition__bridge p {
+    font-size: 16px;
+  }
+
+  .kb-recognition__markers li {
+    font-size: 12px;
+  }
+
+  /* Markers wrap here: give every item its own leading dot so no line starts with a stray separator. */
+  .kb-recognition__markers {
+    gap: 8px 18px;
+  }
+
+  .kb-recognition__markers li::before,
+  .kb-recognition__markers li + li::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    margin: 0 8px 0 0;
+    border-radius: 50%;
+    background: var(--kb-orange);
+  }
+
+  .kb-recognition__grid {
+    gap: 16px;
+  }
+
+  .kb-recognition-card--media .kb-recognition-card__figure {
+    padding: 10px 10px 0;
+  }
+
+  .kb-recognition-card__body,
+  .kb-recognition-card--media .kb-recognition-card__body {
+    padding: 20px;
+  }
+
+  .kb-recognition-card--navy .kb-recognition-card__body {
+    padding-top: 28px;
+  }
+
+  .kb-recognition-card--navy::before {
+    left: 20px;
+  }
+
+  .kb-recognition-card--navy .kb-recognition-card__details {
+    padding-top: 20px;
+  }
+
+  .kb-recognition-card h3 {
+    font-size: 22px;
+  }
+
+  .kb-recognition-card__summary {
+    font-size: 15px;
+  }
+
+  .kb-recognition-card__details > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+    padding-block: 10px;
+  }
+
+  .kb-recognition__bridge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .kb-hero-recognition {
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+}

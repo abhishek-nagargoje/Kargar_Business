@@ -33,6 +33,7 @@ import { TrustedClientsSection } from '@/features/reviews/components/TrustedClie
 import { ServicesSection } from '@/features/home/components/ServicesSection';
 import { ServiceCatalogSection } from '@/features/services/components/ServiceCatalogSection';
 import { CompanyProfileSection } from '@/features/home/components/CompanyProfile';
+import { HeroRecognitionNote, RecognitionSection } from '@/features/home/components/Recognition';
 import { IndustriesSection } from '@/features/home/components/IndustriesSection';
 import { useContactNavigation } from '@/features/services/hooks/useContactNavigation';
 import { Link } from 'react-router';
@@ -255,6 +256,7 @@ function HomeHero() {
               <ArrowRight size={18} />
             </Link>
           </div>
+          <HeroRecognitionNote />
         </div>
       </div>
       <div className="kb-container">
@@ -693,6 +695,7 @@ function HomePage() {
   return (
     <>
       <HomeHero />
+      <RecognitionSection />
       <ClientStrip />
       <ServicesSection />
       <PuneServicesLinksSection />

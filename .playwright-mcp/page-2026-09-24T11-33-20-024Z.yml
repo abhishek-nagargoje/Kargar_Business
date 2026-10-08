@@ -1,0 +1,201 @@
+- generic [ref=f7e3]:
+  - banner [ref=f7e4]:
+    - generic [ref=f7e7]:
+      - link "bd@kargar.co.in" [ref=f7e8] [cursor=pointer]:
+        - /url: mailto:bd@kargar.co.in
+      - link "+91-7821844591" [ref=f7e13] [cursor=pointer]:
+        - /url: tel:+917821844591
+      - link "+91-8788726752" [ref=f7e17] [cursor=pointer]:
+        - /url: tel:+918788726752
+    - generic [ref=f7e21]:
+      - link "KARGAR Facility Management home" [ref=f7e22] [cursor=pointer]:
+        - /url: /
+        - img "KARGAR - Window to a Cleaner World" [ref=f7e24]
+      - navigation "Main navigation" [ref=f7e25]:
+        - link "Home" [ref=f7e27] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=f7e29] [cursor=pointer]:
+          - /url: /services
+        - link "Sectors" [ref=f7e31] [cursor=pointer]:
+          - /url: /sectors
+        - link "Company Profile" [ref=f7e33] [cursor=pointer]:
+          - /url: /company-profile
+        - link "Support" [ref=f7e35] [cursor=pointer]:
+          - /url: /support
+        - link "Contact Us" [ref=f7e37] [cursor=pointer]:
+          - /url: /contact-us
+      - generic [ref=f7e38]:
+        - link "Call for More Information +91-7821844591" [ref=f7e39] [cursor=pointer]:
+          - /url: tel:+917821844591
+          - generic [ref=f7e43]: Call for More Information
+          - strong [ref=f7e44]: +91-7821844591
+        - link "Request Proposal" [ref=f7e45] [cursor=pointer]:
+          - /url: /contact-us?source=header&cta_position=navbar#contact-form
+  - main [ref=f7e48]:
+    - generic [ref=f7e50]:
+      - generic [ref=f7e54]:
+        - generic [ref=f7e55]:
+          - navigation "Breadcrumb" [ref=f7e57]:
+            - link "Home" [ref=f7e58] [cursor=pointer]:
+              - /url: /
+            - link "Services" [ref=f7e66] [cursor=pointer]:
+              - /url: /services
+            - link "Hard Services" [ref=f7e70] [cursor=pointer]:
+              - /url: /services/hard-services
+            - generic [ref=f7e71]: Electrical Maintenance
+          - paragraph [ref=f7e75]: Hard Services
+          - heading "Electrical Maintenance" [level=1] [ref=f7e76]
+          - paragraph [ref=f7e77]: Uninterrupted Power for Uninterrupted Business.
+          - paragraph [ref=f7e78]: Keep your operations running safely with our 24/7 electrical maintenance services.
+          - generic [ref=f7e79]:
+            - link "Request a Proposal" [ref=f7e80] [cursor=pointer]:
+              - /url: /contact-us?category=hard&service=electrical-maintenance&source=hero&cta_position=hero#contact-form
+            - 'link "Talk to our team: call +91 78218 44591" [ref=f7e81] [cursor=pointer]':
+              - /url: tel:+917821844591
+              - text: Talk to Our Team
+            - button "Download Brochure" [ref=f7e84]
+        - img "Enterprise Electrical Maintenance and HT Panels" [ref=f7e87]
+      - generic [ref=f7e90]:
+        - generic [ref=f7e91]:
+          - paragraph [ref=f7e92]: Electrical Maintenance
+          - heading "Business Overview" [level=2] [ref=f7e93]
+        - paragraph [ref=f7e94]: Ensure the safety and reliability of your electrical infrastructure with our comprehensive electrical maintenance services. Our certified technicians handle everything from routine inspections and preventive maintenance to complex troubleshooting and emergency repairs. We cover lighting systems, power distribution, backup generators, and more, ensuring uninterrupted operations for your facility.
+      - generic [ref=f7e97]:
+        - generic [ref=f7e98]:
+          - paragraph [ref=f7e99]: What We Do
+          - heading "Scope of Work" [level=2] [ref=f7e100]
+        - list [ref=f7e101]:
+          - listitem [ref=f7e102]:
+            - generic [aria-hidden] [ref=f7e104]: "1"
+            - generic [ref=f7e106]:
+              - heading "Preventive Maintenance" [level=3] [ref=f7e107]
+              - paragraph [ref=f7e108]: Regular inspections to identify potential issues.
+          - listitem [ref=f7e109]:
+            - generic [aria-hidden] [ref=f7e111]: "2"
+            - generic [ref=f7e113]:
+              - heading "Emergency Repairs" [level=3] [ref=f7e114]
+              - paragraph [ref=f7e115]: 24/7 rapid response for critical failures.
+          - listitem [ref=f7e116]:
+            - generic [aria-hidden] [ref=f7e118]: "3"
+            - generic [ref=f7e120]:
+              - heading "System Upgrades" [level=3] [ref=f7e121]
+              - paragraph [ref=f7e122]: Modernization of outdated electrical panels.
+          - listitem [ref=f7e123]:
+            - generic [aria-hidden] [ref=f7e125]: "4"
+            - generic [ref=f7e126]:
+              - heading "Energy Optimization" [level=3] [ref=f7e127]
+              - paragraph [ref=f7e128]: Solutions to reduce power consumption.
+      - generic [ref=f7e131]:
+        - generic [ref=f7e132]:
+          - paragraph [ref=f7e133]: Technical Capabilities
+          - heading "Equipment We Maintain" [level=2] [ref=f7e134]
+        - generic [ref=f7e135]:
+          - heading "LT Panels" [level=3] [ref=f7e141]
+          - heading "HT Panels" [level=3] [ref=f7e147]
+          - heading "Transformers" [level=3] [ref=f7e152]
+          - heading "DG Synchronization" [level=3] [ref=f7e157]
+          - heading "Cabling & Earthing" [level=3] [ref=f7e162]
+      - generic [ref=f7e165]:
+        - generic [ref=f7e166]:
+          - paragraph [ref=f7e167]: What You Get
+          - heading "Key Benefits" [level=2] [ref=f7e168]
+        - generic [ref=f7e169]:
+          - generic [ref=f7e170]:
+            - heading "Certified Technicians" [level=3] [ref=f7e175]
+            - paragraph [ref=f7e176]: Fully licensed and trained in latest safety standards.
+          - generic [ref=f7e177]:
+            - heading "Rapid Response" [level=3] [ref=f7e182]
+            - paragraph [ref=f7e183]: 24/7 emergency support for critical failures.
+          - generic [ref=f7e184]:
+            - heading "Energy Savings" [level=3] [ref=f7e189]
+            - paragraph [ref=f7e190]: Proven strategies to reduce overall power consumption.
+      - generic [ref=f7e193]:
+        - generic [ref=f7e194]:
+          - paragraph [ref=f7e195]: Our Expertise
+          - heading "Industries Served" [level=2] [ref=f7e196]
+        - generic [ref=f7e197]:
+          - generic [ref=f7e198]: Corporate Offices
+          - generic [ref=f7e199]: IT Parks
+          - generic [ref=f7e200]: Manufacturing
+          - generic [ref=f7e201]: Warehouses
+          - generic [ref=f7e202]: Retail & Malls
+      - generic [ref=f7e205]:
+        - generic [ref=f7e206]:
+          - paragraph [ref=f7e207]: Got Questions?
+          - heading "Frequently Asked Questions" [level=2] [ref=f7e208]
+        - generic [ref=f7e209]:
+          - generic [ref=f7e210]:
+            - button "How often should electrical maintenance be performed?" [expanded] [ref=f7e211]
+            - generic [ref=f7e216]: We recommend comprehensive inspections at least annually, with more frequent checks for critical systems.
+          - generic [ref=f7e218]:
+            - button "Do you provide emergency electrical services?" [ref=f7e219]
+            - generic: Yes, our team is available 24/7 for emergency electrical troubleshooting and repairs.
+          - generic [ref=f7e225]:
+            - button "Do you handle backup generator maintenance?" [ref=f7e226]
+            - generic: Yes, generator maintenance is a key part of our electrical services to ensure reliable backup power.
+      - generic [ref=f7e234]:
+        - generic [ref=f7e235]:
+          - paragraph [ref=f7e236]: Discover More
+          - heading "Related Services" [level=2] [ref=f7e237]
+        - link [ref=f7e239] [cursor=pointer]:
+          - /url: /services/hard-services/hvac-maintenance
+          - generic [ref=f7e240]:
+            - heading "HVAC Maintenance" [level=3] [ref=f7e246]
+            - paragraph [ref=f7e247]: Expert heating, ventilation, and air conditioning services.
+            - generic [ref=f7e248]: Learn More
+      - generic [ref=f7e256]:
+        - heading "Need Electrical Maintenance for your facility?" [level=2] [ref=f7e257]
+        - paragraph [ref=f7e258]: Talk to the KARGAR team about your requirements. Our experts are ready to design a tailored solution for your specific needs.
+        - generic [ref=f7e259]:
+          - link "Request a Proposal" [ref=f7e260] [cursor=pointer]:
+            - /url: /contact-us?category=hard&service=electrical-maintenance&source=cta_section&cta_position=bottom#contact-form
+          - link "Contact Us" [ref=f7e261] [cursor=pointer]:
+            - /url: /contact-us
+        - generic [ref=f7e262]:
+          - generic [ref=f7e267]:
+            - paragraph [ref=f7e268]: Call Us
+            - paragraph [ref=f7e269]:
+              - link "+91 78218 44591" [ref=f7e270] [cursor=pointer]:
+                - /url: tel:+917821844591
+              - text: ·
+              - link "+91 87887 26752" [ref=f7e271] [cursor=pointer]:
+                - /url: tel:+918788726752
+            - paragraph [ref=f7e272]: "Mon - Sat: 09:00 AM - 06:00 PM"
+          - generic [ref=f7e278]:
+            - paragraph [ref=f7e279]: Email Us
+            - paragraph [ref=f7e280]:
+              - link "bd@kargar.co.in" [ref=f7e281] [cursor=pointer]:
+                - /url: mailto:bd@kargar.co.in
+    - paragraph [ref=f7e284]:
+      - text: Looking for electrical maintenance specifically in Pune? See our
+      - link "Electrical Maintenance Services in Pune" [ref=f7e285] [cursor=pointer]:
+        - /url: /electrical-maintenance-services-pune
+      - text: page for local coverage and FAQs.
+  - contentinfo [ref=f7e286]:
+    - generic [ref=f7e287]:
+      - generic [ref=f7e288]:
+        - generic [ref=f7e289]:
+          - generic "KARGAR Admin Portal Trigger" [ref=f7e290] [cursor=pointer]:
+            - img "KARGAR - Window to a Cleaner World" [ref=f7e292]
+          - link "KARGAR Facility Management on Fazier":
+            - /url: https://fazier.com/launches/www.kargarbusinessservices.com
+            - img "KARGAR Facility Management on Fazier"
+        - navigation "Social Media Links" [ref=f7e295]:
+          - generic [ref=f7e296]: FOLLOW US
+          - generic [ref=f7e299]:
+            - link "Follow KARGAR on Instagram" [ref=f7e300] [cursor=pointer]:
+              - /url: https://www.instagram.com/kargar.facility/
+              - generic [ref=f7e305]: Instagram
+            - link "Follow KARGAR on Facebook" [ref=f7e306] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/
+              - generic [ref=f7e310]: Facebook
+            - link "Follow KARGAR on LinkedIn" [ref=f7e311] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/?viewAsMember=true
+              - generic [ref=f7e315]: LinkedIn
+            - link "Follow KARGAR on X" [ref=f7e316] [cursor=pointer]:
+              - /url: https://x.com/Kargar_Business
+              - generic [ref=f7e320]: X
+      - paragraph [ref=f7e323]:
+        - text: © 2026 KARGAR Facility Management. All rights reserved.
+        - link "Privacy Policy" [ref=f7e324] [cursor=pointer]:
+          - /url: /privacy-policy

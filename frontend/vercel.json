@@ -35,12 +35,68 @@
       "destination": "/privacy-policy.html"
     },
     {
+      "source": "/resources",
+      "destination": "/resources.html"
+    },
+    {
       "source": "/housekeeping-services-pune",
       "destination": "/housekeeping-services-pune.html"
     },
     {
-      "source": "/security-services-pune",
-      "destination": "/security-services-pune.html"
+      "source": "/commercial-housekeeping-services-pune",
+      "destination": "/commercial-housekeeping-services-pune.html"
+    },
+    {
+      "source": "/corporate-housekeeping-services-pune",
+      "destination": "/corporate-housekeeping-services-pune.html"
+    },
+    {
+      "source": "/office-housekeeping-services-pune",
+      "destination": "/office-housekeeping-services-pune.html"
+    },
+    {
+      "source": "/society-housekeeping-services-pune",
+      "destination": "/society-housekeeping-services-pune.html"
+    },
+    {
+      "source": "/housekeeping-staff-pune",
+      "destination": "/housekeeping-staff-pune.html"
+    },
+    {
+      "source": "/industrial-housekeeping-services-pune",
+      "destination": "/industrial-housekeeping-services-pune.html"
+    },
+    {
+      "source": "/school-housekeeping-services-pune",
+      "destination": "/school-housekeeping-services-pune.html"
+    },
+    {
+      "source": "/healthcare-housekeeping-services-pune",
+      "destination": "/healthcare-housekeeping-services-pune.html"
+    },
+    {
+      "source": "/facility-management-company-pune",
+      "destination": "/facility-management-company-pune.html"
+    },
+    {
+      "source": "/facility-management-for-societies-pune",
+      "destination": "/facility-management-for-societies-pune.html"
+    },
+    {
+      "source": "/office-facility-management-pune",
+      "destination": "/office-facility-management-pune.html"
+    },
+    {
+      "source": "/commercial-facility-management-pune",
+      "destination": "/commercial-facility-management-pune.html"
+    },
+    {
+      "source": "/facility-staffing-services-pune",
+      "destination": "/facility-staffing-services-pune.html"
+    },
+    {
+      "source": "/facility-maintenance-services-pune",
+      "destination": "/facility-maintenance-services-pune.html"
     },
     {
       "source": "/electrical-maintenance-services-pune",
@@ -51,8 +107,44 @@
       "destination": "/hvac-maintenance-services-pune.html"
     },
     {
-      "source": "/facility-management-company-pune",
-      "destination": "/facility-management-company-pune.html"
+      "source": "/plumbing-maintenance-services-pune",
+      "destination": "/plumbing-maintenance-services-pune.html"
+    },
+    {
+      "source": "/building-maintenance-services-pune",
+      "destination": "/building-maintenance-services-pune.html"
+    },
+    {
+      "source": "/stp-operation-maintenance-pune",
+      "destination": "/stp-operation-maintenance-pune.html"
+    },
+    {
+      "source": "/landscaping-services-pune",
+      "destination": "/landscaping-services-pune.html"
+    },
+    {
+      "source": "/security-services-pune",
+      "destination": "/security-services-pune.html"
+    },
+    {
+      "source": "/society-security-services-pune",
+      "destination": "/society-security-services-pune.html"
+    },
+    {
+      "source": "/resources/how-to-choose-a-housekeeping-company-pune",
+      "destination": "/resources/how-to-choose-a-housekeeping-company-pune.html"
+    },
+    {
+      "source": "/resources/office-housekeeping-checklist",
+      "destination": "/resources/office-housekeeping-checklist.html"
+    },
+    {
+      "source": "/resources/housekeeping-cost-pune",
+      "destination": "/resources/housekeeping-cost-pune.html"
+    },
+    {
+      "source": "/resources/how-many-housekeeping-staff",
+      "destination": "/resources/how-many-housekeeping-staff.html"
     },
     {
       "source": "/services/hard-services",
@@ -77,14 +169,6 @@
     {
       "source": "/services/soft-services/security-services",
       "destination": "/services/soft-services/security-services.html"
-    },
-    {
-      "source": "/services/:categoryId",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/services/:categoryId/:serviceId",
-      "destination": "/index.html"
     },
     {
       "source": "/admin",
@@ -124,7 +208,25 @@
   ],
   "headers": [
     {
+      "source": "/admin",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
       "source": "/admin/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
       "headers": [
         {
           "key": "X-Robots-Tag",

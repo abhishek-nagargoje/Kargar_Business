@@ -20,6 +20,14 @@ export function validateRouteCoverage(appTsxSource: string): string[] {
     }
   }
 
+  // Landing pages and guides are routed by mapping over their content lists in App.tsx.
+  if (pages.some((p) => p.type === 'landing') && !appTsxSource.includes('punePageList.map(')) {
+    errors.push('Pune landing pages exist in config but App.tsx does not route them via punePageList.map(...)');
+  }
+  if (pages.some((p) => p.type === 'guide') && !appTsxSource.includes('guidePageList.map(')) {
+    errors.push('Guide pages exist in config but App.tsx does not route them via guidePageList.map(...)');
+  }
+
   // Dynamic category/service routes must be covered by the /services/:categoryId(/:serviceId) patterns.
   const hasCategoryRoute = appRoutes.some((r) => r === '/services/:categoryId');
   const hasServiceRoute = appRoutes.some((r) => r === '/services/:categoryId/:serviceId');

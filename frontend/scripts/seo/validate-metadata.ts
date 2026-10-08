@@ -9,6 +9,21 @@ const TITLE_MAX = 31;
 const DESCRIPTION_MIN = 140;
 const DESCRIPTION_MAX = 160;
 
+/**
+ * Lowercases and drops connector words/punctuation so "Commercial Housekeeping Services Pune"
+ * matches natural copy like "commercial housekeeping services in Pune". Requiring the raw
+ * keyword string verbatim would push meta descriptions toward unnatural, stuffed phrasing.
+ */
+const CONNECTOR_WORDS = new Set(['in', 'for', 'and', 'the', 'of', 'a', 'an', '&']);
+function normalizeForKeywordMatch(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9& ]+/g, ' ')
+    .split(/\s+/)
+    .filter((word) => word && !CONNECTOR_WORDS.has(word))
+    .join(' ');
+}
+
 export function validateMetadata(): string[] {
   const errors: string[] = [];
   const pages = buildRouteInventory().filter((page) => !page.noindex);
@@ -31,8 +46,12 @@ export function validateMetadata(): string[] {
       );
     }
     if (page.keywords && page.keywords.length > 0 && page.description) {
-      const primaryKeyword = page.keywords[0]?.toLowerCase();
-      if (primaryKeyword && !page.description.toLowerCase().includes(primaryKeyword) && !page.title.toLowerCase().includes(primaryKeyword)) {
+      const primaryKeyword = page.keywords[0] ? normalizeForKeywordMatch(page.keywords[0]) : '';
+      if (
+        primaryKeyword &&
+        !normalizeForKeywordMatch(page.description).includes(primaryKeyword) &&
+        !normalizeForKeywordMatch(page.title).includes(primaryKeyword)
+      ) {
         errors.push(`${page.path}: primary keyword "${page.keywords[0]}" not found in title or description`);
       }
     }

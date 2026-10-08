@@ -10,7 +10,11 @@
 
 export const SITE_URL = 'https://www.kargarbusinessservices.com';
 
-/** Static routes that render pages and are covered by `src/features/seo/registry.ts`. */
+/**
+ * Static routes that render pages and are covered by `src/features/seo/registry.ts`.
+ * Pune landing pages and /resources guides are NOT listed here — route-inventory.ts reads them
+ * straight from their content configs, so a new page is wired by adding its content entry.
+ */
 export const STATIC_ROUTES = [
   '/',
   '/services',
@@ -19,11 +23,7 @@ export const STATIC_ROUTES = [
   '/support',
   '/contact-us',
   '/privacy-policy',
-  '/housekeeping-services-pune',
-  '/security-services-pune',
-  '/electrical-maintenance-services-pune',
-  '/hvac-maintenance-services-pune',
-  '/facility-management-company-pune',
+  '/resources',
 ];
 
 /** Route prefixes that must never appear in the sitemap and must be disallowed in robots.txt. */
@@ -45,56 +45,37 @@ export const REDIRECTS: RedirectRule[] = [
 ];
 
 /**
- * Known hero-image asset per route, for `<image:image>` sitemap entries.
- * Hardcoded here (rather than importing features/services/config/images.ts) to keep the
- * pipeline's dependency surface small and Node-safe; update alongside real asset changes.
+ * Image entries for the sitemap's `<image:image>` block. The site's hero photographs are generic
+ * illustrations (not KARGAR sites or staff), so titles describe only what is literally in the
+ * frame — never a location, client or KARGAR team. Pune landing pages and guides use the same
+ * illustrative photos as decorative backdrops and are deliberately not given image entries.
  */
 export const PAGE_IMAGES: Record<string, { src: string; alt: string }> = {
-  '/': { src: '/images/page/hero-building.webp', alt: 'Kargar facility management hero building' },
-  '/services': { src: '/images/page/services-hero.webp', alt: 'Kargar integrated facility management services' },
+  '/': { src: '/images/page/hero-building.webp', alt: 'Modern glass office building at dusk' },
+  '/services': { src: '/images/page/services-hero.webp', alt: 'Bright office lobby with a cleaner operating a floor machine' },
   '/services/hard-services': {
     src: '/images/services/hard-services.webp',
-    alt: 'Hard services — electrical, HVAC, and plumbing maintenance',
+    alt: 'Technicians in safety gear inspecting an electrical panel and plant-room equipment',
   },
   '/services/soft-services': {
     src: '/images/services/soft-services.webp',
-    alt: 'Soft services — housekeeping, pantry, and waste management',
+    alt: 'Cleaning staff wiping desks and mopping the floor of an open-plan office',
   },
   '/services/hard-services/electrical-maintenance': {
     src: '/images/services/hard-services.webp',
-    alt: 'Enterprise electrical maintenance and HT panels',
+    alt: 'Technicians in safety gear inspecting an electrical panel and plant-room equipment',
   },
   '/services/hard-services/hvac-maintenance': {
     src: '/images/services/hard-services.webp',
-    alt: 'Commercial HVAC and chiller maintenance',
+    alt: 'Technicians in safety gear inspecting an electrical panel and plant-room equipment',
   },
   '/services/soft-services/housekeeping': {
     src: '/images/services/housekeeping-services.webp',
-    alt: 'Corporate housekeeping and deep cleaning',
+    alt: 'Cleaning staff operating floor scrubbers in a marble-floored office lobby',
   },
   '/services/soft-services/security-services': {
     src: '/images/services/security-services.webp',
-    alt: 'Corporate security and manned guarding',
-  },
-  '/housekeeping-services-pune': {
-    src: '/images/services/housekeeping-services.webp',
-    alt: 'Housekeeping staff cleaning a corporate office in Pune',
-  },
-  '/security-services-pune': {
-    src: '/images/services/security-services.webp',
-    alt: 'Trained security guard on duty at a Pune corporate facility',
-  },
-  '/electrical-maintenance-services-pune': {
-    src: '/images/services/hard-services.webp',
-    alt: 'Electrical maintenance technician servicing an LT panel in Pune',
-  },
-  '/hvac-maintenance-services-pune': {
-    src: '/images/services/hard-services.webp',
-    alt: 'HVAC technician servicing a commercial cooling system in Pune',
-  },
-  '/facility-management-company-pune': {
-    src: '/images/page/hero-building.webp',
-    alt: 'KARGAR Facility Management office building in Baner, Pune',
+    alt: 'Uniformed security officer standing at the glass entrance of an office building',
   },
 };
 

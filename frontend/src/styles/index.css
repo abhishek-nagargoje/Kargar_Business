@@ -171,7 +171,8 @@
   outline: none;
 }
 .focus-ring:focus-visible {
-  outline: 2px solid var(--color-orange-500);
+  /* orange-600: orange-500 is under 3:1 against white/slate backgrounds (WCAG 1.4.11). */
+  outline: 2px solid var(--color-orange-600);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }

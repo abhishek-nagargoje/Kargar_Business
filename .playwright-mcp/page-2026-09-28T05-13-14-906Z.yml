@@ -1,0 +1,127 @@
+- generic [ref=f4e3]:
+  - banner [ref=f4e4]:
+    - generic [ref=f4e7]:
+      - link "bd@kargar.co.in" [ref=f4e8] [cursor=pointer]:
+        - /url: mailto:bd@kargar.co.in
+      - link "+91-7821844591" [ref=f4e12] [cursor=pointer]:
+        - /url: tel:+917821844591
+    - generic [ref=f4e16]:
+      - link "KARGAR Facility Management home" [ref=f4e17] [cursor=pointer]:
+        - /url: /
+        - img "KARGAR - Window to a Cleaner World" [ref=f4e19]
+      - button "Toggle navigation" [ref=f4e21]
+  - main [ref=f4e23]:
+    - generic [ref=f4e29]:
+      - navigation "Breadcrumb" [ref=f4e30]:
+        - link "Home" [ref=f4e31] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f4e36]: Housekeeping Services Pune
+      - paragraph [ref=f4e40]: Housekeeping in Pune
+      - heading "Housekeeping Services in Pune" [level=1] [ref=f4e41]
+      - paragraph [ref=f4e42]: KARGAR Facility Management provides trained, supervised housekeeping teams for corporate offices, IT parks, commercial properties, and industrial sites across Pune and the wider Pune Metropolitan Region, including PCMC.
+      - link "Request a Proposal" [ref=f4e43] [cursor=pointer]:
+        - /url: /contact-us?service=%2Fhousekeeping-services-pune&source=pune_landing_hero#contact-form
+    - generic [ref=f4e47]:
+      - paragraph [ref=f4e48]: If you manage a corporate office, IT park campus, retail space, or industrial facility in Pune, consistent housekeeping standards directly affect how your workplace looks, feels, and functions for employees, clients, and visitors. KARGAR Facility Management is based in Baner, Pune, and deploys trained, police-verified housekeeping staff to facilities across the city and the wider Pune Metropolitan Region, including PCMC.
+      - paragraph [ref=f4e49]: Our housekeeping teams are supervised, not just deployed — every site follows a daily cleaning checklist and is tracked through a monthly hygiene report, so facility managers get measurable, accountable service rather than an unsupervised contract.
+    - generic [ref=f4e51]:
+      - heading "What Our Pune Housekeeping Service Covers" [level=2] [ref=f4e53]
+      - generic [ref=f4e54]:
+        - generic [ref=f4e55]:
+          - heading "Daily Janitorial" [level=3] [ref=f4e56]
+          - paragraph [ref=f4e57]: Dusting, vacuuming, and trash removal across workstations, common areas, and pantries.
+        - generic [ref=f4e58]:
+          - heading "Restroom Hygiene" [level=3] [ref=f4e59]
+          - paragraph [ref=f4e60]: Strict sanitization protocols to prevent cross-contamination in high-traffic washrooms.
+        - generic [ref=f4e61]:
+          - heading "Deep Cleaning" [level=3] [ref=f4e62]
+          - paragraph [ref=f4e63]: Intensive periodic cleaning for floors, upholstery, and specialized surfaces.
+        - generic [ref=f4e64]:
+          - heading "Consumables Management" [level=3] [ref=f4e65]
+          - paragraph [ref=f4e66]: Refilling soap, paper towels, and sanitizers so facilities never run short.
+    - generic [ref=f4e68]:
+      - heading "Why Facility Managers in Pune Choose KARGAR" [level=2] [ref=f4e70]
+      - generic [ref=f4e71]:
+        - generic [ref=f4e72]:
+          - heading "Police-Verified Staff" [level=3] [ref=f4e76]
+          - paragraph [ref=f4e77]: Every housekeeping team member undergoes police verification and background checks before deployment.
+        - generic [ref=f4e78]:
+          - heading "Eco-Friendly Cleaning" [level=3] [ref=f4e82]
+          - paragraph [ref=f4e83]: We use sustainable, non-toxic cleaning agents across every site.
+        - generic [ref=f4e84]:
+          - heading "Unannounced Inspections" [level=3] [ref=f4e88]
+          - paragraph [ref=f4e89]: Supervisors conduct regular unannounced quality checks, not just scheduled visits.
+        - generic [ref=f4e90]:
+          - heading "ISO-Aligned Processes" [level=3] [ref=f4e94]
+          - paragraph [ref=f4e95]: Housekeeping operations follow ISO process guidelines for consistent standards site to site.
+    - generic [ref=f4e97]:
+      - heading "Facilities We Support Across Pune" [level=2] [ref=f4e99]
+      - generic [ref=f4e100]:
+        - generic [ref=f4e101]: Corporate Offices
+        - generic [ref=f4e102]: IT Parks
+        - generic [ref=f4e103]: Healthcare Facilities
+        - generic [ref=f4e104]: Retail & Malls
+        - generic [ref=f4e105]: Hotels & Hospitality
+        - generic [ref=f4e106]: Warehouses
+        - generic [ref=f4e107]: Manufacturing Plants
+    - generic [ref=f4e109]:
+      - paragraph [ref=f4e110]:
+        - text: For full operational detail on this service, see our
+        - link "housekeeping service details" [ref=f4e111] [cursor=pointer]:
+          - /url: /services/soft-services/housekeeping
+        - text: .
+      - generic [ref=f4e112]:
+        - link "Facility Management Company in Pune" [ref=f4e113] [cursor=pointer]:
+          - /url: /facility-management-company-pune
+        - link "Security Services in Pune" [ref=f4e114] [cursor=pointer]:
+          - /url: /security-services-pune
+        - link "Soft Services" [ref=f4e115] [cursor=pointer]:
+          - /url: /services/soft-services
+    - generic [ref=f4e117]:
+      - heading "Frequently Asked Questions" [level=2] [ref=f4e119]
+      - generic [ref=f4e120]:
+        - generic [ref=f4e121]:
+          - heading [level=3] [ref=f4e122]:
+            - button "Which areas of Pune do you serve for housekeeping?" [expanded] [ref=f4e123]
+          - paragraph [ref=f4e126]: We operate out of Baner, Pune, and serve corporate and industrial facilities across Pune and the wider Pune Metropolitan Region, including PCMC.
+        - heading [level=3] [ref=f4e128]:
+          - button "Are your housekeeping staff background-checked?" [ref=f4e129]
+        - heading [level=3] [ref=f4e133]:
+          - button "Do you handle both corporate offices and industrial sites?" [ref=f4e134]
+        - heading [level=3] [ref=f4e138]:
+          - button "How is housekeeping quality tracked?" [ref=f4e139]
+        - heading [level=3] [ref=f4e143]:
+          - button "How do I get a housekeeping quote for my Pune facility?" [ref=f4e144]
+    - generic [ref=f4e148]:
+      - heading "Get a Housekeeping Proposal for Your Pune Facility" [level=2] [ref=f4e149]
+      - paragraph [ref=f4e150]: Share your facility details and our team will follow up with a tailored housekeeping proposal.
+      - link "Get Facility Management Quote" [ref=f4e151] [cursor=pointer]:
+        - /url: /contact-us?service=%2Fhousekeeping-services-pune&source=pune_landing_cta#contact-form
+  - contentinfo [ref=f4e154]:
+    - generic [ref=f4e155]:
+      - generic [ref=f4e156]:
+        - generic [ref=f4e157]:
+          - generic "KARGAR Admin Portal Trigger" [ref=f4e158] [cursor=pointer]:
+            - img "KARGAR - Window to a Cleaner World" [ref=f4e160]
+          - link "KARGAR Facility Management on Fazier":
+            - /url: https://fazier.com/launches/www.kargarbusinessservices.com
+            - img "KARGAR Facility Management on Fazier"
+        - navigation "Social Media Links" [ref=f4e162]:
+          - generic [ref=f4e163]: FOLLOW US
+          - generic [ref=f4e166]:
+            - link "Follow KARGAR on Instagram" [ref=f4e167] [cursor=pointer]:
+              - /url: https://www.instagram.com/kargar.facility/
+              - generic [ref=f4e172]: Instagram
+            - link "Follow KARGAR on Facebook" [ref=f4e173] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/
+              - generic [ref=f4e177]: Facebook
+            - link "Follow KARGAR on LinkedIn" [ref=f4e178] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/?viewAsMember=true
+              - generic [ref=f4e182]: LinkedIn
+            - link "Follow KARGAR on X" [ref=f4e183] [cursor=pointer]:
+              - /url: https://x.com/Kargar_Business
+              - generic [ref=f4e187]: X
+      - paragraph [ref=f4e190]:
+        - text: © 2026 KARGAR Facility Management. All rights reserved.
+        - link "Privacy Policy" [ref=f4e191] [cursor=pointer]:
+          - /url: /privacy-policy

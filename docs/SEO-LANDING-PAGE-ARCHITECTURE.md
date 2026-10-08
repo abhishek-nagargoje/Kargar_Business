@@ -1,5 +1,8 @@
 # SEO Landing Page Architecture — Pune Local-Commercial Pages
 
+> **Superseded wiring (2026-10-08):** Pune pages no longer need entries in `App.tsx`, `STATIC_ROUTES`, `seoRegistry` or `PAGE_IMAGES`. Content now lives in `src/features/pune-landing/config/pages/*.ts` (and guides in `src/features/resources/config/guides.ts`); routes, the route inventory, sitemap, rewrites, hub/footer links and breadcrumbs are all derived from those lists. **To add a page, add one content object.** See `seo-audit/SEO_TECHNICAL_ARCHITECTURE.md`. The sections below describe the original 5-page implementation and are kept for history.
+
+
 **Date:** 2026-09-21
 
 ## 1. Repository audit summary (Phase 0)

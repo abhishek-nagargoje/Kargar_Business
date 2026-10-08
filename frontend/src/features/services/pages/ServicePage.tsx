@@ -13,7 +13,7 @@ import { Container } from '@/components/ui/Container';
 
 /** Maps a service-detail path (this page's own served-in-Pune equivalent, per punePages' serviceDetailLink) back to that Pune page. */
 function findPunePageFor(servicePath: string) {
-  return punePageList.find((p) => p.serviceDetailLink.href === servicePath);
+  return punePageList.find((p) => p.serviceDetailLink?.href === servicePath);
 }
 
 export function ServicePage() {

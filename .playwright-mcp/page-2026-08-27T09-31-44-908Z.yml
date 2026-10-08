@@ -1,0 +1,171 @@
+- generic [ref=e4]:
+  - generic [ref=e6]:
+    - generic [ref=e7]:
+      - generic:
+        - img "Housekeeping staff cleaning a corporate office lobby floor"
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - navigation "Breadcrumb" [ref=e12]:
+          - link "Home" [ref=e13] [cursor=pointer]:
+            - /url: /
+          - link "Services" [ref=e21] [cursor=pointer]:
+            - /url: /services
+          - link "Soft Services" [ref=e25] [cursor=pointer]:
+            - /url: /services/soft-services
+          - generic [ref=e26]: Housekeeping Services
+        - heading "Professional Housekeeping Services in Pune" [level=1] [ref=e30]
+        - paragraph [ref=e31]: Ensure a spotless, hygienic, and welcoming workplace for your employees and visitors, with trained housekeeping staff based in Pune.
+        - generic [ref=e32]:
+          - link "Request a Consultation" [ref=e33] [cursor=pointer]:
+            - /url: /contact-us?category=soft&service=housekeeping&source=hero&cta_position=hero#contact-form
+          - button "Download Brochure" [ref=e34]
+      - generic [ref=e36]:
+        - heading "✓ Eco-Friendly" [level=3] [ref=e37]:
+          - generic [ref=e38]: ✓
+          - text: Eco-Friendly
+        - paragraph [ref=e39]: Using sustainable, non-toxic cleaning agents for a safer workspace.
+  - generic [ref=e42]:
+    - generic [ref=e43]:
+      - paragraph [ref=e44]: Housekeeping Services
+      - heading "Business Overview" [level=2] [ref=e45]
+    - paragraph [ref=e46]: Kargar Business Services provides professional housekeeping services in Pune for corporate offices, commercial facilities, and workplaces. We deliver comprehensive cleaning solutions tailored to each facility's needs, from daily janitorial housekeeping to specialized deep cleaning. Our trained housekeeping staff uses industry-leading equipment and eco-friendly products, backed by regular supervision, to maintain consistently high standards of cleanliness and hygiene. Based in Baner, Pune, our team supports office housekeeping for IT parks and corporate campuses, commercial housekeeping for retail and hospitality spaces, and industrial housekeeping for manufacturing plants and warehouses, with consistent standards across every environment. We serve facilities across Pune and the wider Pune Metropolitan Region, including PCMC.
+  - generic [ref=e49]:
+    - generic [ref=e50]:
+      - paragraph [ref=e51]: What We Do
+      - heading "Scope of Work" [level=2] [ref=e52]
+    - generic [ref=e53]:
+      - generic [ref=e58]:
+        - heading "Daily Janitorial" [level=3] [ref=e59]
+        - paragraph [ref=e60]: Dusting, vacuuming, and trash removal.
+      - generic [ref=e65]:
+        - heading "Restroom Hygiene" [level=3] [ref=e66]
+        - paragraph [ref=e67]: Strict sanitization protocols to prevent cross-contamination.
+      - generic [ref=e72]:
+        - heading "Deep Cleaning" [level=3] [ref=e73]
+        - paragraph [ref=e74]: Intensive periodic cleaning for specialized surfaces.
+      - generic [ref=e79]:
+        - heading "Consumables Management" [level=3] [ref=e80]
+        - paragraph [ref=e81]: Refilling soap, paper towels, and sanitizers.
+  - generic [ref=e84]:
+    - generic [ref=e85]:
+      - paragraph [ref=e86]: Measurable Results
+      - heading "Key Deliverables" [level=2] [ref=e87]
+    - generic [ref=e88]:
+      - generic [ref=e89]:
+        - heading "Daily Cleaning Checklist" [level=3] [ref=e94]
+        - paragraph [ref=e95]: Signed logs of all daily cleaning tasks.
+      - generic [ref=e96]:
+        - heading "Monthly Hygiene Report" [level=3] [ref=e101]
+        - paragraph [ref=e102]: Detailed analysis of facility cleanliness.
+  - generic [ref=e105]:
+    - generic [ref=e106]:
+      - paragraph [ref=e107]: The Enterprise Advantage
+      - heading "Why Choose Kargar" [level=2] [ref=e108]
+    - generic [ref=e109]:
+      - generic [ref=e110]:
+        - heading "Eco-Friendly" [level=3] [ref=e115]
+        - paragraph [ref=e116]: We use sustainable, non-toxic cleaning agents.
+      - generic [ref=e117]:
+        - heading "Trained Personnel" [level=3] [ref=e124]
+        - paragraph [ref=e125]: Rigorous training in hospitality and hygiene.
+      - generic [ref=e126]:
+        - heading "Quality Assurance" [level=3] [ref=e131]
+        - paragraph [ref=e132]: Regular unannounced inspections by supervisors.
+  - generic [ref=e135]:
+    - generic [ref=e136]:
+      - paragraph [ref=e137]: Verified & Reliable
+      - heading "Trust & Compliance" [level=2] [ref=e138]
+    - generic [ref=e139]:
+      - generic [ref=e140]:
+        - heading "Verified Workforce" [level=3] [ref=e145]
+        - paragraph [ref=e146]: All housekeeping personnel undergo thorough police verification and background checks before deployment.
+      - generic [ref=e147]:
+        - heading "ISO-Aligned Processes" [level=3] [ref=e153]
+        - paragraph [ref=e154]: Housekeeping operations follow ISO process guidelines for consistent quality standards.
+      - generic [ref=e155]:
+        - heading "Structured Service Delivery" [level=3] [ref=e161]
+        - paragraph [ref=e162]: Daily cleaning checklists and monthly hygiene reports provide measurable, deliverable-driven tracking.
+  - generic [ref=e165]:
+    - generic [ref=e166]:
+      - paragraph [ref=e167]: How It Works
+      - heading "Our Process" [level=2] [ref=e168]
+    - list [ref=e169]:
+      - listitem [ref=e170]:
+        - generic [ref=e171]: "1"
+        - generic [ref=e174]:
+          - heading "Enquiry & Consultation" [level=3] [ref=e175]
+          - paragraph [ref=e176]: Share your facility's housekeeping requirements through our contact page. Our team follows up to understand your site and cleaning needs.
+      - listitem [ref=e177]:
+        - generic [ref=e178]: "2"
+        - generic [ref=e181]:
+          - heading "Service Plan & Staff Deployment" [level=3] [ref=e182]
+          - paragraph [ref=e183]: We deploy trained housekeeping staff covering daily janitorial work, restroom hygiene, deep cleaning, and consumables management based on your facility.
+      - listitem [ref=e184]:
+        - generic [ref=e185]: "3"
+        - generic [ref=e188]:
+          - heading "Ongoing Supervision" [level=3] [ref=e189]
+          - paragraph [ref=e190]: Supervisors conduct regular unannounced inspections to maintain consistent quality standards.
+      - listitem [ref=e191]:
+        - generic [ref=e192]: "4"
+        - generic [ref=e194]:
+          - heading "Reporting & Quality Tracking" [level=3] [ref=e195]
+          - paragraph [ref=e196]: Cleaning activity is tracked through daily cleaning checklists and monthly hygiene reports.
+  - generic [ref=e199]:
+    - generic [ref=e200]:
+      - paragraph [ref=e201]: Our Expertise
+      - heading "Industries Served" [level=2] [ref=e202]
+    - generic [ref=e203]:
+      - generic [ref=e204]: Corporate Offices
+      - generic [ref=e205]: IT Parks
+      - generic [ref=e206]: Healthcare
+      - generic [ref=e207]: Retail & Malls
+      - generic [ref=e208]: Hotels & Hospitality
+      - generic [ref=e209]: Warehouses
+      - generic [ref=e210]: Manufacturing
+  - generic [ref=e213]:
+    - generic [ref=e214]:
+      - paragraph [ref=e215]: Got Questions?
+      - heading "Frequently Asked Questions" [level=2] [ref=e216]
+    - generic [ref=e217]:
+      - generic [ref=e218]:
+        - button "Does Kargar provide housekeeping services in Pune?" [expanded] [ref=e219]
+        - generic [ref=e224]: Yes. Kargar Business Services is based in Baner, Pune, and provides professional housekeeping services for corporate offices and commercial facilities across the city.
+      - generic [ref=e226]:
+        - button "Does Kargar provide housekeeping staff for corporate offices?" [ref=e227]
+        - generic: Yes, we provide trained housekeeping staff for corporate offices, commercial facilities, and workplace environments, with regular supervision and quality checks.
+      - generic [ref=e233]:
+        - button "What is included in daily housekeeping?" [ref=e234]
+        - generic: Tasks include emptying trash, vacuuming, mopping, cleaning restrooms, and wiping surfaces.
+      - generic [ref=e240]:
+        - button "Do you use eco-friendly cleaning products?" [ref=e241]
+        - generic: Yes, we prioritize the use of environmentally friendly and non-toxic cleaning solutions.
+      - generic [ref=e247]:
+        - button "Are your housekeeping staff background-checked?" [ref=e248]
+        - generic: Absolutely. All our personnel undergo thorough police verification and background checks.
+      - generic [ref=e254]:
+        - button "How can I request housekeeping services in Pune?" [ref=e255]
+        - generic: You can request a housekeeping service quote through our contact page, and our team will follow up to understand your facility's requirements.
+      - generic [ref=e261]:
+        - button "Does Kargar provide commercial and industrial housekeeping services?" [ref=e262]
+        - generic: Yes. Beyond corporate offices, our housekeeping teams support commercial facilities such as retail spaces and hotels, as well as industrial environments including manufacturing plants and warehouses.
+      - generic [ref=e268]:
+        - button "Do you provide housekeeping services in PCMC and other parts of the Pune metropolitan region?" [ref=e269]
+        - generic: Yes. Operating out of Baner, Pune, we serve corporate and industrial facilities across Pune and the wider Pune Metropolitan Region, including PCMC.
+      - generic [ref=e275]:
+        - button "What information do you need to prepare a housekeeping services proposal?" [ref=e276]
+        - generic: Typically your facility type, site size, operating hours, and current staffing needs. Share these through our contact page and our team will follow up with a tailored proposal.
+  - generic [ref=e284]:
+    - generic [ref=e285]:
+      - paragraph [ref=e286]: Discover More
+      - heading "Related Services" [level=2] [ref=e287]
+    - link [ref=e289] [cursor=pointer]:
+      - /url: /services/soft-services/security-services
+      - generic [ref=e290]:
+        - heading "Security Services" [level=3] [ref=e296]
+        - paragraph [ref=e297]: Comprehensive manned guarding and surveillance solutions.
+        - generic [ref=e298]: Learn More
+  - generic [ref=e306]:
+    - heading "Professional Housekeeping Services in Pune" [level=2] [ref=e307]
+    - paragraph [ref=e308]: Partner with Kargar to ensure your enterprise operations run smoothly, safely, and efficiently. Our experts are ready to design a tailored solution for your specific needs.
+    - link "Request a Consultation" [ref=e309] [cursor=pointer]:
+      - /url: /contact-us?category=soft&service=housekeeping&source=cta_section&cta_position=bottom#contact-form

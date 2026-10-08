@@ -5,7 +5,7 @@ import { Container } from '@/components/ui/Container';
 import { Button, buttonVariants } from '@/components/ui/Button';
 import { ManagedImage } from '@/features/media/components/ManagedImage';
 import { useManagedVideo } from '@/features/media/hooks/useManagedImage';
-import { contactDetails, telHref } from '@/config/contact';
+import { useBusinessPhone } from '@/hooks/useBusinessPhone';
 import { Breadcrumb } from './Breadcrumb';
 import { useContactNavigation } from '../hooks/useContactNavigation';
 import { useServices } from '../hooks/useServices';
@@ -17,7 +17,8 @@ import type { Category, Service } from '../domain/service.types';
 
 export const HeroSection = memo(function HeroSection({ entity, block }: ServiceBlockProps) {
   const image = serviceImages[entity.imageKey] ?? serviceImages.hardServices;
-  const { navigateToContact, buildContactUrl } = useContactNavigation();
+  const { navigateToContact, contactHref } = useContactNavigation();
+  const phone = useBusinessPhone();
   const { getCategory } = useServices();
   const { doc, isDownloading, handleDownload } = useDocument('brochure', {
     page: typeof window !== 'undefined' ? window.location.pathname : '',
@@ -53,7 +54,7 @@ export const HeroSection = memo(function HeroSection({ entity, block }: ServiceB
       <Container size="xl" className="relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <div className="min-w-0 max-w-2xl">
           <div className="mb-6 text-white/80 [&_a]:text-white/80 [&_span]:text-white">
-            <Breadcrumb items={breadcrumbs} className="[scrollbar-width:none] [&::-webkit-scrollbar]:hidden" />
+            <Breadcrumb items={breadcrumbs} tone="dark" className="[scrollbar-width:none] [&::-webkit-scrollbar]:hidden" />
           </div>
 
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-300">{eyebrow}</p>
@@ -75,15 +76,15 @@ export const HeroSection = memo(function HeroSection({ entity, block }: ServiceB
           <div className="flex flex-wrap gap-4">
             <Link
               className={buttonVariants({ variant: 'primary', size: 'lg', className: 'shadow-lg hover:shadow-orange-500/20' })}
-              to={buildContactUrl(contactOptions)}
+              to={contactHref}
               onClick={(e) => { navigateToContact(contactOptions, e); }}
             >
               Request a Proposal
             </Link>
             <a
-              href={telHref(contactDetails.phone)}
+              href={phone.href}
               className={buttonVariants({ variant: 'outline', size: 'lg', className: 'text-white border-white/40 hover:bg-white/10 hover:text-white' })}
-              aria-label={`Talk to our team: call ${contactDetails.phone.display}`}
+              aria-label={`Talk to our team: call ${phone.display}`}
             >
               <Phone className="mr-2 h-4 w-4" aria-hidden="true" />
               Talk to Our Team

@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 import { serviceImages } from '../config/images';
 import { memo } from 'react';
 import { useContactNavigation } from '../hooks/useContactNavigation';
-import { buildContactUrl } from '../utils/contactNavigation';
+import { CONTACT_LINK_HREF } from '../utils/contactNavigation';
 
 export interface ServiceCategoryCardProps {
   category: Category;
@@ -131,10 +131,9 @@ export const ServiceCategoryCard = memo(function ServiceCategoryCard({
             <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
           </Link>
           <a 
-            href={buildContactUrl({ source: `category_card_${category.id}`, category: category.id })}
+            href={CONTACT_LINK_HREF}
             onClick={(e) => {
-              e.preventDefault();
-              navigateToContact({ source: `category_card_${category.id}`, category: category.id });
+              navigateToContact({ source: `category_card_${category.id}`, category: category.id }, e);
             }}
             className="flex-1 flex items-center justify-center py-2.5 px-4 bg-orange-50 hover:bg-orange-100 text-orange-600 text-sm font-bold transition-colors rounded-xl cursor-pointer"
           >

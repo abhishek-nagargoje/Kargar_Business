@@ -33,7 +33,7 @@ export function SectionHeading({
   return (
     <div className={clsx('max-w-3xl mb-12', alignments[align], className)} {...props}>
       {eyebrow && (
-        <p className="mb-3 font-semibold uppercase tracking-wider text-sm text-orange-500">
+        <p className={clsx('mb-3 font-semibold uppercase tracking-wider text-sm', dark ? 'text-orange-400' : 'text-orange-600')}>
           {eyebrow}
         </p>
       )}

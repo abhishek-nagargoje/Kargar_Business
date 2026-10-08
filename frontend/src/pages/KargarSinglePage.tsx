@@ -28,6 +28,7 @@ import { BrandLogo } from '@/components/ui/BrandLogo';
 import { SocialLinks } from '@/components/ui/SocialLinks';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { submitContactMessage } from '@/services/contact.service';
+import { useBusinessPhone } from '@/hooks/useBusinessPhone';
 import { ReviewsSection } from '@/features/reviews/components/ReviewsSection';
 import { TrustedClientsSection } from '@/features/reviews/components/TrustedClientsSection';
 import { ServicesSection } from '@/features/home/components/ServicesSection';
@@ -41,6 +42,8 @@ import { SEO } from '@/components/seo/SEO';
 import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { getSeoEntry } from '@/features/seo/registry';
 import { PuneServicesLinksSection } from '@/features/pune-landing/components/PuneServicesLinksSection';
+import { clusterPages, clusters, punePagesByPath } from '@/features/pune-landing/config/punePages';
+import { guidePageList } from '@/features/resources/config/guides';
 import { trackFormSubmission } from '@/lib/analytics';
 
 const CountUp =
@@ -114,6 +117,8 @@ const operatingCities = ['Mumbai', 'Pune', 'Delhi', 'Bengaluru', 'Hyderabad'];
 function isActiveRoute(currentPath: string, href: string) {
   if (href === '/') return currentPath === '/';
   if (href === '/contact-us') return currentPath === '/contact-us' || currentPath === '/contact';
+  // Category/service detail pages and the Pune service pages all sit under "Services" in the IA.
+  if (href === '/services') return currentPath === '/services' || currentPath.startsWith('/services/') || currentPath in punePagesByPath;
   return currentPath === href;
 }
 
@@ -158,7 +163,9 @@ function KargarButton({
 export function Header({ activePath }: { activePath: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const contactPage = activePath === '/contact' || activePath === '/contact-us';
-  const { navigateToContact, buildContactUrl } = useContactNavigation();
+  const { navigateToContact, contactHref } = useContactNavigation();
+  const topbarPhone = useBusinessPhone(contactPage ? '+91 78218 44591' : '+91-7821844591');
+  const navPhone = useBusinessPhone('+91-7821844591');
 
   return (
     <header className="kb-header">
@@ -167,7 +174,7 @@ export function Header({ activePath }: { activePath: string }) {
           <div className="kb-topbar__left">
             <a href="mailto:bd@kargar.co.in"><Mail size={15} /> bd@kargar.co.in</a>
             <span aria-hidden="true" />
-            <a href="tel:+917821844591"><Phone size={15} /> {contactPage ? '+91 78218 44591' : '+91-7821844591'}</a>
+            <a href={topbarPhone.href}><Phone size={15} /> {topbarPhone.display}</a>
             <span aria-hidden="true" />
             {contactPage ? (
               <a href="#contact-form"><Clock size={15} /> Mon - Sat: 09:00 AM - 06:00 PM</a>
@@ -199,14 +206,14 @@ export function Header({ activePath }: { activePath: string }) {
           </nav>
 
           <div className="kb-nav__actions">
-            <a className="kb-call" href="tel:+917821844591">
+            <a className="kb-call" href={navPhone.href}>
               <span><Phone size={24} /></span>
               <small>Call for More Information</small>
-              <strong>+91-7821844591</strong>
+              <strong>{navPhone.display}</strong>
             </a>
             <Link 
               className="kb-btn kb-btn--primary"
-              to={buildContactUrl({ source: 'header', ctaPosition: 'navbar' })}
+              to={contactHref}
               onClick={(e) => { setIsOpen(false); navigateToContact({ source: 'header', ctaPosition: 'navbar' }, e); }}
             >
               Request Proposal
@@ -229,7 +236,7 @@ export function Header({ activePath }: { activePath: string }) {
 }
 
 function HomeHero() {
-  const { navigateToContact, buildContactUrl } = useContactNavigation();
+  const { navigateToContact, contactHref } = useContactNavigation();
   return (
     <section className="kb-home-hero" id="home">
       <img className="kb-home-hero__image" src="/images/page/hero-building.webp" alt="" aria-hidden="true" />
@@ -249,7 +256,7 @@ function HomeHero() {
             <KargarButton href="/services" variant="dark">Explore Services</KargarButton>
             <Link 
               className="kb-btn kb-btn--primary"
-              to={buildContactUrl({ source: 'homepage', ctaPosition: 'hero' })}
+              to={contactHref}
               onClick={(e) => { navigateToContact({ source: 'homepage', ctaPosition: 'hero' }, e); }}
             >
               Request Proposal
@@ -420,7 +427,7 @@ function StatsBand() {
 
 
 function SupportBand() {
-  const { navigateToContact, buildContactUrl } = useContactNavigation();
+  const { navigateToContact, contactHref } = useContactNavigation();
   return (
     <section className="kb-support" id="support">
       <div className="kb-container kb-support__inner">
@@ -430,7 +437,7 @@ function SupportBand() {
         </div>
         <Link 
           className="kb-btn kb-btn--primary"
-          to={buildContactUrl({ source: 'support_band', ctaPosition: 'footer-cta' })}
+          to={contactHref}
           onClick={(e) => { navigateToContact({ source: 'support_band', ctaPosition: 'footer-cta' }, e); }}
         >
           Talk to Our Team
@@ -442,6 +449,7 @@ function SupportBand() {
 }
 
 function ContactPage() {
+  const phone = useBusinessPhone();
   return (
     <section className="kb-contact-page" id="contact">
       <div className="kb-container kb-contact-grid">
@@ -470,7 +478,7 @@ function ContactPage() {
             </div>
             <div className="kb-info-list">
               <ContactInfo icon={MapPin} title="Our Office" text="301, 3rd Floor, Unity Commercial, Baner, Pune, Maharashtra 411045, India" />
-              <ContactInfo icon={Phone} title="Call Us" text="+91 78218 44591|Alternate: +91 87887 26752|Mon - Sat: 09:00 AM - 06:00 PM" />
+              <ContactInfo icon={Phone} title="Call Us" text={`${phone.display}|Alternate: +91 87887 26752|Mon - Sat: 09:00 AM - 06:00 PM`} />
               <ContactInfo icon={Mail} title="Email Us" text="bd@kargar.co.in|We'll reply as soon as possible" />
               <ContactInfo icon={Globe} title="Website" text="www.kargarbusinessservices.com|Visit our website for more information" />
             </div>
@@ -632,11 +640,51 @@ function OperationsCard() {
   );
 }
 
+/**
+ * Site-wide directory of every service, topic-cluster and guide page, generated from the same
+ * config that defines the routes — so no page can exist without being linked from every page.
+ */
+function FooterDirectory() {
+  const linkClass = 'text-gray-300 hover:text-orange-300 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm';
+  return (
+    <nav aria-label="Site directory" className="grid grid-cols-1 gap-8 border-b border-navy-800/80 pb-8 mb-6 sm:grid-cols-2 lg:grid-cols-5">
+      {clusters.map((cluster) => (
+        <div key={cluster.id}>
+          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white">{cluster.label}</h2>
+          <ul className="space-y-2 text-sm">
+            {clusterPages(cluster.id).map((page) => (
+              <li key={page.path}>
+                <Link to={page.path} className={linkClass}>{page.breadcrumbLabel}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <div>
+        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white">Company</h2>
+        <ul className="space-y-2 text-sm">
+          {[...navItems.filter((item) => item.href !== '/'), { label: 'Resources', href: '/resources' }].map((item) => (
+            <li key={item.href}>
+              <Link to={item.href} className={linkClass}>{item.label}</Link>
+            </li>
+          ))}
+          {guidePageList.map((guide) => (
+            <li key={guide.path}>
+              <Link to={guide.path} className={linkClass}>{guide.breadcrumbLabel}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
+}
+
 export function Footer() {
   const navigate = useNavigate();
   return (
     <footer className="bg-navy-950 text-gray-300 pt-8 pb-6 border-t border-navy-800/80">
       <div className="kb-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FooterDirectory />
         {/* Main Footer Row: Brand Area (40-45%) & Social Media Area (55-60%) */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-6">
           {/* Left Area: Logo & Fazier Badge */}

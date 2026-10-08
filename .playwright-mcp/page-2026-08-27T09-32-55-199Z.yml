@@ -1,0 +1,78 @@
+- generic [ref=f2e4]:
+  - generic [ref=f2e6]:
+    - img "Soft services — housekeeping, pantry, and waste management" [ref=f2e10]
+    - generic [ref=f2e12]:
+      - generic [ref=f2e13]:
+        - navigation "Breadcrumb" [ref=f2e15]:
+          - link "Home" [ref=f2e16] [cursor=pointer]:
+            - /url: /
+          - link "Services" [ref=f2e24] [cursor=pointer]:
+            - /url: /services
+          - generic [ref=f2e25]: Soft Services
+        - heading "Soft Services" [level=1] [ref=f2e29]
+        - paragraph [ref=f2e30]: Professional cleaning, security, and facility support services.
+        - generic [ref=f2e31]:
+          - link "Request Proposal" [ref=f2e32] [cursor=pointer]:
+            - /url: /contact-us?service=soft-services&source=hero&cta_position=hero#contact-form
+          - button "Download Brochure" [ref=f2e33]
+      - generic [ref=f2e34]:
+        - generic [ref=f2e35]:
+          - heading "99%" [level=3] [ref=f2e36]
+          - paragraph [ref=f2e37]: SLA Compliance Rate
+        - generic [ref=f2e38]:
+          - heading "24/7" [level=3] [ref=f2e39]
+          - paragraph [ref=f2e40]: Emergency Support
+  - generic [ref=f2e44]:
+    - generic [ref=f2e45]:
+      - generic [ref=f2e47]:
+        - text: "0"
+        - generic [ref=f2e48]: +
+      - generic [ref=f2e49]: Trained Staff
+    - generic [ref=f2e50]:
+      - generic [ref=f2e52]:
+        - text: "0"
+        - generic [ref=f2e53]: M+
+      - generic [ref=f2e54]: Sq. Ft. Managed
+    - generic [ref=f2e55]:
+      - generic [ref=f2e57]:
+        - text: "0"
+        - generic [ref=f2e58]: /7
+      - generic [ref=f2e59]: Support Available
+  - generic [ref=f2e62]:
+    - generic [ref=f2e63]:
+      - paragraph [ref=f2e64]: Soft Services
+      - heading "Business Overview" [level=2] [ref=f2e65]
+    - paragraph [ref=f2e66]: Our Soft Services create a clean, safe, and welcoming environment for your employees and visitors. From professional housekeeping and deep cleaning to comprehensive security and pest control, we handle the day-to-day services that enhance the quality of your workspace. Our trained staff ensures high standards of hygiene and safety across all your facilities.
+  - generic [ref=f2e69]:
+    - generic [ref=f2e70]:
+      - paragraph [ref=f2e71]: What We Offer
+      - heading "Included Services" [level=2] [ref=f2e72]
+    - generic [ref=f2e73]:
+      - link [ref=f2e74] [cursor=pointer]:
+        - /url: /services/soft-services/housekeeping
+        - generic [ref=f2e75]:
+          - heading "Housekeeping Services" [level=3] [ref=f2e81]
+          - paragraph [ref=f2e82]: Professional housekeeping services in Pune for corporate offices and commercial facilities.
+          - generic [ref=f2e83]: Learn More
+      - link [ref=f2e86] [cursor=pointer]:
+        - /url: /services/soft-services/security-services
+        - generic [ref=f2e87]:
+          - heading "Security Services" [level=3] [ref=f2e93]
+          - paragraph [ref=f2e94]: Comprehensive manned guarding and surveillance solutions.
+          - generic [ref=f2e95]: Learn More
+  - generic [ref=f2e100]:
+    - generic [ref=f2e101]:
+      - paragraph [ref=f2e102]: Our Expertise
+      - heading "Industries Served" [level=2] [ref=f2e103]
+    - generic [ref=f2e104]:
+      - generic [ref=f2e105]: Corporate Offices
+      - generic [ref=f2e106]: IT Parks
+      - generic [ref=f2e107]: Healthcare
+      - generic [ref=f2e108]: Retail & Malls
+      - generic [ref=f2e109]: Hotels & Hospitality
+      - generic [ref=f2e110]: Warehouses
+  - generic [ref=f2e116]:
+    - heading "Ready to Optimize Your Facility?" [level=2] [ref=f2e117]
+    - paragraph [ref=f2e118]: Partner with Kargar to ensure your enterprise operations run smoothly, safely, and efficiently. Our experts are ready to design a tailored solution for your specific needs.
+    - link "Request a Free Consultation" [ref=f2e119] [cursor=pointer]:
+      - /url: /contact-us?service=soft-services&source=cta_section&cta_position=bottom#contact-form

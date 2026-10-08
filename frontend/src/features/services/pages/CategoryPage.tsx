@@ -23,7 +23,7 @@ export function CategoryPage() {
   const services = getServicesByCategory(category.id);
   const heroImage = serviceImages[category.imageKey];
   const path = `/services/${category.slug}`;
-  const categoryPunePages = punePageList.filter((p) => p.serviceDetailLink.href.startsWith(`${path}/`));
+  const categoryPunePages = punePageList.filter((p) => p.serviceDetailLink?.href.startsWith(`${path}/`));
 
   return (
     <div className="kargar-site kb-site">

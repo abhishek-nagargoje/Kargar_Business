@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router';
 import type { ContactNavigationOptions } from '../domain/navigation.types';
-import { buildContactUrl } from '../utils/contactNavigation';
+import { buildContactUrl, CONTACT_LINK_HREF } from '../utils/contactNavigation';
 
 /**
  * Layer 2: React Hook for Contact Navigation
@@ -54,5 +54,5 @@ export function useContactNavigation() {
     [navigate, location.pathname]
   );
 
-  return { navigateToContact, buildContactUrl };
+  return { navigateToContact, buildContactUrl, contactHref: CONTACT_LINK_HREF };
 }

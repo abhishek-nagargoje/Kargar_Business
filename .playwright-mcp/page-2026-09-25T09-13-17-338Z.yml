@@ -1,0 +1,209 @@
+- generic [ref=f2e3]:
+  - banner [ref=f2e4]:
+    - generic [ref=f2e7]:
+      - link "bd@kargar.co.in" [ref=f2e8] [cursor=pointer]:
+        - /url: mailto:bd@kargar.co.in
+      - link "+91-7821844591" [ref=f2e13] [cursor=pointer]:
+        - /url: tel:+917821844591
+      - link "+91-8788726752" [ref=f2e17] [cursor=pointer]:
+        - /url: tel:+918788726752
+    - generic [ref=f2e21]:
+      - link "KARGAR Facility Management home" [ref=f2e22] [cursor=pointer]:
+        - /url: /
+        - img "KARGAR - Window to a Cleaner World" [ref=f2e24]
+      - navigation "Main navigation" [ref=f2e25]:
+        - link "Home" [ref=f2e27] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=f2e29] [cursor=pointer]:
+          - /url: /services
+        - link "Sectors" [ref=f2e31] [cursor=pointer]:
+          - /url: /sectors
+        - link "Company Profile" [ref=f2e33] [cursor=pointer]:
+          - /url: /company-profile
+        - link "Support" [ref=f2e35] [cursor=pointer]:
+          - /url: /support
+        - link "Contact Us" [ref=f2e37] [cursor=pointer]:
+          - /url: /contact-us
+      - generic [ref=f2e38]:
+        - link "Call for More Information +91-7821844591" [ref=f2e39] [cursor=pointer]:
+          - /url: tel:+917821844591
+          - generic [ref=f2e43]: Call for More Information
+          - strong [ref=f2e44]: +91-7821844591
+        - link "Request Proposal" [ref=f2e45] [cursor=pointer]:
+          - /url: /contact-us?source=header&cta_position=navbar#contact-form
+  - main [ref=f2e48]:
+    - generic [ref=f2e50]:
+      - generic [ref=f2e54]:
+        - generic [ref=f2e55]:
+          - navigation "Breadcrumb" [ref=f2e57]:
+            - link "Home" [ref=f2e58] [cursor=pointer]:
+              - /url: /
+            - link "Services" [ref=f2e66] [cursor=pointer]:
+              - /url: /services
+            - link "Soft Services" [ref=f2e70] [cursor=pointer]:
+              - /url: /services/soft-services
+            - generic [ref=f2e71]: Security Services
+          - paragraph [ref=f2e75]: Soft Services
+          - heading "Security Services" [level=1] [ref=f2e76]
+          - paragraph [ref=f2e77]: Uncompromising Protection for Your Business.
+          - paragraph [ref=f2e78]: Deter threats and ensure peace of mind with our highly trained security personnel.
+          - generic [ref=f2e79]:
+            - link "Request a Proposal" [ref=f2e80] [cursor=pointer]:
+              - /url: /contact-us?category=soft&service=security-services&source=hero&cta_position=hero#contact-form
+            - 'link "Talk to our team: call +91 78218 44591" [ref=f2e81] [cursor=pointer]':
+              - /url: tel:+917821844591
+              - text: Talk to Our Team
+            - button "Download Brochure" [ref=f2e84]
+        - img "Security Services" [ref=f2e277]
+      - generic [ref=f2e280]:
+        - generic [ref=f2e281]:
+          - paragraph [ref=f2e282]: Real Service Work
+          - heading "Security Services at Work" [level=2] [ref=f2e283]
+          - paragraph [ref=f2e284]: Photos and videos of KARGAR teams delivering security services on site.
+        - region "Security Services media" [ref=f2e285]:
+          - generic [ref=f2e286]:
+            - 'button "View larger: 5" [ref=f2e326]':
+              - img "5" [ref=f2e327]
+              - generic [ref=f2e290]: View larger
+            - button "Previous media" [ref=f2e300]
+            - button "Next media" [ref=f2e303]
+          - generic [ref=f2e306]:
+            - paragraph [ref=f2e307]: DSC04444
+            - paragraph [ref=f2e308]:
+              - text: 5 of 5
+              - generic [ref=f2e309]: ": 5"
+          - list "Security Services media thumbnails" [ref=f2e310]:
+            - listitem [ref=f2e311]:
+              - 'button "Show image 1 of 5: Security Services" [ref=f2e312]'
+            - listitem [ref=f2e314]:
+              - 'button "Show image 2 of 5: 2" [ref=f2e315]'
+            - listitem [ref=f2e317]:
+              - 'button "Show image 3 of 5: 3" [ref=f2e318]'
+            - listitem [ref=f2e320]:
+              - 'button "Show image 4 of 5: 4" [ref=f2e321]'
+            - listitem [ref=f2e323]:
+              - 'button "Show image 5 of 5: 5" [active] [ref=f2e324]'
+      - generic [ref=f2e90]:
+        - generic [ref=f2e91]:
+          - paragraph [ref=f2e92]: Security Services
+          - heading "Business Overview" [level=2] [ref=f2e93]
+        - paragraph [ref=f2e94]: Safeguard your assets, employees, and visitors with our robust security services. We offer highly trained security personnel, access control management, and surveillance monitoring. Our proactive approach to security ensures a safe environment, deterring potential threats and providing rapid response to any incidents.
+      - generic [ref=f2e97]:
+        - generic [ref=f2e98]:
+          - paragraph [ref=f2e99]: What We Do
+          - heading "Scope of Work" [level=2] [ref=f2e100]
+        - list [ref=f2e101]:
+          - listitem [ref=f2e102]:
+            - generic [aria-hidden] [ref=f2e104]: "1"
+            - generic [ref=f2e106]:
+              - heading "Manned Guarding" [level=3] [ref=f2e107]
+              - paragraph [ref=f2e108]: Trained security officers for static guarding and patrols.
+          - listitem [ref=f2e109]:
+            - generic [aria-hidden] [ref=f2e111]: "2"
+            - generic [ref=f2e113]:
+              - heading "Access Control" [level=3] [ref=f2e114]
+              - paragraph [ref=f2e115]: Managing entry and exit points to prevent unauthorized access.
+          - listitem [ref=f2e116]:
+            - generic [aria-hidden] [ref=f2e118]: "3"
+            - generic [ref=f2e120]:
+              - heading "CCTV Monitoring" [level=3] [ref=f2e121]
+              - paragraph [ref=f2e122]: 24/7 surveillance monitoring and incident recording.
+          - listitem [ref=f2e123]:
+            - generic [aria-hidden] [ref=f2e125]: "4"
+            - generic [ref=f2e126]:
+              - heading "Emergency Response" [level=3] [ref=f2e127]
+              - paragraph [ref=f2e128]: Rapid deployment and coordination during critical incidents.
+      - generic [ref=f2e131]:
+        - generic [ref=f2e132]:
+          - paragraph [ref=f2e133]: What You Get
+          - heading "Key Benefits" [level=2] [ref=f2e134]
+        - generic [ref=f2e135]:
+          - generic [ref=f2e136]:
+            - heading "Vetted Professionals" [level=3] [ref=f2e141]
+            - paragraph [ref=f2e142]: Strict background checks and psychological profiling.
+          - generic [ref=f2e143]:
+            - heading "Advanced Training" [level=3] [ref=f2e147]
+            - paragraph [ref=f2e148]: Trained in conflict resolution and emergency response.
+          - generic [ref=f2e149]:
+            - heading "Rapid Deployment" [level=3] [ref=f2e153]
+            - paragraph [ref=f2e154]: Quickly scale security presence based on threat levels.
+      - generic [ref=f2e157]:
+        - generic [ref=f2e158]:
+          - paragraph [ref=f2e159]: Got Questions?
+          - heading "Frequently Asked Questions" [level=2] [ref=f2e160]
+        - generic [ref=f2e161]:
+          - generic [ref=f2e162]:
+            - button "Are your security guards armed or unarmed?" [expanded] [ref=f2e163]
+            - generic [ref=f2e168]: We primarily provide unarmed personnel, but armed guards can be arranged depending on regulations.
+          - generic [ref=f2e170]:
+            - button "Do you offer 24/7 security coverage?" [ref=f2e171]
+            - generic: Yes, we provide round-the-clock security services.
+          - generic [ref=f2e177]:
+            - button "What is your response protocol for emergencies?" [ref=f2e178]
+            - generic: Immediate containment, coordination with local authorities, and rapid incident reporting.
+      - generic [ref=f2e186]:
+        - generic [ref=f2e187]:
+          - paragraph [ref=f2e188]: Discover More
+          - heading "Related Services" [level=2] [ref=f2e189]
+        - link [ref=f2e191] [cursor=pointer]:
+          - /url: /services/soft-services/housekeeping
+          - generic [ref=f2e192]:
+            - heading "Housekeeping Services" [level=3] [ref=f2e198]
+            - paragraph [ref=f2e199]: Professional housekeeping services in Pune for corporate offices and commercial facilities.
+            - generic [ref=f2e200]: Learn More
+      - generic [ref=f2e208]:
+        - heading "Need Security Services for your facility?" [level=2] [ref=f2e209]
+        - paragraph [ref=f2e210]: Talk to the KARGAR team about your requirements. Our experts are ready to design a tailored solution for your specific needs.
+        - generic [ref=f2e211]:
+          - link "Request a Proposal" [ref=f2e212] [cursor=pointer]:
+            - /url: /contact-us?category=soft&service=security-services&source=cta_section&cta_position=bottom#contact-form
+          - link "Contact Us" [ref=f2e213] [cursor=pointer]:
+            - /url: /contact-us
+        - generic [ref=f2e214]:
+          - generic [ref=f2e219]:
+            - paragraph [ref=f2e220]: Call Us
+            - paragraph [ref=f2e221]:
+              - link "+91 78218 44591" [ref=f2e222] [cursor=pointer]:
+                - /url: tel:+917821844591
+              - text: ·
+              - link "+91 87887 26752" [ref=f2e223] [cursor=pointer]:
+                - /url: tel:+918788726752
+            - paragraph [ref=f2e224]: "Mon - Sat: 09:00 AM - 06:00 PM"
+          - generic [ref=f2e230]:
+            - paragraph [ref=f2e231]: Email Us
+            - paragraph [ref=f2e232]:
+              - link "bd@kargar.co.in" [ref=f2e233] [cursor=pointer]:
+                - /url: mailto:bd@kargar.co.in
+    - paragraph [ref=f2e236]:
+      - text: Looking for security services specifically in Pune? See our
+      - link "Security Services in Pune" [ref=f2e237] [cursor=pointer]:
+        - /url: /security-services-pune
+      - text: page for local coverage and FAQs.
+  - contentinfo [ref=f2e238]:
+    - generic [ref=f2e239]:
+      - generic [ref=f2e240]:
+        - generic [ref=f2e241]:
+          - generic "KARGAR Admin Portal Trigger" [ref=f2e242] [cursor=pointer]:
+            - img "KARGAR - Window to a Cleaner World" [ref=f2e244]
+          - link "KARGAR Facility Management on Fazier":
+            - /url: https://fazier.com/launches/www.kargarbusinessservices.com
+            - img "KARGAR Facility Management on Fazier"
+        - navigation "Social Media Links" [ref=f2e247]:
+          - generic [ref=f2e248]: FOLLOW US
+          - generic [ref=f2e251]:
+            - link "Follow KARGAR on Instagram" [ref=f2e252] [cursor=pointer]:
+              - /url: https://www.instagram.com/kargar.facility/
+              - generic [ref=f2e257]: Instagram
+            - link "Follow KARGAR on Facebook" [ref=f2e258] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/
+              - generic [ref=f2e262]: Facebook
+            - link "Follow KARGAR on LinkedIn" [ref=f2e263] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/?viewAsMember=true
+              - generic [ref=f2e267]: LinkedIn
+            - link "Follow KARGAR on X" [ref=f2e268] [cursor=pointer]:
+              - /url: https://x.com/Kargar_Business
+              - generic [ref=f2e272]: X
+      - paragraph [ref=f2e275]:
+        - text: © 2026 KARGAR Facility Management. All rights reserved.
+        - link "Privacy Policy" [ref=f2e276] [cursor=pointer]:
+          - /url: /privacy-policy

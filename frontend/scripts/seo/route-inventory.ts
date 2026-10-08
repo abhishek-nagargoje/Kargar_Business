@@ -1,5 +1,7 @@
 import { seoRegistry } from '../../src/features/seo/registry';
 import { serviceCategories, allServices } from '../../src/features/services/config';
+import { punePageList } from '../../src/features/pune-landing/config/punePages';
+import { guidePageList } from '../../src/features/resources/config/guides';
 import { STATIC_ROUTES, buildCanonicalUrl, PAGE_IMAGES } from './seo.config';
 
 export interface RoutePage {
@@ -10,7 +12,7 @@ export interface RoutePage {
   canonical: string;
   noindex: boolean;
   image?: { src: string; alt: string };
-  type: 'static' | 'category' | 'service';
+  type: 'static' | 'category' | 'service' | 'landing' | 'guide';
   hasFaqs: boolean;
 }
 
@@ -35,6 +37,34 @@ export function buildRouteInventory(): RoutePage[] {
       image: PAGE_IMAGES[path],
       type: 'static',
       hasFaqs: false,
+    });
+  }
+
+  for (const page of punePageList) {
+    pages.push({
+      path: page.path,
+      title: page.seo.title,
+      description: page.seo.description,
+      keywords: page.seo.keywords,
+      canonical: buildCanonicalUrl(page.path),
+      noindex: false,
+      image: PAGE_IMAGES[page.path],
+      type: 'landing',
+      hasFaqs: page.faqs.length > 0,
+    });
+  }
+
+  for (const guide of guidePageList) {
+    pages.push({
+      path: guide.path,
+      title: guide.seo.title,
+      description: guide.seo.description,
+      keywords: guide.seo.keywords,
+      canonical: buildCanonicalUrl(guide.path),
+      noindex: false,
+      image: PAGE_IMAGES[guide.path],
+      type: 'guide',
+      hasFaqs: Boolean(guide.faqs?.length),
     });
   }
 

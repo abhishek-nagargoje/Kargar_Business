@@ -7,157 +7,251 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.kargarbusinessservices.com/images/page/hero-building.webp</image:loc>
-      <image:title>Kargar facility management hero building</image:title>
+      <image:title>Modern glass office building at dusk</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/services</loc>
     <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.kargarbusinessservices.com/images/page/services-hero.webp</image:loc>
-      <image:title>Kargar integrated facility management services</image:title>
+      <image:title>Bright office lobby with a cleaner operating a floor machine</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/sectors</loc>
     <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/company-profile</loc>
     <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/support</loc>
     <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/contact-us</loc>
     <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/privacy-policy</loc>
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/resources</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/housekeeping-services-pune</loc>
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.kargarbusinessservices.com/images/services/housekeeping-services.webp</image:loc>
-      <image:title>Housekeeping staff cleaning a corporate office in Pune</image:title>
-    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.kargarbusinessservices.com/security-services-pune</loc>
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.kargarbusinessservices.com/commercial-housekeeping-services-pune</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.kargarbusinessservices.com/images/services/security-services.webp</image:loc>
-      <image:title>Trained security guard on duty at a Pune corporate facility</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://www.kargarbusinessservices.com/electrical-maintenance-services-pune</loc>
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.kargarbusinessservices.com/corporate-housekeeping-services-pune</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.kargarbusinessservices.com/images/services/hard-services.webp</image:loc>
-      <image:title>Electrical maintenance technician servicing an LT panel in Pune</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://www.kargarbusinessservices.com/hvac-maintenance-services-pune</loc>
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.kargarbusinessservices.com/office-housekeeping-services-pune</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.kargarbusinessservices.com/images/services/hard-services.webp</image:loc>
-      <image:title>HVAC technician servicing a commercial cooling system in Pune</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/society-housekeeping-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/housekeeping-staff-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/industrial-housekeeping-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/school-housekeeping-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/healthcare-housekeeping-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/facility-management-company-pune</loc>
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/facility-management-for-societies-pune</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.kargarbusinessservices.com/images/page/hero-building.webp</image:loc>
-      <image:title>KARGAR Facility Management office building in Baner, Pune</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/office-facility-management-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/commercial-facility-management-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/facility-staffing-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/facility-maintenance-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/electrical-maintenance-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/hvac-maintenance-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/plumbing-maintenance-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/building-maintenance-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/stp-operation-maintenance-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/landscaping-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/security-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/society-security-services-pune</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/resources/how-to-choose-a-housekeeping-company-pune</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/resources/office-housekeeping-checklist</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/resources/housekeeping-cost-pune</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.kargarbusinessservices.com/resources/how-many-housekeeping-staff</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/services/hard-services</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.kargarbusinessservices.com/images/services/hard-services.webp</image:loc>
-      <image:title>Hard services — electrical, HVAC, and plumbing maintenance</image:title>
+      <image:title>Technicians in safety gear inspecting an electrical panel and plant-room equipment</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/services/soft-services</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.kargarbusinessservices.com/images/services/soft-services.webp</image:loc>
-      <image:title>Soft services — housekeeping, pantry, and waste management</image:title>
+      <image:title>Cleaning staff wiping desks and mopping the floor of an open-plan office</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/services/hard-services/electrical-maintenance</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.kargarbusinessservices.com/images/services/hard-services.webp</image:loc>
-      <image:title>Enterprise electrical maintenance and HT panels</image:title>
+      <image:title>Technicians in safety gear inspecting an electrical panel and plant-room equipment</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/services/hard-services/hvac-maintenance</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.kargarbusinessservices.com/images/services/hard-services.webp</image:loc>
-      <image:title>Commercial HVAC and chiller maintenance</image:title>
+      <image:title>Technicians in safety gear inspecting an electrical panel and plant-room equipment</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/services/soft-services/housekeeping</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.kargarbusinessservices.com/images/services/housekeeping-services.webp</image:loc>
-      <image:title>Corporate housekeeping and deep cleaning</image:title>
+      <image:title>Cleaning staff operating floor scrubbers in a marble-floored office lobby</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.kargarbusinessservices.com/services/soft-services/security-services</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.kargarbusinessservices.com/images/services/security-services.webp</image:loc>
-      <image:title>Corporate security and manned guarding</image:title>
+      <image:title>Uniformed security officer standing at the glass entrance of an office building</image:title>
     </image:image>
   </url>
 </urlset>

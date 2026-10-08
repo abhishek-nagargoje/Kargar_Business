@@ -1,0 +1,169 @@
+- generic [ref=f3e3]:
+  - banner [ref=f3e4]:
+    - generic [ref=f3e7]:
+      - link "bd@kargar.co.in" [ref=f3e8] [cursor=pointer]:
+        - /url: mailto:bd@kargar.co.in
+      - link "+91 78218 44591" [ref=f3e13] [cursor=pointer]:
+        - /url: tel:+917821844591
+      - 'link "Mon - Sat: 09:00 AM - 06:00 PM" [ref=f3e17] [cursor=pointer]':
+        - /url: "#contact-form"
+    - generic [ref=f3e22]:
+      - link "KARGAR Facility Management home" [ref=f3e23] [cursor=pointer]:
+        - /url: /
+        - img "KARGAR - Window to a Cleaner World" [ref=f3e25]
+      - navigation "Main navigation" [ref=f3e26]:
+        - link "Home" [ref=f3e28] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=f3e30] [cursor=pointer]:
+          - /url: /services
+        - link "Sectors" [ref=f3e32] [cursor=pointer]:
+          - /url: /sectors
+        - link "Company Profile" [ref=f3e34] [cursor=pointer]:
+          - /url: /company-profile
+        - link "Support" [ref=f3e36] [cursor=pointer]:
+          - /url: /support
+        - link "Contact Us" [ref=f3e38] [cursor=pointer]:
+          - /url: /contact-us
+      - generic [ref=f3e39]:
+        - link "Call for More Information +91-7821844591" [ref=f3e40] [cursor=pointer]:
+          - /url: tel:+917821844591
+          - generic [ref=f3e44]: Call for More Information
+          - strong [ref=f3e45]: +91-7821844591
+        - link "Request Proposal" [ref=f3e46] [cursor=pointer]:
+          - /url: /contact-us?source=header&cta_position=navbar#contact-form
+  - main [ref=f3e49]:
+    - generic [ref=f3e51]:
+      - generic [ref=f3e52]:
+        - generic [ref=f3e53]:
+          - link "Home" [ref=f3e54] [cursor=pointer]:
+            - /url: /
+          - generic [ref=f3e55]: ›
+          - strong [ref=f3e56]: Contact Us
+        - heading "Get in Touch We're Here to Help!" [level=1] [ref=f3e57]:
+          - text: Get in Touch
+          - generic [ref=f3e58]: We're Here to Help!
+        - paragraph [ref=f3e59]: Have a question, need a proposal, or want to learn more about our facility management solutions? Our team is ready to assist you.
+        - generic [ref=f3e60]:
+          - article [ref=f3e61]:
+            - generic [ref=f3e65]:
+              - strong [ref=f3e66]: Quick Response
+              - generic [ref=f3e67]: We aim to respond within 24 hours
+          - article [ref=f3e68]:
+            - generic [ref=f3e75]:
+              - strong [ref=f3e76]: Expert Support
+              - generic [ref=f3e77]: Talk to our facility management experts
+          - article [ref=f3e78]:
+            - generic [ref=f3e83]:
+              - strong [ref=f3e84]: Trusted Partner
+              - generic [ref=f3e85]: Reliable solutions for your business
+        - generic [ref=f3e86]:
+          - generic [ref=f3e87]:
+            - heading "Get in Touch" [level=2] [ref=f3e88]
+            - paragraph [ref=f3e89]: Reach out to us using any of the following channels.
+            - img "Modern KARGAR office building" [ref=f3e90]
+          - generic [ref=f3e91]:
+            - article [ref=f3e92]:
+              - generic [ref=f3e97]:
+                - strong [ref=f3e98]: Our Office
+                - paragraph [ref=f3e99]: 301, 3rd Floor, Unity Commercial, Baner, Pune, Maharashtra 411045, India
+            - article [ref=f3e100]:
+              - generic [ref=f3e104]:
+                - strong [ref=f3e105]: Call Us
+                - paragraph [ref=f3e106]: +91 78218 44591
+                - paragraph [ref=f3e107]: "Alternate: +91 87887 26752"
+                - paragraph [ref=f3e108]: "Mon - Sat: 09:00 AM - 06:00 PM"
+            - article [ref=f3e109]:
+              - generic [ref=f3e114]:
+                - strong [ref=f3e115]: Email Us
+                - paragraph [ref=f3e116]: bd@kargar.co.in
+                - paragraph [ref=f3e117]: We'll reply as soon as possible
+            - article [ref=f3e118]:
+              - generic [ref=f3e123]:
+                - strong [ref=f3e124]: Website
+                - paragraph [ref=f3e125]: www.kargarbusinessservices.com
+                - paragraph [ref=f3e126]: Visit our website for more information
+        - generic "Office area map preview" [ref=f3e127]:
+          - generic [ref=f3e128]: Baner
+          - generic [ref=f3e129]: Pashan Rd
+          - generic [ref=f3e130]: Balewadi High Street
+      - generic [ref=f3e134]:
+        - generic [ref=f3e135]:
+          - heading "Send Us a Message" [level=2] [ref=f3e136]
+          - paragraph [ref=f3e137]: Fill out the form below and we'll get back to you shortly.
+          - generic [ref=f3e138]:
+            - generic [ref=f3e139]:
+              - text: Full Name
+              - generic [ref=f3e140]: "*"
+              - textbox "Full Name *" [ref=f3e141]:
+                - /placeholder: Enter your full name
+            - generic [ref=f3e142]:
+              - text: Email Address
+              - generic [ref=f3e143]: "*"
+              - textbox "Email Address *" [ref=f3e144]:
+                - /placeholder: Enter your email address
+            - generic [ref=f3e145]:
+              - text: Phone Number
+              - generic [ref=f3e146]: "*"
+              - textbox "Phone Number *" [ref=f3e147]:
+                - /placeholder: Enter your phone number
+            - generic [ref=f3e148]:
+              - text: Company Name
+              - generic [ref=f3e149]: "*"
+              - textbox "Company Name *" [ref=f3e150]:
+                - /placeholder: Enter your company name
+          - generic [ref=f3e151]:
+            - text: Subject
+            - generic [ref=f3e152]: "*"
+            - textbox "Subject *" [ref=f3e153]:
+              - /placeholder: How can we help you?
+          - generic [ref=f3e154]:
+            - text: Message
+            - generic [ref=f3e155]: "*"
+            - textbox "Message *" [ref=f3e156]:
+              - /placeholder: Type your message here...
+          - button "Send Message" [ref=f3e157] [cursor=pointer]
+          - generic [ref=f3e161]: We respect your privacy. Your information is safe with us.
+        - generic [ref=f3e165]:
+          - heading "We Operate Across India" [level=2] [ref=f3e166]
+          - paragraph [ref=f3e167]: With a strong presence in 50+ sites across 5+ cities, we are always close to you.
+          - generic [ref=f3e168]:
+            - article [ref=f3e169]:
+              - strong [ref=f3e174]: Mumbai
+            - article [ref=f3e175]:
+              - strong [ref=f3e180]: Pune
+            - article [ref=f3e181]:
+              - strong [ref=f3e186]: Delhi
+            - article [ref=f3e187]:
+              - strong [ref=f3e192]: Bengaluru
+            - article [ref=f3e193]:
+              - strong [ref=f3e198]: Hyderabad
+          - link "View All Locations" [ref=f3e199] [cursor=pointer]:
+            - /url: /sectors
+  - contentinfo [ref=f3e202]:
+    - generic [ref=f3e203]:
+      - generic [ref=f3e204]:
+        - generic [ref=f3e205]:
+          - generic "KARGAR Admin Portal Trigger" [ref=f3e206] [cursor=pointer]:
+            - img "KARGAR - Window to a Cleaner World" [ref=f3e208]
+          - link "KARGAR Facility Management on Fazier":
+            - /url: https://fazier.com/launches/www.kargarbusinessservices.com
+            - img "KARGAR Facility Management on Fazier"
+        - navigation "Social Media Links" [ref=f3e211]:
+          - generic [ref=f3e212]: FOLLOW US
+          - generic [ref=f3e215]:
+            - link "Follow KARGAR on Instagram" [ref=f3e216] [cursor=pointer]:
+              - /url: https://www.instagram.com/kargar.facility/
+              - generic [ref=f3e221]: Instagram
+            - link "Follow KARGAR on Facebook" [ref=f3e222] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/
+              - generic [ref=f3e226]: Facebook
+            - link "Follow KARGAR on LinkedIn" [ref=f3e227] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/?viewAsMember=true
+              - generic [ref=f3e231]: LinkedIn
+            - link "Follow KARGAR on X" [ref=f3e232] [cursor=pointer]:
+              - /url: https://x.com/Kargar_Business
+              - generic [ref=f3e236]: X
+      - paragraph [ref=f3e239]:
+        - text: © 2026 KARGAR Facility Management. All rights reserved.
+        - link "Privacy Policy" [ref=f3e240] [cursor=pointer]:
+          - /url: /privacy-policy

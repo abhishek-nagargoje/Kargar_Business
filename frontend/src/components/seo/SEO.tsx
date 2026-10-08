@@ -42,6 +42,8 @@ interface SEOProps {
   breadcrumbItems?: BreadcrumbItem[];
   /** Additional JSON-LD nodes (Service, FAQPage, etc.) appended to the site-wide @graph. */
   schema?: object[];
+  /** Open Graph object type — 'article' for /resources guides, 'website' everywhere else. */
+  ogType?: 'website' | 'article';
 }
 
 const DEFAULT_OG_IMAGE = `${config.siteUrl}/images/brand/kargar-logo.png`;
@@ -54,6 +56,7 @@ export function SEO({
   robots,
   breadcrumbItems = [],
   schema = [],
+  ogType = 'website',
 }: SEOProps) {
   const siteTitle = title ? `${title} | ${config.siteName}` : config.siteName;
   const metaDescription =
@@ -79,18 +82,20 @@ export function SEO({
       <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:site_name" content={config.siteName} />
+      <meta property="og:locale" content="en_IN" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:image" content={ogImage} />
 
       {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={canonicalUrl} />
-      <meta property="twitter:title" content={siteTitle} />
-      <meta property="twitter:description" content={metaDescription} />
-      <meta property="twitter:image" content={ogImage} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={canonicalUrl} />
+      <meta name="twitter:title" content={siteTitle} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:image" content={ogImage} />
 
       {/* Structured Data / JSON-LD */}
       <script type="application/ld+json">

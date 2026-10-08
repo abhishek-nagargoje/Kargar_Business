@@ -4,6 +4,8 @@ import { buildRouteInventory } from './route-inventory';
 import { STATIC_ROUTES } from './seo.config';
 
 const LINK_ATTR_RE = /\b(?:to|href)\s*=\s*"(\/[^"]*)"/g;
+// Links declared in content configs: `[anchor](/path)` InlineText and `href: '/path'` objects.
+const CONFIG_LINK_RES = [/\]\((\/[^)\s]*)\)/g, /\bhref:\s*'(\/[^']*)'/g];
 // Template-literal links (e.g. `to={`/services/${category.slug}`}`) can't be resolved to an
 // exact path by this regex-based scanner, but their presence still matters for the orphan/
 // crawl-depth report — count them separately rather than silently under-reporting real links.
@@ -15,7 +17,7 @@ function listSourceFiles(dir: string): string[] {
     const fullPath = `${dir}/${entry}`;
     const stats = statSync(fullPath);
     if (stats.isDirectory()) files.push(...listSourceFiles(fullPath));
-    else if (/\.(tsx|jsx)$/.test(entry)) files.push(fullPath);
+    else if (/\.(tsx|jsx|ts)$/.test(entry) && !entry.endsWith('.d.ts')) files.push(fullPath);
   }
   return files;
 }
@@ -51,11 +53,15 @@ export function checkLinks(srcDir: string): LinkCheckResult {
   let dynamicServiceLinkSites = 0;
 
   for (const file of listSourceFiles(srcDir)) {
-    const source = readFileSync(file, 'utf8');
+    const raw = readFileSync(file, 'utf8');
+    // Strip comments from plain .ts files so documentation examples aren't treated as links.
+    const source = file.endsWith('.ts') ? raw.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '') : raw;
     let match: RegExpExecArray | null;
 
-    LINK_ATTR_RE.lastIndex = 0;
-    while ((match = LINK_ATTR_RE.exec(source))) {
+    const patterns = file.endsWith('.ts') ? CONFIG_LINK_RES : [LINK_ATTR_RE];
+    for (const pattern of patterns) {
+    pattern.lastIndex = 0;
+    while ((match = pattern.exec(source))) {
       const rawPath = match[1] ?? '';
       const path = rawPath.split('?')[0]?.split('#')[0] ?? rawPath;
       if (!path) continue;
@@ -66,6 +72,7 @@ export function checkLinks(srcDir: string): LinkCheckResult {
         const relFile = file.split(/[/\\]src[/\\]/)[1] ? `src/${file.split(/[/\\]src[/\\]/)[1]}` : file;
         errors.push(`${relFile}: links to unknown route "${path}"`);
       }
+    }
     }
 
     dynamicServiceLinkSites += source.match(DYNAMIC_SERVICES_LINK_RE)?.length ?? 0;

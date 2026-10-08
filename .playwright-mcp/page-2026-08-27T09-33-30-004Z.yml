@@ -1,0 +1,73 @@
+- generic [ref=f4e3]:
+  - banner [ref=f4e4]:
+    - generic [ref=f4e7]:
+      - link "bd@kargar.co.in" [ref=f4e8] [cursor=pointer]:
+        - /url: mailto:bd@kargar.co.in
+      - link "+91-8788726752" [ref=f4e13] [cursor=pointer]:
+        - /url: tel:+918788726752
+      - link "+91-9226903010" [ref=f4e17] [cursor=pointer]:
+        - /url: tel:+919226903010
+    - generic [ref=f4e21]:
+      - link "Kargar home" [ref=f4e22] [cursor=pointer]:
+        - /url: /
+        - img "Kargar - Window to a Cleaner World" [ref=f4e24]
+      - button "Toggle navigation" [ref=f4e26]
+  - main [ref=f4e28]:
+    - generic [ref=f4e33]:
+      - generic [ref=f4e34]:
+        - link "Home" [ref=f4e35] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f4e36]: ›
+        - strong [ref=f4e37]: Sectors
+      - paragraph [ref=f4e38]: Sectors We Serve
+      - heading "Facility Management Across Diverse Sectors" [level=1] [ref=f4e39]:
+        - text: Facility Management
+        - generic [ref=f4e40]: Across Diverse Sectors
+      - paragraph [ref=f4e41]:
+        - text: Kargar delivers
+        - link "facility management solutions" [ref=f4e42] [cursor=pointer]:
+          - /url: /services
+        - text: across IT parks, manufacturing plants, corporate offices, healthcare facilities, retail spaces, and more, including
+        - link "corporate and industrial housekeeping services" [ref=f4e43] [cursor=pointer]:
+          - /url: /services/soft-services/housekeeping
+        - text: — each supported with sector-specific service standards.
+    - generic [ref=f4e45]:
+      - heading "Diverse sectors. Tailored solutions." [level=2] [ref=f4e47]
+      - generic [ref=f4e48]:
+        - generic [ref=f4e53] [cursor=pointer]:
+          - heading "IT Parks" [level=3] [ref=f4e59]
+          - paragraph [ref=f4e60]: High-performance facility services for modern IT campuses.
+        - generic [ref=f4e68] [cursor=pointer]:
+          - heading "Manufacturing" [level=3] [ref=f4e72]
+          - paragraph [ref=f4e73]: Safe, efficient & reliable support for industrial operations.
+        - generic [ref=f4e81] [cursor=pointer]:
+          - heading "Airport Lounges" [level=3] [ref=f4e85]
+          - paragraph [ref=f4e86]: Premium housekeeping and facility management for airport spaces.
+        - generic [ref=f4e94] [cursor=pointer]:
+          - heading "Corporate Offices" [level=3] [ref=f4e99]
+          - paragraph [ref=f4e100]: Smart, professional & seamless facility management for offices.
+        - generic [ref=f4e108] [cursor=pointer]:
+          - heading "Healthcare" [level=3] [ref=f4e112]
+          - paragraph [ref=f4e113]: Hygienic, safe & compliant facility solutions for hospitals.
+        - generic [ref=f4e121] [cursor=pointer]:
+          - heading "Retail & Malls" [level=3] [ref=f4e126]
+          - paragraph [ref=f4e127]: Clean, customer-friendly environments that elevate experience.
+        - generic [ref=f4e135] [cursor=pointer]:
+          - heading "Warehouses" [level=3] [ref=f4e141]
+          - paragraph [ref=f4e142]: Efficient operations with organized and safe facility support.
+        - generic [ref=f4e150] [cursor=pointer]:
+          - heading "Hotels & Hospitality" [level=3] [ref=f4e154]
+          - paragraph [ref=f4e155]: Exceptional housekeeping and guest experience support.
+    - generic [ref=f4e160]:
+      - generic [ref=f4e161]:
+        - paragraph [ref=f4e162]: Support
+        - heading "Fast response. Expert coordination. Reliable follow-through." [level=2] [ref=f4e163]
+      - link "Talk to Our Team" [ref=f4e164] [cursor=pointer]:
+        - /url: /contact-us?source=support_band&cta_position=footer-cta#contact-form
+  - contentinfo [ref=f4e167]:
+    - generic [ref=f4e168]:
+      - img "Kargar - Window to a Cleaner World" [ref=f4e171] [cursor=pointer]
+      - link "Kargar Business Services on Fazier" [ref=f4e173] [cursor=pointer]:
+        - /url: https://fazier.com/launches/www.kargarbusinessservices.com
+        - img "Kargar Business Services on Fazier" [ref=f4e174]
+      - generic [ref=f4e175]: Copyright 2026 Kargar Business Services. All rights reserved.

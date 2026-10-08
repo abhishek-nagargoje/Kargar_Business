@@ -4,9 +4,11 @@ import { SEO } from '@/components/seo/SEO';
 import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { getSeoEntry } from '@/features/seo/registry';
 import { ShieldCheck, Mail, MapPin, Phone, Lock } from 'lucide-react';
+import { useBusinessPhone } from '@/hooks/useBusinessPhone';
 
 export function PrivacyPolicyPage() {
   const seoEntry = getSeoEntry('/privacy-policy');
+  const phone = useBusinessPhone();
 
   return (
     <div className="kargar-site kb-site">
@@ -110,7 +112,7 @@ export function PrivacyPolicyPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone size={18} className="text-amber-600 shrink-0" />
-                  <span><strong>Phone:</strong> <a href="tel:+917821844591" className="text-amber-600 hover:underline">+91 78218 44591</a></span>
+                  <span><strong>Phone:</strong> <a href={phone.href} className="text-amber-600 hover:underline">{phone.display}</a></span>
                 </div>
               </div>
             </section>

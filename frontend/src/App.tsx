@@ -6,6 +6,10 @@ import { ServicesProvider } from '@/features/services/context/ServicesProvider';
 import { CategoryPage } from '@/features/services/pages/CategoryPage';
 import { ServicePage } from '@/features/services/pages/ServicePage';
 import { PuneLandingPage } from '@/features/pune-landing/pages/PuneLandingPage';
+import { punePageList } from '@/features/pune-landing/config/punePages';
+import { ResourcesHubPage } from '@/features/resources/pages/ResourcesHubPage';
+import { GuidePage } from '@/features/resources/pages/GuidePage';
+import { guidePageList } from '@/features/resources/config/guides';
 
 /** Lazy-loaded admin routes for code splitting */
 const AdminLoginPage = lazy(() => import('@/features/admin/pages/AdminLoginPage'));
@@ -48,11 +52,14 @@ export default function App() {
           <Route path="/support" element={<KargarSinglePage />} />
           <Route path="/contact-us" element={<KargarSinglePage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/housekeeping-services-pune" element={<PuneLandingPage />} />
-          <Route path="/security-services-pune" element={<PuneLandingPage />} />
-          <Route path="/electrical-maintenance-services-pune" element={<PuneLandingPage />} />
-          <Route path="/hvac-maintenance-services-pune" element={<PuneLandingPage />} />
-          <Route path="/facility-management-company-pune" element={<PuneLandingPage />} />
+          {/* Pune landing pages and guides are generated from their content configs (single source of truth). */}
+          {punePageList.map((page) => (
+            <Route key={page.path} path={page.path} element={<PuneLandingPage />} />
+          ))}
+          <Route path="/resources" element={<ResourcesHubPage />} />
+          {guidePageList.map((guide) => (
+            <Route key={guide.path} path={guide.path} element={<GuidePage />} />
+          ))}
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin/forgot-password" element={<ForgotPasswordPage />} />
           <Route path="/admin/update-password" element={<UpdatePasswordPage />} />

@@ -41,6 +41,12 @@ export const config = {
     /** Conversion labels from Google Ads → Goals → Conversions. Empty = conversion not sent. */
     googleAdsPhoneConversionLabel: getEnvVar('VITE_GOOGLE_ADS_PHONE_CONVERSION_LABEL', ''),
     googleAdsFormConversionLabel: getEnvVar('VITE_GOOGLE_ADS_FORM_CONVERSION_LABEL', ''),
+    /**
+     * "Calls from website visits" conversion (`AW-…/label`) and the number it tracks, exactly as
+     * entered in that Google Ads conversion action. Empty conversion = no forwarding number.
+     */
+    googleAdsCallConversion: getEnvVar('VITE_GOOGLE_ADS_CALL_CONVERSION', 'AW-18494930780/DQNpCILlqpUdENz-iPNE'),
+    googleAdsCallNumber: '7821844591',
     gtmId: getEnvVar('VITE_GTM_ID', ''),
     clarityId: getEnvVar('VITE_CLARITY_ID', ''),
     hotjarId: getEnvVar('VITE_HOTJAR_ID', ''),

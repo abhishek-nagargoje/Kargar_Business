@@ -1,0 +1,286 @@
+- generic [ref=f3e3]:
+  - banner [ref=f3e4]:
+    - generic [ref=f3e7]:
+      - link "bd@kargar.co.in" [ref=f3e8] [cursor=pointer]:
+        - /url: mailto:bd@kargar.co.in
+      - link "+91-8788726752" [ref=f3e13] [cursor=pointer]:
+        - /url: tel:+918788726752
+      - link "+91-9226903010" [ref=f3e17] [cursor=pointer]:
+        - /url: tel:+919226903010
+    - generic [ref=f3e21]:
+      - link "Kargar home" [ref=f3e22] [cursor=pointer]:
+        - /url: /
+        - img "Kargar - Window to a Cleaner World" [ref=f3e24]
+      - button "Toggle navigation" [ref=f3e26]
+  - main [ref=f3e28]:
+    - generic [ref=f3e29]:
+      - generic [ref=f3e33]:
+        - paragraph [ref=f3e34]: Integrated Facility Management Solutions
+        - heading "Reliable Facility Management Solutions that keep your Business Running Seamlessly" [level=1] [ref=f3e35]
+        - paragraph [ref=f3e36]: We deliver integrated facility management services that ensure clean, safe, efficient, and productive environments.
+        - generic [ref=f3e37]:
+          - link "Explore Services" [ref=f3e38] [cursor=pointer]:
+            - /url: /services
+          - link "Request Proposal" [ref=f3e41] [cursor=pointer]:
+            - /url: /contact-us?source=homepage&cta_position=hero#contact-form
+      - list "Kargar operational performance statistics" [ref=f3e45]:
+        - listitem "10+ Years of Experience" [ref=f3e46]:
+          - generic [ref=f3e51]:
+            - strong [ref=f3e52]: 0+
+            - generic [ref=f3e53]: Years of Experience
+        - listitem "2,000+ Skilled Workforce" [ref=f3e54]:
+          - generic [ref=f3e61]:
+            - strong [ref=f3e62]: 0+
+            - generic [ref=f3e63]: Skilled Workforce
+        - listitem "50+ Sites Managed" [ref=f3e64]:
+          - generic [ref=f3e70]:
+            - strong [ref=f3e71]: 0+
+            - generic [ref=f3e72]: Sites Managed
+        - listitem "10,000+ Happy Clients" [ref=f3e73]:
+          - generic [ref=f3e78]:
+            - strong [ref=f3e79]: 0+
+            - generic [ref=f3e80]: Happy Clients
+    - region [ref=f3e81]:
+      - generic [ref=f3e83]:
+        - paragraph [ref=f3e84]: Trusted By
+        - heading "500+ Businesses" [level=2] [ref=f3e89]
+        - paragraph [ref=f3e90]: Trusted across real estate, healthcare, education, manufacturing, and corporate workplaces.
+    - generic [ref=f3e106]:
+      - generic [ref=f3e107]:
+        - paragraph [ref=f3e108]: What We Offer
+        - heading "Our Integrated Facility Management Services" [level=2] [ref=f3e109]
+      - generic [ref=f3e110]:
+        - generic [ref=f3e113]:
+          - generic [ref=f3e114]:
+            - img "Hard services — electrical, HVAC, and plumbing maintenance" [ref=f3e116]
+            - generic [ref=f3e132]:
+              - heading "Hard Services" [level=3] [ref=f3e133]
+              - paragraph [ref=f3e134]: 2 Integrated Services
+          - generic [ref=f3e135]:
+            - paragraph [ref=f3e136]: Reliable engineering and maintenance solutions for seamless operations.
+            - generic [ref=f3e137]:
+              - generic [ref=f3e138]:
+                - generic [ref=f3e139]: Most Requested
+                - list [ref=f3e140]:
+                  - listitem [ref=f3e141]:
+                    - generic [ref=f3e142]: ✓
+                    - text: Electrical Maintenance
+                  - listitem [ref=f3e143]:
+                    - generic [ref=f3e144]: ✓
+                    - text: HVAC Maintenance
+              - generic [ref=f3e145]:
+                - generic [ref=f3e146]: Key Metrics
+                - list [ref=f3e147]:
+                  - listitem [ref=f3e148]:
+                    - generic [ref=f3e149]: 25+
+                    - generic [ref=f3e150]: Years Experience
+                  - listitem [ref=f3e151]:
+                    - generic [ref=f3e152]: 150+
+                    - generic [ref=f3e153]: Engineers
+                - generic [ref=f3e154]: Top Industries
+                - list [ref=f3e155]:
+                  - listitem [ref=f3e156]: Corporate Offices
+                  - listitem [ref=f3e158]: IT Parks
+                  - listitem [ref=f3e160]: Manufacturing
+            - generic [ref=f3e162]:
+              - link "Explore Hard Services" [ref=f3e163] [cursor=pointer]:
+                - /url: /services/hard-services
+              - link "Request Proposal" [ref=f3e167] [cursor=pointer]:
+                - /url: /contact-us?category=hard&source=category_card_hard#contact-form
+        - generic [ref=f3e171]:
+          - generic [ref=f3e172]:
+            - img "Soft services — housekeeping, pantry, and waste management" [ref=f3e174]
+            - generic [ref=f3e191]:
+              - heading "Soft Services" [level=3] [ref=f3e192]
+              - paragraph [ref=f3e193]: 2 Integrated Services
+          - generic [ref=f3e194]:
+            - paragraph [ref=f3e195]: Professional cleaning, security, and facility support services.
+            - generic [ref=f3e196]:
+              - generic [ref=f3e197]:
+                - generic [ref=f3e198]: Most Requested
+                - list [ref=f3e199]:
+                  - listitem [ref=f3e200]:
+                    - generic [ref=f3e201]: ✓
+                    - text: Housekeeping Services
+                  - listitem [ref=f3e202]:
+                    - generic [ref=f3e203]: ✓
+                    - text: Security Services
+              - generic [ref=f3e204]:
+                - generic [ref=f3e205]: Key Metrics
+                - list [ref=f3e206]:
+                  - listitem [ref=f3e207]:
+                    - generic [ref=f3e208]: 500+
+                    - generic [ref=f3e209]: Trained Staff
+                  - listitem [ref=f3e210]:
+                    - generic [ref=f3e211]: 5M+
+                    - generic [ref=f3e212]: Sq. Ft. Managed
+                - generic [ref=f3e213]: Top Industries
+                - list [ref=f3e214]:
+                  - listitem [ref=f3e215]: Corporate Offices
+                  - listitem [ref=f3e217]: IT Parks
+                  - listitem [ref=f3e219]: Healthcare
+            - generic [ref=f3e221]:
+              - link "Explore Soft Services" [ref=f3e222] [cursor=pointer]:
+                - /url: /services/soft-services
+              - link "Request Proposal" [ref=f3e226] [cursor=pointer]:
+                - /url: /contact-us?category=soft&source=category_card_soft#contact-form
+    - generic [ref=f3e229]:
+      - generic [ref=f3e230]:
+        - generic [ref=f3e231]: COMPANY PROFILE
+        - heading "Facility teams that keep operations moving" [level=2] [ref=f3e232]
+        - paragraph [ref=f3e233]:
+          - text: Kargar Business Services delivers integrated facility management across soft services,
+          - link "hard services" [ref=f3e234] [cursor=pointer]:
+            - /url: /services/hard-services
+          - text: ", security, and support operations, including"
+          - link "professional housekeeping services in Pune" [ref=f3e235] [cursor=pointer]:
+            - /url: /services/soft-services/housekeeping
+          - text: ", with trained teams and dependable processes."
+      - generic [ref=f3e236]:
+        - generic [ref=f3e238]:
+          - generic [ref=f3e243]:
+            - generic [ref=f3e244]: Kargar
+            - generic [ref=f3e251]: Window to a Cleaner World
+          - generic [ref=f3e255]:
+            - generic [ref=f3e256]:
+              - generic [ref=f3e257]: Official Document
+              - heading "Company Profile" [level=3] [ref=f3e262]
+              - paragraph [ref=f3e263]: Discover our journey, core values, service capabilities, key industries, and the commitment that drives excellence in everything we do.
+              - generic [ref=f3e264]:
+                - generic [ref=f3e270]:
+                  - generic [ref=f3e271]: PDF
+                  - generic [ref=f3e272]: Format
+                - generic [ref=f3e278]:
+                  - generic [ref=f3e279]: 2.4 MB
+                  - generic [ref=f3e280]: File Size
+                - generic [ref=f3e286]:
+                  - generic [ref=f3e287]: v1.2
+                  - generic [ref=f3e288]: Version
+                - generic [ref=f3e294]:
+                  - generic [ref=f3e295]: 2026-07-15
+                  - generic [ref=f3e296]: Last Updated
+              - generic [ref=f3e297]:
+                - button "Preview" [ref=f3e298]
+                - button "Download PDF" [ref=f3e302]
+                - button "Share document link" [ref=f3e306]: Share Link
+            - generic [ref=f3e313]:
+              - generic [ref=f3e319]:
+                - generic [ref=f3e320]: Trusted by 100+ organizations
+                - generic [ref=f3e321]: Delivering excellence. Building trust. Creating impact.
+              - generic [ref=f3e322]:
+                - generic [ref=f3e323]: DLF
+                - generic [ref=f3e324]: Godrej
+                - generic [ref=f3e325]: JLL
+                - generic [ref=f3e326]: Colliers
+                - generic [ref=f3e327]: "+95"
+        - generic [ref=f3e328]:
+          - article [ref=f3e329]:
+            - generic [ref=f3e335]:
+              - heading "Quality Assured" [level=4] [ref=f3e336]
+              - paragraph [ref=f3e337]: Strict operating standards and continuous quality monitoring across every engagement.
+          - article [ref=f3e338]:
+            - generic [ref=f3e346]:
+              - heading "Verified Workforce" [level=4] [ref=f3e347]
+              - paragraph [ref=f3e348]: Trained, verified, and background-checked teams committed to safety and professionalism.
+          - article [ref=f3e349]:
+            - generic [ref=f3e355]:
+              - heading "Technology Driven" [level=4] [ref=f3e356]
+              - paragraph [ref=f3e357]: Smart processes, real-time reporting, and data-driven operations for complete transparency.
+      - generic [ref=f3e358]:
+        - generic [ref=f3e366]:
+          - generic [ref=f3e367]: 150+
+          - generic [ref=f3e368]: Expert Workforce
+        - generic [ref=f3e376]:
+          - generic [ref=f3e377]: 100+
+          - generic [ref=f3e378]: Happy Clients
+        - generic [ref=f3e385]:
+          - generic [ref=f3e386]: 25+
+          - generic [ref=f3e387]: Cities Covered
+        - generic [ref=f3e394]:
+          - generic [ref=f3e395]: 10+
+          - generic [ref=f3e396]: Years of Excellence
+    - generic [ref=f3e398]:
+      - heading "Diverse sectors. Tailored solutions." [level=2] [ref=f3e400]
+      - generic [ref=f3e401]:
+        - generic [ref=f3e406] [cursor=pointer]:
+          - heading "IT Parks" [level=3] [ref=f3e412]
+          - paragraph [ref=f3e413]: High-performance facility services for modern IT campuses.
+        - generic [ref=f3e421] [cursor=pointer]:
+          - heading "Manufacturing" [level=3] [ref=f3e425]
+          - paragraph [ref=f3e426]: Safe, efficient & reliable support for industrial operations.
+        - generic [ref=f3e434] [cursor=pointer]:
+          - heading "Airport Lounges" [level=3] [ref=f3e438]
+          - paragraph [ref=f3e439]: Premium housekeeping and facility management for airport spaces.
+        - generic [ref=f3e447] [cursor=pointer]:
+          - heading "Corporate Offices" [level=3] [ref=f3e452]
+          - paragraph [ref=f3e453]: Smart, professional & seamless facility management for offices.
+        - generic [ref=f3e461] [cursor=pointer]:
+          - heading "Healthcare" [level=3] [ref=f3e465]
+          - paragraph [ref=f3e466]: Hygienic, safe & compliant facility solutions for hospitals.
+        - generic [ref=f3e474] [cursor=pointer]:
+          - heading "Retail & Malls" [level=3] [ref=f3e479]
+          - paragraph [ref=f3e480]: Clean, customer-friendly environments that elevate experience.
+        - generic [ref=f3e488] [cursor=pointer]:
+          - heading "Warehouses" [level=3] [ref=f3e494]
+          - paragraph [ref=f3e495]: Efficient operations with organized and safe facility support.
+        - generic [ref=f3e503] [cursor=pointer]:
+          - heading "Hotels & Hospitality" [level=3] [ref=f3e507]
+          - paragraph [ref=f3e508]: Exceptional housekeeping and guest experience support.
+    - generic [ref=f3e513]:
+      - generic [ref=f3e514]:
+        - generic [ref=f3e515]: Trusted by 500+ Businesses
+        - heading "What Our Clients Say" [level=2] [ref=f3e516]
+        - paragraph [ref=f3e517]: Real experiences from real businesses. We take pride in delivering reliable, consistent, and exceptional facility management services.
+      - generic [ref=f3e520]:
+        - textbox "Search reviews by company, name, or keyword..." [ref=f3e524]
+        - generic [ref=f3e525]:
+          - combobox "Filter by rating" [ref=f3e529]:
+            - option "All Ratings" [selected]
+            - option "5 Stars"
+            - option "4 Stars"
+            - option "3 Stars"
+          - combobox "Sort reviews" [ref=f3e533]:
+            - option "Featured First" [selected]
+            - option "Newest First"
+            - option "Highest Rated"
+      - generic [ref=f3e535]:
+        - separator [ref=f3e550]
+        - separator [ref=f3e570]
+        - separator [ref=f3e590]
+      - generic [ref=f3e596]:
+        - generic [ref=f3e599]:
+          - generic [ref=f3e600]:
+            - generic [ref=f3e612]:
+              - text: "4.9"
+              - generic [ref=f3e613]: /5
+            - paragraph [ref=f3e614]: Average Rating
+          - generic [ref=f3e615]:
+            - generic [ref=f3e620]:
+              - text: "200"
+              - generic [ref=f3e621]: +
+            - paragraph [ref=f3e622]: Verified Reviews
+          - generic [ref=f3e623]:
+            - generic [ref=f3e628]:
+              - text: "0"
+              - generic [ref=f3e629]: +
+            - paragraph [ref=f3e630]: Projects Completed
+          - generic [ref=f3e631]:
+            - generic [ref=f3e638]:
+              - text: "0"
+              - generic [ref=f3e639]: +
+            - paragraph [ref=f3e640]: Enterprise Clients
+        - button "Write a Review" [ref=f3e642]
+    - generic [ref=f3e648]:
+      - generic [ref=f3e649]:
+        - paragraph [ref=f3e650]: Support
+        - heading "Fast response. Expert coordination. Reliable follow-through." [level=2] [ref=f3e651]
+      - link "Talk to Our Team" [ref=f3e652] [cursor=pointer]:
+        - /url: /contact-us?source=support_band&cta_position=footer-cta#contact-form
+  - contentinfo [ref=f3e655]:
+    - generic [ref=f3e656]:
+      - img "Kargar - Window to a Cleaner World" [ref=f3e659] [cursor=pointer]
+      - generic:
+        - link "Kargar Business Services on Fazier":
+          - /url: https://fazier.com/launches/www.kargarbusinessservices.com
+          - img "Kargar Business Services on Fazier"
+      - generic [ref=f3e660]: Copyright 2026 Kargar Business Services. All rights reserved.

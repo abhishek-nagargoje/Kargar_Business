@@ -25,11 +25,11 @@ export function mergeRedirects(existing: VercelConfig): VercelConfig {
     destination: `/${routeToStaticFile(page.path)}`,
   }));
 
-  // Parameter patterns for any future dynamic category/service route not yet in the
-  // inventory, and the admin portal, fall back to the CSR shell (client-side routed).
+  // Only the admin portal falls back to the CSR shell. There is deliberately NO catch-all for
+  // /services/:categoryId(/:serviceId): every real category/service page is in the inventory and
+  // rewritten above, and a pattern fallback made unknown URLs like /services/foo return the SPA
+  // shell with HTTP 200 (a soft 404). Unmatched paths now get dist/404.html with a real 404.
   rewrites.push(
-    { source: '/services/:categoryId', destination: '/index.html' },
-    { source: '/services/:categoryId/:serviceId', destination: '/index.html' },
     { source: '/admin', destination: '/index.html' },
     { source: '/admin/(.*)', destination: '/index.html' },
   );

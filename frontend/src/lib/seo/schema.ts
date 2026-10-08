@@ -14,8 +14,11 @@ export function buildOrganizationSchema() {
     '@type': 'Organization',
     '@id': ORGANIZATION_ID,
     name: config.siteName,
+    // Registered name as printed on the Company Brochure (public/assets/documents).
+    legalName: 'Kargar Business Services Pvt. Ltd.',
     url: config.siteUrl,
     logo: LOGO_URL,
+    email: contactDetails.email,
     // Documented in KARGAR's Company Profile (p.17). Plain text only — schema.org has no
     // verifiable award type, and no other recognition is asserted here.
     award: 'Punyashlok Ahilya Devi Holkar Woman Startup Award (2024)',
@@ -39,6 +42,20 @@ export function buildLocalBusinessSchema() {
     url: config.siteUrl,
     image: LOGO_URL,
     telephone: contactDetails.phone.e164,
+    email: contactDetails.email,
+    parentOrganization: { '@id': ORGANIZATION_ID },
+    // Hours as published on the contact page (contactDetails.hours) — keep the two in sync.
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+    // Service area as stated on-site (Pune and PCMC). No other branches or locations are claimed.
+    areaServed: [
+      { '@type': 'City', name: 'Pune' },
+      { '@type': 'City', name: 'Pimpri-Chinchwad' },
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: '301, 3rd Floor, Unity Commercial, Baner',
@@ -56,11 +73,10 @@ export function buildWebsiteSchema() {
     '@id': WEBSITE_ID,
     url: config.siteUrl,
     name: config.siteName,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${config.siteUrl}/services?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
+    // No SearchAction: the site has no search feature, so declaring one would describe
+    // functionality that does not exist (and invite crawling of /services?q= URLs).
+    publisher: { '@id': ORGANIZATION_ID },
+    inLanguage: 'en-IN',
   };
 }
 

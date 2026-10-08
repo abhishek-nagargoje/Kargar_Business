@@ -35,3 +35,9 @@ jobs:
 
       - name: Build Application
         run: npm run build
+
+      # Crawls the built site through the same vercel.json routing Vercel uses and fails on
+      # critical SEO regressions: missing title/description/canonical/H1, noindex or non-200
+      # sitemap URLs, broken internal links, canonical pointing at a non-200 URL.
+      - name: SEO Regression Audit
+        run: npm run seo:audit -- --strict --out ../seo-audit-ci

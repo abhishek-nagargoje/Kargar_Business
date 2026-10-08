@@ -8,7 +8,7 @@ import { useContactNavigation } from '../hooks/useContactNavigation';
 import { ServiceContactStrip } from './ServiceContactStrip';
 
 export const CTASection = memo(function CTASection({ entity }: ServiceBlockProps) {
-  const { navigateToContact, buildContactUrl } = useContactNavigation();
+  const { navigateToContact, contactHref } = useContactNavigation();
 
   const isService = 'categoryId' in entity;
   const categoryId = isService ? (entity as { categoryId: string }).categoryId : undefined;
@@ -43,7 +43,7 @@ export const CTASection = memo(function CTASection({ entity }: ServiceBlockProps
         <div className="flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
           <Link
             className={buttonVariants({ variant: 'primary', size: 'lg', className: 'shadow-lg hover:shadow-orange-500/20 px-8' })}
-            to={buildContactUrl(contactOptions)}
+            to={contactHref}
             onClick={(e) => { navigateToContact(contactOptions, e); }}
           >
             Request a Proposal

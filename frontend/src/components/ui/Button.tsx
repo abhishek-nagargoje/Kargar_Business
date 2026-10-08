@@ -25,7 +25,8 @@ export function buttonVariants({ variant = 'primary', size = 'md', fullWidth, cl
 
   const variants: Record<NonNullable<ButtonProps['variant']>, ClassValue> = {
     primary:
-      'bg-orange-500 text-white hover:bg-orange-600 focus-visible:ring-orange-500 shadow-sm',
+      // orange-600 (not 500): white text on orange-500 is ~2.8:1 and fails WCAG AA for button text.
+      'bg-orange-600 text-white hover:bg-[#A33D14] focus-visible:ring-orange-600 shadow-sm',
     secondary:
       'bg-navy-800 text-white hover:bg-navy-700 focus-visible:ring-navy-800 shadow-sm',
     outline:

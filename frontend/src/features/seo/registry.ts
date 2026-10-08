@@ -13,7 +13,7 @@ const homeEntry: RouteSEOEntry = {
   path: '/',
   title: 'Facility Management Company',
   description:
-    'KARGAR is a trusted integrated facility management company delivering housekeeping, security, and maintenance services for corporate offices across India.',
+    'KARGAR is a Pune-based facility management company providing housekeeping, security and maintenance for housing societies, offices, institutes and plants.',
   keywords: ['Facility Management Company', 'Integrated Facility Management', 'Housekeeping and Security Services'],
 };
 
@@ -26,7 +26,9 @@ const adminEntry: RouteSEOEntry = {
 
 /**
  * Single source of truth for metadata on every STATIC route.
- * Dynamic service/category routes are NOT duplicated here — they already carry their
+ * Pune landing pages (features/pune-landing/config) and /resources guides
+ * (features/resources/config) carry their own `seo` field and are NOT duplicated here.
+ * Dynamic service/category routes are NOT duplicated here either — they already carry their
  * own `seo` field in features/services/config/{categories,hard-services,soft-services}.ts,
  * which stays their source of truth.
  */
@@ -79,40 +81,12 @@ export const seoRegistry: Record<string, RouteSEOEntry> = {
       'Privacy Policy for KARGAR Facility Management explaining how user enquiry and contact information submitted through this website is collected and protected.',
     keywords: ['Privacy Policy'],
   },
-  '/housekeeping-services-pune': {
-    path: '/housekeeping-services-pune',
-    title: 'Housekeeping Services in Pune',
+  '/resources': {
+    path: '/resources',
+    title: 'Facility Management Resources',
     description:
-      'Professional housekeeping services in Pune for corporate offices, IT parks, and commercial and industrial facilities, from KARGAR Facility Management.',
-    keywords: ['Housekeeping Services in Pune', 'Commercial Housekeeping Pune', 'Corporate Housekeeping Pune', 'Housekeeping Company Pune'],
-  },
-  '/security-services-pune': {
-    path: '/security-services-pune',
-    title: 'Security Services in Pune',
-    description:
-      'Trained security guards, access control, and 24/7 CCTV surveillance monitoring for corporate and industrial facilities in Pune, from KARGAR Facility Management.',
-    keywords: ['Security Services in Pune', 'Security Guard Services Pune', 'Corporate Security Pune', 'Facility Security Pune'],
-  },
-  '/electrical-maintenance-services-pune': {
-    path: '/electrical-maintenance-services-pune',
-    title: 'Electrical Maintenance Pune',
-    description:
-      'Preventive and emergency electrical maintenance for LT/HT panels, transformers, and backup generators at corporate and industrial facilities in Pune.',
-    keywords: ['Electrical Maintenance Pune', 'Electrical AMC Pune', 'LT HT Panel Maintenance Pune', 'DG Set Maintenance Pune'],
-  },
-  '/hvac-maintenance-services-pune': {
-    path: '/hvac-maintenance-services-pune',
-    title: 'HVAC Maintenance Pune',
-    description:
-      'Preventive HVAC servicing for chillers, AHUs, VRV/VRF systems, and cooling towers at facilities in Pune. Schedule service with KARGAR Facility Management.',
-    keywords: ['HVAC Maintenance Pune', 'AC Maintenance Pune', 'Chiller Maintenance Pune', 'Commercial HVAC Pune'],
-  },
-  '/facility-management-company-pune': {
-    path: '/facility-management-company-pune',
-    title: 'Facility Management Pune',
-    description:
-      'KARGAR Facility Management delivers integrated housekeeping, security, electrical, and HVAC maintenance for corporate facilities across Pune, Maharashtra.',
-    keywords: ['Facility Management Pune', 'Facility Management Company Pune', 'Integrated Facility Management Pune'],
+      'Guides from KARGAR on choosing a housekeeping company, office housekeeping checklists, housekeeping costs and staffing for Pune offices and societies.',
+    keywords: ['Facility Management Resources', 'Housekeeping Guides'],
   },
   '/404': {
     path: '/404',

@@ -1,0 +1,249 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e7]:
+      - link "bd@kargar.co.in" [ref=e8] [cursor=pointer]:
+        - /url: mailto:bd@kargar.co.in
+      - link "+91-7821844591" [ref=e13] [cursor=pointer]:
+        - /url: tel:+917821844591
+      - link "+91-8788726752" [ref=e17] [cursor=pointer]:
+        - /url: tel:+918788726752
+    - generic [ref=e21]:
+      - link "KARGAR Facility Management home" [ref=e22] [cursor=pointer]:
+        - /url: /
+        - img "KARGAR - Window to a Cleaner World" [ref=e24]
+      - navigation "Main navigation" [ref=e25]:
+        - link "Home" [ref=e27] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=e29] [cursor=pointer]:
+          - /url: /services
+        - link "Sectors" [ref=e31] [cursor=pointer]:
+          - /url: /sectors
+        - link "Company Profile" [ref=e33] [cursor=pointer]:
+          - /url: /company-profile
+        - link "Support" [ref=e35] [cursor=pointer]:
+          - /url: /support
+        - link "Contact Us" [ref=e37] [cursor=pointer]:
+          - /url: /contact-us
+      - generic [ref=e38]:
+        - link "Call for More Information +91-7821844591" [ref=e39] [cursor=pointer]:
+          - /url: tel:+917821844591
+          - generic [ref=e43]: Call for More Information
+          - strong [ref=e44]: +91-7821844591
+        - link "Request Proposal" [ref=e45] [cursor=pointer]:
+          - /url: /contact-us?source=header&cta_position=navbar#contact-form
+  - main [ref=e48]:
+    - generic [ref=e50]:
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - navigation "Breadcrumb" [ref=e57]:
+            - link "Home" [ref=e58] [cursor=pointer]:
+              - /url: /
+            - link "Services" [ref=e66] [cursor=pointer]:
+              - /url: /services
+            - link "Soft Services" [ref=e70] [cursor=pointer]:
+              - /url: /services/soft-services
+            - generic [ref=e71]: Housekeeping Services
+          - paragraph [ref=e75]: Soft Services
+          - heading "Housekeeping Services" [level=1] [ref=e76]
+          - paragraph [ref=e77]: A Spotless, Hygienic Workplace, Every Day
+          - paragraph [ref=e78]: Ensure a spotless, hygienic, and welcoming workplace for your employees and visitors, with trained, police-verified housekeeping staff.
+          - generic [ref=e79]:
+            - link "Request a Proposal" [ref=e80] [cursor=pointer]:
+              - /url: /contact-us?category=soft&service=housekeeping&source=hero&cta_position=hero#contact-form
+            - 'link "Talk to our team: call +91 78218 44591" [ref=e81] [cursor=pointer]':
+              - /url: tel:+917821844591
+              - text: Talk to Our Team
+            - button "Download Brochure" [ref=e84]
+        - img "Housekeeping staff cleaning a corporate office lobby floor" [ref=e87]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - paragraph [ref=e92]: Housekeeping Services
+          - heading "Business Overview" [level=2] [ref=e93]
+        - paragraph [ref=e94]: KARGAR Facility Management provides professional housekeeping services for corporate offices, commercial facilities, and workplaces. We deliver comprehensive cleaning solutions tailored to each facility's needs, from daily janitorial housekeeping to specialized deep cleaning. Our trained housekeeping staff uses industry-leading equipment and eco-friendly products, backed by regular supervision, to maintain consistently high standards of cleanliness and hygiene. Our team supports office housekeeping for IT parks and corporate campuses, commercial housekeeping for retail and hospitality spaces, and industrial housekeeping for manufacturing plants and warehouses, with consistent standards across every environment.
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - paragraph [ref=e99]: What We Do
+          - heading "Scope of Work" [level=2] [ref=e100]
+        - generic [ref=e101]:
+          - generic [ref=e106]:
+            - heading "Daily Janitorial" [level=3] [ref=e107]
+            - paragraph [ref=e108]: Dusting, vacuuming, and trash removal.
+          - generic [ref=e113]:
+            - heading "Restroom Hygiene" [level=3] [ref=e114]
+            - paragraph [ref=e115]: Strict sanitization protocols to prevent cross-contamination.
+          - generic [ref=e120]:
+            - heading "Deep Cleaning" [level=3] [ref=e121]
+            - paragraph [ref=e122]: Intensive periodic cleaning for specialized surfaces.
+          - generic [ref=e127]:
+            - heading "Consumables Management" [level=3] [ref=e128]
+            - paragraph [ref=e129]: Refilling soap, paper towels, and sanitizers.
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - paragraph [ref=e134]: Measurable Results
+          - heading "Key Deliverables" [level=2] [ref=e135]
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - heading "Daily Cleaning Checklist" [level=3] [ref=e142]
+            - paragraph [ref=e143]: Signed logs of all daily cleaning tasks.
+          - generic [ref=e144]:
+            - heading "Monthly Hygiene Report" [level=3] [ref=e149]
+            - paragraph [ref=e150]: Detailed analysis of facility cleanliness.
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - paragraph [ref=e155]: The Enterprise Advantage
+          - heading "Why Choose KARGAR" [level=2] [ref=e156]
+        - generic [ref=e157]:
+          - generic [ref=e158]:
+            - heading "Eco-Friendly" [level=3] [ref=e163]
+            - paragraph [ref=e164]: We use sustainable, non-toxic cleaning agents.
+          - generic [ref=e165]:
+            - heading "Trained Personnel" [level=3] [ref=e172]
+            - paragraph [ref=e173]: Rigorous training in hospitality and hygiene.
+          - generic [ref=e174]:
+            - heading "Quality Assurance" [level=3] [ref=e179]
+            - paragraph [ref=e180]: Regular unannounced inspections by supervisors.
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - paragraph [ref=e185]: Verified & Reliable
+          - heading "Trust & Compliance" [level=2] [ref=e186]
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - heading "Verified Workforce" [level=3] [ref=e193]
+            - paragraph [ref=e194]: All housekeeping personnel undergo thorough police verification and background checks before deployment.
+          - generic [ref=e195]:
+            - heading "ISO-Aligned Processes" [level=3] [ref=e201]
+            - paragraph [ref=e202]: Housekeeping operations follow ISO process guidelines for consistent quality standards.
+          - generic [ref=e203]:
+            - heading "Structured Service Delivery" [level=3] [ref=e209]
+            - paragraph [ref=e210]: Daily cleaning checklists and monthly hygiene reports provide measurable, deliverable-driven tracking.
+      - generic [ref=e213]:
+        - generic [ref=e214]:
+          - paragraph [ref=e215]: How It Works
+          - heading "Our Process" [level=2] [ref=e216]
+        - list [ref=e217]:
+          - listitem [ref=e218]:
+            - generic [aria-hidden] [ref=e220]: "1"
+            - generic [ref=e222]:
+              - heading "Enquiry & Consultation" [level=3] [ref=e223]
+              - paragraph [ref=e224]: Share your facility's housekeeping requirements through our contact page. Our team follows up to understand your site and cleaning needs.
+          - listitem [ref=e225]:
+            - generic [aria-hidden] [ref=e227]: "2"
+            - generic [ref=e229]:
+              - heading "Service Plan & Staff Deployment" [level=3] [ref=e230]
+              - paragraph [ref=e231]: We deploy trained housekeeping staff covering daily janitorial work, restroom hygiene, deep cleaning, and consumables management based on your facility.
+          - listitem [ref=e232]:
+            - generic [aria-hidden] [ref=e234]: "3"
+            - generic [ref=e236]:
+              - heading "Ongoing Supervision" [level=3] [ref=e237]
+              - paragraph [ref=e238]: Supervisors conduct regular unannounced inspections to maintain consistent quality standards.
+          - listitem [ref=e239]:
+            - generic [aria-hidden] [ref=e241]: "4"
+            - generic [ref=e242]:
+              - heading "Reporting & Quality Tracking" [level=3] [ref=e243]
+              - paragraph [ref=e244]: Cleaning activity is tracked through daily cleaning checklists and monthly hygiene reports.
+      - generic [ref=e247]:
+        - generic [ref=e248]:
+          - paragraph [ref=e249]: Our Expertise
+          - heading "Industries Served" [level=2] [ref=e250]
+        - generic [ref=e251]:
+          - generic [ref=e252]: Corporate Offices
+          - generic [ref=e253]: IT Parks
+          - generic [ref=e254]: Healthcare
+          - generic [ref=e255]: Retail & Malls
+          - generic [ref=e256]: Hotels & Hospitality
+          - generic [ref=e257]: Warehouses
+          - generic [ref=e258]: Manufacturing
+      - generic [ref=e261]:
+        - generic [ref=e262]:
+          - paragraph [ref=e263]: Got Questions?
+          - heading "Frequently Asked Questions" [level=2] [ref=e264]
+        - generic [ref=e265]:
+          - generic [ref=e266]:
+            - button "Does KARGAR provide housekeeping staff for corporate offices?" [expanded] [ref=e267]
+            - generic [ref=e272]: Yes, we provide trained housekeeping staff for corporate offices, commercial facilities, and workplace environments, with regular supervision and quality checks.
+          - generic [ref=e274]:
+            - button "What is included in daily housekeeping?" [ref=e275]
+            - generic: Tasks include emptying trash, vacuuming, mopping, cleaning restrooms, and wiping surfaces.
+          - generic [ref=e281]:
+            - button "Do you use eco-friendly cleaning products?" [ref=e282]
+            - generic: Yes, we prioritize the use of environmentally friendly and non-toxic cleaning solutions.
+          - generic [ref=e288]:
+            - button "Are your housekeeping staff background-checked?" [ref=e289]
+            - generic: Absolutely. All our personnel undergo thorough police verification and background checks.
+          - generic [ref=e295]:
+            - button "Does KARGAR provide commercial and industrial housekeeping services?" [ref=e296]
+            - generic: Yes. Beyond corporate offices, our housekeeping teams support commercial facilities such as retail spaces and hotels, as well as industrial environments including manufacturing plants and warehouses.
+          - generic [ref=e302]:
+            - button "What information do you need to prepare a housekeeping services proposal?" [ref=e303]
+            - generic: Typically your facility type, site size, operating hours, and current staffing needs. Share these through our contact page and our team will follow up with a tailored proposal.
+      - generic [ref=e311]:
+        - generic [ref=e312]:
+          - paragraph [ref=e313]: Discover More
+          - heading "Related Services" [level=2] [ref=e314]
+        - link [ref=e316] [cursor=pointer]:
+          - /url: /services/soft-services/security-services
+          - generic [ref=e317]:
+            - heading "Security Services" [level=3] [ref=e323]
+            - paragraph [ref=e324]: Comprehensive manned guarding and surveillance solutions.
+            - generic [ref=e325]: Learn More
+      - generic [ref=e333]:
+        - heading "Need Housekeeping Services for your facility?" [level=2] [ref=e334]
+        - paragraph [ref=e335]: Talk to the KARGAR team about your requirements. Our experts are ready to design a tailored solution for your specific needs.
+        - generic [ref=e336]:
+          - link "Request a Proposal" [ref=e337] [cursor=pointer]:
+            - /url: /contact-us?category=soft&service=housekeeping&source=cta_section&cta_position=bottom#contact-form
+          - link "Contact Us" [ref=e338] [cursor=pointer]:
+            - /url: /contact-us
+        - generic [ref=e339]:
+          - generic [ref=e344]:
+            - paragraph [ref=e345]: Call Us
+            - paragraph [ref=e346]:
+              - link "+91 78218 44591" [ref=e347] [cursor=pointer]:
+                - /url: tel:+917821844591
+              - text: ·
+              - link "+91 87887 26752" [ref=e348] [cursor=pointer]:
+                - /url: tel:+918788726752
+            - paragraph [ref=e349]: "Mon - Sat: 09:00 AM - 06:00 PM"
+          - generic [ref=e355]:
+            - paragraph [ref=e356]: Email Us
+            - paragraph [ref=e357]:
+              - link "bd@kargar.co.in" [ref=e358] [cursor=pointer]:
+                - /url: mailto:bd@kargar.co.in
+        - paragraph [ref=e359]:
+          - text: Facility in Pune? See our
+          - link "housekeeping services in Pune" [ref=e360] [cursor=pointer]:
+            - /url: /housekeeping-services-pune
+          - text: page.
+    - paragraph [ref=e363]:
+      - text: Looking for housekeeping services specifically in Pune? See our
+      - link "Housekeeping Services in Pune" [ref=e364] [cursor=pointer]:
+        - /url: /housekeeping-services-pune
+      - text: page for local coverage and FAQs.
+  - contentinfo [ref=e365]:
+    - generic [ref=e366]:
+      - generic [ref=e367]:
+        - generic [ref=e368]:
+          - generic "KARGAR Admin Portal Trigger" [ref=e369] [cursor=pointer]:
+            - img "KARGAR - Window to a Cleaner World" [ref=e371]
+          - link "KARGAR Facility Management on Fazier":
+            - /url: https://fazier.com/launches/www.kargarbusinessservices.com
+            - img "KARGAR Facility Management on Fazier"
+        - navigation "Social Media Links" [ref=e374]:
+          - generic [ref=e375]: FOLLOW US
+          - generic [ref=e378]:
+            - link "Follow KARGAR on Instagram" [ref=e379] [cursor=pointer]:
+              - /url: https://www.instagram.com/kargar.facility/
+              - generic [ref=e384]: Instagram
+            - link "Follow KARGAR on Facebook" [ref=e385] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/
+              - generic [ref=e389]: Facebook
+            - link "Follow KARGAR on LinkedIn" [ref=e390] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/?viewAsMember=true
+              - generic [ref=e394]: LinkedIn
+            - link "Follow KARGAR on X" [ref=e395] [cursor=pointer]:
+              - /url: https://x.com/Kargar_Business
+              - generic [ref=e399]: X
+      - paragraph [ref=e402]:
+        - text: © 2026 KARGAR Facility Management. All rights reserved.
+        - link "Privacy Policy" [ref=e403] [cursor=pointer]:
+          - /url: /privacy-policy

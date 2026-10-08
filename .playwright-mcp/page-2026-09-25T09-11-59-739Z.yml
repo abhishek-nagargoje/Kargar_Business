@@ -1,0 +1,225 @@
+- generic [ref=f1e3]:
+  - banner [ref=f1e4]:
+    - generic [ref=f1e7]:
+      - link "bd@kargar.co.in" [ref=f1e8] [cursor=pointer]:
+        - /url: mailto:bd@kargar.co.in
+      - link "+91-7821844591" [ref=f1e13] [cursor=pointer]:
+        - /url: tel:+917821844591
+      - link "+91-8788726752" [ref=f1e17] [cursor=pointer]:
+        - /url: tel:+918788726752
+    - generic [ref=f1e21]:
+      - link "KARGAR Facility Management home" [ref=f1e22] [cursor=pointer]:
+        - /url: /
+        - img "KARGAR - Window to a Cleaner World" [ref=f1e24]
+      - navigation "Main navigation" [ref=f1e25]:
+        - link "Home" [ref=f1e27] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=f1e29] [cursor=pointer]:
+          - /url: /services
+        - link "Sectors" [ref=f1e31] [cursor=pointer]:
+          - /url: /sectors
+        - link "Company Profile" [ref=f1e33] [cursor=pointer]:
+          - /url: /company-profile
+        - link "Support" [ref=f1e35] [cursor=pointer]:
+          - /url: /support
+        - link "Contact Us" [ref=f1e37] [cursor=pointer]:
+          - /url: /contact-us
+      - generic [ref=f1e38]:
+        - link "Call for More Information +91-7821844591" [ref=f1e39] [cursor=pointer]:
+          - /url: tel:+917821844591
+          - generic [ref=f1e43]: Call for More Information
+          - strong [ref=f1e44]: +91-7821844591
+        - link "Request Proposal" [ref=f1e45] [cursor=pointer]:
+          - /url: /contact-us?source=header&cta_position=navbar#contact-form
+  - main [ref=f1e48]:
+    - generic [ref=f1e49]:
+      - generic [ref=f1e53]:
+        - paragraph [ref=f1e54]: Our Services
+        - heading "Integrated Facility Management Solutions for Every Need" [level=1] [ref=f1e55]:
+          - text: Integrated Facility Management
+          - generic [ref=f1e56]: Solutions for Every Need
+        - paragraph [ref=f1e57]: We offer comprehensive facility management services tailored to meet the unique requirements of your business. Our solutions ensure efficiency, safety, and sustainability across all your operations.
+      - generic [ref=f1e58]:
+        - article [ref=f1e59]:
+          - generic [ref=f1e66]:
+            - strong [ref=f1e67]: People First
+            - generic [ref=f1e68]: Trained & Verified Staff
+        - article [ref=f1e69]:
+          - generic [ref=f1e74]:
+            - strong [ref=f1e75]: Technology Driven
+            - generic [ref=f1e76]: Smart & Efficient Operations
+        - article [ref=f1e77]:
+          - generic [ref=f1e82]:
+            - strong [ref=f1e83]: Quality Assured
+            - generic [ref=f1e84]: Strict Quality Standards
+        - article [ref=f1e85]:
+          - generic [ref=f1e90]:
+            - strong [ref=f1e91]: Sustainable Practices
+            - generic [ref=f1e92]: Eco-friendly Solutions
+    - generic [ref=f1e94]:
+      - generic [ref=f1e95]:
+        - paragraph [ref=f1e96]: What We Offer
+        - heading "Our Facility Management Services" [level=2] [ref=f1e97]
+        - paragraph [ref=f1e98]: Explore each service to see the work our teams deliver, what is included, and how to request a proposal.
+      - generic [ref=f1e99]:
+        - generic [ref=f1e100]:
+          - generic [ref=f1e101]:
+            - generic [ref=f1e102]:
+              - heading "Hard Services" [level=3] [ref=f1e103]
+              - paragraph [ref=f1e104]: Reliable engineering and maintenance solutions for seamless operations.
+            - link "Hard Services overview" [ref=f1e105] [cursor=pointer]:
+              - /url: /services/hard-services
+          - list [ref=f1e108]:
+            - listitem [ref=f1e109]:
+              - article [ref=f1e110]:
+                - generic [ref=f1e111]:
+                  - img "Enterprise Electrical Maintenance and HT Panels" [ref=f1e113]
+                  - generic: Image
+                - generic [ref=f1e114]:
+                  - paragraph [ref=f1e119]: Hard Services
+                  - heading "Electrical Maintenance" [level=4] [ref=f1e120]
+                  - paragraph [ref=f1e121]: Comprehensive electrical system maintenance and troubleshooting.
+                  - list [ref=f1e122]:
+                    - listitem [ref=f1e123]:
+                      - generic [ref=f1e126]: Preventive Maintenance
+                    - listitem [ref=f1e127]:
+                      - generic [ref=f1e130]: Emergency Repairs
+                    - listitem [ref=f1e131]:
+                      - generic [ref=f1e134]: System Upgrades
+                  - link "Learn more about Electrical Maintenance" [ref=f1e135] [cursor=pointer]:
+                    - /url: /services/hard-services/electrical-maintenance
+                    - text: Learn More
+            - listitem [ref=f1e138]:
+              - article [ref=f1e139]:
+                - generic [ref=f1e140]:
+                  - img "Commercial HVAC and Chiller Maintenance" [ref=f1e142]
+                  - generic: Image
+                - generic [ref=f1e143]:
+                  - paragraph [ref=f1e150]: Hard Services
+                  - heading "HVAC Maintenance" [level=4] [ref=f1e151]
+                  - paragraph [ref=f1e152]: Expert heating, ventilation, and air conditioning services.
+                  - list [ref=f1e153]:
+                    - listitem [ref=f1e154]:
+                      - generic [ref=f1e157]: Scheduled Servicing
+                    - listitem [ref=f1e158]:
+                      - generic [ref=f1e161]: Air Quality Testing
+                    - listitem [ref=f1e162]:
+                      - generic [ref=f1e165]: System Balancing
+                  - link "Learn more about HVAC Maintenance" [ref=f1e166] [cursor=pointer]:
+                    - /url: /services/hard-services/hvac-maintenance
+                    - text: Learn More
+        - generic [ref=f1e169]:
+          - generic [ref=f1e170]:
+            - generic [ref=f1e171]:
+              - heading "Soft Services" [level=3] [ref=f1e172]
+              - paragraph [ref=f1e173]: Professional cleaning, security, and facility support services.
+            - link "Soft Services overview" [ref=f1e174] [cursor=pointer]:
+              - /url: /services/soft-services
+          - list [ref=f1e177]:
+            - listitem [ref=f1e178]:
+              - article [ref=f1e179]:
+                - generic [ref=f1e180]:
+                  - img "Housekeeping staff cleaning a corporate office lobby floor" [ref=f1e182]
+                  - generic: Image
+                - generic [ref=f1e183]:
+                  - paragraph [ref=f1e191]: Soft Services
+                  - heading "Housekeeping Services" [level=4] [ref=f1e192]
+                  - paragraph [ref=f1e193]: Professional housekeeping services in Pune for corporate offices and commercial facilities.
+                  - list [ref=f1e194]:
+                    - listitem [ref=f1e195]:
+                      - generic [ref=f1e198]: Daily Janitorial
+                    - listitem [ref=f1e199]:
+                      - generic [ref=f1e202]: Restroom Hygiene
+                    - listitem [ref=f1e203]:
+                      - generic [ref=f1e206]: Deep Cleaning
+                  - link "Learn more about Housekeeping Services" [ref=f1e207] [cursor=pointer]:
+                    - /url: /services/soft-services/housekeeping
+                    - text: Learn More
+            - listitem [ref=f1e210]:
+              - article [ref=f1e211]:
+                - generic [ref=f1e212]:
+                  - img "Corporate Security and Manned Guarding" [ref=f1e214]
+                  - generic: Image
+                - generic [ref=f1e215]:
+                  - paragraph [ref=f1e220]: Soft Services
+                  - heading "Security Services" [level=4] [ref=f1e221]
+                  - paragraph [ref=f1e222]: Comprehensive manned guarding and surveillance solutions.
+                  - list [ref=f1e223]:
+                    - listitem [ref=f1e224]:
+                      - generic [ref=f1e227]: Manned Guarding
+                    - listitem [ref=f1e228]:
+                      - generic [ref=f1e231]: Access Control
+                    - listitem [ref=f1e232]:
+                      - generic [ref=f1e235]: CCTV Monitoring
+                  - link "Learn more about Security Services" [ref=f1e236] [cursor=pointer]:
+                    - /url: /services/soft-services/security-services
+                    - text: Learn More
+    - generic [ref=f1e240]:
+      - generic [ref=f1e241]:
+        - paragraph [ref=f1e242]: Local Coverage
+        - heading "Facility Management Services Across Pune" [level=2] [ref=f1e243]
+      - generic [ref=f1e244]:
+        - link "Housekeeping Services in Pune" [ref=f1e245] [cursor=pointer]:
+          - /url: /housekeeping-services-pune
+        - link "Security Services in Pune" [ref=f1e249] [cursor=pointer]:
+          - /url: /security-services-pune
+        - link "Electrical Maintenance Services in Pune" [ref=f1e253] [cursor=pointer]:
+          - /url: /electrical-maintenance-services-pune
+        - link "HVAC Maintenance Services in Pune" [ref=f1e257] [cursor=pointer]:
+          - /url: /hvac-maintenance-services-pune
+        - link "Facility Management Company in Pune" [ref=f1e261] [cursor=pointer]:
+          - /url: /facility-management-company-pune
+    - generic [ref=f1e266]:
+      - article [ref=f1e267]:
+        - generic [ref=f1e272]:
+          - strong [ref=f1e273]: 10+
+          - heading "Years of Experience" [level=3] [ref=f1e274]
+          - paragraph [ref=f1e275]: Delivering excellence consistently.
+      - article [ref=f1e276]:
+        - generic [ref=f1e283]:
+          - strong [ref=f1e284]: 2,000+
+          - heading "Skilled Workforce" [level=3] [ref=f1e285]
+          - paragraph [ref=f1e286]: Trained, verified & well-equipped teams.
+      - article [ref=f1e287]:
+        - generic [ref=f1e293]:
+          - strong [ref=f1e294]: 50+
+          - heading "Sites Managed" [level=3] [ref=f1e295]
+          - paragraph [ref=f1e296]: Pan India presence with strong operational network.
+      - article [ref=f1e297]:
+        - generic [ref=f1e302]:
+          - strong [ref=f1e303]: 10,000+
+          - heading "Happy Clients" [level=3] [ref=f1e304]
+          - paragraph [ref=f1e305]: Building long-term partnerships.
+      - article [ref=f1e306]:
+        - generic [ref=f1e311]:
+          - strong [ref=f1e312]: 5+
+          - heading "Cities Pan India" [level=3] [ref=f1e313]
+          - paragraph [ref=f1e314]: Expanding our footprint across the nation.
+  - contentinfo [ref=f1e315]:
+    - generic [ref=f1e316]:
+      - generic [ref=f1e317]:
+        - generic [ref=f1e318]:
+          - generic "KARGAR Admin Portal Trigger" [ref=f1e319] [cursor=pointer]:
+            - img "KARGAR - Window to a Cleaner World" [ref=f1e321]
+          - link "KARGAR Facility Management on Fazier":
+            - /url: https://fazier.com/launches/www.kargarbusinessservices.com
+            - img "KARGAR Facility Management on Fazier"
+        - navigation "Social Media Links" [ref=f1e324]:
+          - generic [ref=f1e325]: FOLLOW US
+          - generic [ref=f1e328]:
+            - link "Follow KARGAR on Instagram" [ref=f1e329] [cursor=pointer]:
+              - /url: https://www.instagram.com/kargar.facility/
+              - generic [ref=f1e334]: Instagram
+            - link "Follow KARGAR on Facebook" [ref=f1e335] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/
+              - generic [ref=f1e339]: Facebook
+            - link "Follow KARGAR on LinkedIn" [ref=f1e340] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/?viewAsMember=true
+              - generic [ref=f1e344]: LinkedIn
+            - link "Follow KARGAR on X" [ref=f1e345] [cursor=pointer]:
+              - /url: https://x.com/Kargar_Business
+              - generic [ref=f1e349]: X
+      - paragraph [ref=f1e352]:
+        - text: © 2026 KARGAR Facility Management. All rights reserved.
+        - link "Privacy Policy" [ref=f1e353] [cursor=pointer]:
+          - /url: /privacy-policy

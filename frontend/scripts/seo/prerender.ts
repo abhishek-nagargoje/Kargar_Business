@@ -99,19 +99,28 @@ async function main() {
     const baseUrl = localUrl.replace(/\/$/, '');
     console.log(`[prerender] Preview server running at ${baseUrl}\n`);
 
-    const page = await browser.newPage();
-
     let failures = 0;
-    for (const routeEntry of inventory) {
-      const outFile = join(DIST_DIR, routeToStaticFile(routeEntry.path));
-      try {
-        await prerenderRoute(page, baseUrl, routeEntry.path, outFile);
-      } catch (error) {
-        failures += 1;
-        console.error(`[prerender] FAILED for ${routeEntry.path}:`, (error as Error).message);
-      }
-    }
+    // Each route is an independent page load in its own tab, so a small worker pool cuts wall
+    // time roughly by PRERENDER_CONCURRENCY without changing the HTML produced for any route.
+    const concurrency = Math.max(1, Number(process.env.PRERENDER_CONCURRENCY ?? 4));
+    const pending = [...inventory];
+    await Promise.all(
+      Array.from({ length: Math.min(concurrency, pending.length) }, async () => {
+        const workerPage = await browser.newPage();
+        for (let routeEntry = pending.shift(); routeEntry; routeEntry = pending.shift()) {
+          const outFile = join(DIST_DIR, routeToStaticFile(routeEntry.path));
+          try {
+            await prerenderRoute(workerPage, baseUrl, routeEntry.path, outFile);
+          } catch (error) {
+            failures += 1;
+            console.error(`[prerender] FAILED for ${routeEntry.path}:`, (error as Error).message);
+          }
+        }
+        await workerPage.close();
+      }),
+    );
 
+    const page = await browser.newPage();
     // Prerender the real 404 page content (a genuinely nonexistent path hits the * route).
     try {
       await prerenderRoute(page, baseUrl, NOT_FOUND_PROBE_PATH, join(DIST_DIR, '404.html'));

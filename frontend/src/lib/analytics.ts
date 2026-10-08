@@ -57,7 +57,50 @@ export function initGoogleTag(): void {
   }
   if (googleAdsId) {
     window.gtag('config', googleAdsId, { send_page_view: false });
+    configureWebsiteCallConversion();
   }
+}
+
+/**
+ * Google Ads "Calls from website visits": for visitors from an ad, Google issues a forwarding
+ * number and hands it to the callback. Using the callback (rather than letting gtag.js rewrite
+ * DOM text) keeps React in control of the markup, so the number survives re-renders and route
+ * changes, and lets the `tel:` href be swapped too — which Google requires the callback for.
+ * The source HTML and JSON-LD keep the real business number.
+ */
+export interface DisplayedPhone {
+  display: string;
+  href: string;
+}
+
+let forwardingPhone: DisplayedPhone | null = null;
+const forwardingPhoneListeners = new Set<() => void>();
+
+function configureWebsiteCallConversion(): void {
+  const { googleAdsCallConversion, googleAdsCallNumber } = config.analytics;
+  if (!googleAdsCallConversion || !window.gtag) return;
+
+  window.gtag('config', googleAdsCallConversion, {
+    phone_conversion_number: googleAdsCallNumber,
+    phone_conversion_callback: (formattedNumber: string, mobileNumber: string) => {
+      if (!formattedNumber || !mobileNumber) return;
+      if (forwardingPhone?.display === formattedNumber && forwardingPhone.href === `tel:${mobileNumber}`) return;
+      // Google's documented tel: form: "tel:" + the callback's second argument.
+      forwardingPhone = { display: formattedNumber, href: `tel:${mobileNumber}` };
+      forwardingPhoneListeners.forEach((listener) => { listener(); });
+    },
+  });
+}
+
+/** External-store subscription for useSyncExternalStore (see useBusinessPhone). */
+export function subscribeForwardingPhone(listener: () => void): () => void {
+  forwardingPhoneListeners.add(listener);
+  return () => { forwardingPhoneListeners.delete(listener); };
+}
+
+/** The Google forwarding number for this visit, or null (no ad click, tracking off, or not yet fetched). */
+export function getForwardingPhone(): DisplayedPhone | null {
+  return forwardingPhone;
 }
 
 /** Accepts either the bare conversion label or the full `AW-…/label` send_to value from Google Ads. */

@@ -1,0 +1,201 @@
+- generic [ref=f8e3]:
+  - banner [ref=f8e4]:
+    - generic [ref=f8e7]:
+      - link "bd@kargar.co.in" [ref=f8e8] [cursor=pointer]:
+        - /url: mailto:bd@kargar.co.in
+      - link "+91-7821844591" [ref=f8e13] [cursor=pointer]:
+        - /url: tel:+917821844591
+      - link "+91-8788726752" [ref=f8e17] [cursor=pointer]:
+        - /url: tel:+918788726752
+    - generic [ref=f8e21]:
+      - link "KARGAR Facility Management home" [ref=f8e22] [cursor=pointer]:
+        - /url: /
+        - img "KARGAR - Window to a Cleaner World" [ref=f8e24]
+      - navigation "Main navigation" [ref=f8e25]:
+        - link "Home" [ref=f8e27] [cursor=pointer]:
+          - /url: /
+        - link "Services" [ref=f8e29] [cursor=pointer]:
+          - /url: /services
+        - link "Sectors" [ref=f8e31] [cursor=pointer]:
+          - /url: /sectors
+        - link "Company Profile" [ref=f8e33] [cursor=pointer]:
+          - /url: /company-profile
+        - link "Support" [ref=f8e35] [cursor=pointer]:
+          - /url: /support
+        - link "Contact Us" [ref=f8e37] [cursor=pointer]:
+          - /url: /contact-us
+      - generic [ref=f8e38]:
+        - link "Call for More Information +91-7821844591" [ref=f8e39] [cursor=pointer]:
+          - /url: tel:+917821844591
+          - generic [ref=f8e43]: Call for More Information
+          - strong [ref=f8e44]: +91-7821844591
+        - link "Request Proposal" [ref=f8e45] [cursor=pointer]:
+          - /url: /contact-us?source=header&cta_position=navbar#contact-form
+  - main [ref=f8e48]:
+    - generic [ref=f8e50]:
+      - generic [ref=f8e54]:
+        - generic [ref=f8e55]:
+          - navigation "Breadcrumb" [ref=f8e57]:
+            - link "Home" [ref=f8e58] [cursor=pointer]:
+              - /url: /
+            - link "Services" [ref=f8e66] [cursor=pointer]:
+              - /url: /services
+            - link "Hard Services" [ref=f8e70] [cursor=pointer]:
+              - /url: /services/hard-services
+            - generic [ref=f8e71]: HVAC Maintenance
+          - paragraph [ref=f8e75]: Hard Services
+          - heading "HVAC Maintenance" [level=1] [ref=f8e76]
+          - paragraph [ref=f8e77]: Optimized Air Quality. Maximum Efficiency.
+          - paragraph [ref=f8e78]: Ensure a healthy, comfortable, and energy-efficient environment for your workforce.
+          - generic [ref=f8e79]:
+            - link "Request a Proposal" [ref=f8e80] [cursor=pointer]:
+              - /url: /contact-us?category=hard&service=hvac-maintenance&source=hero&cta_position=hero#contact-form
+            - 'link "Talk to our team: call +91 78218 44591" [ref=f8e81] [cursor=pointer]':
+              - /url: tel:+917821844591
+              - text: Talk to Our Team
+            - button "Download Brochure" [ref=f8e84]
+        - img "Commercial HVAC and Chiller Maintenance" [ref=f8e87]
+      - generic [ref=f8e90]:
+        - generic [ref=f8e91]:
+          - paragraph [ref=f8e92]: HVAC Maintenance
+          - heading "Business Overview" [level=2] [ref=f8e93]
+        - paragraph [ref=f8e94]: Maintain optimal indoor air quality and temperature with our expert HVAC maintenance services. We provide comprehensive care for all types of heating, ventilation, and air conditioning systems. From routine filter changes and coil cleaning to complex compressor repairs and system balancing, our services ensure your environment remains comfortable and energy-efficient year-round.
+      - generic [ref=f8e97]:
+        - generic [ref=f8e98]:
+          - paragraph [ref=f8e99]: What We Do
+          - heading "Scope of Work" [level=2] [ref=f8e100]
+        - list [ref=f8e101]:
+          - listitem [ref=f8e102]:
+            - generic [aria-hidden] [ref=f8e104]: "1"
+            - generic [ref=f8e106]:
+              - heading "Scheduled Servicing" [level=3] [ref=f8e107]
+              - paragraph [ref=f8e108]: Routine cleaning, lubrication, and calibration.
+          - listitem [ref=f8e109]:
+            - generic [aria-hidden] [ref=f8e111]: "2"
+            - generic [ref=f8e113]:
+              - heading "Air Quality Testing" [level=3] [ref=f8e114]
+              - paragraph [ref=f8e115]: Monitoring and improving indoor air quality.
+          - listitem [ref=f8e116]:
+            - generic [aria-hidden] [ref=f8e118]: "3"
+            - generic [ref=f8e120]:
+              - heading "System Balancing" [level=3] [ref=f8e121]
+              - paragraph [ref=f8e122]: Ensuring even temperature distribution.
+          - listitem [ref=f8e123]:
+            - generic [aria-hidden] [ref=f8e125]: "4"
+            - generic [ref=f8e126]:
+              - heading "Duct Cleaning" [level=3] [ref=f8e127]
+              - paragraph [ref=f8e128]: Thorough cleaning to improve airflow.
+      - generic [ref=f8e131]:
+        - generic [ref=f8e132]:
+          - paragraph [ref=f8e133]: Technical Capabilities
+          - heading "Equipment We Maintain" [level=2] [ref=f8e134]
+        - generic [ref=f8e135]:
+          - heading "VRV / VRF Systems" [level=3] [ref=f8e142]
+          - heading "Chillers" [level=3] [ref=f8e153]
+          - heading "Cooling Towers" [level=3] [ref=f8e158]
+          - heading "AHU & FCU" [level=3] [ref=f8e163]
+          - heading "Cassette & Split ACs" [level=3] [ref=f8e169]
+      - generic [ref=f8e172]:
+        - generic [ref=f8e173]:
+          - paragraph [ref=f8e174]: What You Get
+          - heading "Key Benefits" [level=2] [ref=f8e175]
+        - generic [ref=f8e176]:
+          - generic [ref=f8e177]:
+            - heading "Energy Efficiency" [level=3] [ref=f8e183]
+            - paragraph [ref=f8e184]: We tune your systems to operate at peak efficiency.
+          - generic [ref=f8e185]:
+            - heading "Health & Safety" [level=3] [ref=f8e189]
+            - paragraph [ref=f8e190]: Prioritizing indoor air quality for occupant well-being.
+          - generic [ref=f8e191]:
+            - heading "Comprehensive Care" [level=3] [ref=f8e198]
+            - paragraph [ref=f8e199]: From split ACs to massive commercial chillers.
+      - generic [ref=f8e202]:
+        - generic [ref=f8e203]:
+          - paragraph [ref=f8e204]: Our Expertise
+          - heading "Industries Served" [level=2] [ref=f8e205]
+        - generic [ref=f8e206]:
+          - generic [ref=f8e207]: Corporate Offices
+          - generic [ref=f8e208]: IT Parks
+          - generic [ref=f8e209]: Healthcare
+          - generic [ref=f8e210]: Retail & Malls
+          - generic [ref=f8e211]: Manufacturing
+      - generic [ref=f8e214]:
+        - generic [ref=f8e215]:
+          - paragraph [ref=f8e216]: Got Questions?
+          - heading "Frequently Asked Questions" [level=2] [ref=f8e217]
+        - generic [ref=f8e218]:
+          - generic [ref=f8e219]:
+            - button "What is included in routine HVAC maintenance?" [expanded] [ref=f8e220]
+            - generic [ref=f8e225]: Changing filters, cleaning coils, checking refrigerant levels, and testing controls.
+          - generic [ref=f8e227]:
+            - button "How can I improve my building's indoor air quality?" [ref=f8e228]
+            - generic: Regular duct cleaning, upgrading to high-efficiency filters, and proper ventilation.
+          - generic [ref=f8e234]:
+            - button "Do you service commercial chiller systems?" [ref=f8e235]
+            - generic: Yes, our technicians are highly experienced in servicing large-scale commercial chillers.
+      - generic [ref=f8e243]:
+        - generic [ref=f8e244]:
+          - paragraph [ref=f8e245]: Discover More
+          - heading "Related Services" [level=2] [ref=f8e246]
+        - link [ref=f8e248] [cursor=pointer]:
+          - /url: /services/hard-services/electrical-maintenance
+          - generic [ref=f8e249]:
+            - heading "Electrical Maintenance" [level=3] [ref=f8e255]
+            - paragraph [ref=f8e256]: Comprehensive electrical system maintenance and troubleshooting.
+            - generic [ref=f8e257]: Learn More
+      - generic [ref=f8e265]:
+        - heading "Need HVAC Maintenance for your facility?" [level=2] [ref=f8e266]
+        - paragraph [ref=f8e267]: Talk to the KARGAR team about your requirements. Our experts are ready to design a tailored solution for your specific needs.
+        - generic [ref=f8e268]:
+          - link "Request a Proposal" [ref=f8e269] [cursor=pointer]:
+            - /url: /contact-us?category=hard&service=hvac-maintenance&source=cta_section&cta_position=bottom#contact-form
+          - link "Contact Us" [ref=f8e270] [cursor=pointer]:
+            - /url: /contact-us
+        - generic [ref=f8e271]:
+          - generic [ref=f8e276]:
+            - paragraph [ref=f8e277]: Call Us
+            - paragraph [ref=f8e278]:
+              - link "+91 78218 44591" [ref=f8e279] [cursor=pointer]:
+                - /url: tel:+917821844591
+              - text: ·
+              - link "+91 87887 26752" [ref=f8e280] [cursor=pointer]:
+                - /url: tel:+918788726752
+            - paragraph [ref=f8e281]: "Mon - Sat: 09:00 AM - 06:00 PM"
+          - generic [ref=f8e287]:
+            - paragraph [ref=f8e288]: Email Us
+            - paragraph [ref=f8e289]:
+              - link "bd@kargar.co.in" [ref=f8e290] [cursor=pointer]:
+                - /url: mailto:bd@kargar.co.in
+    - paragraph [ref=f8e293]:
+      - text: Looking for hvac maintenance specifically in Pune? See our
+      - link "HVAC Maintenance Services in Pune" [ref=f8e294] [cursor=pointer]:
+        - /url: /hvac-maintenance-services-pune
+      - text: page for local coverage and FAQs.
+  - contentinfo [ref=f8e295]:
+    - generic [ref=f8e296]:
+      - generic [ref=f8e297]:
+        - generic [ref=f8e298]:
+          - generic "KARGAR Admin Portal Trigger" [ref=f8e299] [cursor=pointer]:
+            - img "KARGAR - Window to a Cleaner World" [ref=f8e301]
+          - link "KARGAR Facility Management on Fazier":
+            - /url: https://fazier.com/launches/www.kargarbusinessservices.com
+            - img "KARGAR Facility Management on Fazier"
+        - navigation "Social Media Links" [ref=f8e304]:
+          - generic [ref=f8e305]: FOLLOW US
+          - generic [ref=f8e308]:
+            - link "Follow KARGAR on Instagram" [ref=f8e309] [cursor=pointer]:
+              - /url: https://www.instagram.com/kargar.facility/
+              - generic [ref=f8e314]: Instagram
+            - link "Follow KARGAR on Facebook" [ref=f8e315] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/
+              - generic [ref=f8e319]: Facebook
+            - link "Follow KARGAR on LinkedIn" [ref=f8e320] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/?viewAsMember=true
+              - generic [ref=f8e324]: LinkedIn
+            - link "Follow KARGAR on X" [ref=f8e325] [cursor=pointer]:
+              - /url: https://x.com/Kargar_Business
+              - generic [ref=f8e329]: X
+      - paragraph [ref=f8e332]:
+        - text: © 2026 KARGAR Facility Management. All rights reserved.
+        - link "Privacy Policy" [ref=f8e333] [cursor=pointer]:
+          - /url: /privacy-policy

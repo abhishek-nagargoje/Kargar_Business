@@ -5,6 +5,8 @@
  *   - returns HTTP 200 directly (no redirect, no 404)
  *   - is self-canonical (exactly one canonical, equal to the sitemap URL)
  *   - is not noindex (meta robots or X-Robots-Tag)
+ *   - contains no internal links to parameterized or trailing-slash URLs
+ * Also checks a nonexistent URL returns a genuine 404 that is noindex with no canonical.
  * Also checks robots.txt references the sitemap and sitemap.xml itself is served as XML.
  *
  * Usage:
@@ -58,6 +60,23 @@ async function validate(baseUrl: string): Promise<string[]> {
     if (page.robotsMeta.some((r) => /noindex/i.test(r)) || /noindex/i.test(res.xRobotsTag ?? '')) errors.push(`${loc}: is noindex`);
     if (page.titles.length !== 1 || !page.titles[0]) errors.push(`${loc}: missing or duplicate <title>`);
     if (page.h1s.length !== 1) errors.push(`${loc}: has ${page.h1s.length} <h1> elements`);
+    // Crawlable hrefs with query strings or trailing slashes create the duplicate/redirecting URLs
+    // Search Console reports ("Alternate page with proper canonical tag", "Page with redirect").
+    // CTA attribution params belong in the click handler, not the href (see contactNavigation.ts).
+    for (const link of page.internalLinks) {
+      const [linkPath = '', query] = link.split('?');
+      if (query !== undefined) errors.push(`${loc}: links to parameterized URL ${link}`);
+      if (linkPath !== '/' && linkPath.endsWith('/')) errors.push(`${loc}: links to trailing-slash URL ${link}`);
+    }
+  }
+
+  // A nonexistent URL must be a real 404 (not a soft 404) and must not declare a canonical.
+  const missing = await fetchRaw(`${baseUrl}/__validate-sitemap-missing-page__`);
+  if (missing.status !== 404) errors.push(`nonexistent URL returned HTTP ${missing.status}, expected 404`);
+  else {
+    const notFound = analyzeHtml(missing.body, `${baseUrl}/__validate-sitemap-missing-page__`);
+    if (notFound.canonicals.length > 0) errors.push(`404 page declares a canonical (${notFound.canonicals.join(', ')})`);
+    if (!notFound.robotsMeta.some((r) => /noindex/i.test(r))) errors.push('404 page is not noindex');
   }
 
   console.log(`[validate-sitemap] Checked ${locs.length} sitemap URLs against ${baseUrl}`);

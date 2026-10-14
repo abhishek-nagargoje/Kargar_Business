@@ -44,6 +44,7 @@ import { getSeoEntry } from '@/features/seo/registry';
 import { PuneServicesLinksSection } from '@/features/pune-landing/components/PuneServicesLinksSection';
 import { clusterPages, clusters, punePagesByPath } from '@/features/pune-landing/config/punePages';
 import { guidePageList } from '@/features/resources/config/guides';
+import { serviceCategories } from '@/features/services/config';
 import { trackFormSubmission } from '@/lib/analytics';
 
 const CountUp =
@@ -523,8 +524,11 @@ function ContactForm() {
   const campaignParam = searchParams.get('campaign') ?? '';
   const ctaPosition = searchParams.get('cta_position') ?? '';
 
-  const defaultSubject = serviceParam 
-    ? `Requesting Proposal for ${serviceParam.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}` 
+  // `service` may be a slug ("security-services-pune") or a page path ("/housekeeping-services-pune");
+  // only the last path segment is humanised for the subject line. The raw value is still submitted.
+  const serviceLabel = serviceParam.split('/').filter(Boolean).pop() ?? '';
+  const defaultSubject = serviceLabel
+    ? `Requesting Proposal for ${serviceLabel.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`
     : '';
 
   useEffect(() => {
@@ -534,7 +538,7 @@ function ContactForm() {
         const form = document.getElementById('contact-form');
         if (form) {
           form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          const firstInput = form.querySelector('input');
+          const firstInput = form.querySelector<HTMLInputElement>('input:not([type="hidden"])');
           if (firstInput) {
             firstInput.focus();
           }
@@ -596,10 +600,10 @@ function ContactForm() {
       <h2>Send Us a Message</h2>
       <p>Fill out the form below and we&apos;ll get back to you shortly.</p>
       <div className="kb-form-grid">
-        <label>Full Name <b>*</b><input name="name" placeholder="Enter your full name" required /></label>
-        <label>Email Address <b>*</b><input name="email" type="email" placeholder="Enter your email address" required /></label>
-        <label>Phone Number <b>*</b><input name="phone" placeholder="Enter your phone number" required /></label>
-        <label>Company Name <b>*</b><input name="company" placeholder="Enter your company name" required /></label>
+        <label>Full Name <b>*</b><input name="name" autoComplete="name" placeholder="Enter your full name" required /></label>
+        <label>Email Address <b>*</b><input name="email" type="email" autoComplete="email" placeholder="Enter your email address" required /></label>
+        <label>Phone Number <b>*</b><input name="phone" type="tel" autoComplete="tel" placeholder="Enter your phone number" required /></label>
+        <label>Company Name <b>*</b><input name="company" autoComplete="organization" placeholder="Enter your company name" required /></label>
       </div>
       <label>Subject <b>*</b><input name="subject" placeholder="How can we help you?" defaultValue={defaultSubject} required /></label>
       <label>Message <b>*</b><textarea name="message" placeholder="Type your message here..." rows={5} required /></label>
@@ -646,6 +650,14 @@ function OperationsCard() {
  */
 function FooterDirectory() {
   const linkClass = 'text-gray-300 hover:text-orange-300 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm';
+  // The /services/* category hubs sit directly under "Services" so they get the same site-wide
+  // link equity as every other page (they were previously only reachable from a handful of pages).
+  const categoryLinks = Object.values(serviceCategories)
+    .filter((category) => category.showInNavigation)
+    .sort((a, b) => a.priority - b.priority)
+    .map((category) => ({ label: category.title, href: `/services/${category.slug}` }));
+  const companyLinks = [...navItems.filter((item) => item.href !== '/'), { label: 'Resources', href: '/resources' }]
+    .flatMap((item) => (item.href === '/services' ? [item, ...categoryLinks] : [item]));
   return (
     <nav aria-label="Site directory" className="grid grid-cols-1 gap-8 border-b border-navy-800/80 pb-8 mb-6 sm:grid-cols-2 lg:grid-cols-5">
       {clusters.map((cluster) => (
@@ -663,7 +675,7 @@ function FooterDirectory() {
       <div>
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white">Company</h2>
         <ul className="space-y-2 text-sm">
-          {[...navItems.filter((item) => item.href !== '/'), { label: 'Resources', href: '/resources' }].map((item) => (
+          {companyLinks.map((item) => (
             <li key={item.href}>
               <Link to={item.href} className={linkClass}>{item.label}</Link>
             </li>

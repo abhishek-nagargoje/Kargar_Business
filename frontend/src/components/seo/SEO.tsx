@@ -63,6 +63,9 @@ export function SEO({
     description ??
     'Pune facility management partner for housekeeping, security, commercial cleaning, office support, and corporate facility services.';
   const robotsContent = buildRobotsContent(robots ?? {});
+  // A noindex page (e.g. the 404) must not declare a canonical: it would point Google at a URL
+  // that is itself excluded (the 404 page used to canonicalize to /404, which returns 404).
+  const isIndexable = robots?.index !== false;
 
   const graph = [
     buildOrganizationSchema(),
@@ -77,22 +80,22 @@ export function SEO({
       <title>{siteTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta name="robots" content={robotsContent} />
-      <link rel="canonical" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="en-IN" href={canonicalUrl} />
-      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+      {isIndexable && <link rel="canonical" href={canonicalUrl} />}
+      {isIndexable && <link rel="alternate" hrefLang="en-IN" href={canonicalUrl} />}
+      {isIndexable && <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />}
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content={config.siteName} />
       <meta property="og:locale" content="en_IN" />
-      <meta property="og:url" content={canonicalUrl} />
+      {isIndexable && <meta property="og:url" content={canonicalUrl} />}
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:image" content={ogImage} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={canonicalUrl} />
+      {isIndexable && <meta name="twitter:url" content={canonicalUrl} />}
       <meta name="twitter:title" content={siteTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={ogImage} />

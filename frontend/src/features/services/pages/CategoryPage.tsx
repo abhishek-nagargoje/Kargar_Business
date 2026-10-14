@@ -23,7 +23,11 @@ export function CategoryPage() {
   const services = getServicesByCategory(category.id);
   const heroImage = serviceImages[category.imageKey];
   const path = `/services/${category.slug}`;
-  const categoryPunePages = punePageList.filter((p) => p.serviceDetailLink?.href.startsWith(`${path}/`));
+  // Pune pages that link to this hub or to one of its services, so the link is reciprocated.
+  const categoryPunePages = punePageList.filter((p) => {
+    const href = p.serviceDetailLink?.href;
+    return href === path || href?.startsWith(`${path}/`);
+  });
 
   return (
     <div className="kargar-site kb-site">

@@ -1,5 +1,6 @@
 import type { PuneLandingPageContent } from '../../domain/types';
 import { heroImages } from '../heroImages';
+import { recognitions } from '@/features/home/components/Recognition/recognitions';
 
 const PILLAR = { label: 'Housekeeping Services Pune', href: '/housekeeping-services-pune' };
 
@@ -84,6 +85,17 @@ export const housekeepingPages: PuneLandingPageContent[] = [
           { title: 'Attendance and digital reporting', description: 'Attendance is tracked and reporting is digital, so you can see who was on site and what was completed. Read how to size a team in our [staffing guide](/resources/how-many-housekeeping-staff).' },
           { title: 'Compliance and payroll transparency', description: 'Staff are covered for PF and ESIC in line with labour law. Under KARGAR’s 100% financial transparency commitment, you can ask what compensation is paid to the staff deployed at your site. More on [housekeeping staff in Pune](/housekeeping-staff-pune).' },
         ],
+      },
+      {
+        kind: 'cards',
+        heading: 'Recognition Behind the Team',
+        intro: 'KARGAR is a women-led Pune company. The ceremony photograph and details are in our [recognition section](/#recognition).',
+        columns: 2,
+        // Built from recognitions.ts (the single verified source) so the pillar never restates a claim differently.
+        items: recognitions.map((r) => ({
+          title: r.title,
+          description: `${r.summary} ${r.details.map((d) => `${d.label}: ${d.value}.`).join(' ')}`,
+        })),
       },
       {
         kind: 'compare',

@@ -41,7 +41,7 @@ export function useContactNavigation() {
           if (form) {
             form.scrollIntoView({ behavior: 'smooth', block: 'start' });
             // Focus the first input field
-            const firstInput = form.querySelector('input');
+            const firstInput = form.querySelector<HTMLInputElement>('input:not([type="hidden"])');
             if (firstInput) {
               firstInput.focus();
             }

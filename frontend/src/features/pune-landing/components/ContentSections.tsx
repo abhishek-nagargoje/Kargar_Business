@@ -13,7 +13,13 @@ export function Inline({ text, linkClassName = LINK_CLASS }: { text: InlineText;
   return (
     <>
       {parseInline(text).map((part, i) =>
-        part.type === 'link' ? (
+        // Fragment links use a plain <a> so the browser scrolls to the target; client-side
+        // <Link> navigation does not scroll to hashes.
+        part.type === 'link' && part.href.includes('#') ? (
+          <a key={i} href={part.href} className={linkClassName}>
+            {part.label}
+          </a>
+        ) : part.type === 'link' ? (
           <Link key={i} to={part.href} className={linkClassName}>
             {part.label}
           </Link>

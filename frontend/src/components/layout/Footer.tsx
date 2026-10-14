@@ -37,7 +37,7 @@ export function Footer() {
   });
 
   const navigate = useNavigate();
-  const { navigateToContact, buildContactUrl } = useContactNavigation();
+  const { navigateToContact, contactHref } = useContactNavigation();
 
   const handleLogoClick = () => {
     void navigate('/admin/login');
@@ -82,7 +82,7 @@ export function Footer() {
               <li><a href="#case-studies" className="hover:text-orange-500 transition-colors">Case Studies</a></li>
               <li>
                 <Link 
-                  to={buildContactUrl({ source: 'footer_quick_links', ctaPosition: 'footer' })}
+                  to={contactHref}
                   onClick={(e) => { navigateToContact({ source: 'footer_quick_links', ctaPosition: 'footer' }, e); }}
                   className="hover:text-orange-500 transition-colors"
                 >

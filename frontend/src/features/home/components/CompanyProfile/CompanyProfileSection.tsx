@@ -32,7 +32,7 @@ export function CompanyProfileSection() {
               hard services
             </Link>
             , security, and support operations, including{' '}
-            <Link to="/services/soft-services/housekeeping" className="text-[#A74423] font-[600] underline underline-offset-2 hover:text-[#8a3319] rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-[#A74423]">
+            <Link to="/housekeeping-services-pune" className="text-[#A74423] font-[600] underline underline-offset-2 hover:text-[#8a3319] rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-[#A74423]">
               professional housekeeping services in Pune
             </Link>
             , with trained teams and dependable processes.

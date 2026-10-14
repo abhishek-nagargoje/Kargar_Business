@@ -1,6 +1,5 @@
 import { Link } from 'react-router';
 import { SEO } from '@/components/seo/SEO';
-import { buildCanonicalUrl } from '@/lib/seo/canonical';
 
 export function NotFoundPage() {
   return (
@@ -8,7 +7,6 @@ export function NotFoundPage() {
       <SEO
         title="Page Not Found"
         description="The page you are looking for could not be found."
-        canonicalUrl={buildCanonicalUrl('/404')}
         robots={{ index: false, follow: false }}
       />
       <h1 className="text-4xl font-bold text-navy-900">Page Not Found</h1>

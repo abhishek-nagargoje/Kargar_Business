@@ -13,9 +13,9 @@ export const softServices: Record<string, Service> = {
     iconKey: 'sparkles',
     imageKey: 'housekeeping',
     seo: {
-      title: 'Corporate Housekeeping Service',
+      title: 'Business Housekeeping Services',
       description: 'Professional housekeeping services for corporate, commercial, and industrial facilities, with trained staff, eco-friendly cleaning, and reliable supervision.',
-      keywords: ['Housekeeping Services', 'Corporate Housekeeping Service', 'Commercial Housekeeping', 'Industrial Housekeeping', 'Office Housekeeping Services']
+      keywords: ['Housekeeping Services', 'Business Housekeeping Services', 'Commercial Housekeeping', 'Industrial Housekeeping', 'Office Housekeeping Services']
     },
     serviceType: 'cleaning',
     layoutPreset: 'enterpriseCleaning',

@@ -7,7 +7,7 @@
  * (see `generate-redirects.ts`), so crawlers get complete title/meta/canonical/H1/body/JSON-LD
  * in the initial HTTP response without executing JavaScript.
  */
-import { chromium, type Browser, type Page } from 'playwright-core';
+import { chromium, type Browser, type Page, type Request } from 'playwright-core';
 import { preview, type PreviewServer } from 'vite';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -97,8 +97,10 @@ class BrowserManager {
 }
 
 const MAX_ATTEMPTS = 3;
-/** Hard cap per attempt (goto 60s + hydration 30s + margin) so a wedged browser can't hang the build. */
-const ATTEMPT_DEADLINE_MS = 120000;
+/** Hard cap per attempt (goto 60s + networkidle 30s + hydration 30s + margin) so a wedged browser can't hang the build. */
+const ATTEMPT_DEADLINE_MS = 150000;
+/** Requests that only fetch bytes for already-rendered elements; they never change the saved DOM. */
+const NON_DOM_RESOURCE_TYPES = new Set(['image', 'media', 'font', 'stylesheet']);
 const PAGE_CLOSE_DEADLINE_MS = 10000;
 
 function withDeadline<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
@@ -154,8 +156,9 @@ async function waitForHydration(page: Page): Promise<void> {
   await page.waitForSelector('h1', { timeout: 15000 });
   // react-helmet-async commits title/meta/JSON-LD in a post-render effect — give it a beat.
   // `attached`, not the default `visible`: a <script> is never visible, so the default always
-  // burned the full 15s timeout on every route.
-  await page.waitForSelector('script[type="application/ld+json"]', { state: 'attached', timeout: 15000 }).catch(() => {});
+  // burned the full 15s timeout on every route. Required, not best-effort: every page (incl. the
+  // 404 page) emits Organization/WebSite JSON-LD, so its absence means Helmet hasn't committed yet.
+  await page.waitForSelector('script[type="application/ld+json"]', { state: 'attached', timeout: 15000 });
   await page.waitForTimeout(250);
 }
 
@@ -169,7 +172,33 @@ async function prerenderRoute(
   // 60s, not 30s: pages with several unthumbnailed real photos in a "Real Service Work"
   // gallery can legitimately take longer to reach networkidle over a real network than a
   // page with only a few small assets — this is not a hang, just more bytes to fetch.
-  await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
+  // networkidle can be missed because of a stalled third-party *image* download (e.g. the
+  // full-size Unsplash photos on /sectors), which used to fail the whole build after 3 attempts
+  // even though the DOM was complete. Image bytes never change the saved HTML, so a missed
+  // networkidle is tolerated only when every still-pending request is media/font; a pending
+  // document/script/fetch/xhr (e.g. a Supabase query) means the DOM may be incomplete -> retry.
+  const pending = new Set<Request>();
+  page.on('request', (request) => pending.add(request));
+  page.on('requestfinished', (request) => pending.delete(request));
+  page.on('requestfailed', (request) => pending.delete(request));
+
+  await page.goto(url, { waitUntil: 'load', timeout: 60000 });
+  const reachedIdle = await page
+    .waitForLoadState('networkidle', { timeout: 30000 })
+    .then(() => true)
+    .catch(() => false);
+  if (!reachedIdle) {
+    const blocking = Array.from(pending).filter((request) => !NON_DOM_RESOURCE_TYPES.has(request.resourceType()));
+    if (blocking.length > 0) {
+      throw new Error(
+        `networkidle not reached and ${blocking.length} DOM-affecting request(s) still pending: ` +
+          blocking.map((request) => `${request.resourceType()} ${request.url().slice(0, 120)}`).join(', '),
+      );
+    }
+    console.warn(
+      `[prerender] ${routePath}: networkidle not reached in 30s; only ${pending.size} media/font request(s) pending — DOM is complete, continuing.`,
+    );
+  }
   await waitForHydration(page);
   const html = await page.content();
   mkdirSync(dirname(outFile), { recursive: true });

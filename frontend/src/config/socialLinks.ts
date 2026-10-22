@@ -30,7 +30,7 @@ export const OFFICIAL_SOCIAL_LINKS: readonly SocialPlatform[] = [
   {
     id: 'linkedin',
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/?viewAsMember=true',
+    url: 'https://www.linkedin.com/company/kargar-facility-services-pvt-ltd/',
     ariaLabel: 'Follow KARGAR on LinkedIn',
     title: 'LinkedIn',
   },

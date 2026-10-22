@@ -1,12 +1,22 @@
 {
   "summary": {
-    "generatedAt": "2026-10-08T08:03:31.715Z",
+    "generatedAt": "2026-10-22T09:37:23.831Z",
     "target": "http://127.0.0.1:4182",
-    "pagesCrawled": 50,
+    "pagesCrawled": 56,
     "sitemapUrls": 41,
     "indexablePages": 41,
     "criticalIssues": 0,
-    "highIssues": 0
+    "highIssues": 0,
+    "probesFailed": 0,
+    "internalLinksChecked": 2442,
+    "internalLinksBroken": 0,
+    "internalLinksToRedirects": 0,
+    "internalLinkRedirectChains": 0,
+    "internalLinksNeedingReview": 0,
+    "externalLinksChecked": 5,
+    "external_redirected": 1,
+    "external_ok": 3,
+    "external_inconclusive": 1
   },
   "pages": [
     {
@@ -15,7 +25,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Facility Management Company | KARGAR Facility Management",
       "titleLength": 56,
@@ -35,10 +45,36 @@
         "WebSite",
         "BreadcrumbList"
       ],
-      "internalLinkCount": 41,
+      "internalLinkCount": 42,
       "externalLinkCount": 5,
       "imageCount": 17,
       "imagesMissingAlt": 0
+    },
+    {
+      "url": "https://www.kargarbusinessservices.com/about-us",
+      "path": "/about-us",
+      "status": 308,
+      "redirectTo": "/company-profile",
+      "inSitemap": false,
+      "probe": "308 -> /company-profile",
+      "inboundLinks": 0,
+      "issues": [],
+      "redirect": {
+        "chain": [
+          {
+            "url": "http://127.0.0.1:4182/about-us",
+            "status": 308
+          },
+          {
+            "url": "http://127.0.0.1:4182/company-profile",
+            "status": 200
+          }
+        ],
+        "hops": 1,
+        "finalUrl": "http://127.0.0.1:4182/company-profile",
+        "finalStatus": 200,
+        "loop": false
+      }
     },
     {
       "url": "https://www.kargarbusinessservices.com/building-maintenance-services-pune",
@@ -46,7 +82,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Building Maintenance in Pune | KARGAR Facility Management",
       "titleLength": 57,
@@ -68,7 +104,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -81,7 +117,53 @@
       "inSitemap": false,
       "probe": "308 -> /services",
       "inboundLinks": 0,
-      "issues": []
+      "issues": [],
+      "redirect": {
+        "chain": [
+          {
+            "url": "http://127.0.0.1:4182/category/services",
+            "status": 308
+          },
+          {
+            "url": "http://127.0.0.1:4182/services",
+            "status": 200
+          }
+        ],
+        "hops": 1,
+        "finalUrl": "http://127.0.0.1:4182/services",
+        "finalStatus": 200,
+        "loop": false
+      }
+    },
+    {
+      "url": "https://www.kargarbusinessservices.com/category/services/",
+      "path": "/category/services/",
+      "status": 308,
+      "redirectTo": "/category/services",
+      "inSitemap": false,
+      "probe": "308 -> /services (slash strip, then alias)",
+      "inboundLinks": 0,
+      "issues": [],
+      "redirect": {
+        "chain": [
+          {
+            "url": "http://127.0.0.1:4182/category/services/",
+            "status": 308
+          },
+          {
+            "url": "http://127.0.0.1:4182/category/services",
+            "status": 308
+          },
+          {
+            "url": "http://127.0.0.1:4182/services",
+            "status": 200
+          }
+        ],
+        "hops": 2,
+        "finalUrl": "http://127.0.0.1:4182/services",
+        "finalStatus": 200,
+        "loop": false
+      }
     },
     {
       "url": "https://www.kargarbusinessservices.com/commercial-facility-management-pune",
@@ -89,7 +171,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Commercial Facility Management | KARGAR Facility Management",
       "titleLength": 59,
@@ -111,7 +193,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -122,7 +204,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Commercial Housekeeping in Pune | KARGAR Facility Management",
       "titleLength": 60,
@@ -144,7 +226,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -155,7 +237,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [
         "MEDIUM: thin main content (213 words)"
       ],
@@ -190,7 +272,23 @@
       "inSitemap": false,
       "probe": "308 -> /contact-us",
       "inboundLinks": 0,
-      "issues": []
+      "issues": [],
+      "redirect": {
+        "chain": [
+          {
+            "url": "http://127.0.0.1:4182/contact",
+            "status": 308
+          },
+          {
+            "url": "http://127.0.0.1:4182/contact-us",
+            "status": 200
+          }
+        ],
+        "hops": 1,
+        "finalUrl": "http://127.0.0.1:4182/contact-us",
+        "finalStatus": 200,
+        "loop": false
+      }
     },
     {
       "url": "https://www.kargarbusinessservices.com/contact-us",
@@ -198,7 +296,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [
         "MEDIUM: thin main content (195 words)"
       ],
@@ -220,7 +318,7 @@
         "WebSite",
         "BreadcrumbList"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -252,7 +350,7 @@
         "WebSite",
         "BreadcrumbList"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -263,7 +361,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Corporate Housekeeping in Pune | KARGAR Facility Management",
       "titleLength": 59,
@@ -285,7 +383,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -296,7 +394,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Electrical Maintenance Pune | KARGAR Facility Management",
       "titleLength": 56,
@@ -318,7 +416,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 36,
+      "internalLinkCount": 38,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -329,7 +427,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Facility Maintenance in Pune | KARGAR Facility Management",
       "titleLength": 57,
@@ -351,7 +449,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 36,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -362,7 +460,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Facility Management in Pune | KARGAR Facility Management",
       "titleLength": 56,
@@ -384,7 +482,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -395,7 +493,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Society Facility Management | KARGAR Facility Management",
       "titleLength": 56,
@@ -417,7 +515,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -428,7 +526,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Facility Staffing in Pune | KARGAR Facility Management",
       "titleLength": 54,
@@ -450,7 +548,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -461,7 +559,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Healthcare Housekeeping, Pune | KARGAR Facility Management",
       "titleLength": 58,
@@ -483,7 +581,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -494,7 +592,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Housekeeping Services in Pune | KARGAR Facility Management",
       "titleLength": 58,
@@ -507,7 +605,7 @@
       "indexable": true,
       "h1Count": 1,
       "h1": "Professional Housekeeping Services in Pune",
-      "wordCount": 1474,
+      "wordCount": 1590,
       "schema": [
         "Organization",
         "LocalBusiness",
@@ -516,7 +614,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 36,
+      "internalLinkCount": 38,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -537,7 +635,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Housekeeping Staff in Pune | KARGAR Facility Management",
       "titleLength": 55,
@@ -559,7 +657,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -570,7 +668,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "HVAC Maintenance Pune | KARGAR Facility Management",
       "titleLength": 50,
@@ -592,7 +690,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 36,
+      "internalLinkCount": 38,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -603,7 +701,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Industrial Housekeeping, Pune | KARGAR Facility Management",
       "titleLength": 58,
@@ -625,7 +723,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -636,7 +734,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Landscaping Maintenance Pune | KARGAR Facility Management",
       "titleLength": 57,
@@ -658,7 +756,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -669,7 +767,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Office Facility Management Pune | KARGAR Facility Management",
       "titleLength": 60,
@@ -691,7 +789,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -702,7 +800,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Office Housekeeping in Pune | KARGAR Facility Management",
       "titleLength": 56,
@@ -724,7 +822,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -735,7 +833,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Plumbing Maintenance in Pune | KARGAR Facility Management",
       "titleLength": 57,
@@ -757,7 +855,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -768,7 +866,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "probe": "200, canonical /privacy-policy",
+      "inboundLinks": 44,
       "issues": [],
       "title": "Website Privacy Policy | KARGAR Facility Management",
       "titleLength": 51,
@@ -788,10 +887,94 @@
         "WebSite",
         "BreadcrumbList"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 3,
       "imagesMissingAlt": 0
+    },
+    {
+      "url": "https://www.kargarbusinessservices.com/privacy-policy.html",
+      "path": "/privacy-policy.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "inSitemap": false,
+      "probe": "200, canonical /privacy-policy",
+      "inboundLinks": 0,
+      "issues": [],
+      "title": "Website Privacy Policy | KARGAR Facility Management",
+      "titleLength": 51,
+      "description": "Privacy Policy for KARGAR Facility Management explaining how user enquiry and contact information submitted through this website is collected and protected.",
+      "descriptionLength": 156,
+      "canonical": "https://www.kargarbusinessservices.com/privacy-policy",
+      "canonicalStatus": 200,
+      "selfCanonical": false,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "indexable": false,
+      "h1Count": 1,
+      "h1": "Website Privacy Policy",
+      "wordCount": 350,
+      "schema": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "internalLinkCount": 37,
+      "externalLinkCount": 5,
+      "imageCount": 3,
+      "imagesMissingAlt": 0
+    },
+    {
+      "url": "https://www.kargarbusinessservices.com/privacy-policy/",
+      "path": "/privacy-policy/",
+      "status": 308,
+      "redirectTo": "/privacy-policy",
+      "inSitemap": false,
+      "probe": "308 -> /privacy-policy",
+      "inboundLinks": 0,
+      "issues": [],
+      "redirect": {
+        "chain": [
+          {
+            "url": "http://127.0.0.1:4182/privacy-policy/",
+            "status": 308
+          },
+          {
+            "url": "http://127.0.0.1:4182/privacy-policy",
+            "status": 200
+          }
+        ],
+        "hops": 1,
+        "finalUrl": "http://127.0.0.1:4182/privacy-policy",
+        "finalStatus": 200,
+        "loop": false
+      }
+    },
+    {
+      "url": "https://www.kargarbusinessservices.com/privacy-policy/?ref=x",
+      "path": "/privacy-policy/?ref=x",
+      "status": 308,
+      "redirectTo": "/privacy-policy?ref=x",
+      "inSitemap": false,
+      "probe": "308 -> /privacy-policy?ref=x (query string preserved)",
+      "inboundLinks": 0,
+      "issues": [],
+      "redirect": {
+        "chain": [
+          {
+            "url": "http://127.0.0.1:4182/privacy-policy/?ref=x",
+            "status": 308
+          },
+          {
+            "url": "http://127.0.0.1:4182/privacy-policy?ref=x",
+            "status": 200
+          }
+        ],
+        "hops": 1,
+        "finalUrl": "http://127.0.0.1:4182/privacy-policy?ref=x",
+        "finalStatus": 200,
+        "loop": false
+      }
     },
     {
       "url": "https://www.kargarbusinessservices.com/resources",
@@ -799,7 +982,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Facility Management Resources | KARGAR Facility Management",
       "titleLength": 58,
@@ -819,7 +1002,7 @@
         "WebSite",
         "BreadcrumbList"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 3,
       "imagesMissingAlt": 0
@@ -830,7 +1013,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Housekeeping Cost in Pune | KARGAR Facility Management",
       "titleLength": 54,
@@ -852,7 +1035,7 @@
         "Article",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 3,
       "imagesMissingAlt": 0
@@ -863,7 +1046,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "How Many Housekeeping Staff? | KARGAR Facility Management",
       "titleLength": 57,
@@ -885,7 +1068,7 @@
         "Article",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 3,
       "imagesMissingAlt": 0
@@ -896,7 +1079,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Choosing a Housekeeping Company | KARGAR Facility Management",
       "titleLength": 60,
@@ -918,7 +1101,7 @@
         "Article",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 3,
       "imagesMissingAlt": 0
@@ -929,7 +1112,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Office Housekeeping Checklist | KARGAR Facility Management",
       "titleLength": 58,
@@ -950,7 +1133,7 @@
         "BreadcrumbList",
         "Article"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 3,
       "imagesMissingAlt": 0
@@ -961,7 +1144,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "School Housekeeping in Pune | KARGAR Facility Management",
       "titleLength": 56,
@@ -983,7 +1166,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -994,7 +1177,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "probe": "200, canonical /sectors",
+      "inboundLinks": 44,
       "issues": [
         "MEDIUM: thin main content (146 words)"
       ],
@@ -1016,7 +1200,7 @@
         "WebSite",
         "BreadcrumbList"
       ],
-      "internalLinkCount": 39,
+      "internalLinkCount": 40,
       "externalLinkCount": 5,
       "imageCount": 12,
       "imagesMissingAlt": 0
@@ -1029,7 +1213,23 @@
       "inSitemap": false,
       "probe": "308 -> /sectors",
       "inboundLinks": 0,
-      "issues": []
+      "issues": [],
+      "redirect": {
+        "chain": [
+          {
+            "url": "http://127.0.0.1:4182/sectors/",
+            "status": 308
+          },
+          {
+            "url": "http://127.0.0.1:4182/sectors",
+            "status": 200
+          }
+        ],
+        "hops": 1,
+        "finalUrl": "http://127.0.0.1:4182/sectors",
+        "finalStatus": 200,
+        "loop": false
+      }
     },
     {
       "url": "https://www.kargarbusinessservices.com/security-services-pune",
@@ -1037,7 +1237,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Security Services in Pune | KARGAR Facility Management",
       "titleLength": 54,
@@ -1059,7 +1259,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 36,
+      "internalLinkCount": 38,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -1070,7 +1270,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "probe": "200, canonical /services",
+      "inboundLinks": 44,
       "issues": [],
       "title": "Facility Management Services | KARGAR Facility Management",
       "titleLength": 57,
@@ -1096,6 +1297,38 @@
       "imagesMissingAlt": 0
     },
     {
+      "url": "https://www.kargarbusinessservices.com/services.html",
+      "path": "/services.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "inSitemap": false,
+      "probe": "200, canonical /services",
+      "inboundLinks": 0,
+      "issues": [],
+      "title": "Facility Management Services | KARGAR Facility Management",
+      "titleLength": 57,
+      "description": "Explore KARGAR facility management services: soft services like housekeeping and security, plus hard services like electrical and HVAC maintenance.",
+      "descriptionLength": 147,
+      "canonical": "https://www.kargarbusinessservices.com/services",
+      "canonicalStatus": 200,
+      "selfCanonical": false,
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "indexable": false,
+      "h1Count": 1,
+      "h1": "Integrated Facility Management Solutions for Every Need",
+      "wordCount": 458,
+      "schema": [
+        "Organization",
+        "LocalBusiness",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "internalLinkCount": 41,
+      "externalLinkCount": 5,
+      "imageCount": 8,
+      "imagesMissingAlt": 0
+    },
+    {
       "url": "https://www.kargarbusinessservices.com/services/",
       "path": "/services/",
       "status": 308,
@@ -1103,7 +1336,23 @@
       "inSitemap": false,
       "probe": "308 -> /services",
       "inboundLinks": 0,
-      "issues": []
+      "issues": [],
+      "redirect": {
+        "chain": [
+          {
+            "url": "http://127.0.0.1:4182/services/",
+            "status": 308
+          },
+          {
+            "url": "http://127.0.0.1:4182/services",
+            "status": 200
+          }
+        ],
+        "hops": 1,
+        "finalUrl": "http://127.0.0.1:4182/services",
+        "finalStatus": 200,
+        "loop": false
+      }
     },
     {
       "url": "https://www.kargarbusinessservices.com/services/does-not-exist",
@@ -1121,9 +1370,9 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 7,
+      "inboundLinks": 44,
       "issues": [
-        "MEDIUM: thin main content (189 words)"
+        "MEDIUM: thin main content (195 words)"
       ],
       "title": "Hard Facility Management | KARGAR Facility Management",
       "titleLength": 53,
@@ -1136,7 +1385,7 @@
       "indexable": true,
       "h1Count": 1,
       "h1": "Hard Services",
-      "wordCount": 189,
+      "wordCount": 195,
       "schema": [
         "Organization",
         "LocalBusiness",
@@ -1144,7 +1393,7 @@
         "BreadcrumbList",
         "Service"
       ],
-      "internalLinkCount": 37,
+      "internalLinkCount": 39,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -1165,7 +1414,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 5,
+      "inboundLinks": 6,
       "issues": [],
       "title": "Electrical Maintenance | KARGAR Facility Management",
       "titleLength": 51,
@@ -1187,7 +1436,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 37,
+      "internalLinkCount": 38,
       "externalLinkCount": 5,
       "imageCount": 5,
       "imagesMissingAlt": 0
@@ -1198,7 +1447,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 6,
+      "inboundLinks": 7,
       "issues": [],
       "title": "Commercial HVAC Maintenance | KARGAR Facility Management",
       "titleLength": 56,
@@ -1220,7 +1469,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 37,
+      "internalLinkCount": 38,
       "externalLinkCount": 5,
       "imageCount": 5,
       "imagesMissingAlt": 0
@@ -1231,7 +1480,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 3,
+      "inboundLinks": 44,
       "issues": [
         "MEDIUM: thin main content (201 words)"
       ],
@@ -1254,7 +1503,7 @@
         "BreadcrumbList",
         "Service"
       ],
-      "internalLinkCount": 37,
+      "internalLinkCount": 39,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -1267,7 +1516,7 @@
       "inSitemap": true,
       "inboundLinks": 8,
       "issues": [],
-      "title": "Corporate Housekeeping Service | KARGAR Facility Management",
+      "title": "Business Housekeeping Services | KARGAR Facility Management",
       "titleLength": 59,
       "description": "Professional housekeeping services for corporate, commercial, and industrial facilities, with trained staff, eco-friendly cleaning, and reliable supervision.",
       "descriptionLength": 157,
@@ -1287,7 +1536,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 37,
+      "internalLinkCount": 38,
       "externalLinkCount": 5,
       "imageCount": 12,
       "imagesMissingAlt": 0
@@ -1298,7 +1547,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 6,
+      "inboundLinks": 7,
       "issues": [],
       "title": "Corporate Security Services | KARGAR Facility Management",
       "titleLength": 56,
@@ -1320,7 +1569,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 37,
+      "internalLinkCount": 38,
       "externalLinkCount": 5,
       "imageCount": 10,
       "imagesMissingAlt": 0
@@ -1331,7 +1580,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Society Housekeeping in Pune | KARGAR Facility Management",
       "titleLength": 57,
@@ -1353,7 +1602,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -1364,7 +1613,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "Society Security Services Pune | KARGAR Facility Management",
       "titleLength": 59,
@@ -1386,7 +1635,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -1397,7 +1646,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [],
       "title": "STP Operation & Maintenance | KARGAR Facility Management",
       "titleLength": 56,
@@ -1419,7 +1668,7 @@
         "Service",
         "FAQPage"
       ],
-      "internalLinkCount": 35,
+      "internalLinkCount": 37,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0
@@ -1430,7 +1679,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "inSitemap": true,
-      "inboundLinks": 42,
+      "inboundLinks": 44,
       "issues": [
         "MEDIUM: thin main content (67 words)"
       ],
@@ -1452,7 +1701,7 @@
         "WebSite",
         "BreadcrumbList"
       ],
-      "internalLinkCount": 36,
+      "internalLinkCount": 38,
       "externalLinkCount": 5,
       "imageCount": 4,
       "imagesMissingAlt": 0

@@ -1,5 +1,6 @@
 import { config } from '@/config';
 import { contactDetails } from '@/config/contact';
+import { OFFICIAL_SOCIAL_LINKS } from '@/config/socialLinks';
 import { buildCanonicalUrl } from './canonical';
 import type { BreadcrumbItem } from '@/features/services/components/Breadcrumb';
 import type { Category, Service, ServiceFAQ } from '@/features/services/domain/service.types';
@@ -22,10 +23,9 @@ export function buildOrganizationSchema() {
     // Documented in KARGAR's Company Profile (p.17). Plain text only — schema.org has no
     // verifiable award type, and no other recognition is asserted here.
     award: 'Punyashlok Ahilya Devi Holkar Woman Startup Award (2024)',
-    sameAs: [
-      'https://in.linkedin.com/company/kargar',
-      'https://www.facebook.com/people/Kargar-Facility-and-Security-Services-PVT-LTD/100076064059281/',
-    ],
+    // Same list the footer links to, so schema and visible profiles can't drift apart
+    // (a hand-copied LinkedIn URL here had gone 404).
+    sameAs: OFFICIAL_SOCIAL_LINKS.map((platform) => platform.url),
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: contactDetails.phone.e164,

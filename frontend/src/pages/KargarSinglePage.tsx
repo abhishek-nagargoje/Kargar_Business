@@ -85,19 +85,21 @@ const navItems: NavItem[] = [
   { label: 'Contact Us', href: '/contact-us' },
 ];
 
+// Only figures stated in the approved Company Profile / Brochure (Profile p.11-12, Brochure p.2-3).
+// Do not add headcount, client, site, city or years figures without a documented source.
 const heroStats: StatItem[] = [
-  { value: '10+', countTo: 10, suffix: '+', label: 'Years of Experience', icon: ShieldCheck },
-  { value: '2,000+', countTo: 2000, suffix: '+', label: 'Skilled Workforce', icon: Users },
-  { value: '50+', countTo: 50, suffix: '+', label: 'Sites Managed', icon: Building2 },
-  { value: '10,000+', countTo: 10000, suffix: '+', label: 'Happy Clients', icon: Smile },
+  { value: '98%', countTo: 98, suffix: '%', label: 'Client Retention', icon: Smile },
+  { value: '95%', countTo: 95, suffix: '%', label: 'Employee Retention', icon: Users },
+  { value: '100%', countTo: 100, suffix: '%', label: 'Financial Transparency', icon: ShieldCheck },
+  { value: '6', countTo: 6, label: 'Sectors Served', icon: Building2 },
 ];
 
 const serviceStats: StatItem[] = [
-  { value: '10+', label: 'Years of Experience', note: 'Delivering excellence consistently.', icon: ShieldCheck },
-  { value: '2,000+', label: 'Skilled Workforce', note: 'Trained, verified & well-equipped teams.', icon: Users },
-  { value: '50+', label: 'Sites Managed', note: 'Pan India presence with strong operational network.', icon: Building2 },
-  { value: '10,000+', label: 'Happy Clients', note: 'Building long-term partnerships.', icon: Smile },
-  { value: '5+', label: 'Cities Pan India', note: 'Expanding our footprint across the nation.', icon: MapPin, accent: true },
+  { value: '98%', label: 'Client Retention', note: 'Long-term relationships with the properties we serve.', icon: Smile },
+  { value: '95%', label: 'Employee Retention', note: 'Stable site teams, trained round the year.', icon: Users },
+  { value: '100%', label: 'Financial Transparency', note: 'Ask what the staff at your site are paid.', icon: ShieldCheck },
+  { value: '6', label: 'Sectors Served', note: 'Residential, corporate, commercial, education, healthcare, manufacturing.', icon: Building2 },
+  { value: 'Pune', label: 'Head Office in Baner', note: 'Serving societies and businesses across Pune.', icon: MapPin, accent: true },
 ];
 
 const serviceHeroFeatures: FeatureItem[] = [
@@ -113,7 +115,8 @@ const contactHighlights: FeatureItem[] = [
   { title: 'Trusted Partner', text: 'Reliable solutions for your business', icon: BadgeCheck },
 ];
 
-const operatingCities = ['Mumbai', 'Pune', 'Delhi', 'Bengaluru', 'Hyderabad'];
+// Property types from the Company Profile (p.3-4). KARGAR's documented footprint is Pune only.
+const servedPropertyTypes = ['Residential Societies', 'Corporate Offices', 'Commercial Complexes', 'Educational Institutes', 'Manufacturing Plants'];
 
 function isActiveRoute(currentPath: string, href: string) {
   if (href === '/') return currentPath === '/';
@@ -629,13 +632,13 @@ function MapPreview() {
 function OperationsCard() {
   return (
     <section className="kb-operations">
-      <h2>We Operate Across India</h2>
-      <p>With a strong presence in 50+ sites across 5+ cities, we are always close to you.</p>
+      <h2>Serving Properties Across Pune</h2>
+      <p>From our office in Baner, KARGAR teams look after societies, offices, campuses and plants across Pune.</p>
       <div>
-        {operatingCities.map((city) => (
-          <article key={city}>
+        {servedPropertyTypes.map((type) => (
+          <article key={type}>
             <Building2 size={34} />
-            <strong>{city}</strong>
+            <strong>{type}</strong>
           </article>
         ))}
       </div>
@@ -816,12 +819,12 @@ function CompanyProfilePage() {
         breadcrumbLabel="Company Profile"
         eyebrow="Company Profile"
         heading="Trusted Facility Management,"
-        headingAccent="Built Over 10+ Years"
+        headingAccent="Built on Process and People"
         description={
           <>
             KARGAR Facility Management is a{' '}
             <Link to="/facility-management-company-pune" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>facility management company based in Pune</Link>
-            , delivering integrated housekeeping, security, and maintenance services for corporate offices and commercial facilities. Our track record spans 10+ years of experience, 10,000+ clients served, and 50+ sites managed to date.
+            , delivering integrated soft and hard facility services, from housekeeping and security to building maintenance, for residential societies, corporate offices, commercial complexes and institutes. Every site runs on our PURNA operating protocol, with trained teams, one point of coordination and full transparency on what deployed staff are paid.
           </>
         }
         image="/images/page/contact-building.webp"

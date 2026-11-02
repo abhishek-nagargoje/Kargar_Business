@@ -57,7 +57,7 @@ export const seoRegistry: Record<string, RouteSEOEntry> = {
     path: '/company-profile',
     title: 'Trusted Facility Management',
     description:
-      'KARGAR Facility Management is a trusted facility management company with 10+ years of experience serving 10,000+ clients across 50+ sites in India.',
+      'KARGAR is a trusted facility management company in Pune for societies and businesses, running housekeeping, security and maintenance on its PURNA protocol.',
     keywords: ['Trusted Facility Management Company', 'Professional Facility Management Company'],
   },
   '/support': {

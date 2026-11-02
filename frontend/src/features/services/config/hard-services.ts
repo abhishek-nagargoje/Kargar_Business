@@ -21,13 +21,13 @@ export const hardServices: Record<string, Service> = {
     layoutPreset: 'enterpriseTechnical',
     marketing: {
       headline: 'Uninterrupted Power for Uninterrupted Business.',
-      summary: 'Keep your operations running safely with our 24/7 electrical maintenance services.',
+      summary: 'Keep your operations running safely with planned electrical maintenance and coordinated breakdown support.',
       ctaText: 'Request an Electrical Audit'
     },
     operations: {
       scopeOfWork: [
         { title: 'Preventive Maintenance', description: 'Regular inspections to identify potential issues.' },
-        { title: 'Emergency Repairs', description: '24/7 rapid response for critical failures.' },
+        { title: 'Breakdown Coordination', description: 'Faults outside the preventive schedule handled through an agreed escalation process.' },
         { title: 'System Upgrades', description: 'Modernization of outdated electrical panels.' },
         { title: 'Energy Optimization', description: 'Solutions to reduce power consumption.' }
       ],
@@ -39,10 +39,10 @@ export const hardServices: Record<string, Service> = {
         { name: 'Cabling & Earthing', iconKey: 'activity' }
       ]
     },
-    capabilities: ['24x7-support', 'preventive-maintenance', 'emergency-response', 'iso-compliance'],
+    capabilities: ['preventive-maintenance'],
     whyChooseUs: [
       { title: 'Certified Technicians', description: 'Fully licensed and trained in latest safety standards.', iconKey: 'award' },
-      { title: 'Rapid Response', description: '24/7 emergency support for critical failures.', iconKey: 'clock' },
+      { title: 'OEM-Aligned Maintenance', description: 'Preventive maintenance follows OEM schedules for each asset.', iconKey: 'clipboard-check' },
       { title: 'Energy Savings', description: 'Proven strategies to reduce overall power consumption.', iconKey: 'trending-down' }
     ],
     industries: [
@@ -54,7 +54,7 @@ export const hardServices: Record<string, Service> = {
     ],
     faqs: [
       { question: 'How often should electrical maintenance be performed?', answer: 'We recommend comprehensive inspections at least annually, with more frequent checks for critical systems.' },
-      { question: 'Do you provide emergency electrical services?', answer: 'Yes, our team is available 24/7 for emergency electrical troubleshooting and repairs.' },
+      { question: 'What happens if there is an electrical breakdown?', answer: 'Breakdowns are coordinated through an agreed escalation process, with OEMs or specialist vendors brought in where required.' },
       { question: 'Do you handle backup generator maintenance?', answer: 'Yes, generator maintenance is a key part of our electrical services to ensure reliable backup power.' }
     ],
     relationships: {

@@ -25,7 +25,7 @@ export const maintenancePages: PuneLandingPageContent[] = [
     heroImage: heroImages.technicians,
     intro: [
       'Hard services are the systems a building cannot function without. When they are maintained only after something fails, the cost shows up as downtime, emergency call-outs and shortened equipment life. KARGAR’s facility maintenance service puts those systems on a planned preventive maintenance (PPM) schedule aligned to OEM recommendations, and coordinates breakdown repairs when they happen.',
-      'We maintain building systems for residential societies, offices, commercial complexes, institutes and plants across Pune, under an annual maintenance contract (AMC), on call, or as part of [integrated facility management](/facility-management-company-pune).',
+      'We maintain building systems for residential societies, offices, commercial complexes, institutes and plants across Pune, under an annual maintenance contract (AMC), with resident technicians, or as part of [integrated facility management](/facility-management-company-pune).',
     ],
     sections: [
       {
@@ -63,7 +63,7 @@ export const maintenancePages: PuneLandingPageContent[] = [
         columns: 3,
         items: [
           { title: 'AMC', description: 'An annual maintenance contract with a PPM calendar and agreed scope for each system.' },
-          { title: 'On-call', description: 'Technician support when you need it, for sites that do not need a full-time team.' },
+          { title: 'Breakdown coordination', description: 'Faults outside the PPM schedule handled through an agreed escalation process, with OEMs or specialist vendors where needed.' },
           { title: 'Resident technicians', description: 'Electricians, plumbers, STP operators or fire technicians deployed on site, often within a [building maintenance](/building-maintenance-services-pune) setup.' },
         ],
       },
@@ -81,7 +81,7 @@ export const maintenancePages: PuneLandingPageContent[] = [
     faqs: [
       { question: 'What does facility maintenance include?', answer: 'Maintenance of a building’s technical systems — electrical, HVAC, DG, UPS, plumbing, STP/WTP, fire systems and BMS — through preventive schedules and breakdown coordination.' },
       { question: 'Do you work with existing OEM AMCs?', answer: 'Yes. We follow OEM schedules for PPM and coordinate breakdown maintenance with OEMs or specialist vendors where their involvement is required.' },
-      { question: 'Can we take only on-call support?', answer: 'Yes. Maintenance can be engaged as an AMC, on call or incidental, depending on the site.' },
+      { question: 'How is a maintenance contract structured?', answer: 'Typically as an annual maintenance contract with a PPM calendar for each system, with resident technicians deployed where the site needs them and breakdowns coordinated through an agreed escalation process.' },
       { question: 'Do you provide technicians to stay on site?', answer: 'Yes. Electricians, plumbers, STP operators, fire technicians and other technicians can be deployed on site.' },
     ],
     serviceDetailLink: { label: 'hard services overview', href: '/services/hard-services' },
@@ -155,7 +155,7 @@ export const maintenancePages: PuneLandingPageContent[] = [
     ],
     faqs: [
       { question: 'How often should electrical systems be inspected?', answer: 'Preventive schedules follow OEM recommendations and how heavily the system is used. Critical items such as DG sets and UPS batteries are checked more often than general distribution.' },
-      { question: 'Do you provide emergency electrical support?', answer: 'KARGAR provides 24x7 support for emergencies, with breakdowns coordinated through our escalation process.' },
+      { question: 'What happens if there is an electrical breakdown?', answer: 'Breakdowns are coordinated through an agreed escalation process, with OEMs or specialist vendors brought in where their involvement is required.' },
       { question: 'Do you maintain DG sets?', answer: 'Yes. DG operation and maintenance is part of our hard-services scope.' },
       { question: 'Can you work alongside our OEM service contracts?', answer: 'Yes. We follow OEM schedules and coordinate with OEMs where their involvement is required.' },
     ],
@@ -249,7 +249,7 @@ export const maintenancePages: PuneLandingPageContent[] = [
     heroImage: heroImages.technicians,
     intro: [
       'This is building plumbing, not one-off household repair. A housing society or commercial building depends on pumps lifting water to overhead tanks, sumps and tanks staying clean, pipelines and valves holding pressure, and washroom fixtures working across dozens or hundreds of points. When one part fails, the complaint arrives from every floor at once.',
-      'KARGAR maintains plumbing and water systems as part of our hard services — with plumbers deployed on site or on call, and work organised on a preventive schedule rather than complaint by complaint.',
+      'KARGAR maintains plumbing and water systems as part of our hard services — with plumbers deployed on site, and work organised on a preventive schedule rather than complaint by complaint.',
     ],
     sections: [
       {
@@ -274,15 +274,15 @@ export const maintenancePages: PuneLandingPageContent[] = [
       },
       {
         kind: 'prose',
-        heading: 'On-Site Plumber or On-Call Support?',
+        heading: 'Sizing Plumbing Coverage for Your Property',
         paragraphs: [
-          'Large societies and campuses usually benefit from a resident plumber as part of a wider technician team — see [building maintenance services](/building-maintenance-services-pune). Smaller buildings and offices often only need on-call support. Both are available, and the choice is made on how many water points and how much equipment your property has.',
+          'Large societies and campuses usually benefit from a resident plumber as part of a wider technician team — see [building maintenance services](/building-maintenance-services-pune). For smaller buildings, plumbing can sit within a shared technician team. Coverage is decided on how many water points, pumps and tanks your property has.',
         ],
       },
     ],
     faqs: [
       { question: 'Do you do plumbing work inside individual flats?', answer: 'Our service is focused on building and common-area plumbing for societies and businesses. Work inside individual flats is agreed separately with the society.' },
-      { question: 'Can a plumber be deployed at our society full time?', answer: 'Yes. Plumbers can be deployed on site as part of a technician team, or support can be on call.' },
+      { question: 'Can a plumber be deployed at our society full time?', answer: 'Yes. Plumbers can be deployed on site as part of a technician team.' },
       { question: 'Do you look after STPs too?', answer: 'Yes — see [STP and WTP operation and maintenance](/stp-operation-maintenance-pune).' },
     ],
     relatedLinks: [
@@ -291,7 +291,7 @@ export const maintenancePages: PuneLandingPageContent[] = [
       { label: 'Facility Maintenance Services', href: '/facility-maintenance-services-pune' },
     ],
     ctaHeading: 'Get Plumbing Maintenance for Your Property',
-    ctaText: 'Share the number of buildings, pumps and tanks, and we will recommend on-site or on-call coverage.',
+    ctaText: 'Share the number of buildings, pumps and tanks, and we will recommend the right plumbing coverage.',
     serviceType: 'Plumbing and Water System Maintenance',
   },
 

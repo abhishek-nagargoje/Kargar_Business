@@ -163,7 +163,7 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
       {
         kind: 'callout',
         heading: 'Transparency the committee can show residents',
-        text: 'Society money is residents’ money. KARGAR’s 100% financial transparency commitment gives the committee the right to ask what compensation is paid to staff deployed at the society — and PF/ESIC compliance is handled in line with labour law.',
+        text: 'Society money is residents’ money. KARGAR’s 100% financial transparency commitment gives the committee the right to ask what compensation is paid to staff deployed at the society.',
       },
     ],
     faqs: [
@@ -372,7 +372,7 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
         },
         right: {
           title: 'Staffing through KARGAR',
-          items: ['One provider for all facility roles', 'Police verification and background checks done before deployment', 'PF, ESIC and labour-law compliance handled by KARGAR', 'Training and retention managed by KARGAR'],
+          items: ['One provider for all facility roles', 'Police verification and background checks done before deployment', 'Staff employed and paid by KARGAR', 'Training and retention managed by KARGAR'],
         },
       },
       {
@@ -384,7 +384,7 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
     faqs: [
       { question: 'Is facility staffing the same as facility management?', answer: 'No. Staffing supplies people who work under your direction; [facility management](/facility-management-company-pune) means KARGAR also owns the scope, supervision and outcomes.' },
       { question: 'Can I hire different roles under one contract?', answer: 'Yes. Housekeeping, security, technical and front-office roles can all be part of one staffing agreement.' },
-      { question: 'Who handles PF and ESIC?', answer: 'KARGAR, as the employer of the deployed staff, in line with labour law.' },
+      { question: 'Who employs the deployed staff?', answer: 'KARGAR. The staff at your site are KARGAR employees, and under our 100% financial transparency commitment you can ask what they are paid.' },
     ],
     relatedLinks: [
       { label: 'Housekeeping Staff & Manpower', href: '/housekeeping-staff-pune' },

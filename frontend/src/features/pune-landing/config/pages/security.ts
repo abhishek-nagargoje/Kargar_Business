@@ -35,7 +35,7 @@ export const securityPages: PuneLandingPageContent[] = [
           { title: 'Manned guarding', description: 'Trained security officers for static guarding and scheduled patrols.' },
           { title: 'Access control', description: 'Managing entry and exit points to prevent unauthorised access, with visitor logs.' },
           { title: 'CCTV monitoring', description: 'Surveillance monitoring and incident recording by surveillance operators.' },
-          { title: 'Emergency response', description: 'Coordination during incidents, with 24x7 support and escalation through KARGAR management.' },
+          { title: 'Emergency response', description: 'Coordination during incidents, with escalation through KARGAR management.' },
         ],
       },
       {
@@ -51,7 +51,7 @@ export const securityPages: PuneLandingPageContent[] = [
     ],
     faqs: [
       { question: 'Are your security guards police-verified?', answer: 'Yes. Security personnel go through police verification and background checks before deployment.' },
-      { question: 'Do you provide 24/7 security coverage in Pune?', answer: 'Yes, we provide round-the-clock security coverage, planned shift by shift for your site.' },
+      { question: 'What hours can security cover?', answer: 'Coverage hours, guard posts and shifts are agreed with you during the site assessment and written into the post plan for your site.' },
       { question: 'What happens during a security incident?', answer: 'Our protocol is immediate containment, coordination with local authorities where needed, and documented incident reporting.' },
       { question: 'Can security services be combined with housekeeping?', answer: 'Yes. Many clients use our housekeeping and security teams together as part of [integrated facility management](/facility-management-company-pune).' },
       { question: 'How do I request a security assessment for my facility?', answer: 'Share your facility type and current security setup through our contact page, and our team will follow up with a tailored assessment.' },

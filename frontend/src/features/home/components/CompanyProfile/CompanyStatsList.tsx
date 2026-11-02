@@ -1,11 +1,12 @@
-import { Users, Building2, MapPin, Clock } from 'lucide-react';
+import { MapPin, Layers, ClipboardCheck, Award } from 'lucide-react';
 
 export function CompanyStatsList() {
+  // Factual descriptors from the Company Profile (p.10, p.17-18) and Brochure (p.2), not marketing counts.
   const stats = [
-    { icon: Users, value: "2,000+", label: "Expert Workforce" },
-    { icon: Building2, value: "10,000+", label: "Happy Clients" },
-    { icon: MapPin, value: "5+", label: "Cities Covered" },
-    { icon: Clock, value: "10+", label: "Years of Excellence" },
+    { icon: MapPin, value: "Pune", label: "Head Office in Baner" },
+    { icon: Layers, value: "Soft + Hard", label: "Integrated Services" },
+    { icon: ClipboardCheck, value: "PURNA", label: "Operating Protocol" },
+    { icon: Award, value: "2024", label: "Woman Startup Award" },
   ];
 
   return (

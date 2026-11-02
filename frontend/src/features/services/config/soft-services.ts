@@ -101,7 +101,7 @@ export const softServices: Record<string, Service> = {
       scopeOfWork: [
         { title: 'Manned Guarding', description: 'Trained security officers for static guarding and patrols.' },
         { title: 'Access Control', description: 'Managing entry and exit points to prevent unauthorized access.' },
-        { title: 'CCTV Monitoring', description: '24/7 surveillance monitoring and incident recording.' },
+        { title: 'CCTV Monitoring', description: 'Surveillance monitoring and incident recording by surveillance operators.' },
         { title: 'Emergency Response', description: 'Rapid deployment and coordination during critical incidents.' }
       ],
       deliverables: [
@@ -109,7 +109,7 @@ export const softServices: Record<string, Service> = {
         { title: 'Incident Reports', description: 'Detailed documentation of any security breaches.' }
       ]
     },
-    capabilities: ['24x7-support', 'police-verified', 'emergency-response'],
+    capabilities: ['police-verified'],
     whyChooseUs: [
       { title: 'Vetted Professionals', description: 'Strict background checks and psychological profiling.', iconKey: 'shield-check' },
       { title: 'Advanced Training', description: 'Trained in conflict resolution and emergency response.', iconKey: 'crosshair' },
@@ -117,7 +117,7 @@ export const softServices: Record<string, Service> = {
     ],
     faqs: [
       { question: 'Are your security guards armed or unarmed?', answer: 'We primarily provide unarmed personnel, but armed guards can be arranged depending on regulations.' },
-      { question: 'Do you offer 24/7 security coverage?', answer: 'Yes, we provide round-the-clock security services.' },
+      { question: 'What hours can security cover?', answer: 'Coverage hours, guard posts and shifts are agreed with you during the site assessment.' },
       { question: 'What is your response protocol for emergencies?', answer: 'Immediate containment, coordination with local authorities, and rapid incident reporting.' }
     ],
     relationships: {

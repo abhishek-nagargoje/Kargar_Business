@@ -1,4 +1,4 @@
-import { ShieldCheck, Users, Cpu, FileCheck, HeadphonesIcon, MapPin, type LucideIcon } from 'lucide-react';
+import { ShieldCheck, Users, Cpu, type LucideIcon } from 'lucide-react';
 
 export interface TrustCard {
   icon: LucideIcon;
@@ -25,20 +25,5 @@ export const companyTrust: TrustCard[] = [
     title: "Technology Driven",
     description: "Smart processes, real-time reporting, and data-driven operations for complete transparency.",
     features: ["Digital Reporting", "Attendance Tracking", "Performance Monitoring"]
-  },
-  {
-    icon: FileCheck,
-    title: "Compliance",
-    features: ["PF & ESIC", "Labour Law", "ISO Guidelines"]
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "24x7 Support",
-    features: ["Emergency Response", "Helpdesk", "Rapid Escalation"]
-  },
-  {
-    icon: MapPin,
-    title: "PAN India",
-    features: ["Corporate Offices", "Industrial Plants", "IT Parks"]
   }
 ];

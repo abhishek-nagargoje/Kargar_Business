@@ -104,7 +104,7 @@ export const guidePageList: GuidePageContent[] = [
       {
         kind: 'callout',
         heading: 'How KARGAR answers these questions',
-        text: 'KARGAR deploys police-verified, trained staff with supervision and daily checklists, handles PF and ESIC, and — under its 100% financial transparency commitment — gives clients the right to ask what the deployed staff are paid. If you are comparing vendors, [request a proposal](/contact-us) and hold us to this list.',
+        text: 'KARGAR deploys police-verified, trained staff with supervision and daily checklists, and — under its 100% financial transparency commitment — gives clients the right to ask what the deployed staff are paid. If you are comparing vendors, [request a proposal](/contact-us) and hold us to this list.',
       },
     ],
     faqs: [

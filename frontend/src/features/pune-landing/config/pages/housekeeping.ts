@@ -83,7 +83,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
           { title: 'Verified, trained staff', description: 'Housekeeping personnel go through police verification and background checks before deployment, then continuous on-the-job training.' },
           { title: 'Supervision you can see', description: 'Supervisors work from daily cleaning checklists and carry out quality inspections — not just a monthly visit from a sales contact.' },
           { title: 'Attendance and digital reporting', description: 'Attendance is tracked and reporting is digital, so you can see who was on site and what was completed. Read how to size a team in our [staffing guide](/resources/how-many-housekeeping-staff).' },
-          { title: 'Compliance and payroll transparency', description: 'Staff are covered for PF and ESIC in line with labour law. Under KARGAR’s 100% financial transparency commitment, you can ask what compensation is paid to the staff deployed at your site. More on [housekeeping staff in Pune](/housekeeping-staff-pune).' },
+          { title: 'Payroll transparency', description: 'Under KARGAR’s 100% financial transparency commitment, you can ask what compensation is paid to the staff deployed at your site. More on [housekeeping staff in Pune](/housekeeping-staff-pune).' },
         ],
       },
       {
@@ -114,7 +114,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
           title: 'Managed housekeeping with KARGAR',
           items: [
             'One provider is accountable for staffing and continuity',
-            'PF/ESIC compliance and payroll handled by KARGAR',
+            'Staff employed and paid by KARGAR',
             'Checklists, supervision and inspections define quality',
             'Consumables, tools and tackles managed as part of scope',
           ],
@@ -285,7 +285,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
           { title: 'Supervisor ownership', description: 'A supervisor owns each shift’s checklist and is the first point of contact for your admin team.' },
           { title: 'Inspections', description: 'Quality inspections check the work against the checklist; issues are recorded and closed, not just verbally passed on.' },
           { title: 'Reporting and review', description: 'Daily, weekly and monthly reporting, with KARGAR regional management reviewing performance and improvements with you.' },
-          { title: 'Escalation', description: 'A defined escalation path above the supervisor, with 24x7 support for urgent issues.' },
+          { title: 'Escalation', description: 'A defined escalation path above the supervisor for urgent issues.' },
         ],
       },
       {
@@ -299,7 +299,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       {
         kind: 'callout',
         heading: 'Payroll you can verify',
-        text: 'Corporate compliance teams often ask whether outsourced staff are being paid properly. KARGAR’s 100% financial transparency commitment means you have the right to ask what compensation is paid to staff deployed at your site, and PF and ESIC are handled in line with labour law.',
+        text: 'Corporate compliance teams often ask whether outsourced staff are being paid properly. KARGAR’s 100% financial transparency commitment means you have the right to ask what compensation is paid to staff deployed at your site.',
       },
     ],
     faqs: [
@@ -436,7 +436,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       {
         kind: 'callout',
         heading: 'Transparency for the committee',
-        text: 'Society funds belong to the residents, so committees are right to ask where the money goes. Under KARGAR’s 100% financial transparency commitment, the society can ask what compensation is paid to the staff deployed on its premises — and PF and ESIC are handled in line with labour law.',
+        text: 'Society funds belong to the residents, so committees are right to ask where the money goes. Under KARGAR’s 100% financial transparency commitment, the society can ask what compensation is paid to the staff deployed on its premises.',
       },
       {
         kind: 'prose',
@@ -474,7 +474,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     seo: {
       title: 'Housekeeping Staff in Pune',
       description:
-        'Hire verified housekeeping staff in Pune on contract — housekeeping manpower with PF/ESIC compliance, attendance tracking and supervision from KARGAR.',
+        'Hire verified housekeeping staff in Pune on contract: housekeeping manpower employed, trained and supervised by KARGAR, with attendance tracking.',
       keywords: ['Housekeeping Staff Pune', 'Housekeeping Manpower Pune', 'Housekeeping Manpower Supply Pune'],
     },
     eyebrow: 'Housekeeping Manpower',
@@ -507,7 +507,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
         columns: 2,
         items: [
           { title: 'Verification before deployment', description: 'Police verification and background checks are completed before anyone is placed at your site.' },
-          { title: 'Statutory compliance', description: 'PF, ESIC and labour-law compliance are handled by KARGAR as the employer.' },
+          { title: 'One employer', description: 'Staff are KARGAR employees, so you deal with one contract rather than individual workers.' },
           { title: 'Attendance tracking', description: 'Attendance is tracked and reported, so billing reflects the people actually on site.' },
           { title: 'Training and retention', description: 'Year-round skill, safety and behavioural training — KARGAR’s company profile reports 95% employee retention, which means fewer new faces at your site.' },
         ],
@@ -531,7 +531,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       },
     ],
     faqs: [
-      { question: 'Whose payroll are the housekeeping staff on?', answer: 'KARGAR’s. We employ the staff and handle PF, ESIC and labour-law compliance; you pay KARGAR under the contract.' },
+      { question: 'Whose payroll are the housekeeping staff on?', answer: 'KARGAR’s. We employ the staff; you pay KARGAR under the contract, and you can ask what the staff at your site are paid.' },
       { question: 'What happens when a staff member is absent?', answer: 'Continuity of staffing is KARGAR’s responsibility under the contract. How absences are covered is agreed in the proposal for your site.' },
       { question: 'Can I ask for a staff member to be replaced?', answer: 'Yes. If someone is not the right fit for your site, raise it with your KARGAR contact and it will be addressed.' },
       { question: 'Can I check what the staff are paid?', answer: 'Yes. Under KARGAR’s financial transparency commitment, you can ask for the compensation paid to the staff deployed at your site.' },
@@ -738,7 +738,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     faqs: [
       { question: 'Do you handle biomedical waste disposal?', answer: 'Disposal of biomedical waste is managed through the facility’s authorised arrangement. Our staff follow your segregation rules within the housekeeping scope.' },
       { question: 'Can you work with our infection-control team?', answer: 'Yes. Our teams are trained on and follow your facility’s protocols; the protocols themselves remain with your infection-control team.' },
-      { question: 'Do you provide round-the-clock housekeeping?', answer: 'Staffing can be planned for multiple shifts where the facility operates around the clock.' },
+      { question: 'Can housekeeping cover more than one shift?', answer: 'Shift coverage is agreed with you during the site assessment, based on the facility’s operating hours and patient areas.' },
     ],
     relatedLinks: [
       { label: 'Housekeeping Services in Pune', href: '/housekeeping-services-pune' },

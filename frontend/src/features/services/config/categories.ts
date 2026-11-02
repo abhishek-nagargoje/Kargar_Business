@@ -30,12 +30,12 @@ export const serviceCategories: Record<string, Category> = {
     shortDescription: 'Reliable engineering and maintenance solutions for seamless operations.',
     // Scope strictly per Company Brochure p.2 "Hard Services", matching the Pune maintenance cluster
     // (src/features/pune-landing/config/pages/maintenance.ts). Do not add systems outside that scope.
-    overview: 'Hard services are the technical systems a building cannot run without: power distribution and backup, cooling and ventilation, water, sewage treatment and fire safety. KARGAR maintains these systems for housing societies, offices, commercial complexes, institutes and manufacturing plants across Pune. Instead of waiting for equipment to fail, we put each system on a planned preventive maintenance (PPM) schedule built from OEM recommendations and how the site is actually used, and we coordinate breakdown repairs, with OEMs or specialist vendors where needed, when faults still occur. Hard services can be taken on their own under an annual maintenance contract, on call, or as part of integrated facility management alongside our soft services.',
+    overview: 'Hard services are the technical systems a building cannot run without: power distribution and backup, cooling and ventilation, water, sewage treatment and fire safety. KARGAR maintains these systems for housing societies, offices, commercial complexes, institutes and manufacturing plants across Pune. Instead of waiting for equipment to fail, we put each system on a planned preventive maintenance (PPM) schedule built from OEM recommendations and how the site is actually used, and we coordinate breakdown repairs, with OEMs or specialist vendors where needed, when faults still occur. Hard services can be taken on their own under an annual maintenance contract, with resident technicians, or as part of integrated facility management alongside our soft services.',
     iconKey: 'wrench',
     imageKey: 'hardServices',
     seo: {
       title: 'Hard Services & MEP Maintenance',
-      description: 'Hard services in Pune by KARGAR: planned maintenance of electrical, HVAC, DG, UPS, plumbing, STP and fire systems under an AMC, on call or with resident staff.',
+      description: 'Hard services in Pune by KARGAR: planned maintenance of electrical, HVAC, DG, UPS, plumbing, STP and fire systems under an AMC or with resident technicians.',
       keywords: ['Hard Services Pune', 'Hard Facility Management', 'MEP Maintenance Pune', 'Preventive Maintenance'],
     },
     showInNavigation: true,
@@ -59,7 +59,7 @@ export const serviceCategories: Record<string, Category> = {
     ],
     solutions: [
       { title: 'Annual Maintenance Contract', description: 'A PPM calendar and agreed scope for each system, with breakdowns coordinated under the same contract.', iconKey: 'calendar-check' },
-      { title: 'On-Call Support', description: 'Technician support when you need it, for sites that do not need a full-time team.', iconKey: 'phone-call' },
+      { title: 'Breakdown Coordination', description: 'Faults outside the PPM schedule escalated and coordinated, with OEMs or specialist vendors brought in where needed.', iconKey: 'phone-call' },
       { title: 'Resident Technicians', description: 'Electricians, plumbers, STP operators or fire technicians deployed on site.', iconKey: 'hard-hat' },
     ],
     industries: BROCHURE_SECTORS,
@@ -72,7 +72,7 @@ export const serviceCategories: Record<string, Category> = {
     faqs: [
       { question: 'What is the difference between hard services and soft services?', answer: 'Hard services cover the building’s technical systems: electrical, HVAC, DG and UPS, plumbing, STP/WTP, fire systems and BMS. Soft services cover the people-driven work that keeps a property clean, safe and running day to day, such as housekeeping and security.' },
       { question: 'Do you work alongside our existing OEM contracts?', answer: 'Yes. We follow OEM schedules for preventive maintenance and coordinate with OEMs or specialist vendors when their involvement is required.' },
-      { question: 'Can we take only on-call support instead of an AMC?', answer: 'Yes. Hard services can be engaged as an annual maintenance contract, on call, or with resident technicians, depending on the site.' },
+      { question: 'Can technicians be stationed at our site?', answer: 'Yes. Electricians, plumbers, STP operators, fire technicians and other technicians can be deployed on site, alongside a PPM calendar under an annual maintenance contract.' },
       { question: 'What happens when something breaks down between scheduled maintenance?', answer: 'Breakdown maintenance is coordinated by KARGAR through an agreed escalation process, with OEMs or specialist vendors brought in where their involvement is required.' },
       { question: 'Which areas do you cover?', answer: 'We maintain building systems for housing societies, offices, commercial complexes, institutes and plants across Pune.' },
     ],

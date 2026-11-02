@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition, @typescript-eslint/prefer-nullish-coalescing */
 import { memo } from 'react';
+import { Link } from 'react-router';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import type { ServiceBlockProps } from '../registry/BlockRenderer';
@@ -9,6 +10,8 @@ interface FeatureItem {
   title: string;
   description?: string;
   iconKey?: string;
+  /** Internal path to the page that covers this item in detail. */
+  href?: string;
 }
 
 interface ExtendedEntity {
@@ -96,7 +99,15 @@ export const FeatureGridSection = memo(function FeatureGridSection({ entity, blo
                    <LucideIcons.Check size={14} strokeWidth={3} aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-navy-900 mb-1">{item.title}</h3>
+                  <h3 className="text-lg font-bold text-navy-900 mb-1">
+                    {item.href ? (
+                      <Link to={item.href} className="underline decoration-orange-300 underline-offset-4 hover:text-orange-700 hover:decoration-orange-600">
+                        {item.title}
+                      </Link>
+                    ) : (
+                      item.title
+                    )}
+                  </h3>
                   {item.description && <p className="text-slate-600">{item.description}</p>}
                 </div>
               </div>

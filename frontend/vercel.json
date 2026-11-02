@@ -204,6 +204,11 @@
       "source": "/amp",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [

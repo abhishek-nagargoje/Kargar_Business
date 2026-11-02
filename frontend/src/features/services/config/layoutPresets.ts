@@ -1,5 +1,5 @@
  
-import type { PageBlock } from '../domain/service.types';
+import type { ExtendedEntity, PageBlock } from '../domain/service.types';
 import { BlockType, FeatureGridVariant, CollectionVariant, BackgroundIntent } from '../domain/service.types';
 
 export const layoutPresets: Record<string, PageBlock[]> = {
@@ -8,6 +8,7 @@ export const layoutPresets: Record<string, PageBlock[]> = {
     { id: 'stats', type: BlockType.Statistics, order: 20, schemaVersion: 1, background: BackgroundIntent.White, lazy: true, priority: 2 },
     { id: 'clients', type: BlockType.TrustedClients, order: 30, schemaVersion: 1, background: BackgroundIntent.Light, lazy: true, priority: 3, condition: (_entity) => true }, // Add real condition later
     { id: 'overview', type: BlockType.Overview, order: 40, schemaVersion: 1, background: BackgroundIntent.White, lazy: true },
+    { id: 'scope', type: BlockType.FeatureGrid, variant: FeatureGridVariant.Checklist, order: 45, schemaVersion: 1, background: BackgroundIntent.Light, lazy: true, condition: (entity) => !!(entity as ExtendedEntity).operations?.scopeOfWork },
     { id: 'challenges', type: BlockType.FeatureGrid, variant: FeatureGridVariant.Cards, order: 50, schemaVersion: 1, background: BackgroundIntent.Light, lazy: true, condition: (entity) => !!entity.challenges },
     { id: 'solutions', type: BlockType.FeatureGrid, variant: FeatureGridVariant.Highlight, order: 60, schemaVersion: 1, background: BackgroundIntent.White, lazy: true, condition: (entity) => !!entity.solutions },
     { id: 'services', type: BlockType.Collection, variant: CollectionVariant.Service, order: 70, schemaVersion: 1, background: BackgroundIntent.Light, lazy: true },

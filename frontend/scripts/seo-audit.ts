@@ -60,7 +60,12 @@ const PROBES: Probe[] = [
   { path: '/category/services/', status: 308, location: '/services', maxHops: 2, note: 'slash strip, then alias' },
   { path: '/contact', status: 308, location: '/contact-us' },
   { path: '/about-us', status: 308, location: '/company-profile' },
+  // GSC "Not found (404)" (Nov 2026): legacy homepage URL.
+  { path: '/home', status: 308, location: '/' },
+  { path: '/home/', status: 308, location: '/', maxHops: 2, note: 'slash strip, then alias' },
   { path: '/contact-us?source=homepage&cta_position=hero', status: 200, canonical: '/contact-us' },
+  { path: '/contact-us?service=/housekeeping-services-pune&source=pune_landing_hero', status: 200, canonical: '/contact-us' },
+  { path: '/contact-us?category=hard&source=category_card_hard', status: 200, canonical: '/contact-us' },
   // Unknown URLs must be real 404s, never the homepage or a soft-404 200.
   { path: '/services/does-not-exist', status: 404, note: 'was soft-404 200' },
   { path: '/services/hard-services/does-not-exist', status: 404, note: 'was soft-404 200' },

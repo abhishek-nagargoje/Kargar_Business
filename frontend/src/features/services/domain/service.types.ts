@@ -207,7 +207,7 @@ export interface Service extends BaseEntity {
   order: number;
 }
 
-export interface Category extends BaseEntity {
+export interface Category extends ExtendedEntity {
   shortDescription: string;
   overview: string;
   showInNavigation: boolean;

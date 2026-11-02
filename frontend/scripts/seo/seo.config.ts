@@ -42,6 +42,8 @@ export const REDIRECTS: RedirectRule[] = [
   { from: '/about-us', to: '/company-profile', permanent: true },
   { from: '/category/services', to: '/services', permanent: true },
   { from: '/amp', to: '/', permanent: true },
+  // Legacy pre-React homepage URL; GSC reported it as 404 (Nov 2026). Not linked anywhere in this codebase.
+  { from: '/home', to: '/', permanent: true },
 ];
 
 /**

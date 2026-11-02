@@ -39,7 +39,7 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
           ['Support services', 'Mailroom operations, helpdesk and ticket management, statutory documentation, daily/weekly/monthly reporting, tools, tackles and consumables management'],
           ['Engagement models', 'Full integrated FM, single-service contracts, AMC, on-call or incidental support'],
         ],
-        note: 'Explore each area: [housekeeping](/housekeeping-services-pune), [security](/security-services-pune), [facility maintenance](/facility-maintenance-services-pune) and [facility staffing](/facility-staffing-services-pune).',
+        note: 'Category overviews: [soft services](/services/soft-services) and [hard services](/services/hard-services). Explore each area: [housekeeping](/housekeeping-services-pune), [security](/security-services-pune), [facility maintenance](/facility-maintenance-services-pune) and [facility staffing](/facility-staffing-services-pune).',
       },
       {
         kind: 'steps',

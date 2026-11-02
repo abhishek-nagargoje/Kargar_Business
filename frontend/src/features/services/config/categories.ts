@@ -73,7 +73,7 @@ export const serviceCategories: Record<string, Category> = {
       { question: 'What is the difference between hard services and soft services?', answer: 'Hard services cover the building’s technical systems: electrical, HVAC, DG and UPS, plumbing, STP/WTP, fire systems and BMS. Soft services cover the people-driven work that keeps a property clean, safe and running day to day, such as housekeeping and security.' },
       { question: 'Do you work alongside our existing OEM contracts?', answer: 'Yes. We follow OEM schedules for preventive maintenance and coordinate with OEMs or specialist vendors when their involvement is required.' },
       { question: 'Can we take only on-call support instead of an AMC?', answer: 'Yes. Hard services can be engaged as an annual maintenance contract, on call, or with resident technicians, depending on the site.' },
-      { question: 'Do you provide emergency support?', answer: 'Yes. KARGAR provides 24x7 support for emergencies, with breakdowns coordinated through an agreed escalation process.' },
+      { question: 'What happens when something breaks down between scheduled maintenance?', answer: 'Breakdown maintenance is coordinated by KARGAR through an agreed escalation process, with OEMs or specialist vendors brought in where their involvement is required.' },
       { question: 'Which areas do you cover?', answer: 'We maintain building systems for housing societies, offices, commercial complexes, institutes and plants across Pune.' },
     ],
   },
@@ -100,6 +100,7 @@ export const serviceCategories: Record<string, Category> = {
     operations: {
       scopeOfWork: [
         { title: 'Housekeeping & Deep Cleaning', description: 'Daily, weekly and monthly cleaning schedules, with periodic deep cleaning, supervised against checklists.', href: '/housekeeping-services-pune' },
+        { title: 'Façade Cleaning', description: 'Cleaning of the building’s external façade, as part of the soft-services scope.' },
         { title: 'Washroom Hygiene & Pantry', description: 'Washroom cleaning and restocking, plus pantry services and office-boy support for workplaces.', href: '/office-housekeeping-services-pune' },
         { title: 'Waste Management', description: 'Wet and dry waste segregation, and OWC operators for societies that process organic waste on site.', href: '/society-housekeeping-services-pune' },
         { title: 'Landscaping & Horticulture', description: 'Gardeners and garden supervisors for lawns, podiums and campus landscapes.', href: '/landscaping-services-pune' },
@@ -111,24 +112,24 @@ export const serviceCategories: Record<string, Category> = {
     challenges: [
       { title: 'Too Many Vendors', description: 'Separate agencies for cleaning, security and gardening mean separate supervisors, separate invoices and no single party accountable when something is missed.', iconKey: 'users' },
       { title: 'Unstable Teams', description: 'When staff keep changing, residents and employees keep seeing new faces, and every replacement has to learn the site again.', iconKey: 'refresh-cw' },
-      { title: 'Unclear Spending', description: 'Committees and admin teams often cannot see what the deployed staff are actually paid, or whether statutory dues are being met.', iconKey: 'receipt' },
+      { title: 'Unclear Spending', description: 'Committees and admin teams often cannot see what the deployed staff are actually paid, so expenses go unmanaged.', iconKey: 'receipt' },
     ],
     solutions: [
       { title: 'One Site Team', description: 'Housekeeping, security, gardening and support roles set up under one org structure, with one point of contact for the property.', iconKey: 'network' },
       { title: 'Trained, Stable Staff', description: 'Skill, safety and behavioural training round the year by Field Trainers and Quality Managers, so staff stay longer and know the site.', iconKey: 'graduation-cap' },
-      { title: '100% Financial Transparency', description: 'You have the right to ask what compensation is paid to the staff deployed at your site. PF and ESIC are handled in line with labour law.', iconKey: 'badge-check' },
+      { title: '100% Financial Transparency', description: 'You have the right to ask what compensation is paid to the staff deployed at your site.', iconKey: 'badge-check' },
     ],
     industries: BROCHURE_SECTORS,
     process: [
       { title: 'Site Walk-Through', description: 'We visit the property with the committee or admin team to see the areas, footfall, timings and how services are run today.' },
       { title: 'Roles, Shifts & Checklists', description: 'We propose the team for each service, their shifts, and the checklists and SOPs they will work to.' },
-      { title: 'Deployment & Handover', description: 'Verified, trained staff are deployed with a supervisor. When we take over from an existing agency, the changeover is planned so the site is not left uncovered.' },
+      { title: 'Deployment & Handover', description: 'Trained staff are deployed with a site supervisor, and security personnel are police-verified before they start.' },
       { title: 'Supervision & Review', description: 'Supervisors check work against the checklists, and KARGAR regional management reviews performance and reports to you, as set out in our PURNA protocol.' },
     ],
     faqs: [
-      { question: 'What do soft services include?', answer: 'At KARGAR, soft services cover housekeeping (daily, weekly, monthly and deep cleaning), washroom hygiene, pantry services, waste management with wet/dry segregation, landscaping and horticulture, and security guards. Support roles such as front desk and lift operators can be added to the same team.' },
+      { question: 'What do soft services include?', answer: 'At KARGAR, soft services cover housekeeping (daily, weekly, monthly and deep cleaning), façade cleaning, washroom hygiene, pantry services, waste management with wet/dry segregation, landscaping and horticulture, and security guards. Support roles such as front desk and lift operators can be added to the same team.' },
       { question: 'Do we need a separate vendor for cleaning, security and gardening?', answer: 'No. KARGAR can run all of them as one site team under one org structure, so the property deals with one supervisor and one point of contact instead of several agencies.' },
-      { question: 'Can we start with one service and add more later?', answer: 'Yes. Sites can begin with a single service, such as housekeeping or security, and add others later under the same team.' },
+      { question: 'How is the team sized for our property?', answer: 'The site team and its org structure are set up in accordance with the size and complexity of your property, from a small office to a large residential society.' },
       { question: 'Can soft services be taken on call or for a one-off job?', answer: 'Yes. Soft services can be engaged on an annual contract, on call, or on an incidental basis, for example a one-time deep clean.' },
       { question: 'How are staff trained?', answer: 'Staff receive skill, safety and behavioural training round the year from KARGAR Field Trainers and Quality Managers. Security personnel are police-verified before deployment.' },
       { question: 'Do you work with housing societies in Pune?', answer: 'Yes. Residential societies are a core part of our work in Pune. We set up the full society team, from housekeeping staff and gardeners to watchmen and gatekeepers, and also support co-operative societies with registration, statutory documentation, conveyance and AGM filings.' },

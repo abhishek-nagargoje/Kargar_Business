@@ -234,3 +234,55 @@ stays on the Pune pages it links to, so the hub doesn't duplicate them.
 - Enquiry flow: the crawlable CTA `href` is `/contact-us#contact-form`. A click lands on
   `/contact-us?service=<category>&source=cta_section&cta_position=bottom`, and the form receives all
   three values.
+
+---
+
+## Addendum 2: page-by-page visual verification of the approved PDFs
+
+Every page of `Company Brochure.pdf` (4 pages, A4) and `Company Profile.pdf` (18 slides) was rendered
+at about 1400px and inspected visually. The earlier pass had used only the text layer and a
+low-resolution contact sheet.
+
+### Numerical claims
+
+| # | Claim (as shown on site) | Source | Page | Evidence | Status |
+|---|---|---|---|---|---|
+| 1 | 98% Client Retention | Company Profile | 12 | "HOW DO WE KNOW IT WORKS? Because over the years we have seen **98%** Client retention &" | VERIFIED |
+| 2 | 95% Employee Retention | Company Profile | 12 | "… **95%** Employee retention" | VERIFIED |
+| 3 | 100% Financial Transparency | Brochure; Company Profile | B3; P11 | "02 100% FINANCIAL TRANSPARENCY: You have the right to ask for compensation paid to the staff deployed at your site" (B3); same text under "The KARGAR Commitment" (P11) | VERIFIED |
+| 4 | 10+ Years Experience | Company Profile | 10, 12 | Only "Built on decades of experience, our proprietary PURNA … protocol" (P10) and "over the years" (P12). No figure, and it is unclear whose experience is meant. P17 describes KARGAR receiving a *Woman Startup* award (20 Sep 2024) | AMBIGUOUS (removed from category pages) |
+| 5 | 150+ Engineers | Neither | all 22 | No headcount anywhere. The technician roles on P8 are listed without numbers | NOT FOUND (removed) |
+| 6 | 99% SLA Compliance | Neither | all 22 | No SLA metric anywhere | NOT FOUND (removed) |
+| 7 | 2,000+ Trained Staff | Neither | all 22 | The staff photos (P15–16) are not counts | NOT FOUND (removed) |
+| 8 | 5M+ Sq. Ft. Managed | Neither | all 22 | No area figure anywhere | NOT FOUND (removed) |
+| 9 | 24/7 Support Available (soft stat); "24x7 support" (hard FAQ) | Neither | all 22 | Not stated. B2 lists only "Breakdown maintenance coordination" | NOT FOUND (removed; FAQ reworded to breakdown coordination) |
+
+**Figures in the PDFs that belong to clients, never to KARGAR:** "1995–2021, 26 Years of Excellence"
+(Lila Poonawalla Foundation logo, P14), "An ISO 9001, 14001, OHSAS 18001 company" (Kirti Developers logo,
+P13), "Since 1978" (Ganesh Bhel logo, B4), and the CIN on the Impact logo (P14). A site-wide search finds
+none of them attributed to KARGAR.
+
+### Non-numerical alignment made in this pass
+- **Added façade cleaning** to the soft-services scope and FAQ. It is listed under Soft Services on B2 but
+  was missing from the text extraction.
+- **Removed from new copy** (not in the approved documents): "PF and ESIC handled in line with labour
+  law", a vendor-changeover promise, "statutory dues", and "start with one service".
+- **Replaced** the single-service FAQ with team sizing "in accordance with the size & complexity of your
+  site" (P6).
+
+### Still unverified elsewhere on the site (outside the category pages; needs a business decision)
+- `src/pages/KargarSinglePage.tsx:819,824` (homepage section): "Built Over 10+ Years", "10+ years of
+  experience, 10,000+ clients served, and 50+ sites managed". The 10+ years is AMBIGUOUS; 10,000+ clients
+  and 50+ sites are NOT FOUND. The profile shows about 45 client logos.
+- `src/features/seo/registry.ts:60` (`/company-profile` meta description): the same three figures.
+- "24x7 emergency support" on `/electrical-maintenance-services-pune` and in `companyTrust.ts`; "PF & ESIC"
+  in `companyTrust.ts`. These may be true, but the approved PDFs do not state them.
+- "AMC and On Call Basis or Incidental" appears in the brochure's **Soft Services** column (B2). Applying
+  on-call engagement to hard services, as the hub and the Pune maintenance pages do, is AMBIGUOUS. "AMC
+  Management" is shown on P6.
+
+### Re-test (after these edits)
+`tsc -b` exit 0. ESLint 0 errors (same 7 pre-existing warnings). `npm run build` exit 0, all validators
+PASS, sitemap 41/41. `seo-audit --strict`: 0 critical, 0 high. Raw HTML of both hubs: one H1, one
+canonical, no unsupported terms. Playwright at 390px and 1366px: all PASS, 0 console errors, enquiry
+parameters intact.

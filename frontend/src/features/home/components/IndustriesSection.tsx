@@ -1,66 +1,20 @@
 import { Link } from 'react-router';
 import { Container } from '@/components/ui/Container';
-import { Building2, Factory, Plane, Home, PlusSquare, ShoppingBag, Package, Bed, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/animations';
+import { sectorProfiles } from '@/features/sectors/config/sectors';
 
-const sectors = [
-  {
-    name: 'IT Parks',
-    icon: Building2,
-    description: 'High-performance facility services for modern IT campuses.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80',
-    href: '/services',
-  },
-  {
-    name: 'Manufacturing',
-    icon: Factory,
-    description: 'Safe, efficient & reliable support for industrial operations.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80',
-    href: '/services/hard-services',
-  },
-  {
-    name: 'Airport Lounges',
-    icon: Plane,
-    description: 'Premium housekeeping and facility management for airport spaces.',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80',
-    href: '/services/soft-services/housekeeping',
-  },
-  {
-    name: 'Corporate Offices',
-    icon: Home,
-    description: 'Smart, professional & seamless facility management for offices.',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80',
-    href: '/services/hard-services/hvac-maintenance',
-  },
-  {
-    name: 'Healthcare',
-    icon: PlusSquare,
-    description: 'Hygienic, safe & compliant facility solutions for hospitals.',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80',
-    href: '/services/soft-services/housekeeping',
-  },
-  {
-    name: 'Retail & Malls',
-    icon: ShoppingBag,
-    description: 'Clean, customer-friendly environments that elevate experience.',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800',
-    href: '/services/soft-services/security-services',
-  },
-  {
-    name: 'Warehouses',
-    icon: Package,
-    description: 'Efficient operations with organized and safe facility support.',
-    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=800',
-    href: '/services/hard-services',
-  },
-  {
-    name: 'Hotels & Hospitality',
-    icon: Bed,
-    description: 'Exceptional housekeeping and guest experience support.',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80',
-    href: '/services/soft-services/housekeeping',
-  },
-];
+/**
+ * Homepage sector grid. Sectors come from the shared, source-verified list in
+ * features/sectors/config/sectors.ts (Company Brochure p.2) — the same list /sectors expands on.
+ */
+const sectors = sectorProfiles.map((sector) => ({
+  name: sector.name,
+  icon: sector.icon,
+  description: sector.cardSummary,
+  image: sector.image,
+  href: sector.href,
+}));
 
 export function IndustriesSection() {
   const containerRef = useScrollReveal();
@@ -74,16 +28,16 @@ export function IndustriesSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
           {sectors.map((sector, index) => {
             const Icon = sector.icon;
             return (
               <Link
                 to={sector.href}
-                key={index}
+                key={sector.name}
                 data-gsap-reveal="zoom-in"
                 data-gsap-delay={index * 0.1}
-                className="group relative flex flex-col justify-end h-[320px] rounded-[16px] overflow-hidden bg-[#06183a] transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
+                className="group relative flex flex-col justify-end h-[320px] rounded-[16px] overflow-hidden bg-[#06183a] transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-600 focus-visible:ring-offset-2"
               >
                 {/*
                   Whole photo, never cropped: object-contain letterboxes against the card's own

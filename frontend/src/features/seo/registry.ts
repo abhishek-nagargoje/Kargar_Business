@@ -43,36 +43,45 @@ export const seoRegistry: Record<string, RouteSEOEntry> = {
   },
   '/sectors': {
     path: '/sectors',
-    title: 'Facility Management by Sector',
+    title: 'Sectors We Serve in Pune',
     description:
-      'KARGAR delivers commercial facility management, industrial facility management, and corporate facility management solutions for manufacturing plants.',
+      'Facility management for Pune housing societies, offices, commercial complexes, institutes, clinics and plants: housekeeping, security and maintenance by sector.',
     keywords: [
-      'Commercial Facility Management',
-      'Industrial Facility Management',
-      'Corporate Facility Management',
-      'Facility Management for Manufacturing Plants',
+      'Facility Management Pune',
+      'Facility Management for Housing Societies Pune',
+      'Industries We Serve',
+      'Sectors We Serve',
     ],
   },
   '/company-profile': {
     path: '/company-profile',
-    title: 'Trusted Facility Management',
+    title: 'Company Profile in Pune',
     description:
-      'KARGAR is a trusted facility management company in Pune for societies and businesses, running housekeeping, security and maintenance on its PURNA protocol.',
-    keywords: ['Trusted Facility Management Company', 'Professional Facility Management Company'],
+      'KARGAR Facility Management company profile: a facility management company in Baner, Pune, running housekeeping, security and maintenance on its PURNA protocol.',
+    keywords: [
+      'Company Profile',
+      'Facility Management Company Pune',
+    ],
   },
   '/support': {
     path: '/support',
     title: 'Facility Support Services',
     description:
-      'Get fast response and expert coordination from KARGAR support team for facility management, housekeeping, security, and maintenance service requests nationwide.',
-    keywords: ['Facility Support Services', 'Workplace Management Services'],
+      'Reach KARGAR support in Pune: phone, email and office hours, how to raise housekeeping, security or maintenance requests, and helpdesk services for your site.',
+    keywords: [
+      'Facility Support Services',
+      'Facility Helpdesk Pune',
+    ],
   },
   '/contact-us': {
     path: '/contact-us',
-    title: 'Get Facility Management Quote',
+    title: 'Contact Us in Baner, Pune',
     description:
-      'Contact KARGAR, a facility management company for corporate offices in Pune, Baner. Request a proposal for housekeeping, security, or maintenance services.',
-    keywords: ['Facility Management Company for Corporate Offices'],
+      'Contact KARGAR Facility Management at our Baner, Pune office. Call, email or request a proposal for housekeeping, security or maintenance in Pune and PCMC.',
+    keywords: [
+      'Contact KARGAR Facility Management',
+      'Facility Management Company Pune',
+    ],
   },
   '/privacy-policy': {
     path: '/privacy-policy',

@@ -7,3 +7,5 @@
 "/category/services/","308","2","/category/services/ [308] -> /category/services [308] -> /services [200]","/services","200","false","308 -> /services (slash strip, then alias)"
 "/contact","308","1","/contact [308] -> /contact-us [200]","/contact-us","200","false","308 -> /contact-us"
 "/about-us","308","1","/about-us [308] -> /company-profile [200]","/company-profile","200","false","308 -> /company-profile"
+"/home","308","1","/home [308] -> / [200]","/","200","false","308 -> /"
+"/home/","308","2","/home/ [308] -> /home [308] -> / [200]","/","200","false","308 -> / (slash strip, then alias)"

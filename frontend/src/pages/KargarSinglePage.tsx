@@ -10,7 +10,6 @@ import {
   Clock,
   Cpu,
   Globe,
-  Headphones,
   Leaf,
   Lock,
   Mail,
@@ -46,6 +45,12 @@ import { clusterPages, clusters, punePagesByPath } from '@/features/pune-landing
 import { guidePageList } from '@/features/resources/config/guides';
 import { serviceCategories } from '@/features/services/config';
 import { trackFormSubmission } from '@/lib/analytics';
+import { buildFAQSchema } from '@/lib/seo/schema';
+import { stripInline } from '@/features/pune-landing/utils/inlineText';
+import { SectorsContent } from '@/features/sectors/components/SectorsContent';
+import { sectorFaqs } from '@/features/sectors/config/sectors';
+import { SupportContent } from '@/features/support/components/SupportContent';
+import { supportFaqs } from '@/features/support/config/supportFaqs';
 
 const CountUp =
   typeof CountUpModule === 'function'
@@ -109,8 +114,9 @@ const serviceHeroFeatures: FeatureItem[] = [
   { title: 'Sustainable Practices', text: 'Eco-friendly Solutions', icon: Leaf },
 ];
 
+// No response-time commitment: none is stated in KARGAR's Company Profile or Brochure.
 const contactHighlights: FeatureItem[] = [
-  { title: 'Quick Response', text: 'We aim to respond within 24 hours', icon: Headphones },
+  { title: 'Office Hours', text: 'Mon - Sat: 09:00 AM - 06:00 PM', icon: Clock },
   { title: 'Expert Support', text: 'Talk to our facility management experts', icon: Users },
   { title: 'Trusted Partner', text: 'Reliable solutions for your business', icon: BadgeCheck },
 ];
@@ -459,8 +465,8 @@ function ContactPage() {
       <div className="kb-container kb-contact-grid">
         <div className="kb-contact-left">
           <div className="kb-breadcrumb"><a href="/">Home</a><span>›</span><strong>Contact Us</strong></div>
-          <h1>Get in Touch <span>We&apos;re Here to Help!</span></h1>
-          <p>Have a question, need a proposal, or want to learn more about our facility management solutions? Our team is ready to assist you.</p>
+          <h1>Contact KARGAR <span>Facility Management in Pune</span></h1>
+          <p>Have a question, need a proposal, or want to learn more about our facility management services in Pune and PCMC? Call, email or visit our Baner office, or send us a message using the form.</p>
           <div className="kb-contact-highlights">
             {contactHighlights.map(({ title, text, icon: Icon }) => (
               <article key={title}>
@@ -476,7 +482,7 @@ function ContactPage() {
               <p>Reach out to us using any of the following channels.</p>
               <OptimizedImage
                 src="/images/page/contact-building.webp"
-                alt="Modern KARGAR office building"
+                alt="Modern commercial office building"
                 showBlur={false}
               />
             </div>
@@ -642,7 +648,7 @@ function OperationsCard() {
           </article>
         ))}
       </div>
-      <KargarButton href="/sectors" variant="outline">View All Locations</KargarButton>
+      <KargarButton href="/sectors" variant="outline">View Sectors We Serve</KargarButton>
     </section>
   );
 }
@@ -818,8 +824,8 @@ function CompanyProfilePage() {
       <PageIntroHero
         breadcrumbLabel="Company Profile"
         eyebrow="Company Profile"
-        heading="Trusted Facility Management,"
-        headingAccent="Built on Process and People"
+        heading="KARGAR Company Profile:"
+        headingAccent="Facility Management Built on Process and People"
         description={
           <>
             KARGAR Facility Management is a{' '}
@@ -841,24 +847,20 @@ function SectorsPage() {
       <PageIntroHero
         breadcrumbLabel="Sectors"
         eyebrow="Sectors We Serve"
-        heading="Facility Management"
-        headingAccent="Across Diverse Sectors"
+        heading="Industries We Serve"
+        headingAccent="Across Pune and PCMC"
         description={
           <>
-            KARGAR delivers{' '}
-            <Link to="/services" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>facility management solutions</Link>{' '}
-            across IT parks, manufacturing plants, corporate offices, healthcare facilities, retail spaces, and more, including{' '}
-            <Link to="/services/soft-services/housekeeping" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>corporate and industrial housekeeping services</Link>{' '}
-            — each supported with sector-specific service standards. See our{' '}
-            <Link to="/housekeeping-services-pune" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>housekeeping services in Pune</Link>{' '}
-            or{' '}
-            <Link to="/security-services-pune" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>security services in Pune</Link>{' '}
-            for local coverage details.
+            KARGAR provides{' '}
+            <Link to="/facility-management-company-pune" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>facility management services in Pune</Link>{' '}
+            for six sectors: housing societies, corporate offices, commercial complexes, educational institutes, healthcare
+            facilities and manufacturing plants. Each runs differently, so we plan housekeeping, security and technical
+            maintenance around the way your property is used.
           </>
         }
         image="/images/page/services-hero.webp"
       />
-      <IndustriesSection />
+      <SectorsContent />
       <SupportBand />
     </>
   );
@@ -869,26 +871,19 @@ function SupportPage() {
     <>
       <PageIntroHero
         breadcrumbLabel="Support"
-        eyebrow="Support"
+        eyebrow="Customer Support"
         heading="Facility Support"
         headingAccent="You Can Rely On"
         description={
           <>
-            Our support team coordinates{' '}
+            How to reach KARGAR, what to share when you enquire, and how{' '}
             <Link to="/services/soft-services/housekeeping" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>housekeeping</Link>
-            , security, and maintenance service requests, with fast response times and expert follow-through from request to resolution.
+            , security and maintenance requests are coordinated at sites we manage across Pune and PCMC.
           </>
         }
         image="/images/page/hero-building.webp"
       />
-      <div className="kb-container kb-contact-highlights" style={{ paddingTop: '3rem', paddingBottom: '1rem' }}>
-        {contactHighlights.map(({ title, text, icon: Icon }) => (
-          <article key={title}>
-            <span><Icon size={24} /></span>
-            <div><strong>{title}</strong><small>{text}</small></div>
-          </article>
-        ))}
-      </div>
+      <SupportContent />
       <SupportBand />
     </>
   );
@@ -908,6 +903,11 @@ export function KargarSinglePage() {
   const canonicalPath = pathname === '/contact' ? '/contact-us' : pathname;
   const seoEntry = getSeoEntry(canonicalPath);
   const breadcrumbLabel = isContact ? 'Contact Us' : isServices ? 'Services' : seoRouteLabel(pathname);
+  // FAQPage JSON-LD mirrors the FAQ answers rendered visibly on these pages.
+  const pageFaqs = isSectors ? sectorFaqs : isSupport ? supportFaqs : null;
+  const pageSchema = pageFaqs
+    ? [buildFAQSchema(pageFaqs.map((faq) => ({ question: faq.question, answer: stripInline(faq.answer) })))]
+    : [];
 
   return (
     <div className="kargar-site kb-site">
@@ -917,6 +917,7 @@ export function KargarSinglePage() {
         canonicalUrl={buildCanonicalUrl(canonicalPath)}
         robots={seoEntry.robots}
         breadcrumbItems={breadcrumbLabel ? [{ label: breadcrumbLabel, href: '#' }] : []}
+        schema={pageSchema}
       />
       <Header activePath={pathname} />
       <main>

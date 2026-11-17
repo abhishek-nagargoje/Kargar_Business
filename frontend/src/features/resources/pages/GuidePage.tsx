@@ -62,7 +62,7 @@ export function GuidePage() {
         ogType="article"
       />
       <Header activePath={guide.path} />
-      <main className="bg-white">
+      <main id="main-content" tabIndex={-1} className="bg-white">
         <section className="bg-navy-950 text-white">
           <Container size="md" className="pt-8 pb-14 lg:pb-20">
             <Breadcrumb items={breadcrumbItems} tone="dark" />
@@ -107,7 +107,7 @@ export function GuidePage() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="inline-flex items-center gap-2 rounded-full border border-navy-100 bg-navy-50 px-5 py-2 font-semibold text-navy-900 hover:border-orange-300 hover:text-orange-600 focus-ring"
+                    className="inline-flex items-center gap-2 rounded-full border border-navy-100 bg-navy-50 px-5 py-2 font-semibold text-navy-900 hover:border-orange-300 hover:text-orange-700 focus-ring"
                   >
                     {link.label}
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -132,7 +132,7 @@ export function GuidePage() {
             <Link
               className={buttonVariants({ variant: 'primary', size: 'lg' })}
               to={contactHref}
-              onClick={(e) => { navigateToContact({ source: 'guide_cta', service: guide.path }, e); }}
+              onClick={(e) => { navigateToContact({ source: 'guide_cta', service: guide.path, ctaPosition: 'guide-cta' }, e); }}
             >
               Talk to KARGAR
               <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />

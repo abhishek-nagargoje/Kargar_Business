@@ -40,7 +40,7 @@ export function CategoryPage() {
         schema={[buildCategoryServiceSchema(category)]}
       />
       <Header activePath={path} />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <CategoryLayout category={category} services={services} />
         {categoryPunePages.length > 0 && (
           <section className="py-12 bg-white border-t border-slate-100">

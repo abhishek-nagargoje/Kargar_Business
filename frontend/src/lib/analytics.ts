@@ -124,6 +124,16 @@ export function trackWhatsAppClick(url: string): void {
   trackEvent('whatsapp_click', { link_url: url });
 }
 
+/**
+ * Click on a "Request a Quote"-style CTA that leads to the contact form. Analytics event only,
+ * not a Google Ads conversion: it measures which page and position start an enquiry, including
+ * visitors who later abandon the form.
+ */
+export function trackCtaClick(params: GtagEventParams): void {
+  if (!isTrackingEnabled()) return;
+  trackEvent('cta_click', params);
+}
+
 /** Call only after the backend has confirmed the lead was saved. */
 export function trackFormSubmission(params: GtagEventParams): void {
   if (!isTrackingEnabled()) return;

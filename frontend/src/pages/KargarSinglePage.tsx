@@ -10,7 +10,7 @@ import {
   Clock,
   Cpu,
   Globe,
-  Leaf,
+  Scale,
   Lock,
   Mail,
   MapPin,
@@ -111,7 +111,8 @@ const serviceHeroFeatures: FeatureItem[] = [
   { title: 'People First', text: 'Trained & Verified Staff', icon: Users },
   { title: 'Technology Driven', text: 'Smart & Efficient Operations', icon: Cpu },
   { title: 'Quality Assured', text: 'Strict Quality Standards', icon: BadgeCheck },
-  { title: 'Sustainable Practices', text: 'Eco-friendly Solutions', icon: Leaf },
+  // "Eco-friendly" removed: not supported by the Company Profile or Brochure (SEO_CONTENT_PLAN §0).
+  { title: 'Payroll Transparency', text: 'Staff Pay You Can Verify', icon: Scale },
 ];
 
 // No response-time commitment: none is stated in KARGAR's Company Profile or Brochure.
@@ -179,6 +180,7 @@ export function Header({ activePath }: { activePath: string }) {
 
   return (
     <header className="kb-header">
+      <a href="#main-content" className="kb-skip-link">Skip to main content</a>
       <div className="kb-topbar">
         <div className="kb-container kb-topbar__inner">
           <div className="kb-topbar__left">
@@ -573,6 +575,8 @@ function ContactForm() {
         service: getFormString(formData, 'service'),
         source: getFormString(formData, 'source'),
         campaign: getFormString(formData, 'campaign'),
+        category: getFormString(formData, 'category'),
+        ctaPosition: getFormString(formData, 'cta_position'),
         message: getFormString(formData, 'message'),
       });
 
@@ -587,6 +591,7 @@ function ContactForm() {
         service: getFormString(formData, 'service'),
         source: getFormString(formData, 'source'),
         campaign: getFormString(formData, 'campaign'),
+        cta_position: getFormString(formData, 'cta_position'),
       });
 
       form.reset();
@@ -920,7 +925,7 @@ export function KargarSinglePage() {
         schema={pageSchema}
       />
       <Header activePath={pathname} />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         {isContact ? <ContactPage />
           : isServices ? <ServicesPage />
           : isCompanyProfile ? <CompanyProfilePage />

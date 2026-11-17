@@ -3,68 +3,359 @@ import { heroImages } from '../heroImages';
 
 const PILLAR = { label: 'Security Services Pune', href: '/security-services-pune' };
 
+/**
+ * Security cluster. Every KARGAR-specific claim must trace to the Company Brochure / Company
+ * Profile PDFs or companyTrust.ts — see seo-audit/SEO_CONTENT_PLAN.md §0.
+ *
+ * Verified security facts: security guards (brochure soft services); watchmen & gatekeepers,
+ * security guards & supervisors, surveillance operators, bouncers and valets (profile org
+ * structures); police verification & background checks, PF/ESIC compliance, attendance tracking
+ * and digital reporting (companyTrust.ts); year-round training by Field Trainers and Quality
+ * Managers and payroll transparency (profile p.10–11).
+ *
+ * NOT claimed anywhere until the business supplies documents: PSARA licence number, armed
+ * guards, ex-servicemen, ISO or any certification, guard counts, response times, prices.
+ * The PSARA Act is mentioned only as buyer guidance (what to check with any agency).
+ */
 export const securityPages: PuneLandingPageContent[] = [
-  // ───────────────────────────── PILLAR (existing, extended) ─────────────────────────────
+  // ───────────────────────────── PILLAR ─────────────────────────────
   {
     path: '/security-services-pune',
     cluster: 'security',
     isPillar: true,
     breadcrumbLabel: 'Security Services Pune',
-    summary: 'Trained, police-verified security guards, access control and CCTV monitoring for businesses, institutes and plants.',
+    summary: 'Police-verified security guards, supervisors and CCTV operators for offices, plants, institutes and housing societies in Pune.',
     seo: {
       title: 'Security Services in Pune',
       description:
-        'Security services in Pune — police-verified security guards, access control and CCTV monitoring for offices, campuses and plants, from KARGAR.',
-      keywords: ['Security Services in Pune', 'Security Guard Services Pune', 'Corporate Security Pune', 'Facility Security Pune'],
+        'Security services in Pune from KARGAR: police-verified security guards, supervisors and CCTV operators for offices, plants, institutes and housing societies.',
+      keywords: ['Security Services in Pune', 'Security Agency in Pune', 'Security Guard Services Pune', 'Security Guards in Pune'],
     },
     eyebrow: 'Security in Pune',
     h1: 'Security Services in Pune',
     heroSubtitle:
-      'KARGAR Facility Management deploys trained, police-verified security personnel and access-control support for corporate, institutional and industrial facilities across Pune, with CCTV monitoring and documented incident reporting.',
+      'KARGAR Facility Management is a Pune security services provider. We deploy police-verified, trained security guards with supervisors, written post instructions and documented records, for corporate offices, commercial buildings, manufacturing sites, institutes and housing societies.',
     heroImage: heroImages.security,
     intro: [
-      'Facility security in Pune covers more than posting a guard at the gate — it means managed access control, documented visitor logs, and a team trained to respond to incidents rather than just observe them. KARGAR Facility Management provides security guard services, access control and CCTV surveillance monitoring for corporate offices, commercial buildings, institutes and industrial sites across Pune.',
-      'Every security officer undergoes police verification and background checks before deployment, and our teams receive year-round skill, safety and behavioural training. Residential societies have different needs — gates, visitors, deliveries and parking — which we cover on a dedicated page for [society security services](/society-security-services-pune).',
+      'Security services in Pune means more than a guard at the gate. A working security arrangement has the right posts on the right shifts, written instructions for each post, a supervisor who checks them, visitor and incident records you can audit, and cover when a guard is absent. KARGAR Facility Management provides security guard services on that basis, as a security agency based in Baner, Pune.',
+      'Every security officer goes through police verification and background checks before deployment. Our teams receive year-round skill, safety and behavioural training from our Field Trainers and Quality Managers. Guards are employed by KARGAR with PF and ESIC compliance, so the client does not carry the employer risk of a directly hired guard.',
     ],
     sections: [
       {
+        kind: 'prose',
+        heading: 'What Does a Security Agency Provide?',
+        paragraphs: [
+          'A security agency supplies trained security personnel to a property and takes responsibility for how they work there. That covers recruitment and verification, training, deployment to agreed posts and shifts, supervision, replacement when someone is absent, payroll and statutory compliance, and the records that show what happened on each shift.',
+          'For the property, the difference from hiring a guard directly is accountability. If a post is left empty, a visitor is let in without a check, or an incident goes unreported, there is one provider responsible for fixing it. That provider also has the processes to stop it happening again.',
+        ],
+      },
+      {
         kind: 'cards',
-        heading: 'What Our Pune Security Service Covers',
+        heading: 'Security Services by Type of Property',
+        intro: 'The basic job is the same everywhere: control who and what comes in and goes out, and respond properly when something goes wrong. How that is done depends on the property.',
         columns: 2,
         items: [
-          { title: 'Manned guarding', description: 'Trained security officers for static guarding and scheduled patrols.' },
-          { title: 'Access control', description: 'Managing entry and exit points to prevent unauthorised access, with visitor logs.' },
-          { title: 'CCTV monitoring', description: 'Surveillance monitoring and incident recording by surveillance operators.' },
-          { title: 'Emergency response', description: 'Coordination during incidents, with escalation through KARGAR management.' },
+          { title: 'Corporate offices and commercial buildings', description: 'Reception and visitor management, access control, parking, after-hours patrols and asset movement. See [corporate security services in Pune](/corporate-security-services-pune).' },
+          { title: 'Factories, plants and warehouses', description: 'Main and material gates, gate-pass checks, contractor labour entry, perimeter patrols and shift changeovers. See [industrial security services in Pune](/industrial-security-services-pune).' },
+          { title: 'Housing societies', description: 'Gatekeeping, visitors, deliveries, domestic staff and resident parking, run to the committee’s rules. See [society security services in Pune](/society-security-services-pune).' },
+          { title: 'Institutes and healthcare facilities', description: 'Campus entry, visitor and vendor control, and patrols planned around the institute’s working hours, using the same post-plan method described below.' },
+        ],
+      },
+      {
+        kind: 'table',
+        heading: 'Security Roles We Deploy',
+        intro: 'These are the security roles in KARGAR’s site organisation structures. A site usually needs a few of them, not all.',
+        caption: 'Security roles provided by KARGAR and what each role does',
+        columns: ['Role', 'What the role does', 'Typical use'],
+        rows: [
+          ['Security guard', 'Static posts, access control, patrols and incident reporting', 'Every site'],
+          ['Watchman / gatekeeper', 'Gate operation, visitor and vehicle entry, gate registers', 'Societies, plants, campuses'],
+          ['Security supervisor', 'Shift planning, post checks, guard briefings, first escalation point', 'Sites with several posts or shifts'],
+          ['Surveillance operator', 'CCTV monitoring and access-control system operation', 'Sites with a CCTV or control room'],
+          ['Bouncer', 'Crowd management at events and high-footfall entrances', 'Events, as needed'],
+          ['Valet', 'Parking assistance for visitors and events', 'Commercial buildings, societies, events'],
         ],
       },
       {
         kind: 'steps',
         heading: 'How a Security Deployment Is Set Up',
+        intro: 'This is the same sequence whether the site needs one gate post or a full multi-shift team.',
         steps: [
-          { title: 'Site assessment', description: 'We review entry points, the layout, operating hours and current arrangements with you.' },
-          { title: 'Post plan', description: 'Guard posts, shifts, patrol routes and a security supervisor are defined in writing.' },
-          { title: 'Deployment', description: 'Verified, trained guards are deployed with the post instructions for your site.' },
-          { title: 'Records and review', description: 'Visitor logs and incident reports give you an auditable record; performance is reviewed with you.' },
+          { title: 'Site assessment', description: 'We walk the site with you: entry and exit points, perimeter, parking, working hours, visitor volume, valuables and what is going wrong today.' },
+          { title: 'Post plan', description: 'Guard posts, shifts, patrol routes, the supervisor role and relief cover are written down and agreed with you before deployment.' },
+          { title: 'Post instructions', description: 'Each post gets written instructions covering visitor checks, vehicle rules, material movement, emergency contacts and what to escalate.' },
+          { title: 'Deployment and briefing', description: 'Verified, trained guards are deployed and briefed on your site’s instructions. The supervisor checks that each post follows them.' },
+          { title: 'Records and review', description: 'Visitor logs, attendance and incident reports give you an auditable record. Performance is reviewed with you and the post plan is updated when the site changes.' },
+        ],
+      },
+      {
+        kind: 'table',
+        heading: 'How Many Security Guards Does a Property Need?',
+        intro: 'There is no fixed guards-per-square-foot ratio. The count comes from posts and hours. This worked example shows the method for one post covered round the clock.',
+        caption: 'Worked example: staffing one round-the-clock security post',
+        columns: ['Step', 'Assumption', 'Result'],
+        rows: [
+          ['Posts', 'One main gate that must always be manned', '1 post'],
+          ['Shifts', 'Three 8-hour shifts cover 24 hours', '3 guards on duty per day'],
+          ['Weekly off', 'Each guard works 6 days a week, the post runs 7 days', 'About 1 extra guard for relief'],
+          ['Supervision', 'A supervisor is added once there are several posts or shifts', 'Planned per site'],
+        ],
+        note: 'Multiply by the number of posts, then adjust for patrols, peak hours and day-only posts. We work out the count with you during the site assessment.',
+      },
+      {
+        kind: 'cards',
+        heading: 'Screening, Training and Supervision',
+        columns: 2,
+        items: [
+          { title: 'Police verification', description: 'Security personnel go through police verification and background checks before they are deployed to any site.' },
+          { title: 'Year-round training', description: 'Skill, safety and behavioural training is run throughout the year by KARGAR’s Field Trainers and Quality Managers, not only at induction.' },
+          { title: 'Attendance and reporting', description: 'Attendance is tracked and reporting is digital, so you can see who was on duty and what was recorded on each shift.' },
+          { title: 'Compliance and payroll transparency', description: 'Guards are on KARGAR’s payroll with PF and ESIC compliance. Under our 100% financial transparency commitment, you can ask what compensation is paid to the staff at your site.' },
+        ],
+      },
+      {
+        kind: 'checklist',
+        heading: 'What to Check Before Hiring a Security Agency in Pune',
+        intro: 'Whichever agency you choose, ask for these in writing. Our [guide to choosing a security agency in Pune](/resources/how-to-choose-a-security-agency-pune) explains each check.',
+        groups: [
+          { title: 'Legal and compliance', items: ['A current licence under the Private Security Agencies (Regulation) Act, 2005', 'PF and ESIC registration, with proof that contributions are paid', 'Police verification records for deployed guards'] },
+          { title: 'Operations', items: ['A written post plan with shifts and relief cover', 'Post instructions for each post', 'Who supervises, and how often posts are checked'] },
+          { title: 'Accountability', items: ['How absences and replacements are handled', 'What records you receive: visitor logs, incident reports, attendance', 'A named escalation path above the supervisor'] },
+        ],
+      },
+      {
+        kind: 'prose',
+        heading: 'Where We Provide Security in Pune',
+        paragraphs: [
+          'We operate from Baner and deploy security teams across Pune and Pimpri-Chinchwad (PCMC). That includes offices and commercial buildings in the western and eastern business districts, residential societies across the city, and industrial sites in the PCMC belt. Guards for a site are deployed to that site, so coverage is confirmed per property during the assessment rather than drawn on a fixed map.',
+          'Security often works best alongside other site services. When security and [housekeeping services in Pune](/housekeeping-services-pune) report to the same site manager, gate, parking and common-area issues stop bouncing between vendors. Security can also be combined with maintenance and support staff under our [integrated facility management in Pune](/facility-management-company-pune), or supplied as part of [facility staffing and manpower](/facility-staffing-services-pune).',
         ],
       },
     ],
     faqs: [
+      { question: 'What services does a security agency provide?', answer: 'A security agency supplies verified, trained security personnel and manages them on site. That covers deployment to agreed posts and shifts, supervision, replacement during absences, payroll and statutory compliance, visitor and incident records, and escalation when something goes wrong.' },
+      { question: 'How can a company hire security guards in Pune?', answer: 'Share your site type, entry points and working hours with us. We carry out a site assessment, propose a written post plan with shifts and relief cover, and deploy verified guards once the plan is agreed. You can start through our contact page.' },
+      { question: 'How many security guards does a commercial property need?', answer: 'It depends on the number of posts and the hours each must be covered. One post manned round the clock needs three guards on duty a day plus relief for weekly offs, so about four people. Patrols, peak hours and extra entrances add to that.' },
+      { question: 'What are the responsibilities of security personnel?', answer: 'Controlling entry and exit, checking and logging visitors and vehicles, following the post instructions for material movement, patrolling, reporting incidents, and acting on the site’s emergency procedure while escalating to the supervisor.' },
+      { question: 'What should businesses check before hiring a security agency?', answer: 'A current licence under the Private Security Agencies (Regulation) Act, 2005, PF and ESIC compliance, police verification of guards, a written post plan with relief cover, supervision arrangements and the records you will receive. See our [security agency selection guide](/resources/how-to-choose-a-security-agency-pune).' },
       { question: 'Are your security guards police-verified?', answer: 'Yes. Security personnel go through police verification and background checks before deployment.' },
-      { question: 'What hours can security cover?', answer: 'Coverage hours, guard posts and shifts are agreed with you during the site assessment and written into the post plan for your site.' },
-      { question: 'What happens during a security incident?', answer: 'Our protocol is immediate containment, coordination with local authorities where needed, and documented incident reporting.' },
-      { question: 'Can security services be combined with housekeeping?', answer: 'Yes. Many clients use our housekeeping and security teams together as part of [integrated facility management](/facility-management-company-pune).' },
-      { question: 'How do I request a security assessment for my facility?', answer: 'Share your facility type and current security setup through our contact page, and our team will follow up with a tailored assessment.' },
+      { question: 'What hours can security cover?', answer: 'Coverage hours, guard posts and shifts are agreed with you during the site assessment and written into the post plan for your site, including night and weekend posts where you need them.' },
+      { question: 'What happens during a security incident?', answer: 'The guard acts on the post instructions and the site’s emergency procedure, informs the supervisor, and the incident is recorded. It escalates to KARGAR management and, where needed, the local authorities.' },
+      { question: 'Can security services be combined with housekeeping?', answer: 'Yes. Many clients use our housekeeping and security teams together as part of [integrated facility management](/facility-management-company-pune), with one point of contact.' },
+      { question: 'How do I request a security assessment for my facility?', answer: 'Share your facility type, number of entrances, working hours and current security setup through our contact page. Our team will follow up to arrange the site assessment.' },
     ],
     serviceDetailLink: { label: 'security service details', href: '/services/soft-services/security-services' },
     relatedLinks: [
+      { label: 'Corporate Security Services', href: '/corporate-security-services-pune' },
+      { label: 'Industrial Security Services', href: '/industrial-security-services-pune' },
       { label: 'Society Security Services', href: '/society-security-services-pune' },
-      { label: 'Housekeeping Services in Pune', href: '/housekeeping-services-pune' },
-      { label: 'Facility Staffing & Manpower', href: '/facility-staffing-services-pune' },
+      { label: 'How to Choose a Security Agency', href: '/resources/how-to-choose-a-security-agency-pune' },
     ],
     ctaHeading: 'Request a Security Assessment for Your Pune Facility',
-    ctaText: 'Tell us about your facility and current security setup, and our team will follow up with a tailored assessment.',
+    ctaText: 'Tell us about your facility, its entrances and working hours, and your current security setup. We will arrange a site assessment and propose a written post plan.',
+    ctaLabel: 'Request Security Assessment',
     serviceType: 'Security Guard Services',
+  },
+
+  // ───────────────────────────── CORPORATE & COMMERCIAL ─────────────────────────────
+  {
+    path: '/corporate-security-services-pune',
+    cluster: 'security',
+    parent: PILLAR,
+    breadcrumbLabel: 'Corporate Security',
+    summary: 'Reception, visitor management, access control, after-hours patrols and asset movement for corporate offices and commercial buildings in Pune.',
+    seo: {
+      title: 'Corporate Security in Pune',
+      description:
+        'Corporate security services in Pune for offices and commercial buildings: visitor management, access control, after-hours patrols and police-verified guards.',
+      keywords: ['Corporate Security Services Pune', 'Office Security Services Pune', 'Commercial Security Services Pune', 'Corporate Security Guards Pune'],
+    },
+    eyebrow: 'Corporate Security',
+    h1: 'Corporate Security Services in Pune',
+    heroSubtitle:
+      'For admin, facility and HR teams running offices and commercial buildings in Pune: security that manages visitors and access, protects assets after hours, and gives you records you can rely on.',
+    heroImage: heroImages.security,
+    intro: [
+      'Corporate security is mostly about controlled access. An office building has employees, visitors, interview candidates, couriers, vendors and housekeeping staff coming through the same doors all day. Laptops, documents and equipment move in and out. Floors stay lit long after most people leave. Most security failures in offices are not dramatic. They are an unchecked visitor, an asset that left without a gate pass, or a floor nobody patrolled at night.',
+      'KARGAR provides corporate security services in Pune for single-occupier offices and for multi-tenant commercial buildings. Police-verified, trained guards work to written post instructions under a security supervisor, and visitor and incident records are kept so your admin team can answer questions with evidence.',
+    ],
+    sections: [
+      {
+        kind: 'table',
+        heading: 'Security Posts in a Typical Office Building',
+        intro: 'Every building is different. This is the starting framework we adapt during the site assessment.',
+        caption: 'Common security posts in office and commercial buildings and their duties',
+        columns: ['Post', 'Main duties'],
+        rows: [
+          ['Main entrance and reception', 'Visitor registration, host confirmation, visitor passes, courier and delivery handling'],
+          ['Lift lobby or floor access', 'Access-card or turnstile supervision, tailgating checks, directing visitors'],
+          ['Parking and basement', 'Vehicle entry and exit logging, parking allocation, patrols of lower levels'],
+          ['Service and loading entry', 'Vendor and housekeeping staff entry, material in and out against gate passes'],
+          ['CCTV or control room', 'Camera monitoring by a surveillance operator, access-control system operation'],
+          ['After-hours patrol', 'Floor rounds, doors and windows checked, lights and equipment noted, incidents logged'],
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'How Visitor and Access Management Works',
+        intro: 'The visitor process is where office security is won or lost, so it is written down and followed the same way on every shift.',
+        steps: [
+          { title: 'Registration', description: 'Every visitor is recorded in your register or visitor-management system with name, contact, host and purpose.' },
+          { title: 'Host confirmation', description: 'The guard or reception confirms with the host before the visitor goes beyond the lobby.' },
+          { title: 'Pass and escort rules', description: 'A visitor pass is issued, and restricted areas follow your escort rules.' },
+          { title: 'Exit logging', description: 'Exit time is recorded and the pass returned, so the register shows who is still inside at any point.' },
+          { title: 'Material check', description: 'Laptops and equipment leaving the building are checked against your gate-pass procedure.' },
+        ],
+      },
+      {
+        kind: 'cards',
+        heading: 'What Corporate Clients Usually Ask Us to Cover',
+        columns: 2,
+        items: [
+          { title: 'After-hours and weekend security', description: 'Patrol rounds with recorded checks when the office is empty, plus controlled entry for staff working late or on weekends.' },
+          { title: 'Asset and material movement', description: 'Gate-pass checks for IT equipment, furniture and stock, with outward and inward entries logged.' },
+          { title: 'Professional front-of-house conduct', description: 'Guards at reception are trained to be courteous with clients and candidates while still applying procedure firmly.' },
+          { title: 'Emergency procedures', description: 'Guards follow the building’s emergency and evacuation plan, help keep exits clear and escalate through the supervisor.' },
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Single-Occupier Office or Multi-Tenant Commercial Building?',
+        intro: 'Both are covered on this page, but the security set-up is planned differently.',
+        left: {
+          title: 'Single-occupier corporate office',
+          items: [
+            'Security reports to your admin or facilities team',
+            'Visitor rules follow your company policy',
+            'Access control is tied to your employee cards',
+            'Often combined with [corporate housekeeping](/corporate-housekeeping-services-pune) under one contract',
+          ],
+        },
+        right: {
+          title: 'Multi-tenant commercial building',
+          items: [
+            'Security reports to the owner, property manager or association',
+            'Common areas, parking and the main gate are covered for all tenants',
+            'Each tenant’s visitor rules have to be supported at one reception',
+            'Often combined with common-area services under [commercial facility management](/commercial-facility-management-pune)',
+          ],
+        },
+      },
+      {
+        kind: 'callout',
+        heading: 'Records your compliance team can use',
+        text: 'Visitor registers, attendance records and incident reports are maintained for your site. When an internal audit or an incident review asks who entered, when, and what the guard did, the answer is on record. KARGAR guards are also on our payroll with PF and ESIC compliance.',
+      },
+    ],
+    faqs: [
+      { question: 'What is corporate security?', answer: 'Corporate security is the protection of an organisation’s offices, people and assets. Day to day, that means controlling access, managing visitors, checking material movement, patrolling after hours and responding to incidents under a written procedure.' },
+      { question: 'Can your guards work with our access-card and visitor-management systems?', answer: 'Yes. Guards are trained on your site’s procedure, whether it uses access cards, turnstiles, a visitor app or a register. Surveillance operators can monitor CCTV and operate access-control systems.' },
+      { question: 'Do you provide security for multi-tenant commercial buildings?', answer: 'Yes. For commercial buildings the contract is usually with the owner, property manager or association, and covers the main entrance, common areas and parking for all tenants.' },
+      { question: 'Can security cover nights and weekends only?', answer: 'Yes. Posts and shifts are planned around when you need cover. Some offices only need after-hours and weekend security, which is written into the post plan.' },
+      { question: 'Can you take over from our current security agency?', answer: 'Yes. We assess the site, write the post plan and instructions before the changeover date, and plan the handover so no post is left uncovered.' },
+    ],
+    relatedLinks: [
+      { label: 'Security Services in Pune', href: '/security-services-pune' },
+      { label: 'Corporate Housekeeping in Pune', href: '/corporate-housekeeping-services-pune' },
+      { label: 'Office Facility Management', href: '/office-facility-management-pune' },
+      { label: 'How to Choose a Security Agency', href: '/resources/how-to-choose-a-security-agency-pune' },
+    ],
+    ctaHeading: 'Plan Security for Your Office or Commercial Building',
+    ctaText: 'Share the number of floors and entrances, working hours, visitor volume and current arrangement. We will propose posts, shifts and post instructions.',
+    ctaLabel: 'Discuss Office Security',
+    serviceType: 'Corporate Security Services',
+  },
+
+  // ───────────────────────────── INDUSTRIAL ─────────────────────────────
+  {
+    path: '/industrial-security-services-pune',
+    cluster: 'security',
+    parent: PILLAR,
+    breadcrumbLabel: 'Industrial Security',
+    summary: 'Gate control, material gate passes, contractor labour entry, perimeter patrols and shift changeovers for factories and warehouses around Pune.',
+    seo: {
+      title: 'Industrial Security in Pune',
+      description:
+        'Industrial security services in Pune for factories and warehouses: gate control, material gate passes, contractor entry, patrols and police-verified guards.',
+      keywords: ['Industrial Security Services Pune', 'Factory Security Services Pune', 'Warehouse Security Services Pune', 'Industrial Security Guards Pune'],
+    },
+    eyebrow: 'Industrial Security',
+    h1: 'Industrial Security Services in Pune',
+    heroSubtitle:
+      'For plant heads, admin and HR managers at manufacturing units and warehouses: security built around gates, gate passes, shifts and large perimeters.',
+    heroImage: heroImages.security,
+    intro: [
+      'Industrial security is about movement: people, vehicles and material crossing the plant boundary all day, across shifts. A manufacturing unit has permanent employees, contract labour, transporters, vendors and visitors, often through different gates. Raw material comes in and finished goods, scrap and returnable items go out. Losses in a plant rarely come from a break-in. They come from material leaving without a valid gate pass, unchecked vehicles, or a perimeter nobody patrolled on the night shift.',
+      'KARGAR provides industrial security services for manufacturing sites and warehouses around Pune. Police-verified, trained guards work to written post instructions that follow your plant’s own procedures, under a security supervisor who owns each shift. Industrial sites often run housekeeping through the same provider. Our [industrial housekeeping services in Pune](/industrial-housekeeping-services-pune) work alongside the security team.',
+    ],
+    sections: [
+      {
+        kind: 'table',
+        heading: 'Industrial Security Posts and What Each One Does',
+        intro: 'The posts depend on your layout. This is the framework we start from during the site assessment.',
+        caption: 'Common security posts at factories and warehouses and their duties',
+        columns: ['Post', 'Main duties'],
+        rows: [
+          ['Main gate', 'Employee and visitor entry, visitor registration, vehicle entry and exit logs'],
+          ['Material gate', 'Inward and outward material checked against gate passes, challans and your procedure; returnable items tracked'],
+          ['Contractor and labour gate', 'Identity and entry checks for contract workers, entry and exit records matched to shifts'],
+          ['Perimeter patrol', 'Boundary-wall and fence rounds, especially at night, with recorded checkpoints'],
+          ['Stores and scrap yard', 'Access restricted to authorised staff, movements recorded'],
+          ['CCTV room', 'Camera monitoring by a surveillance operator, with incidents logged'],
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Shift Changeover: Where Industrial Security Slips',
+        intro: 'Plants run in shifts, and so does security. The handover between shifts is a common weak point, so it follows a fixed routine.',
+        steps: [
+          { title: 'Post-by-post handover', description: 'The outgoing guard briefs the incoming guard at the post itself, not in the guard room.' },
+          { title: 'Register check', description: 'Open visitor entries, vehicles still inside and pending gate passes are reviewed and signed over.' },
+          { title: 'Incident briefing', description: 'Anything unusual from the previous shift is passed on and recorded.' },
+          { title: 'Supervisor round', description: 'The shift supervisor checks every post early in the shift and records the check.' },
+        ],
+      },
+      {
+        kind: 'checklist',
+        heading: 'Plant Procedures We Write Into the Post Instructions',
+        intro: 'Your plant already has rules. Our job is to make every guard on every shift apply them the same way.',
+        groups: [
+          { title: 'Material', items: ['Gate-pass formats and who may sign them', 'Returnable and non-returnable material rules', 'Scrap and finished-goods dispatch checks'] },
+          { title: 'Vehicles', items: ['Transporter and truck entry procedure', 'Vehicle checking rules as set by the plant', 'Parking and loading-bay movement'] },
+          { title: 'People', items: ['Contract-labour entry and identity checks', 'Visitor registration and your safety-induction requirement', 'Restricted areas and escort rules'] },
+        ],
+      },
+      {
+        kind: 'prose',
+        heading: 'Security for Pune’s Manufacturing Belts',
+        paragraphs: [
+          'Much of Pune’s manufacturing sits in industrial areas such as Chakan, Talegaon, Bhosari and the Pimpri-Chinchwad MIDC zones. Sites there often run round the clock, cover large plots with long boundary walls, and handle heavy transporter traffic. These factors drive the number of posts and patrols far more than the built-up area does. We confirm coverage and staffing for each site during the assessment.',
+          'Because KARGAR also provides housekeeping, technicians and support staff, a plant can bring security together with other services under one provider. See our [facility staffing and manpower services](/facility-staffing-services-pune) or the main [security services in Pune](/security-services-pune) page for other property types.',
+        ],
+      },
+      {
+        kind: 'callout',
+        heading: 'Contractor compliance matters to the principal employer',
+        text: 'When a plant outsources security, the plant is generally treated as the principal employer for labour-law purposes. KARGAR guards are on our payroll with PF and ESIC compliance, and under our 100% financial transparency commitment you can ask what compensation is paid to the staff deployed at your site.',
+      },
+    ],
+    faqs: [
+      { question: 'What is industrial security?', answer: 'Industrial security protects manufacturing units, warehouses and their material, people and assets. In practice it means gate control, material gate-pass checks, vehicle and contractor entry records, perimeter patrols and incident reporting across every shift.' },
+      { question: 'Can your guards follow our plant’s gate-pass procedure?', answer: 'Yes. Your gate-pass formats, signing authorities and vehicle-checking rules are written into the post instructions, and guards are briefed on them before deployment.' },
+      { question: 'Do you provide security for warehouses as well as factories?', answer: 'Yes. Warehouses need the same core controls of gate, vehicle and material checks and patrols. The posts are planned around loading bays and dispatch timings.' },
+      { question: 'Can security be planned around three production shifts?', answer: 'Yes. Posts, guard shifts and supervisor coverage are planned to match your production shifts, with a fixed handover routine at each changeover.' },
+      { question: 'Do you also provide housekeeping for industrial sites?', answer: 'Yes. Shop floors, canteens and amenities can be covered by our [industrial housekeeping](/industrial-housekeeping-services-pune) team under the same provider.' },
+    ],
+    relatedLinks: [
+      { label: 'Security Services in Pune', href: '/security-services-pune' },
+      { label: 'Industrial Housekeeping in Pune', href: '/industrial-housekeeping-services-pune' },
+      { label: 'Facility Staffing & Manpower', href: '/facility-staffing-services-pune' },
+      { label: 'How to Choose a Security Agency', href: '/resources/how-to-choose-a-security-agency-pune' },
+    ],
+    ctaHeading: 'Plan Security for Your Plant or Warehouse',
+    ctaText: 'Share the number of gates, shifts, plot size and current security arrangement. We will propose posts, patrols and post instructions for your site.',
+    ctaLabel: 'Discuss Plant Security',
+    serviceType: 'Industrial Security Services',
   },
 
   // ───────────────────────────── SOCIETY SECURITY ─────────────────────────────
@@ -87,7 +378,7 @@ export const securityPages: PuneLandingPageContent[] = [
     heroImage: heroImages.security,
     intro: [
       'Society security is different from guarding an office. The flow at a society gate never really stops, the people coming in are mostly legitimate, and the guard has to be firm with procedure while staying courteous with residents and their visitors. Most complaints committees receive about security are really about process: who was let in, why a delivery was refused, or why nobody noticed a vehicle.',
-      'KARGAR provides security for Pune housing societies as part of the same site structure we use for housekeeping and maintenance, with certified, police-verified, trained security personnel.',
+      'KARGAR provides security for Pune housing societies as part of the same site structure we use for housekeeping and maintenance, with police-verified, trained security personnel.',
     ],
     sections: [
       {
@@ -123,7 +414,7 @@ export const securityPages: PuneLandingPageContent[] = [
       },
     ],
     faqs: [
-      { question: 'Are your society security guards police-verified?', answer: 'Yes. KARGAR’s security personnel are certified, police-verified and trained before deployment.' },
+      { question: 'Are your society security guards police-verified?', answer: 'Yes. KARGAR’s security personnel are police-verified and trained before deployment.' },
       { question: 'Can you work with our visitor-management app?', answer: 'Yes. Guards are trained on the society’s visitor-management procedure, whether app-based or register-based.' },
       { question: 'Can we get valets for society events?', answer: 'Valets and bouncers are part of our security roles and can be arranged as needed.' },
       { question: 'Who does the committee contact about security issues?', answer: 'The security supervisor first, then the site manager and KARGAR management through the agreed escalation path.' },

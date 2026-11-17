@@ -15,7 +15,8 @@ export type CustomEventNames =
   | 'contact_form_submit'
   | 'call_click'
   | 'email_click'
-  | 'whatsapp_click';
+  | 'whatsapp_click'
+  | 'cta_click';
 
 export interface GtagEventParams {
   page_path?: string;

@@ -61,7 +61,36 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
           { title: 'Housing societies', description: 'A complete site organisation plus co-operative society administration. See [facility management for housing societies](/facility-management-for-societies-pune).' },
           { title: 'Offices', description: 'Housekeeping, front desk, mailroom, helpdesk and upkeep for a single occupier. See [office facility management](/office-facility-management-pune).' },
           { title: 'Commercial buildings', description: 'Common areas, building services and vendor consolidation for owners and associations. See [commercial facility management](/commercial-facility-management-pune).' },
-          { title: 'Institutes, healthcare and plants', description: 'Sector-specific housekeeping and maintenance — for example [school housekeeping](/school-housekeeping-services-pune) and [industrial housekeeping](/industrial-housekeeping-services-pune).' },
+          { title: 'Institutes, healthcare and plants', description: 'Sector-specific housekeeping, security and maintenance — for example [school housekeeping](/school-housekeeping-services-pune), [industrial housekeeping](/industrial-housekeeping-services-pune) and [industrial security](/industrial-security-services-pune).' },
+        ],
+      },
+      {
+        kind: 'cards',
+        heading: 'Soft, Hard and Support Services in Plain Terms',
+        intro: 'Facility management contracts in India are usually described in these three groups. Knowing which group a problem belongs to makes scoping and quotes easier to compare.',
+        columns: 3,
+        items: [
+          { title: 'Soft services: the people-led work', description: 'Cleaning, hygiene, waste, gardens and guarding: services delivered mainly by deployed staff every day. See [housekeeping](/housekeeping-services-pune) and [security services in Pune](/security-services-pune).' },
+          { title: 'Hard services: the building’s systems', description: 'Electrical, HVAC, DG, fire, plumbing and STP: equipment that needs preventive maintenance and fast breakdown coordination. See [facility maintenance](/facility-maintenance-services-pune).' },
+          { title: 'Support services: the administration', description: 'Helpdesk and tickets, mailroom, statutory documentation, reports and consumables: the work that keeps the other two accountable.' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'Moving From Several Vendors to One Facility Management Contract',
+        intro: 'Most clients already have a housekeeping agency, a security agency and a few technicians. The transition is planned so nothing is left uncovered.',
+        steps: [
+          { title: 'Survey and scope', description: 'We survey the site, list every service and vendor in place today, and write the combined scope and org structure.' },
+          { title: 'Phased or single changeover', description: 'Services can move together on one date, or one at a time as existing contracts end.' },
+          { title: 'Staff continuity', description: 'Where existing staff are performing well, we discuss retaining them so the site keeps people who already know it.' },
+          { title: 'One reporting line', description: 'From day one, the site manager owns reporting and escalation for every service in the contract.' },
+        ],
+      },
+      {
+        kind: 'prose',
+        heading: 'Facility Management Across Pune and PCMC',
+        paragraphs: [
+          'We operate from Baner and run sites across Pune and Pimpri-Chinchwad: residential societies throughout the city, offices and commercial buildings in the western and eastern business districts, institutes and healthcare facilities, and manufacturing sites in the PCMC industrial belt. Staff are deployed to each site, so coverage is planned per property during the survey.',
         ],
       },
       {
@@ -86,7 +115,9 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
     ],
     faqs: [
       { question: 'What does a facility management company do?', answer: 'It runs the services that keep a property working — cleaning, security, technical maintenance and support — through its own staff and processes, so the owner or occupier manages one partner instead of many vendors.' },
+      { question: 'What is integrated facility management?', answer: 'Integrated facility management means one provider runs several site services, such as housekeeping, security, technical maintenance and support, under one contract, one site manager and one reporting line, instead of separate vendors for each.' },
       { question: 'Can I use KARGAR for just one service?', answer: 'Yes. Housekeeping, security, maintenance and staffing can be engaged individually or combined into integrated facility management.' },
+      { question: 'What does facility management cost in Pune?', answer: 'There is no standard rate. Cost depends mainly on the roles and headcount, shifts, the services included, whether materials and consumables are part of the scope, and maintenance coverage (AMC, on-call or resident technicians). We quote after a site survey.' },
       { question: 'Which sectors does KARGAR serve?', answer: 'Residential societies, commercial complexes, corporate offices, educational institutes, healthcare facilities and manufacturing.' },
       { question: 'Where is KARGAR based?', answer: 'Our office is in Unity Commercial, near Amar Business Zone, Baner, Pune. We deploy teams to sites across Pune and Pimpri-Chinchwad.' },
       { question: 'How do I request a facility management proposal?', answer: 'Share your property type, size and the services you need through our contact page. We will arrange a site survey and send a written proposal.' },
@@ -94,6 +125,7 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
     serviceDetailLink: { label: 'our full range of services', href: '/services' },
     relatedLinks: [
       { label: 'Housekeeping Services in Pune', href: '/housekeeping-services-pune' },
+      { label: 'Security Services in Pune', href: '/security-services-pune' },
       { label: 'Facility Management for Societies', href: '/facility-management-for-societies-pune' },
       { label: 'Facility Maintenance Services', href: '/facility-maintenance-services-pune' },
       { label: 'Company Profile', href: '/company-profile' },

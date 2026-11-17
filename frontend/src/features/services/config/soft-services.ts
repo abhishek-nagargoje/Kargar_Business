@@ -9,12 +9,12 @@ export const softServices: Record<string, Service> = {
     catalogSlug: 'housekeeping-services',
     title: 'Housekeeping Services',
     shortDescription: 'Professional housekeeping services for corporate offices and commercial facilities.',
-    overview: 'KARGAR Facility Management provides professional housekeeping services for corporate offices, commercial facilities, and workplaces. We deliver comprehensive cleaning solutions tailored to each facility\'s needs, from daily janitorial housekeeping to specialized deep cleaning. Our trained housekeeping staff uses industry-leading equipment and eco-friendly products, backed by regular supervision, to maintain consistently high standards of cleanliness and hygiene. Our team supports office housekeeping for IT parks and corporate campuses, commercial housekeeping for retail and hospitality spaces, and industrial housekeeping for manufacturing plants and warehouses, with consistent standards across every environment.',
+    overview: 'KARGAR Facility Management provides professional housekeeping services for corporate offices, commercial facilities, and workplaces. We deliver comprehensive cleaning solutions tailored to each facility\'s needs, from daily janitorial housekeeping to specialized deep cleaning. Our trained, police-verified housekeeping staff work from written checklists under regular supervision to maintain consistent standards of cleanliness and hygiene. Our teams support office housekeeping for corporate offices and campuses, commercial housekeeping for commercial buildings and complexes, and industrial housekeeping for manufacturing plants and warehouses, with the same operating standards in every environment.',
     iconKey: 'sparkles',
     imageKey: 'housekeeping',
     seo: {
       title: 'Business Housekeeping Services',
-      description: 'Professional housekeeping services for corporate, commercial, and industrial facilities, with trained staff, eco-friendly cleaning, and reliable supervision.',
+      description: 'Housekeeping services for corporate, commercial and industrial facilities: police-verified, trained staff, written checklists and on-site supervision by KARGAR.',
       keywords: ['Housekeeping Services', 'Business Housekeeping Services', 'Commercial Housekeeping', 'Industrial Housekeeping', 'Office Housekeeping Services']
     },
     serviceType: 'cleaning',
@@ -36,10 +36,10 @@ export const softServices: Record<string, Service> = {
         { title: 'Monthly Hygiene Report', description: 'Detailed analysis of facility cleanliness.' }
       ]
     },
-    capabilities: ['police-verified', 'iso-compliance', 'sla-driven'],
+    capabilities: ['police-verified'],
     compliance: [
       { title: 'Verified Workforce', description: 'All housekeeping personnel undergo thorough police verification and background checks before deployment.', iconKey: 'shield-check' },
-      { title: 'ISO-Aligned Processes', description: 'Housekeeping operations follow ISO process guidelines for consistent quality standards.', iconKey: 'file-check' },
+      { title: 'PF & ESIC Compliance', description: 'Housekeeping staff are employed on KARGAR’s payroll with PF and ESIC compliance, and you can ask what the staff at your site are paid.', iconKey: 'file-check' },
       { title: 'Structured Service Delivery', description: 'Daily cleaning checklists and monthly hygiene reports provide measurable, deliverable-driven tracking.', iconKey: 'clipboard-check' }
     ],
     process: [
@@ -49,25 +49,25 @@ export const softServices: Record<string, Service> = {
       { step: 4, title: 'Reporting & Quality Tracking', description: 'Cleaning activity is tracked through daily cleaning checklists and monthly hygiene reports.' }
     ],
     whyChooseUs: [
-      { title: 'Eco-Friendly', description: 'We use sustainable, non-toxic cleaning agents.', iconKey: 'leaf' },
-      { title: 'Trained Personnel', description: 'Rigorous training in hospitality and hygiene.', iconKey: 'users' },
+      { title: 'Payroll Transparency', description: 'You have the right to ask what compensation is paid to the staff deployed at your site.', iconKey: 'file-check' },
+      { title: 'Trained Personnel', description: 'Year-round skill, safety and behavioural training by Field Trainers and Quality Managers.', iconKey: 'users' },
       { title: 'Quality Assurance', description: 'Regular unannounced inspections by supervisors.', iconKey: 'check-circle' }
     ],
     industries: [
       { title: 'Corporate Offices', iconKey: 'building' },
-      { title: 'IT Parks', iconKey: 'building-2' },
+      { title: 'Commercial Buildings', iconKey: 'building-2' },
+      { title: 'Residential Societies', iconKey: 'home' },
+      { title: 'Educational Institutes', iconKey: 'graduation-cap' },
       { title: 'Healthcare', iconKey: 'plus-square' },
-      { title: 'Retail & Malls', iconKey: 'shopping-bag' },
-      { title: 'Hotels & Hospitality', iconKey: 'bed' },
       { title: 'Warehouses', iconKey: 'package' },
       { title: 'Manufacturing', iconKey: 'factory' }
     ],
     faqs: [
       { question: 'Does KARGAR provide housekeeping staff for corporate offices?', answer: 'Yes, we provide trained housekeeping staff for corporate offices, commercial facilities, and workplace environments, with regular supervision and quality checks.' },
       { question: 'What is included in daily housekeeping?', answer: 'Tasks include emptying trash, vacuuming, mopping, cleaning restrooms, and wiping surfaces.' },
-      { question: 'Do you use eco-friendly cleaning products?', answer: 'Yes, we prioritize the use of environmentally friendly and non-toxic cleaning solutions.' },
+      { question: 'Do you supply cleaning materials and machines?', answer: 'They can be included. Consumables, tools and tackles can be managed by KARGAR as part of the contract or supplied by you, and this is agreed in the scope.' },
       { question: 'Are your housekeeping staff background-checked?', answer: 'Absolutely. All our personnel undergo thorough police verification and background checks.' },
-      { question: 'Does KARGAR provide commercial and industrial housekeeping services?', answer: 'Yes. Beyond corporate offices, our housekeeping teams support commercial facilities such as retail spaces and hotels, as well as industrial environments including manufacturing plants and warehouses.' },
+      { question: 'Does KARGAR provide commercial and industrial housekeeping services?', answer: 'Yes. Beyond corporate offices, our housekeeping teams support commercial buildings and complexes, as well as industrial environments including manufacturing plants and warehouses.' },
       { question: 'What information do you need to prepare a housekeeping services proposal?', answer: 'Typically your facility type, site size, operating hours, and current staffing needs. Share these through our contact page and our team will follow up with a tailored proposal.' }
     ],
     relationships: {
@@ -82,13 +82,15 @@ export const softServices: Record<string, Service> = {
     catalogSlug: 'security-services',
     title: 'Security Services',
     shortDescription: 'Comprehensive manned guarding and surveillance solutions.',
-    overview: 'Safeguard your assets, employees, and visitors with our robust security services. We offer highly trained security personnel, access control management, and surveillance monitoring. Our proactive approach to security ensures a safe environment, deterring potential threats and providing rapid response to any incidents.',
+    overview: 'Safeguard your assets, employees, and visitors with our robust security services. We offer highly trained security personnel, access control management, and surveillance monitoring. Every guard works to written post instructions under a security supervisor, and visitor logs and incident reports give you an auditable record of each shift.',
     iconKey: 'shield',
     imageKey: 'security',
     seo: {
-      title: 'Corporate Security Services',
-      description: 'Reliable trained security guards, access control, and CCTV surveillance monitoring for complete corporate and industrial facility protection.',
-      keywords: ['Corporate Security Services', 'Security Guard Services', 'Trained Security Guards', 'Security Solutions'],
+      // Deliberately service-detail intent: commercial queries ("security services Pune",
+      // "corporate security Pune") belong to the /security-services-pune cluster pages.
+      title: 'Security Service Scope & FAQs',
+      description: 'Security service scope at KARGAR: manned guarding, access control, CCTV monitoring, visitor logs and incident reports, delivered by police-verified guards.',
+      keywords: ['Security Service Scope', 'Manned Guarding', 'Access Control', 'CCTV Monitoring'],
     },
     serviceType: 'security',
     layoutPreset: 'enterpriseTechnical',
@@ -102,7 +104,7 @@ export const softServices: Record<string, Service> = {
         { title: 'Manned Guarding', description: 'Trained security officers for static guarding and patrols.' },
         { title: 'Access Control', description: 'Managing entry and exit points to prevent unauthorized access.' },
         { title: 'CCTV Monitoring', description: 'Surveillance monitoring and incident recording by surveillance operators.' },
-        { title: 'Emergency Response', description: 'Rapid deployment and coordination during critical incidents.' }
+        { title: 'Incident Response', description: 'Guards act on the site’s emergency procedure and escalate through the supervisor and KARGAR management.' }
       ],
       deliverables: [
         { title: 'Visitor Logs', description: 'Digital or physical logs of all facility visitors.' },
@@ -111,12 +113,12 @@ export const softServices: Record<string, Service> = {
     },
     capabilities: ['police-verified'],
     whyChooseUs: [
-      { title: 'Vetted Professionals', description: 'Strict background checks and psychological profiling.', iconKey: 'shield-check' },
-      { title: 'Advanced Training', description: 'Trained in conflict resolution and emergency response.', iconKey: 'crosshair' },
-      { title: 'Rapid Deployment', description: 'Quickly scale security presence based on threat levels.', iconKey: 'zap' }
+      { title: 'Verified Personnel', description: 'Police verification and background checks before any guard is deployed.', iconKey: 'shield-check' },
+      { title: 'Year-Round Training', description: 'Skill, safety and behavioural training by KARGAR’s Field Trainers and Quality Managers.', iconKey: 'graduation-cap' },
+      { title: 'Supervised Posts', description: 'A security supervisor checks posts and is your first escalation point.', iconKey: 'clipboard-check' }
     ],
     faqs: [
-      { question: 'Are your security guards armed or unarmed?', answer: 'We primarily provide unarmed personnel, but armed guards can be arranged depending on regulations.' },
+      { question: 'Are your security guards police-verified?', answer: 'Yes. Security personnel go through police verification and background checks before deployment.' },
       { question: 'What hours can security cover?', answer: 'Coverage hours, guard posts and shifts are agreed with you during the site assessment.' },
       { question: 'What is your response protocol for emergencies?', answer: 'Immediate containment, coordination with local authorities, and rapid incident reporting.' }
     ],

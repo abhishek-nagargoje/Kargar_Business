@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router';
 import type { ContactNavigationOptions } from '../domain/navigation.types';
 import { buildContactUrl, CONTACT_LINK_HREF } from '../utils/contactNavigation';
+import { trackCtaClick } from '@/lib/analytics';
 
 /**
  * Layer 2: React Hook for Contact Navigation
@@ -13,19 +14,22 @@ export function useContactNavigation() {
 
   const navigateToContact = useCallback(
     (options?: ContactNavigationOptions, e?: React.MouseEvent) => {
+      // Record every CTA click, including modifier/new-tab clicks the browser handles itself.
+      trackCtaClick({
+        page_path: location.pathname,
+        source: options?.source,
+        service: options?.service,
+        category: options?.category,
+        cta_position: options?.ctaPosition,
+      });
+
       // If it's a left click without modifiers, we can handle it
       if (e && !e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
         e.preventDefault();
       } else if (e) {
-        // Let browser handle middle-click/new tab naturally since we use <Link> 
+        // Let browser handle middle-click/new tab naturally since we use <Link>
         return;
       }
-
-      // Fire analytics event
-      console.log('Analytics Event: Request Proposal Clicked', {
-        ...options,
-        timestamp: new Date().toISOString(),
-      });
 
       const url = buildContactUrl(options);
       

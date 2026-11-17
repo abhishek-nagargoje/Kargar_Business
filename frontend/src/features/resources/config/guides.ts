@@ -336,6 +336,115 @@ export const guidePageList: GuidePageContent[] = [
       { label: 'Office Housekeeping Checklist', href: '/resources/office-housekeeping-checklist' },
     ],
   },
+
+  // ───────────────────────────── CHOOSING A SECURITY AGENCY ─────────────────────────────
+  // Legal references are limited to what the PSARA Act and labour law say in general terms. This
+  // guide makes no claim about KARGAR's own licence; see docs/seo/01_SEO_AUDIT_REPORT.md (P0-2).
+  {
+    path: '/resources/how-to-choose-a-security-agency-pune',
+    breadcrumbLabel: 'Choosing a Security Agency',
+    summary: 'The licence, compliance, post-plan and supervision checks to make before signing with any security agency in Pune.',
+    seo: {
+      title: 'Choosing a Security Agency',
+      description:
+        'How to choose a security agency in Pune: check the PSARA licence, PF/ESIC compliance, guard verification, post plans, supervision and relief cover first.',
+      keywords: ['How to Choose a Security Agency', 'Security Agency Selection Pune', 'Hiring Security Guards Checklist'],
+    },
+    h1: 'How to Choose a Security Agency in Pune',
+    standfirst: 'A practical checklist for admin managers, plant heads and society committees comparing security agencies.',
+    datePublished: '2026-11-17',
+    dateModified: '2026-11-17',
+    intro: [
+      'Choosing a security agency is mostly about checking things that are easy to promise and hard to see: whether the agency is licensed, whether guards are verified and paid properly, and whether anyone actually supervises the posts. A low monthly rate means little if a post is empty at 2 a.m. or the agency stops paying PF. This guide lists what to check, what to ask for in writing, and the warning signs, whichever agency you choose.',
+    ],
+    sections: [
+      {
+        kind: 'steps',
+        heading: 'Step-by-Step Selection Process',
+        steps: [
+          { title: 'Define what you need', description: 'List entrances, working hours, visitor and vehicle volume, valuables and current problems. This becomes the brief every agency quotes against.' },
+          { title: 'Ask for a site assessment', description: 'A serious agency walks the site before quoting. A quote given over the phone without seeing the site is a guess.' },
+          { title: 'Compare post plans, not headcounts', description: 'Ask each agency to show posts, shifts, relief cover and supervision in writing. Two quotes with the same guard count can deliver very different coverage.' },
+          { title: 'Verify licence and compliance', description: 'Check the licence and PF/ESIC compliance before shortlisting (see below), not after you have chosen.' },
+          { title: 'Agree records and escalation', description: 'Settle which registers and reports you will receive and who you call above the supervisor, and write it into the contract.' },
+        ],
+      },
+      {
+        kind: 'checklist',
+        heading: 'Documents to Ask Every Security Agency For',
+        intro: 'Ask for these in writing. An agency that hesitates over any of them is telling you something.',
+        groups: [
+          { title: 'Licence', items: ['A current licence under the Private Security Agencies (Regulation) Act, 2005 (PSARA), issued by the state’s Controlling Authority', 'Confirmation that the licence covers the area where your site is located'] },
+          { title: 'Statutory compliance', items: ['PF and ESIC registration numbers', 'Proof that contributions for deployed guards are paid, such as recent challans', 'How wages compare with the applicable minimum wage'] },
+          { title: 'People', items: ['Police verification records for guards deployed to your site', 'Training records and who conducts training', 'The supervisor’s name and visit or check schedule'] },
+        ],
+      },
+      {
+        kind: 'table',
+        heading: 'Questions to Ask in the Meeting',
+        caption: 'Questions to ask a security agency and what a good answer looks like',
+        columns: ['Question', 'What a good answer looks like'],
+        rows: [
+          ['What happens when a guard does not turn up?', 'A named relief process and a time within which the post is covered, written into the contract'],
+          ['Who checks the posts, and how often?', 'A supervisor with a defined round, and a record of each check'],
+          ['What records will we receive?', 'Visitor and vehicle registers, attendance, incident reports and a periodic review'],
+          ['How are guards briefed on our rules?', 'Written post instructions for each post, agreed with you before deployment'],
+          ['Can we see what the guards are paid?', 'A clear yes. Underpaid guards leave, and high turnover weakens security'],
+          ['How do you handle a changeover from our current agency?', 'A planned handover date with every post covered on day one'],
+        ],
+      },
+      {
+        kind: 'compare',
+        heading: 'Warning Signs and Good Signs',
+        left: {
+          title: 'Warning signs',
+          items: [
+            'Cannot or will not show a PSARA licence',
+            'Quotes a rate per guard that looks below the legal wage plus PF and ESIC',
+            'No site visit before quoting',
+            'No named supervisor, or supervision is “as needed”',
+            'Vague about relief for weekly offs and leave',
+          ],
+        },
+        right: {
+          title: 'Good signs',
+          items: [
+            'Licence and compliance documents shared without being chased',
+            'A written post plan with shifts, relief and supervision',
+            'Post instructions drafted for your site',
+            'Clear records and an escalation path above the supervisor',
+            'Willing to discuss guard pay openly',
+          ],
+        },
+      },
+      {
+        kind: 'prose',
+        heading: 'Why Compliance Is Your Problem Too',
+        paragraphs: [
+          'When you outsource security, your organisation or society is generally treated as the principal employer for the deployed guards. If an agency fails to pay PF or ESIC contributions, the principal employer can end up liable for them. That is why proof of payment matters more than a registration number on a letterhead.',
+          'Under-pricing is the usual cause. A rate that cannot cover the legal wage, contributions and relief staff means something is being cut, and it is usually the guards’ pay or the relief cover. Our [housekeeping cost guide](/resources/housekeeping-cost-pune) explains the same cost structure for housekeeping contracts, and it applies to security in the same way.',
+        ],
+      },
+      {
+        kind: 'prose',
+        heading: 'Working Out How Many Guards You Need',
+        paragraphs: [
+          'Count posts and hours, not floor area. One post manned round the clock needs three guards on duty each day plus relief for weekly offs, so about four people for that post. Add day-only posts, patrols and a supervisor where there are several posts. Then compare agencies on that same plan.',
+          'KARGAR provides [security services in Pune](/security-services-pune) using this method, with separate set-ups for [corporate offices and commercial buildings](/corporate-security-services-pune), [factories and warehouses](/industrial-security-services-pune) and [housing societies](/society-security-services-pune).',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Does a security agency in Maharashtra need a licence?', answer: 'Yes. The Private Security Agencies (Regulation) Act, 2005 requires a private security agency to hold a licence from the state’s Controlling Authority. Ask to see it and check that it is current.' },
+      { question: 'Should I choose the cheapest security agency?', answer: 'Compare post plans, compliance and supervision first. A rate below the cost of legal wages, PF, ESIC and relief staff usually means guard pay or cover is being cut.' },
+      { question: 'What records should a security agency give us?', answer: 'Visitor and vehicle registers, guard attendance, incident reports and a periodic performance review, plus the post instructions for each post.' },
+    ],
+    relatedLinks: [
+      { label: 'Security Services in Pune', href: '/security-services-pune' },
+      { label: 'Corporate Security Services', href: '/corporate-security-services-pune' },
+      { label: 'Industrial Security Services', href: '/industrial-security-services-pune' },
+    ],
+  },
 ];
 
 export const guidePagesByPath: Record<string, GuidePageContent> = Object.fromEntries(

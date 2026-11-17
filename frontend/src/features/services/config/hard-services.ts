@@ -9,7 +9,7 @@ export const hardServices: Record<string, Service> = {
     catalogSlug: 'electrical-systems-maintenance',
     title: 'Electrical Maintenance',
     shortDescription: 'Comprehensive electrical system maintenance and troubleshooting.',
-    overview: 'Ensure the safety and reliability of your electrical infrastructure with our comprehensive electrical maintenance services. Our certified technicians handle everything from routine inspections and preventive maintenance to complex troubleshooting and emergency repairs. We cover lighting systems, power distribution, backup generators, and more, ensuring uninterrupted operations for your facility.',
+    overview: 'Ensure the safety and reliability of your electrical infrastructure with our comprehensive electrical maintenance services. Our trained technicians handle everything from routine inspections and preventive maintenance to complex troubleshooting and emergency repairs. We cover lighting systems, power distribution, backup generators, and more, ensuring uninterrupted operations for your facility.',
     iconKey: 'zap',
     imageKey: 'electrical',
     seo: {
@@ -41,16 +41,16 @@ export const hardServices: Record<string, Service> = {
     },
     capabilities: ['preventive-maintenance'],
     whyChooseUs: [
-      { title: 'Certified Technicians', description: 'Fully licensed and trained in latest safety standards.', iconKey: 'award' },
+      { title: 'Trained Technicians', description: 'Skill and safety training throughout the year, delivered by KARGAR’s Field Trainers and Quality Managers.', iconKey: 'award' },
       { title: 'OEM-Aligned Maintenance', description: 'Preventive maintenance follows OEM schedules for each asset.', iconKey: 'clipboard-check' },
       { title: 'Energy Savings', description: 'Proven strategies to reduce overall power consumption.', iconKey: 'trending-down' }
     ],
     industries: [
       { title: 'Corporate Offices', iconKey: 'building' },
-      { title: 'IT Parks', iconKey: 'building-2' },
+      { title: 'Commercial Buildings', iconKey: 'building-2' },
+      { title: 'Residential Societies', iconKey: 'home' },
       { title: 'Manufacturing', iconKey: 'factory' },
-      { title: 'Warehouses', iconKey: 'package' },
-      { title: 'Retail & Malls', iconKey: 'shopping-bag' }
+      { title: 'Warehouses', iconKey: 'package' }
     ],
     faqs: [
       { question: 'How often should electrical maintenance be performed?', answer: 'We recommend comprehensive inspections at least annually, with more frequent checks for critical systems.' },
@@ -100,7 +100,7 @@ export const hardServices: Record<string, Service> = {
         { name: 'Cassette & Split ACs', iconKey: 'box' }
       ]
     },
-    capabilities: ['preventive-maintenance', 'iso-compliance', 'sla-driven'],
+    capabilities: ['preventive-maintenance'],
     whyChooseUs: [
       { title: 'Energy Efficiency', description: 'We tune your systems to operate at peak efficiency.', iconKey: 'battery-charging' },
       { title: 'Health & Safety', description: 'Prioritizing indoor air quality for occupant well-being.', iconKey: 'heart' },
@@ -108,9 +108,9 @@ export const hardServices: Record<string, Service> = {
     ],
     industries: [
       { title: 'Corporate Offices', iconKey: 'building' },
-      { title: 'IT Parks', iconKey: 'building-2' },
+      { title: 'Commercial Buildings', iconKey: 'building-2' },
       { title: 'Healthcare', iconKey: 'plus-square' },
-      { title: 'Retail & Malls', iconKey: 'shopping-bag' },
+      { title: 'Educational Institutes', iconKey: 'graduation-cap' },
       { title: 'Manufacturing', iconKey: 'factory' }
     ],
     faqs: [

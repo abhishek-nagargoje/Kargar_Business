@@ -127,6 +127,14 @@
       "destination": "/security-services-pune.html"
     },
     {
+      "source": "/corporate-security-services-pune",
+      "destination": "/corporate-security-services-pune.html"
+    },
+    {
+      "source": "/industrial-security-services-pune",
+      "destination": "/industrial-security-services-pune.html"
+    },
+    {
       "source": "/society-security-services-pune",
       "destination": "/society-security-services-pune.html"
     },
@@ -145,6 +153,10 @@
     {
       "source": "/resources/how-many-housekeeping-staff",
       "destination": "/resources/how-many-housekeeping-staff.html"
+    },
+    {
+      "source": "/resources/how-to-choose-a-security-agency-pune",
+      "destination": "/resources/how-to-choose-a-security-agency-pune.html"
     },
     {
       "source": "/services/hard-services",

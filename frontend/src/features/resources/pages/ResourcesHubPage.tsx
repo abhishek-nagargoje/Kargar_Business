@@ -71,7 +71,7 @@ export function ResourcesHubPage() {
     <div className="kargar-site kb-site">
       <SEO title={seo.title} description={seo.description} canonicalUrl={buildCanonicalUrl(PATH)} breadcrumbItems={breadcrumbItems} schema={[faqSchema]} />
       <Header activePath={PATH} />
-      <main className="bg-white">
+      <main id="main-content" tabIndex={-1} className="bg-white">
         <section className="bg-navy-950 text-white">
           <Container size="lg" className="pt-8 pb-14 lg:pb-20">
             <Breadcrumb items={breadcrumbItems} tone="dark" />

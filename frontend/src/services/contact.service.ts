@@ -26,7 +26,28 @@ export interface ContactSubmission {
   service?: string;
   source?: string;
   campaign?: string;
+  category?: string;
+  ctaPosition?: string;
   message: string;
+}
+
+/**
+ * Lead attribution stored in `contact_messages.metadata` (existing JSONB column, no migration):
+ * which landing page, campaign, category and CTA position produced the enquiry. Empty values
+ * are dropped so the column only holds what was actually present.
+ */
+function buildAttribution(input: ContactSubmission): Record<string, string> {
+  const entries: [string, string | undefined][] = [
+    ['service', input.service],
+    ['campaign', input.campaign],
+    ['category', input.category],
+    ['cta_position', input.ctaPosition],
+  ];
+  return Object.fromEntries(
+    entries
+      .map(([key, value]): [string, string] => [key, value?.trim().slice(0, 200) ?? ''])
+      .filter(([, value]) => value !== ''),
+  );
 }
 
 export interface ContactResult {
@@ -65,7 +86,8 @@ export async function submitContactMessage(input: ContactSubmission): Promise<Co
       message: input.message.trim(),
       status: 'new',
       priority: 'medium',
-      source: input.source?.trim() ?? 'website',
+      source: input.source?.trim() || 'website',
+      metadata: buildAttribution(input),
     }); // Removed .select('id').single() because anon key cannot read rows for security
 
   if (dbError) {

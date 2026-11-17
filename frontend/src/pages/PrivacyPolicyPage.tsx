@@ -21,7 +21,7 @@ export function PrivacyPolicyPage() {
       />
       <Header activePath="/privacy-policy" />
 
-      <main className="py-12 md:py-20 bg-slate-50 min-h-[60vh]">
+      <main id="main-content" tabIndex={-1} className="py-12 md:py-20 bg-slate-50 min-h-[60vh]">
         <div className="kb-container max-w-4xl mx-auto px-4 sm:px-6">
           
           {/* Breadcrumb */}

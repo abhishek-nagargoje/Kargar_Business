@@ -200,7 +200,12 @@ function SectionBody({ section }: { section: ContentSection }) {
                 <ul className="space-y-3 list-disc pl-5">
                   {side.items.map((item) => (
                     <li key={item} className={sideIndex === 0 ? 'text-slate-600' : 'text-gray-200'}>
-                      {sideIndex === 0 ? <Inline text={item} /> : item}
+                      {sideIndex === 0 ? (
+                        <Inline text={item} />
+                      ) : (
+                        // Dark column: orange links fail contrast on navy, so links are white + underlined.
+                        <Inline text={item} linkClassName="text-white font-semibold underline underline-offset-2 hover:text-orange-300 focus-ring rounded-sm" />
+                      )}
                     </li>
                   ))}
                 </ul>

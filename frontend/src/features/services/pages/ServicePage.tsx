@@ -46,7 +46,7 @@ export function ServicePage() {
         ]}
       />
       <Header activePath={path} />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <ServiceLayout
           service={service}
           category={category}

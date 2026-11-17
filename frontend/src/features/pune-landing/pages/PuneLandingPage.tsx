@@ -38,8 +38,8 @@ export function PuneLandingPage() {
   const breadcrumbItems = buildPuneBreadcrumbs(content);
   const canonicalUrl = buildCanonicalUrl(content.path);
   const siblings = clusterPages(content.cluster).filter((page) => page.path !== content.path);
-  const ctaOptions = { source: 'pune_landing_cta', service: content.path };
-  const heroCtaOptions = { source: 'pune_landing_hero', service: content.path };
+  const ctaOptions = { source: 'pune_landing_cta', service: content.path, ctaPosition: 'page-cta' };
+  const heroCtaOptions = { source: 'pune_landing_hero', service: content.path, ctaPosition: 'hero' };
 
   const serviceSchema = {
     '@type': 'Service',
@@ -64,7 +64,7 @@ export function PuneLandingPage() {
         schema={[serviceSchema, faqSchema]}
       />
       <Header activePath={content.path} />
-      <main className="bg-white">
+      <main id="main-content" tabIndex={-1} className="bg-white">
         {/* Hero */}
         <section className="relative bg-navy-950 text-white overflow-hidden">
           <div className="absolute inset-0">
@@ -172,7 +172,7 @@ export function PuneLandingPage() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="inline-flex items-center gap-2 rounded-full border border-navy-100 bg-navy-50 px-5 py-2 font-semibold text-navy-900 hover:border-orange-300 hover:text-orange-600 focus-ring"
+                    className="inline-flex items-center gap-2 rounded-full border border-navy-100 bg-navy-50 px-5 py-2 font-semibold text-navy-900 hover:border-orange-300 hover:text-orange-700 focus-ring"
                   >
                     {link.label}
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />

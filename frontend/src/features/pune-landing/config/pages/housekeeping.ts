@@ -21,7 +21,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       title: 'Housekeeping Services in Pune',
       description:
         'Professional housekeeping services in Pune for offices, housing societies, commercial buildings, schools and plants — trained, supervised staff from KARGAR.',
-      keywords: ['Housekeeping Services in Pune', 'Housekeeping Company Pune', 'Professional Housekeeping Services Pune'],
+      keywords: ['Housekeeping Services in Pune', 'Housekeeping Company Pune', 'Housekeeping Agency Pune', 'Professional Housekeeping Services Pune'],
     },
     eyebrow: 'Housekeeping in Pune',
     h1: 'Professional Housekeeping Services in Pune',
@@ -31,6 +31,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     intro: [
       'KARGAR Facility Management (Kargar Business Services Pvt. Ltd.) is a housekeeping and integrated facility management company based in Baner, Pune. We provide housekeeping as a managed service: we recruit, verify, train and deploy the staff, supervise their work on site, manage attendance and payroll, and report on the results — so the person responsible for the property deals with one accountable team instead of individual workers or several vendors.',
       'Our housekeeping work in Pune covers premium residential societies, corporate and commercial offices, commercial complexes, schools and educational institutes, healthcare facilities and manufacturing plants. The scope is built around your site: daily, weekly and monthly cleaning, deep cleaning, washroom hygiene, pantry support, wet/dry waste segregation and consumables management.',
+      'As a housekeeping company and agency, we work on contracts with organisations and housing societies, not one-off visits. That is what lets us put a supervisor, checklists and relief cover behind every site. Those are the things that separate a housekeeping services provider from a cleaner on call.',
     ],
     sections: [
       {
@@ -121,6 +122,29 @@ export const housekeepingPages: PuneLandingPageContent[] = [
         },
       },
       {
+        kind: 'compare',
+        heading: 'Managed Housekeeping Contract or Housekeeping Manpower Supply?',
+        intro: 'Pune buyers usually choose between two contract models. Both use KARGAR-employed, verified staff. The difference is who owns the result.',
+        left: {
+          title: 'Managed housekeeping contract',
+          items: [
+            'KARGAR owns the written scope, checklists and quality inspections',
+            'A KARGAR supervisor directs the team day to day',
+            'Materials, machines and consumables can be included',
+            'Best when you want an outcome, not a headcount',
+          ],
+        },
+        right: {
+          title: 'Housekeeping manpower supply',
+          items: [
+            'Your own team directs the staff day to day',
+            'KARGAR handles recruitment, verification, payroll and PF/ESIC',
+            'Continuity when someone is absent stays KARGAR’s responsibility',
+            'Best when you already have a facility team. See [housekeeping staff and manpower](/housekeeping-staff-pune)',
+          ],
+        },
+      },
+      {
         kind: 'prose',
         heading: 'Where We Work in Pune',
         paragraphs: [
@@ -140,6 +164,8 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       },
     ],
     faqs: [
+      { question: 'What does a professional housekeeping company do?', answer: 'A professional housekeeping company recruits, verifies, trains and employs cleaning staff. It deploys them to your premises against a written scope, supervises and inspects their work, covers absences, and manages materials, attendance, payroll and statutory compliance. You deal with one accountable provider instead of individual cleaners.' },
+      { question: 'What is the difference between housekeeping and facility management?', answer: 'Housekeeping is the cleaning and hygiene of a property. Facility management is wider: it brings housekeeping together with security, technical maintenance (electrical, HVAC, plumbing, STP) and support services under one provider and one site manager. See [facility management in Pune](/facility-management-company-pune).' },
       { question: 'Which types of properties does KARGAR provide housekeeping for in Pune?', answer: 'Residential societies, corporate and commercial offices, commercial complexes, educational institutes, healthcare facilities and manufacturing sites. Scope and staffing are planned separately for each property.' },
       { question: 'How much do housekeeping services cost in Pune?', answer: 'There is no single rate — cost depends mainly on the number of staff, shifts and working hours, the area and its usage, the frequency of deep cleaning, and whether materials and machines are included. We quote after a site survey. Our [housekeeping cost guide](/resources/housekeeping-cost-pune) explains each factor.' },
       { question: 'How many housekeeping staff will my property need?', answer: 'It depends on the cleanable area, footfall, washroom count, operating hours and the scope you choose. We work this out during the survey; our [staffing guide](/resources/how-many-housekeeping-staff) shows the method.' },
@@ -171,8 +197,8 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     seo: {
       title: 'Commercial Housekeeping in Pune',
       description:
-        'Commercial housekeeping services in Pune for multi-tenant buildings and complexes — lobbies, washroom blocks, corridors and parking, supervised by KARGAR.',
-      keywords: ['Commercial Housekeeping Services Pune', 'Commercial Building Cleaning Pune', 'Commercial Complex Housekeeping Pune'],
+        'Commercial housekeeping services in Pune, including commercial cleaning, for multi-tenant buildings: lobbies, washrooms, corridors and parking, by KARGAR.',
+      keywords: ['Commercial Housekeeping Services Pune', 'Commercial Cleaning Services Pune', 'Commercial Building Cleaning Pune', 'Commercial Complex Housekeeping Pune'],
     },
     eyebrow: 'Commercial Housekeeping',
     h1: 'Commercial Housekeeping Services in Pune',
@@ -181,7 +207,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     heroImage: heroImages.brightLobby,
     intro: [
       'In a multi-tenant commercial building, each tenant usually looks after its own office. Everything in between — the entrance lobby, lift lobbies, corridors, staircases, common washroom blocks, parking levels and the building surroundings — belongs to the owner, developer or association. Those areas carry the heaviest footfall and are the first thing a prospective tenant notices.',
-      'KARGAR provides commercial housekeeping for these shared areas. The buyer is typically a building owner, a property manager or a commercial complex association, and the job is to keep common areas consistently presentable through the whole business day, not just at opening time.',
+      'KARGAR provides commercial housekeeping and commercial cleaning services for these shared areas. The buyer is typically a building owner, a property manager or a commercial complex association, and the job is to keep common areas consistently presentable through the whole business day, not just at opening time.',
     ],
     sections: [
       {
@@ -249,12 +275,12 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     cluster: 'housekeeping',
     parent: PILLAR,
     breadcrumbLabel: 'Corporate Housekeeping',
-    summary: 'Multi-floor, multi-shift housekeeping for corporate offices and IT-park campuses, with admin-led reporting and escalation.',
+    summary: 'Multi-floor, multi-shift housekeeping for corporate offices and campuses, with admin-led reporting and escalation.',
     seo: {
       title: 'Corporate Housekeeping in Pune',
       description:
-        'Corporate housekeeping services in Pune for multi-floor offices and IT-park campuses — shift-based teams, supervisor checklists and reporting to your admin.',
-      keywords: ['Corporate Housekeeping Services Pune', 'IT Park Housekeeping Pune', 'Corporate Office Cleaning Pune'],
+        'Corporate housekeeping services in Pune for multi-floor offices and corporate campuses — shift-based teams, supervisor checklists and reporting to your admin.',
+      keywords: ['Corporate Housekeeping Services Pune', 'Corporate Office Cleaning Pune', 'Corporate Cleaning Services Pune'],
     },
     eyebrow: 'Corporate Housekeeping',
     h1: 'Corporate Housekeeping Services in Pune',
@@ -311,6 +337,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     relatedLinks: [
       { label: 'Housekeeping Services in Pune', href: '/housekeeping-services-pune' },
       { label: 'Office Facility Management', href: '/office-facility-management-pune' },
+      { label: 'Corporate Security Services', href: '/corporate-security-services-pune' },
       { label: 'How to Choose a Housekeeping Company', href: '/resources/how-to-choose-a-housekeeping-company-pune' },
     ],
     ctaHeading: 'Talk to Us About Your Corporate Office',
@@ -328,8 +355,8 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     seo: {
       title: 'Office Housekeeping in Pune',
       description:
-        'Office housekeeping services in Pune for small and mid-size offices — trained housekeeping and pantry staff, daily checklists and consumables managed by KARGAR.',
-      keywords: ['Office Housekeeping Services Pune', 'Office Cleaning Staff Pune', 'Office Boy Services Pune'],
+        'Office housekeeping services in Pune, including office cleaning, for small and mid-size offices: trained cleaning and pantry staff, checklists and supervision.',
+      keywords: ['Office Housekeeping Services Pune', 'Office Cleaning Services Pune', 'Office Cleaning Staff Pune', 'Office Boy Services Pune'],
     },
     eyebrow: 'Office Housekeeping',
     h1: 'Office Housekeeping Services in Pune',
@@ -338,7 +365,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     heroImage: heroImages.officeCleaning,
     intro: [
       'A small or mid-size office rarely needs a large housekeeping team. It needs the right person or two, doing a consistent routine — and a provider that makes sure the office is not left without cover when that person is on leave. That is where most directly hired arrangements break down.',
-      'KARGAR provides office housekeeping in Pune with trained, verified staff, a written daily routine, and supervision from our side. Pantry support and office-boy duties can be part of the same arrangement, so the office manager has one provider for the whole day-to-day upkeep of the workplace.',
+      'KARGAR provides office housekeeping and office cleaning services in Pune with trained, verified staff, a written daily routine, and supervision from our side. Pantry support and office-boy duties can be part of the same arrangement, so the office manager has one provider for the whole day-to-day upkeep of the workplace.',
     ],
     sections: [
       {
@@ -375,6 +402,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       },
     ],
     faqs: [
+      { question: 'Is office housekeeping the same as office cleaning?', answer: 'Mostly, yes. Office cleaning usually means the cleaning itself. Office housekeeping also covers the routine around it, such as washroom restocking, pantry upkeep, waste segregation and consumables, with someone accountable for it every day.' },
       { question: 'Can I hire just one housekeeping person for my office?', answer: 'Yes. Many small offices start with one person. The value of going through KARGAR is supervision, compliance and continuity when that person is absent.' },
       { question: 'Do your staff also handle the pantry?', answer: 'They can. Pantry services and office-boy duties can be combined with housekeeping or provided as a separate role.' },
       { question: 'Who buys cleaning supplies?', answer: 'Either you or KARGAR — consumables management can be included in the scope so supplies never run out.' },
@@ -474,8 +502,8 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     seo: {
       title: 'Housekeeping Staff in Pune',
       description:
-        'Hire verified housekeeping staff in Pune on contract: housekeeping manpower employed, trained and supervised by KARGAR, with attendance tracking.',
-      keywords: ['Housekeeping Staff Pune', 'Housekeeping Manpower Pune', 'Housekeeping Manpower Supply Pune'],
+        'Hire verified housekeeping staff in Pune from a housekeeping manpower supplier: staff employed, trained and supervised by KARGAR, with attendance tracking.',
+      keywords: ['Housekeeping Staff Pune', 'Housekeeping Manpower Pune', 'Housekeeping Manpower Supplier Pune', 'Housekeeping Manpower Agency Pune'],
     },
     eyebrow: 'Housekeeping Manpower',
     h1: 'Housekeeping Staff & Manpower Supply in Pune',
@@ -531,6 +559,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       },
     ],
     faqs: [
+      { question: 'How do I hire housekeeping staff in Pune through an agency?', answer: 'Tell us the roles, headcount, shifts and site. As a housekeeping manpower agency, KARGAR proposes the staffing, then recruits, verifies and deploys the staff on our payroll. Covering absences stays our responsibility.' },
       { question: 'Whose payroll are the housekeeping staff on?', answer: 'KARGAR’s. We employ the staff; you pay KARGAR under the contract, and you can ask what the staff at your site are paid.' },
       { question: 'What happens when a staff member is absent?', answer: 'Continuity of staffing is KARGAR’s responsibility under the contract. How absences are covered is agreed in the proposal for your site.' },
       { question: 'Can I ask for a staff member to be replaced?', answer: 'Yes. If someone is not the right fit for your site, raise it with your KARGAR contact and it will be addressed.' },
@@ -598,7 +627,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
         kind: 'prose',
         heading: 'Combining Housekeeping with Plant Upkeep',
         paragraphs: [
-          'Plants often need more than cleaning: security at the gates, electrical and DG upkeep, and support staff. These can be combined with housekeeping under one [facility management contract](/facility-management-company-pune), or the technical side can be covered by our [facility maintenance services](/facility-maintenance-services-pune).',
+          'Plants often need more than cleaning: [industrial security](/industrial-security-services-pune) at the gates, electrical and DG upkeep, and support staff. These can be combined with housekeeping under one [facility management contract](/facility-management-company-pune), or the technical side can be covered by our [facility maintenance services](/facility-maintenance-services-pune).',
         ],
       },
     ],
@@ -609,6 +638,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     ],
     relatedLinks: [
       { label: 'Housekeeping Services in Pune', href: '/housekeeping-services-pune' },
+      { label: 'Industrial Security Services', href: '/industrial-security-services-pune' },
       { label: 'Facility Maintenance Services', href: '/facility-maintenance-services-pune' },
       { label: 'Facility Staffing & Manpower', href: '/facility-staffing-services-pune' },
     ],

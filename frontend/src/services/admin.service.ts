@@ -2,7 +2,7 @@ import type { User } from '@supabase/supabase-js';
 import { supabase } from '@/supabase/client';
 import { throwSupabaseError } from '@/lib/supabaseError';
 import { ReviewRepository } from '../repositories/review.repository';
-import type { AdminDashboardSummary, AdminReview, ContactMessage, PaginatedResponse } from '@/types';
+import type { AdminDashboardSummary, AdminReview, ContactMessage, LeadEnquiry, PaginatedResponse } from '@/types';
 import type { Tables, Updates } from '@/supabase/types';
 
 export interface AdminLoginPayload {
@@ -98,8 +98,32 @@ function mapContact(row: ContactRow): ContactMessage {
     priority: row.priority,
     assigned_to: row.assigned_to,
     notes: row.notes,
+    source: row.source,
+    enquiry: mapEnquiry(row.metadata),
     created_at: row.created_at,
     updated_at: row.updated_at,
+  };
+}
+
+function mapEnquiry(metadata: ContactRow['metadata']): LeadEnquiry {
+  const meta = metadata && typeof metadata === 'object' && !Array.isArray(metadata) ? metadata : {};
+  const text = (key: string): string | null => {
+    const value = meta[key];
+    return typeof value === 'string' && value.trim() !== '' ? value : null;
+  };
+  const rawDetails = meta.details;
+  const details =
+    rawDetails && typeof rawDetails === 'object' && !Array.isArray(rawDetails)
+      ? Object.entries(rawDetails).filter((entry): entry is [string, string] => typeof entry[1] === 'string')
+      : [];
+  return {
+    serviceLabel: text('enquiry_service_label'),
+    team: text('team'),
+    enquiryPage: text('service'),
+    landingPage: text('landing_page'),
+    referrerHost: text('referrer_host'),
+    ctaPosition: text('cta_position'),
+    details,
   };
 }
 

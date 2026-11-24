@@ -1,5 +1,6 @@
 import type { PuneLandingPageContent } from '../../domain/types';
 import { heroImages } from '../heroImages';
+import { REVIEWED_2026_11_17, REVIEWED_2026_11_24 } from '../review';
 
 const PILLAR = { label: 'Security Services Pune', href: '/security-services-pune' };
 
@@ -26,29 +27,21 @@ export const securityPages: PuneLandingPageContent[] = [
     breadcrumbLabel: 'Security Services Pune',
     summary: 'Police-verified security guards, supervisors and CCTV operators for offices, plants, institutes and housing societies in Pune.',
     seo: {
-      title: 'Security Services in Pune',
+      title: 'Security Guard Services in Pune',
       description:
-        'Security services in Pune from KARGAR: police-verified security guards, supervisors and CCTV operators for offices, plants, institutes and housing societies.',
-      keywords: ['Security Services in Pune', 'Security Agency in Pune', 'Security Guard Services Pune', 'Security Guards in Pune'],
+        'Security guard services in Pune for offices, plants, institutes and societies: police-verified guards, supervised posts and incident records. Get a proposal.',
+      keywords: ['Security Guard Services in Pune', 'Security Services in Pune', 'Security Agency in Pune', 'Security Guards in Pune'],
     },
     eyebrow: 'Security in Pune',
-    h1: 'Security Services in Pune',
+    h1: 'Security Guard Services in Pune',
     heroSubtitle:
-      'KARGAR Facility Management is a Pune security services provider. We deploy police-verified, trained security guards with supervisors, written post instructions and documented records, for corporate offices, commercial buildings, manufacturing sites, institutes and housing societies.',
+      'Police-verified, trained security guards for offices, commercial buildings, plants, institutes and housing societies, deployed to a written post plan under a security supervisor.',
     heroImage: heroImages.security,
     intro: [
-      'Security services in Pune means more than a guard at the gate. A working security arrangement has the right posts on the right shifts, written instructions for each post, a supervisor who checks them, visitor and incident records you can audit, and cover when a guard is absent. KARGAR Facility Management provides security guard services on that basis, as a security agency based in Baner, Pune.',
-      'Every security officer goes through police verification and background checks before deployment. Our teams receive year-round skill, safety and behavioural training from our Field Trainers and Quality Managers. Guards are employed by KARGAR with PF and ESIC compliance, so the client does not carry the employer risk of a directly hired guard.',
+      'KARGAR provides security guard services in Pune and Pimpri-Chinchwad for corporate offices, commercial buildings, factories and warehouses, institutes and housing societies. We assess your site, propose the posts and shifts it needs, deploy police-verified guards under a security supervisor, and keep visitor, attendance and incident records you can audit. To start, [request a security staffing proposal](/contact-us#contact-form) with your property type, locality and hours of coverage. We confirm everything else during the site assessment.',
+      'Security services in Pune means more than a guard at the gate. A working arrangement has the right posts on the right shifts, written instructions for each post, a supervisor who checks them, and cover when a guard is absent. Guards are KARGAR employees with PF and ESIC compliance, so you do not carry the employer risk of a directly hired guard, and they receive year-round skill, safety and behavioural training from our Field Trainers and Quality Managers.',
     ],
     sections: [
-      {
-        kind: 'prose',
-        heading: 'What Does a Security Agency Provide?',
-        paragraphs: [
-          'A security agency supplies trained security personnel to a property and takes responsibility for how they work there. That covers recruitment and verification, training, deployment to agreed posts and shifts, supervision, replacement when someone is absent, payroll and statutory compliance, and the records that show what happened on each shift.',
-          'For the property, the difference from hiring a guard directly is accountability. If a post is left empty, a visitor is let in without a check, or an incident goes unreported, there is one provider responsible for fixing it. That provider also has the processes to stop it happening again.',
-        ],
-      },
       {
         kind: 'cards',
         heading: 'Security Services by Type of Property',
@@ -103,6 +96,22 @@ export const securityPages: PuneLandingPageContent[] = [
         note: 'Multiply by the number of posts, then adjust for patrols, peak hours and day-only posts. We work out the count with you during the site assessment.',
       },
       {
+        kind: 'table',
+        heading: 'What the Guarding Proposal Includes',
+        intro: 'After the site assessment you receive a written proposal. It sets out what will be deployed and how it will be run, so you can compare it line by line with your current arrangement.',
+        caption: 'Contents of a KARGAR security staffing proposal',
+        columns: ['Section', 'What it tells you'],
+        rows: [
+          ['Post plan', 'Each guard post, its hours, the patrol routes and which posts run at night or on weekends'],
+          ['Staffing', 'Guards per shift, relief cover for weekly offs, and whether a security supervisor or surveillance operator is included'],
+          ['Post instructions', 'The written rules for each post: visitor checks, vehicle entry, material movement, emergency contacts and what to escalate'],
+          ['Records you receive', 'Visitor and vehicle logs, attendance, and incident reports, and how and how often they are shared with you'],
+          ['Supervision and escalation', 'Who checks the posts, and the escalation path from guard to supervisor to KARGAR management'],
+          ['Your responsibilities', 'What the site provides, for example a guard cabin, registers or access-control equipment, agreed case by case'],
+          ['Commercial terms', 'The charges for the agreed staffing and what they include. No rates are quoted before the post plan is agreed'],
+        ],
+      },
+      {
         kind: 'cards',
         heading: 'Screening, Training and Supervision',
         columns: 2,
@@ -111,6 +120,16 @@ export const securityPages: PuneLandingPageContent[] = [
           { title: 'Year-round training', description: 'Skill, safety and behavioural training is run throughout the year by KARGAR’s Field Trainers and Quality Managers, not only at induction.' },
           { title: 'Attendance and reporting', description: 'Attendance is tracked and reporting is digital, so you can see who was on duty and what was recorded on each shift.' },
           { title: 'Compliance and payroll transparency', description: 'Guards are on KARGAR’s payroll with PF and ESIC compliance. Under our 100% financial transparency commitment, you can ask what compensation is paid to the staff at your site.' },
+        ],
+      },
+      {
+        kind: 'checklist',
+        heading: 'What to Send Us for a Useful Proposal',
+        intro: 'You can enquire with only the first group. The rest helps us arrive at the assessment prepared.',
+        groups: [
+          { title: 'Enough to start', items: ['Property type, for example office, plant, society or campus', 'Locality in Pune or PCMC', 'Hours you need covered: day, night or round the clock'] },
+          { title: 'Helpful if you know it', items: ['Number of entry points or guard posts you have in mind', 'Your current setup: no guards, direct hires or another agency', 'Problems you want solved, such as unlogged visitors or asset movement'] },
+          { title: 'Not needed to enquire', items: ['The exact number of guards. We work it out from posts and shifts', 'Floor plans or drawings. We walk the site with you instead', 'A budget figure. The proposal shows what each option costs'] },
         ],
       },
       {
@@ -134,27 +153,24 @@ export const securityPages: PuneLandingPageContent[] = [
     ],
     faqs: [
       { question: 'What services does a security agency provide?', answer: 'A security agency supplies verified, trained security personnel and manages them on site. That covers deployment to agreed posts and shifts, supervision, replacement during absences, payroll and statutory compliance, visitor and incident records, and escalation when something goes wrong.' },
-      { question: 'How can a company hire security guards in Pune?', answer: 'Share your site type, entry points and working hours with us. We carry out a site assessment, propose a written post plan with shifts and relief cover, and deploy verified guards once the plan is agreed. You can start through our contact page.' },
-      { question: 'How many security guards does a commercial property need?', answer: 'It depends on the number of posts and the hours each must be covered. One post manned round the clock needs three guards on duty a day plus relief for weekly offs, so about four people. Patrols, peak hours and extra entrances add to that.' },
-      { question: 'What are the responsibilities of security personnel?', answer: 'Controlling entry and exit, checking and logging visitors and vehicles, following the post instructions for material movement, patrolling, reporting incidents, and acting on the site’s emergency procedure while escalating to the supervisor.' },
-      { question: 'What should businesses check before hiring a security agency?', answer: 'A current licence under the Private Security Agencies (Regulation) Act, 2005, PF and ESIC compliance, police verification of guards, a written post plan with relief cover, supervision arrangements and the records you will receive. See our [security agency selection guide](/resources/how-to-choose-a-security-agency-pune).' },
       { question: 'Are your security guards police-verified?', answer: 'Yes. Security personnel go through police verification and background checks before deployment.' },
       { question: 'What hours can security cover?', answer: 'Coverage hours, guard posts and shifts are agreed with you during the site assessment and written into the post plan for your site, including night and weekend posts where you need them.' },
       { question: 'What happens during a security incident?', answer: 'The guard acts on the post instructions and the site’s emergency procedure, informs the supervisor, and the incident is recorded. It escalates to KARGAR management and, where needed, the local authorities.' },
       { question: 'Can security services be combined with housekeeping?', answer: 'Yes. Many clients use our housekeeping and security teams together as part of [integrated facility management](/facility-management-company-pune), with one point of contact.' },
-      { question: 'How do I request a security assessment for my facility?', answer: 'Share your facility type, number of entrances, working hours and current security setup through our contact page. Our team will follow up to arrange the site assessment.' },
+      { question: 'Are you hiring security guards?', answer: 'This page is for organisations that need security services. If you are looking for a security guard job, email your details to our HR desk at hrdesk@kargar.co.in rather than using the proposal form.' },
     ],
-    serviceDetailLink: { label: 'security service details', href: '/services/soft-services/security-services' },
     relatedLinks: [
       { label: 'Corporate Security Services', href: '/corporate-security-services-pune' },
       { label: 'Industrial Security Services', href: '/industrial-security-services-pune' },
       { label: 'Society Security Services', href: '/society-security-services-pune' },
       { label: 'How to Choose a Security Agency', href: '/resources/how-to-choose-a-security-agency-pune' },
     ],
-    ctaHeading: 'Request a Security Assessment for Your Pune Facility',
-    ctaText: 'Tell us about your facility, its entrances and working hours, and your current security setup. We will arrange a site assessment and propose a written post plan.',
-    ctaLabel: 'Request Security Assessment',
+    ctaHeading: 'Request a Security Staffing Proposal',
+    ctaText: 'Share your property type, locality and the hours you need covered. Entry points and your current setup help but are optional. We confirm them at the site assessment and send a written post plan.',
+    ctaLabel: 'Request a Security Staffing Proposal',
     serviceType: 'Security Guard Services',
+    enquiryService: 'security',
+    review: { ...REVIEWED_2026_11_24, pendingFacts: ['PSARA licence number and validity (buyer checklist tells buyers to ask for one)'] },
   },
 
   // ───────────────────────────── CORPORATE & COMMERCIAL ─────────────────────────────
@@ -264,6 +280,9 @@ export const securityPages: PuneLandingPageContent[] = [
     ctaText: 'Share the number of floors and entrances, working hours, visitor volume and current arrangement. We will propose posts, shifts and post instructions.',
     ctaLabel: 'Discuss Office Security',
     serviceType: 'Corporate Security Services',
+    enquiryService: 'security',
+    showInFooter: true,
+    review: REVIEWED_2026_11_17,
   },
 
   // ───────────────────────────── INDUSTRIAL ─────────────────────────────
@@ -356,6 +375,9 @@ export const securityPages: PuneLandingPageContent[] = [
     ctaText: 'Share the number of gates, shifts, plot size and current security arrangement. We will propose posts, patrols and post instructions for your site.',
     ctaLabel: 'Discuss Plant Security',
     serviceType: 'Industrial Security Services',
+    enquiryService: 'security',
+    showInFooter: true,
+    review: REVIEWED_2026_11_17,
   },
 
   // ───────────────────────────── SOCIETY SECURITY ─────────────────────────────
@@ -427,5 +449,8 @@ export const securityPages: PuneLandingPageContent[] = [
     ctaHeading: 'Request a Society Security Plan',
     ctaText: 'Tell us the number of gates, towers and current guards, and we will propose posts and shifts.',
     serviceType: 'Residential Society Security Services',
+    enquiryService: 'security',
+    showInFooter: true,
+    review: REVIEWED_2026_11_17,
   },
 ];

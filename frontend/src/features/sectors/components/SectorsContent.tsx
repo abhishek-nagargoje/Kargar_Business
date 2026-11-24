@@ -197,7 +197,6 @@ export function SectorsContent() {
               { label: 'Electrical Maintenance in Pune', href: '/electrical-maintenance-services-pune' },
               { label: 'HVAC Maintenance in Pune', href: '/hvac-maintenance-services-pune' },
               { label: 'Facility Staffing in Pune', href: '/facility-staffing-services-pune' },
-              { label: 'Security Services (service overview)', href: '/services/soft-services/security-services' },
             ].map((link) => (
               <li key={link.href}>
                 <Link

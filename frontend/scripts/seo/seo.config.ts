@@ -8,6 +8,8 @@
  * `frontend/src/config/index.ts` whenever the canonical domain changes.
  */
 
+import { serviceCategories, allServices, SERVICE_LANDING_PATHS } from '../../src/features/services/config';
+
 export const SITE_URL = 'https://www.kargarbusinessservices.com';
 
 /**
@@ -44,6 +46,16 @@ export const REDIRECTS: RedirectRule[] = [
   { from: '/amp', to: '/', permanent: true },
   // Legacy pre-React homepage URL; GSC reported it as 404 (Nov 2026). Not linked anywhere in this codebase.
   { from: '/home', to: '/', permanent: true },
+  // 2026-11-24: generic service-detail pages consolidated into their Pune landing pages.
+  ...Object.values(serviceCategories).flatMap((category) =>
+    Object.values(allServices)
+      .filter((service) => service.categoryId === category.id && SERVICE_LANDING_PATHS[service.slug])
+      .map((service) => ({
+        from: `/services/${category.slug}/${service.slug}`,
+        to: SERVICE_LANDING_PATHS[service.slug] as string,
+        permanent: true,
+      })),
+  ),
 ];
 
 /**

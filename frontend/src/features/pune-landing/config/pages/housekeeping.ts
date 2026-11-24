@@ -1,5 +1,6 @@
 import type { PuneLandingPageContent } from '../../domain/types';
 import { heroImages } from '../heroImages';
+import { REVIEWED_2026_11_17, REVIEWED_2026_11_24 } from '../review';
 import { recognitions } from '@/features/home/components/Recognition/recognitions';
 
 const PILLAR = { label: 'Housekeeping Services Pune', href: '/housekeeping-services-pune' };
@@ -29,9 +30,8 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       'KARGAR deploys trained, police-verified housekeeping teams — with on-site supervision, attendance tracking and documented checklists — for offices, commercial buildings, housing societies, educational institutes, healthcare facilities and manufacturing sites across Pune and PCMC.',
     heroImage: heroImages.lobbyScrubbing,
     intro: [
-      'KARGAR Facility Management (Kargar Business Services Pvt. Ltd.) is a housekeeping and integrated facility management company based in Baner, Pune. We provide housekeeping as a managed service: we recruit, verify, train and deploy the staff, supervise their work on site, manage attendance and payroll, and report on the results — so the person responsible for the property deals with one accountable team instead of individual workers or several vendors.',
-      'Our housekeeping work in Pune covers premium residential societies, corporate and commercial offices, commercial complexes, schools and educational institutes, healthcare facilities and manufacturing plants. The scope is built around your site: daily, weekly and monthly cleaning, deep cleaning, washroom hygiene, pantry support, wet/dry waste segregation and consumables management.',
-      'As a housekeeping company and agency, we work on contracts with organisations and housing societies, not one-off visits. That is what lets us put a supervisor, checklists and relief cover behind every site. Those are the things that separate a housekeeping services provider from a cleaner on call.',
+      'KARGAR provides housekeeping services in Pune and Pimpri-Chinchwad for offices, commercial buildings, housing societies, schools, clinics and plants. We survey your site, write a scope of daily, weekly and monthly tasks, deploy trained and police-verified staff with a supervisor, and manage attendance, materials and reporting. To get a quote, share the property type, approximate area and operating hours; the site survey settles the rest.',
+      'KARGAR Facility Management (Kargar Business Services Pvt. Ltd.) is a housekeeping and integrated facility management company based in Baner, Pune. As a housekeeping company and agency we work on contracts with organisations and housing societies, not one-off home cleaning visits. That is what lets us put a supervisor, checklists and relief cover behind every site, so the person responsible for the property deals with one accountable team instead of individual cleaners.',
     ],
     sections: [
       {
@@ -99,67 +99,53 @@ export const housekeepingPages: PuneLandingPageContent[] = [
         })),
       },
       {
-        kind: 'compare',
-        heading: 'In-House Cleaners or an Outsourced Housekeeping Company?',
-        intro: 'Many Pune properties start with directly hired cleaners. This is what typically changes when housekeeping is outsourced to a managed provider.',
-        left: {
-          title: 'Directly hired staff',
-          items: [
-            'You recruit, verify and replace people yourself',
-            'Attendance, leave and payroll compliance sit with you',
-            'Quality depends on whoever is on duty that day',
-            'Materials and machines are bought and tracked separately',
-          ],
-        },
-        right: {
-          title: 'Managed housekeeping with KARGAR',
-          items: [
-            'One provider is accountable for staffing and continuity',
-            'Staff employed and paid by KARGAR',
-            'Checklists, supervision and inspections define quality',
-            'Consumables, tools and tackles managed as part of scope',
-          ],
-        },
-      },
-      {
-        kind: 'compare',
-        heading: 'Managed Housekeeping Contract or Housekeeping Manpower Supply?',
-        intro: 'Pune buyers usually choose between two contract models. Both use KARGAR-employed, verified staff. The difference is who owns the result.',
-        left: {
-          title: 'Managed housekeeping contract',
-          items: [
-            'KARGAR owns the written scope, checklists and quality inspections',
-            'A KARGAR supervisor directs the team day to day',
-            'Materials, machines and consumables can be included',
-            'Best when you want an outcome, not a headcount',
-          ],
-        },
-        right: {
-          title: 'Housekeeping manpower supply',
-          items: [
-            'Your own team directs the staff day to day',
-            'KARGAR handles recruitment, verification, payroll and PF/ESIC',
-            'Continuity when someone is absent stays KARGAR’s responsibility',
-            'Best when you already have a facility team. See [housekeeping staff and manpower](/housekeeping-staff-pune)',
-          ],
-        },
+        kind: 'table',
+        heading: 'Managed Housekeeping Contract or Manpower Supply: Who Provides What',
+        intro: 'KARGAR sells both models, and the enquiry form lets you choose either. Both use KARGAR-employed, verified staff; the difference is who directs the work and owns the result.',
+        caption: 'Responsibilities in a managed housekeeping contract compared with housekeeping manpower supply',
+        columns: ['Responsibility', 'Managed housekeeping contract', 'Housekeeping manpower supply'],
+        rows: [
+          ['Recruitment, police verification, payroll, PF and ESIC', 'KARGAR', 'KARGAR'],
+          ['Cover when a staff member is absent', 'KARGAR', 'KARGAR'],
+          ['Written scope, checklists and frequencies', 'KARGAR, agreed with you', 'Your team'],
+          ['Day-to-day direction of the staff', 'KARGAR housekeeping supervisor', 'Your team, or a KARGAR supervisor if you add one'],
+          ['Quality inspections', 'KARGAR supervisor and site manager', 'Your team'],
+          ['Cleaning materials, tools and machines', 'Included or supplied by you, as agreed in the scope', 'Usually supplied by you'],
+          ['Reporting', 'Daily, weekly and monthly reports from KARGAR', 'Attendance records from KARGAR'],
+          ['Site facilities such as a storage area, water and power points', 'Provided by the site', 'Provided by the site'],
+        ],
+        note: 'Already have a facility team that will direct the staff? See [housekeeping staff and manpower supply](/housekeeping-staff-pune).',
       },
       {
         kind: 'prose',
         heading: 'Where We Work in Pune',
         paragraphs: [
-          'We operate from Baner and deploy teams across Pune and Pimpri-Chinchwad (PCMC) — from the western residential and IT belt around Baner, Balewadi, Aundh, Wakad and Hinjewadi to the eastern business districts around Kharadi, Viman Nagar, Hadapsar and Magarpatta, as well as industrial areas in PCMC. Because the staff for a site are deployed to that site, coverage is planned per property during the survey rather than by a fixed map.',
+          'We operate from our office in Baner and deploy housekeeping teams to sites across Pune and Pimpri-Chinchwad (PCMC). Because the staff for a site work at that site, coverage is confirmed per property during the survey rather than drawn on a fixed map. Tell us your locality when you enquire.',
           'If housekeeping is one of several services you need, it can be combined with [security services](/security-services-pune), [facility maintenance](/facility-maintenance-services-pune) and support staff under our [integrated facility management in Pune](/facility-management-company-pune).',
         ],
       },
       {
-        kind: 'checklist',
-        heading: 'What to Evaluate Before Hiring a Housekeeping Company',
-        intro: 'Whichever provider you choose, these are the questions that separate a reliable contract from a staffing headache. Our full [guide to choosing a housekeeping company in Pune](/resources/how-to-choose-a-housekeeping-company-pune) goes deeper.',
-        groups: [
-          { title: 'People', items: ['Are staff police-verified before deployment?', 'Who trains them, and how often?', 'How are absences and replacements handled?'] },
-          { title: 'Process', items: ['Is there a written scope with daily, weekly and monthly tasks?', 'Who supervises, and how is quality inspected?', 'What reports will you receive?'] },
-          { title: 'Commercials', items: ['Are PF and ESIC paid and provable?', 'Can you see what the deployed staff are actually paid?', 'What is included: materials, machines, consumables? See [what drives housekeeping cost](/resources/housekeeping-cost-pune).'] },
+        kind: 'cards',
+        heading: 'What Affects Your Housekeeping Quote',
+        intro: 'We do not publish a rate card, because two buildings of the same size can need very different teams. These are the factors the site survey measures. Our [housekeeping cost guide](/resources/housekeeping-cost-pune) explains each one.',
+        columns: 3,
+        items: [
+          { title: 'Area and layout', description: 'Cleanable floor area, number of floors, and how much is hard flooring, carpet or glass.' },
+          { title: 'Footfall and usage', description: 'How many people use the site each day, and how many washrooms and pantries they use.' },
+          { title: 'Hours and shifts', description: 'Office hours only, two shifts or round the clock. Each extra shift adds people, not just hours.' },
+          { title: 'Deep-cleaning frequency', description: 'How often machine scrubbing, high-level dusting and other periodic work is needed.' },
+          { title: 'Materials and machines', description: 'Whether consumables, tools and machines are included in the contract or supplied by you.' },
+          { title: 'Supervision level', description: 'Whether the site needs a full-time supervisor or periodic supervision. Our [staffing guide](/resources/how-many-housekeeping-staff) shows the method.' },
+        ],
+      },
+      {
+        kind: 'steps',
+        heading: 'What Happens After You Enquire',
+        steps: [
+          { title: 'Call back', description: 'Our housekeeping team calls to understand the property and what is not working today.' },
+          { title: 'Site survey', description: 'We walk the site with you and note areas, usage, hours and existing materials and machines.' },
+          { title: 'Written scope and proposal', description: 'You receive the task list by frequency, the staffing and supervision plan, what is included, and the commercial terms.' },
+          { title: 'Mobilisation', description: 'Once agreed, staff are selected, verified and briefed, and checklists start from day one, following the PURNA steps above.' },
         ],
       },
     ],
@@ -168,23 +154,22 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       { question: 'What is the difference between housekeeping and facility management?', answer: 'Housekeeping is the cleaning and hygiene of a property. Facility management is wider: it brings housekeeping together with security, technical maintenance (electrical, HVAC, plumbing, STP) and support services under one provider and one site manager. See [facility management in Pune](/facility-management-company-pune).' },
       { question: 'Which types of properties does KARGAR provide housekeeping for in Pune?', answer: 'Residential societies, corporate and commercial offices, commercial complexes, educational institutes, healthcare facilities and manufacturing sites. Scope and staffing are planned separately for each property.' },
       { question: 'How much do housekeeping services cost in Pune?', answer: 'There is no single rate — cost depends mainly on the number of staff, shifts and working hours, the area and its usage, the frequency of deep cleaning, and whether materials and machines are included. We quote after a site survey. Our [housekeeping cost guide](/resources/housekeeping-cost-pune) explains each factor.' },
-      { question: 'How many housekeeping staff will my property need?', answer: 'It depends on the cleanable area, footfall, washroom count, operating hours and the scope you choose. We work this out during the survey; our [staffing guide](/resources/how-many-housekeeping-staff) shows the method.' },
       { question: 'Are your housekeeping staff verified?', answer: 'Yes. Personnel go through police verification and background checks before deployment, and receive ongoing skill, safety and behavioural training.' },
-      { question: 'Do you supply cleaning materials and machines?', answer: 'Consumables, tools and tackles can be managed by KARGAR as part of the contract, or supplied by you — this is agreed in the scope so cost and responsibility are clear.' },
+      { question: 'Do you clean individual homes or flats?', answer: 'No. KARGAR provides contract housekeeping for organisations and housing societies, such as offices, buildings, institutes and society common areas. We do not offer one-off home or flat cleaning.' },
       { question: 'Can housekeeping be combined with security or maintenance?', answer: 'Yes. Many clients run housekeeping alongside security and technical maintenance under one [facility management contract](/facility-management-company-pune), with one point of contact.' },
-      { question: 'How do I get a housekeeping proposal?', answer: 'Share your property type, approximate area, working hours and current setup through our contact page. We follow up to arrange a site survey and then send a written proposal.' },
     ],
-    serviceDetailLink: { label: 'housekeeping service details', href: '/services/soft-services/housekeeping' },
     relatedLinks: [
       { label: 'Society Housekeeping in Pune', href: '/society-housekeeping-services-pune' },
       { label: 'Corporate Housekeeping in Pune', href: '/corporate-housekeeping-services-pune' },
       { label: 'Housekeeping Staff & Manpower', href: '/housekeeping-staff-pune' },
       { label: 'Facility Management Company in Pune', href: '/facility-management-company-pune' },
     ],
-    ctaHeading: 'Get a Housekeeping Proposal for Your Pune Property',
-    ctaText: 'Tell us the property type, area and working hours. We will arrange a site survey and send a written scope and proposal.',
-    ctaLabel: 'Get Housekeeping Proposal',
+    ctaHeading: 'Request a Housekeeping Proposal',
+    ctaText: 'Share the property type, approximate area and operating hours. We will arrange a site survey and send a written scope, staffing plan and proposal.',
+    ctaLabel: 'Get a Housekeeping Proposal',
     serviceType: 'Housekeeping Services',
+    enquiryService: 'housekeeping',
+    review: { ...REVIEWED_2026_11_24, pendingFacts: ['Named Pune/PCMC localities served (removed until confirmed)', 'Default site facilities provided by the client (storage, water, power)', 'Confirm KARGAR does not take one-off home or flat cleaning (FAQ states this)'] },
   },
 
   // ───────────────────────────── COMMERCIAL ─────────────────────────────
@@ -267,6 +252,8 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     ctaHeading: 'Plan Common-Area Housekeeping for Your Building',
     ctaText: 'Share the building size, number of floors and tenants, and current arrangements. We will propose a zone-wise scope.',
     serviceType: 'Commercial Housekeeping',
+    enquiryService: 'housekeeping',
+    review: REVIEWED_2026_11_24,
   },
 
   // ───────────────────────────── CORPORATE ─────────────────────────────
@@ -343,6 +330,8 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     ctaHeading: 'Talk to Us About Your Corporate Office',
     ctaText: 'Share your floors, headcount, shifts and current vendor arrangement, and we will propose a governed housekeeping setup.',
     serviceType: 'Corporate Housekeeping',
+    enquiryService: 'housekeeping',
+    review: REVIEWED_2026_11_24,
   },
 
   // ───────────────────────────── OFFICE ─────────────────────────────
@@ -416,6 +405,9 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     ctaHeading: 'Get Housekeeping for Your Office',
     ctaText: 'Tell us your office size, team size and working hours, and we will recommend the right staffing.',
     serviceType: 'Office Housekeeping',
+    enquiryService: 'housekeeping',
+    showInFooter: true,
+    review: REVIEWED_2026_11_24,
   },
 
   // ───────────────────────────── SOCIETY ─────────────────────────────
@@ -490,6 +482,9 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     ctaHeading: 'Request a Housekeeping Proposal for Your Society',
     ctaText: 'Share the number of buildings, flats and amenities, and we will arrange a survey with your committee.',
     serviceType: 'Residential Society Housekeeping',
+    enquiryService: 'housekeeping',
+    showInFooter: true,
+    review: REVIEWED_2026_11_17,
   },
 
   // ───────────────────────────── STAFF / MANPOWER ─────────────────────────────
@@ -500,9 +495,9 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     breadcrumbLabel: 'Housekeeping Staff & Manpower',
     summary: 'Verified housekeeping manpower on KARGAR’s payroll — housekeeping executives, janitors, office boys and supervisors.',
     seo: {
-      title: 'Housekeeping Staff in Pune',
+      title: 'Housekeeping Manpower in Pune',
       description:
-        'Hire verified housekeeping staff in Pune from a housekeeping manpower supplier: staff employed, trained and supervised by KARGAR, with attendance tracking.',
+        'Housekeeping staff in Pune from a manpower supplier: verified staff employed and trained by KARGAR, directed by your own team, with attendance records.',
       keywords: ['Housekeeping Staff Pune', 'Housekeeping Manpower Pune', 'Housekeeping Manpower Supplier Pune', 'Housekeeping Manpower Agency Pune'],
     },
     eyebrow: 'Housekeeping Manpower',
@@ -511,8 +506,8 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       'Contract housekeeping manpower for businesses, institutions and societies — verified, trained and on KARGAR’s payroll, so you get the people without the employment administration.',
     heroImage: heroImages.officeCleaning,
     intro: [
-      'Some clients do not want a fully managed service — they want reliable people. A housekeeping manpower contract means KARGAR recruits, verifies, trains and employs the staff, handles statutory compliance and payroll, and deploys them to your premises under your day-to-day direction or our supervision.',
-      'This page is about that staffing model specifically. If you are looking for a complete managed service with scope and quality ownership, start with our [housekeeping services in Pune](/housekeeping-services-pune).',
+      'KARGAR supplies housekeeping staff in Pune and PCMC to offices, institutions and housing societies that already have someone to direct the work. We recruit, police-verify, train and employ the staff, handle payroll, PF and ESIC, and cover absences; your facility or admin team directs them day to day. To request staff, tell us the roles, numbers and shifts you need.',
+      'If you would rather KARGAR owned the scope, supervision and quality inspections as well, that is a managed contract: see our [housekeeping services in Pune](/housekeeping-services-pune). A KARGAR housekeeping supervisor can also be added to a manpower deployment if your team wants one.',
     ],
     sections: [
       {
@@ -560,9 +555,11 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     ],
     faqs: [
       { question: 'How do I hire housekeeping staff in Pune through an agency?', answer: 'Tell us the roles, headcount, shifts and site. As a housekeeping manpower agency, KARGAR proposes the staffing, then recruits, verifies and deploys the staff on our payroll. Covering absences stays our responsibility.' },
+      { question: 'Who supervises housekeeping staff supplied on manpower?', answer: 'Your own team directs the staff day to day under a manpower contract. If you want KARGAR to supervise, you can add a KARGAR housekeeping supervisor to the deployment, or choose a managed housekeeping contract where KARGAR owns the scope and quality checks.' },
       { question: 'Whose payroll are the housekeeping staff on?', answer: 'KARGAR’s. We employ the staff; you pay KARGAR under the contract, and you can ask what the staff at your site are paid.' },
       { question: 'What happens when a staff member is absent?', answer: 'Continuity of staffing is KARGAR’s responsibility under the contract. How absences are covered is agreed in the proposal for your site.' },
       { question: 'Can I ask for a staff member to be replaced?', answer: 'Yes. If someone is not the right fit for your site, raise it with your KARGAR contact and it will be addressed.' },
+      { question: 'I am looking for a housekeeping job. Who do I contact?', answer: 'This page is for organisations hiring housekeeping staff through KARGAR. For jobs, email your details to our HR desk at hrdesk@kargar.co.in rather than using the proposal form.' },
       { question: 'Can I check what the staff are paid?', answer: 'Yes. Under KARGAR’s financial transparency commitment, you can ask for the compensation paid to the staff deployed at your site.' },
     ],
     relatedLinks: [
@@ -571,9 +568,12 @@ export const housekeepingPages: PuneLandingPageContent[] = [
       { label: 'Housekeeping Services in Pune', href: '/housekeeping-services-pune' },
     ],
     ctaHeading: 'Request Housekeeping Manpower',
-    ctaText: 'Tell us the roles, headcount and shifts you need, and we will come back with a staffing proposal.',
+    ctaText: 'Tell us the roles, headcount and shifts you need, and whether your team or a KARGAR supervisor will direct them. We will come back with a staffing proposal.',
     ctaLabel: 'Request Manpower Proposal',
     serviceType: 'Housekeeping Manpower Supply',
+    enquiryService: 'housekeeping-manpower',
+    showInFooter: true,
+    review: { ...REVIEWED_2026_11_24, pendingFacts: ['Confirm: manpower staff are directed by the client; a KARGAR supervisor is optional'] },
   },
 
   // ───────────────────────────── INDUSTRIAL ─────────────────────────────
@@ -645,6 +645,8 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     ctaHeading: 'Discuss Housekeeping for Your Plant',
     ctaText: 'Share your plant size, shifts and the areas to be covered, and we will plan a shift-aligned team.',
     serviceType: 'Industrial Housekeeping',
+    enquiryService: 'housekeeping',
+    review: REVIEWED_2026_11_17,
   },
 
   // ───────────────────────────── SCHOOLS ─────────────────────────────
@@ -715,6 +717,8 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     ctaHeading: 'Plan Housekeeping for Your Campus',
     ctaText: 'Share your campus size, student strength and timings, and we will propose a schedule that fits the academic year.',
     serviceType: 'School and Educational Institute Housekeeping',
+    enquiryService: 'housekeeping',
+    review: REVIEWED_2026_11_17,
   },
 
   // ───────────────────────────── HEALTHCARE ─────────────────────────────
@@ -778,5 +782,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     ctaHeading: 'Discuss Housekeeping for Your Facility',
     ctaText: 'Share your facility type, size and operating hours, and we will plan a team around your protocols.',
     serviceType: 'Healthcare Facility Housekeeping',
+    enquiryService: 'housekeeping',
+    review: REVIEWED_2026_11_17,
   },
 ];

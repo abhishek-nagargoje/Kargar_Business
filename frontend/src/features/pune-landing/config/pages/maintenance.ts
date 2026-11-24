@@ -1,5 +1,6 @@
 import type { PuneLandingPageContent } from '../../domain/types';
 import { heroImages } from '../heroImages';
+import { REVIEWED_2026_11_17, REVIEWED_2026_11_24 } from '../review';
 
 const PILLAR = { label: 'Facility Maintenance Pune', href: '/facility-maintenance-services-pune' };
 
@@ -60,12 +61,13 @@ export const maintenancePages: PuneLandingPageContent[] = [
       {
         kind: 'cards',
         heading: 'Engagement Models',
-        columns: 3,
         items: [
           { title: 'AMC', description: 'An annual maintenance contract with a PPM calendar and agreed scope for each system.' },
           { title: 'Breakdown coordination', description: 'Faults outside the PPM schedule handled through an agreed escalation process, with OEMs or specialist vendors where needed.' },
           { title: 'Resident technicians', description: 'Electricians, plumbers, STP operators or fire technicians deployed on site, often within a [building maintenance](/building-maintenance-services-pune) setup.' },
+          { title: 'On-call or incidental', description: 'Work called in when needed, for sites that do not need a full annual contract.' },
         ],
+        columns: 2,
       },
       {
         kind: 'steps',
@@ -75,6 +77,15 @@ export const maintenancePages: PuneLandingPageContent[] = [
           { title: 'PPM calendar', description: 'A preventive maintenance schedule is built from OEM recommendations and how the site is used.' },
           { title: 'Breakdown process', description: 'Escalation and coordination with OEMs or specialist vendors are agreed for faults outside PPM.' },
           { title: 'Reporting', description: 'Completed PPM, open issues and breakdowns are reported on a daily, weekly and monthly basis.' },
+        ],
+      },
+      {
+        kind: 'checklist',
+        heading: 'What to Send for a Maintenance Quote',
+        intro: 'You can enquire with the first group only. We complete the asset list with you during the survey.',
+        groups: [
+          { title: 'Enough to start', items: ['Property type and locality', 'Which systems you want maintained', 'Whether you want an AMC, resident technicians or on-call support'] },
+          { title: 'Helpful if you have it', items: ['Asset list with makes, capacities and quantities, such as DG kVA or number of AHUs', 'Existing AMCs and OEM warranties', 'Recent breakdowns or recurring faults'] },
         ],
       },
     ],
@@ -91,8 +102,11 @@ export const maintenancePages: PuneLandingPageContent[] = [
       { label: 'Facility Management Company in Pune', href: '/facility-management-company-pune' },
     ],
     ctaHeading: 'Request a Maintenance Assessment',
-    ctaText: 'Tell us which systems your property has and how they are maintained today. We will propose a PPM plan.',
+    ctaText: 'Tell us which systems your property has and how they are maintained today. We will survey the assets and propose a PPM plan.',
+    ctaLabel: 'Request a Maintenance Assessment',
     serviceType: 'Facility Maintenance',
+    enquiryService: 'facility-maintenance',
+    review: REVIEWED_2026_11_24,
   },
 
   // ───────────────────────────── ELECTRICAL (rewritten) ─────────────────────────────
@@ -114,8 +128,8 @@ export const maintenancePages: PuneLandingPageContent[] = [
       'Keeping power distribution and backup reliable for Pune properties — panels, DBs, cabling, UPS rooms and DG sets maintained before they fail, with breakdowns coordinated when they do.',
     heroImage: heroImages.technicians,
     intro: [
-      'Electrical problems in a building rarely announce themselves. A loose termination in a distribution board, a battery bank past its life, or a DG set that has not been run under load only becomes visible when the power goes — and in Pune, outages tend to arrive with the monsoon, exactly when a building most needs its backup to work.',
-      'KARGAR maintains electrical systems for residential societies, offices, commercial complexes and plants across Pune: LT panels, distribution boards, cabling, UPS rooms, UPS and battery systems, and DG operation and maintenance. This page covers how that works at a Pune site; for the general service description see our [electrical maintenance service details](/services/hard-services/electrical-maintenance).',
+      'KARGAR provides electrical maintenance services in Pune and Pimpri-Chinchwad for housing societies, offices, commercial buildings, institutes and plants. We maintain LT panels, distribution boards, cabling, UPS rooms, UPS and battery systems and DG sets on a preventive schedule aligned to OEM recommendations, coordinate breakdowns, and record the work done on each asset. To get a quote, tell us your property type and main electrical assets; an asset list helps but is not needed to enquire.',
+      'Electrical problems rarely announce themselves. A loose termination in a distribution board, a battery bank past its life, or a DG set that has not been run under load only shows up when the power goes. In Pune, outages tend to arrive with the monsoon, exactly when a building most needs its backup to work.',
     ],
     sections: [
       {
@@ -129,6 +143,35 @@ export const maintenancePages: PuneLandingPageContent[] = [
           ['UPS rooms, UPS and batteries', 'Battery health checks, room ventilation, UPS checks per OEM schedule', 'Backup only helps if batteries hold charge when needed'],
           ['DG sets', 'Scheduled running, fuel and lubrication checks, operation during outages', 'A DG that has not been exercised may not start when the grid fails'],
         ],
+      },
+      {
+        kind: 'compare',
+        heading: 'What Is in Scope, and What Is Handled Separately',
+        intro: 'Your proposal lists exactly what is covered. This is the usual split for an electrical maintenance contract.',
+        left: {
+          title: 'Included in the maintenance contract',
+          items: [
+            'Preventive maintenance of LT panels, DBs and cabling on an agreed calendar',
+            'UPS and battery checks per OEM schedule',
+            'DG set operation and maintenance',
+            'Breakdown coordination through an agreed escalation path',
+            'A maintenance record for each asset, reported daily, weekly and monthly',
+          ],
+        },
+        right: {
+          title: 'Handled separately or confirmed case by case',
+          items: [
+            'Spare parts and replacement equipment',
+            'Repairs under OEM warranty, coordinated with the OEM',
+            'HT equipment and transformers',
+            'New installation or rewiring projects',
+          ],
+        },
+      },
+      {
+        kind: 'callout',
+        heading: 'Building Maintenance, Not Household Electrician Visits',
+        text: 'This service is for buildings and organisations on contract: society common areas, offices, commercial buildings, institutes and plants. For a resident electrician who stays on site, see [building maintenance technicians](/building-maintenance-services-pune).',
       },
       {
         kind: 'cards',
@@ -152,81 +195,142 @@ export const maintenancePages: PuneLandingPageContent[] = [
           { title: 'Institutes', description: 'Campus distribution and backup for classrooms, labs and offices.' },
         ],
       },
+      {
+        kind: 'checklist',
+        heading: 'What to Send for an Electrical Maintenance Quote',
+        groups: [
+          { title: 'Enough to start', items: ['Property type and locality', 'Main systems on site: LT panels, DG set, UPS', 'Preventive contract, resident electrician or on-call support'] },
+          { title: 'Helpful if you know it', items: ['DG and UPS capacities and quantities', 'Existing AMCs or OEM service contracts', 'Recent tripping, outages or failures'] },
+        ],
+      },
     ],
     faqs: [
       { question: 'How often should electrical systems be inspected?', answer: 'Preventive schedules follow OEM recommendations and how heavily the system is used. Critical items such as DG sets and UPS batteries are checked more often than general distribution.' },
       { question: 'What happens if there is an electrical breakdown?', answer: 'Breakdowns are coordinated through an agreed escalation process, with OEMs or specialist vendors brought in where their involvement is required.' },
       { question: 'Do you maintain DG sets?', answer: 'Yes. DG operation and maintenance is part of our hard-services scope.' },
       { question: 'Can you work alongside our OEM service contracts?', answer: 'Yes. We follow OEM schedules and coordinate with OEMs where their involvement is required.' },
+      { question: 'Can you provide an electrician who stays on site?', answer: 'Yes. Resident electricians can be deployed, usually as part of a [building maintenance](/building-maintenance-services-pune) team with plumbers and other technicians.' },
     ],
     relatedLinks: [
       { label: 'Facility Maintenance Services', href: '/facility-maintenance-services-pune' },
       { label: 'HVAC Maintenance in Pune', href: '/hvac-maintenance-services-pune' },
       { label: 'Building Maintenance Services', href: '/building-maintenance-services-pune' },
     ],
-    ctaHeading: 'Request an Electrical Maintenance Assessment',
-    ctaText: 'Tell us about your panels, backup systems and current maintenance arrangement, and we will propose a preventive plan.',
+    ctaHeading: 'Request an Electrical Maintenance Quote',
+    ctaText: 'Tell us your property type, main electrical systems and how they are maintained today. We will survey the assets and propose a preventive maintenance plan.',
+    ctaLabel: 'Request an Electrical Maintenance Quote',
     serviceType: 'Electrical Maintenance',
+    enquiryService: 'electrical',
+    showInFooter: true,
+    review: { ...REVIEWED_2026_11_24, pendingFacts: ['Spares billing basis', 'Confirm HT/transformer and new-installation work are outside scope', 'Confirm electrical is contract-only (no one-off household calls)'] },
   },
 
-  // ───────────────────────────── HVAC (existing content retained) ─────────────────────────────
+  // ───────────────────────────── HVAC (rewritten 2026-11-24; URL, title and H1 unchanged) ─────────────────────────────
+  // Equipment scope strictly per the Company Brochure: AHU, FCU, VRV/VRF. Chillers, cooling towers,
+  // split/cassette ACs, duct cleaning, system balancing and IAQ testing were removed pending
+  // business confirmation (see review.pendingFacts).
   {
     path: '/hvac-maintenance-services-pune',
     cluster: 'maintenance',
     parent: PILLAR,
     breadcrumbLabel: 'HVAC Maintenance Pune',
-    summary: 'Preventive and breakdown servicing of AHUs, FCUs and VRV/VRF systems for commercial and industrial facilities.',
+    summary: 'Planned preventive servicing and breakdown coordination for AHUs, FCUs and VRV/VRF systems.',
     seo: {
       title: 'HVAC Maintenance Pune',
       description:
-        'Preventive HVAC servicing for chillers, AHUs, VRV/VRF systems, and cooling towers at facilities in Pune. Schedule service with KARGAR Facility Management.',
-      keywords: ['HVAC Maintenance Pune', 'AC Maintenance Pune', 'Chiller Maintenance Pune', 'Commercial HVAC Pune'],
+        'HVAC maintenance services in Pune for AHUs, FCUs and VRV/VRF systems: planned preventive servicing, service records and breakdown coordination. Get a quote.',
+      keywords: ['HVAC Maintenance Pune', 'Commercial HVAC Maintenance Pune', 'HVAC AMC Pune', 'VRV VRF Maintenance Pune'],
     },
     eyebrow: 'HVAC Maintenance in Pune',
     h1: 'HVAC Maintenance Services in Pune',
     heroSubtitle:
-      'KARGAR Facility Management provides preventive and breakdown HVAC servicing for chillers, AHUs, VRV/VRF systems, and cooling towers at commercial and industrial facilities across Pune.',
+      'Planned preventive maintenance of AHUs, FCUs and VRV/VRF systems for offices, commercial buildings, institutes, healthcare facilities and plants, with breakdowns coordinated through one team.',
     heroImage: heroImages.technicians,
     intro: [
-      'Indoor air quality and temperature control directly affect occupant comfort and, in facilities running IT hardware or sensitive equipment, operational reliability. KARGAR Facility Management provides HVAC maintenance for commercial and industrial facilities across Pune — covering everything from split ACs to large commercial chillers.',
-      'Our technicians handle routine servicing as well as the less routine work: system balancing, duct cleaning, and indoor air quality testing, so your HVAC systems stay efficient year-round rather than just functional. HVAC is one part of our wider [facility maintenance services in Pune](/facility-maintenance-services-pune).',
+      'KARGAR provides HVAC maintenance services in Pune and Pimpri-Chinchwad for offices, commercial buildings, institutes, healthcare facilities and manufacturing sites. We maintain air handling units (AHU), fan coil units (FCU) and VRV/VRF systems on a planned preventive schedule aligned to the manufacturer’s (OEM) recommendations, record each visit, and coordinate repairs with the OEM or a specialist when something fails. To get a quote, tell us the equipment type and roughly how many units you have.',
+      'HVAC can be contracted on its own, as an annual maintenance contract (AMC) or on call, or alongside electrical, DG, plumbing and STP work as part of our [facility maintenance services in Pune](/facility-maintenance-services-pune).',
     ],
-    whatsIncluded: {
-      heading: 'What Our HVAC Maintenance Service Covers',
-      items: [
-        { title: 'Scheduled Servicing', description: 'Routine cleaning, lubrication, and calibration of HVAC equipment.' },
-        { title: 'Air Quality Testing', description: 'Monitoring and improving indoor air quality.' },
-        { title: 'System Balancing', description: 'Ensuring even temperature distribution across the facility.' },
-        { title: 'Duct Cleaning', description: 'Thorough duct cleaning to improve airflow and efficiency.' },
-      ],
-    },
-    whyChoose: {
-      heading: 'Why Facility Managers in Pune Choose KARGAR',
-      items: [
-        { title: 'Energy Efficiency', description: 'We tune systems to operate at peak efficiency, reducing energy costs.' },
-        { title: 'Full Equipment Coverage', description: 'VRV/VRF systems, chillers, cooling towers, AHU & FCU, cassette and split ACs.' },
-        { title: 'Health & Safety Focus', description: 'Indoor air quality testing prioritizes occupant well-being, not just cooling performance.' },
-      ],
-    },
-    industries: {
-      heading: 'Facilities We Serve',
-      items: ['Corporate Offices', 'IT Parks', 'Healthcare Facilities', 'Retail & Malls', 'Manufacturing Plants'],
-    },
+    sections: [
+      {
+        kind: 'table',
+        heading: 'Equipment We Maintain and What Planned Servicing Covers',
+        intro: 'The exact checklist for each unit follows its OEM schedule. These are the typical planned checks.',
+        caption: 'HVAC equipment maintained by KARGAR and typical planned servicing activities',
+        columns: ['Equipment', 'Typical planned servicing', 'Coordinated with the OEM or a specialist'],
+        rows: [
+          ['Air handling units (AHU)', 'Filter cleaning or replacement, coil and drain-pan condition, belt and fan-motor checks', 'Motor rewinding, major component replacement'],
+          ['Fan coil units (FCU)', 'Filter cleaning, coil condition, condensate drain clearing, fan operation', 'Control board and motor replacement'],
+          ['VRV / VRF systems', 'Indoor-unit filter cleaning, outdoor-unit condition and cleaning, operating parameters checked against OEM limits', 'Refrigerant-circuit, compressor and PCB repairs'],
+        ],
+      },
+      {
+        kind: 'cards',
+        heading: 'How Visit Frequency Is Agreed',
+        intro: 'There is no single right interval. We agree the calendar with you after the asset survey, based on:',
+        columns: 2,
+        items: [
+          { title: 'OEM recommendations', description: 'The manufacturer’s service intervals for each type of unit are the starting point.' },
+          { title: 'Running hours', description: 'A unit serving a round-the-clock area needs more frequent attention than one running office hours only.' },
+          { title: 'Site conditions', description: 'Dust from construction or traffic clogs filters faster, so some sites need shorter intervals.' },
+          { title: 'Seasonal load', description: 'Servicing is planned so units are checked before the hot months, when Pune’s cooling demand peaks.' },
+        ],
+      },
+      {
+        kind: 'table',
+        heading: 'What Is Recorded at Each Visit',
+        intro: 'Every planned or breakdown visit is logged against the asset list, so you have a maintenance history for each unit.',
+        caption: 'Information recorded in each HVAC service record',
+        columns: ['Record', 'Why it matters'],
+        rows: [
+          ['Asset and location', 'Shows which unit was serviced, so nothing on the list is missed'],
+          ['Work done and observations', 'Shows what was cleaned, checked or adjusted, and the condition found'],
+          ['Parts needing replacement', 'Lets you approve spares before a fault becomes a breakdown'],
+          ['Open issues and their status', 'Tracks each issue to closure in the daily, weekly and monthly reports'],
+        ],
+      },
+      {
+        kind: 'prose',
+        heading: 'Spares, Repairs and Specialist Work',
+        paragraphs: [
+          'Planned servicing covers inspection, cleaning and routine upkeep. Spare parts and major repairs are agreed separately, or handled under your OEM warranty, and work that needs the manufacturer or an authorised specialist is coordinated by us through an agreed escalation path. Your proposal states exactly what is included, so there are no surprises when a part fails.',
+          'Have equipment that is not listed above? Mention it in your enquiry and we will confirm whether we can cover it before sending a proposal.',
+        ],
+      },
+      {
+        kind: 'checklist',
+        heading: 'What to Send for an HVAC Maintenance Quote',
+        groups: [
+          { title: 'Enough to start', items: ['Property type and locality', 'Equipment type: AHU, FCU or VRV/VRF', 'Planned servicing, breakdown support, or both'] },
+          { title: 'Helpful if you know it', items: ['Approximate number of units of each type', 'Makes and age of the main units', 'Existing AMC or OEM warranty, and recent breakdowns'] },
+        ],
+      },
+    ],
     faqs: [
-      { question: 'What does routine HVAC maintenance include?', answer: 'Changing filters, cleaning coils, checking refrigerant levels, and testing controls.' },
-      { question: 'Do you service commercial chiller systems in Pune?', answer: 'Yes, our technicians are experienced in servicing large-scale commercial chillers as well as smaller split and cassette AC systems.' },
-      { question: 'How can HVAC maintenance improve indoor air quality?', answer: 'Regular duct cleaning, upgrading to high-efficiency filters, and proper ventilation checks all contribute to better indoor air quality.' },
-      { question: 'Do you handle VRV/VRF systems?', answer: 'Yes, VRV/VRF systems are part of our standard equipment coverage alongside chillers, cooling towers, and AHU/FCU units.' },
+      { question: 'Which HVAC equipment do you maintain?', answer: 'Air handling units (AHU), fan coil units (FCU) and VRV/VRF systems. If you have other equipment, tell us in the enquiry and we will confirm coverage before quoting.' },
+      { question: 'Do you offer an HVAC annual maintenance contract (AMC)?', answer: 'Yes. HVAC can be covered by an annual maintenance contract with a planned visit calendar, or supported on an on-call basis.' },
+      { question: 'What happens when an HVAC unit breaks down?', answer: 'The fault is raised through the agreed escalation path. Our technicians attend, and where the repair needs the OEM or a specialist, we coordinate it and record the outcome against the asset.' },
+      { question: 'Can HVAC maintenance be combined with other building maintenance?', answer: 'Yes. HVAC can sit in one contract with electrical, DG, UPS, plumbing and STP maintenance. See [facility maintenance services in Pune](/facility-maintenance-services-pune).' },
     ],
-    serviceDetailLink: { label: 'HVAC maintenance service details', href: '/services/hard-services/hvac-maintenance' },
     relatedLinks: [
       { label: 'Electrical Maintenance in Pune', href: '/electrical-maintenance-services-pune' },
       { label: 'Facility Maintenance Services', href: '/facility-maintenance-services-pune' },
       { label: 'Facility Management Company in Pune', href: '/facility-management-company-pune' },
     ],
-    ctaHeading: 'Schedule an HVAC Service Assessment',
-    ctaText: 'Tell us about your facility\'s HVAC systems and our team will follow up with a tailored service plan.',
+    ctaHeading: 'Request an HVAC Maintenance Quote',
+    ctaText: 'Tell us the equipment type (AHU, FCU or VRV/VRF), roughly how many units you have, and whether you need planned servicing, breakdown support or both.',
+    ctaLabel: 'Request an HVAC Maintenance Quote',
     serviceType: 'HVAC Maintenance',
+    enquiryService: 'hvac',
+    showInFooter: true,
+    review: {
+      ...REVIEWED_2026_11_24,
+      pendingFacts: [
+        'Chillers, cooling towers, split and cassette ACs (removed: not in brochure)',
+        'Duct cleaning, system balancing, indoor-air-quality testing (removed: not in brochure)',
+        'Spares and major-repair billing basis',
+        'Technical head to check the typical AHU/FCU/VRV servicing activities listed in the table',
+      ],
+    },
   },
 
   // ───────────────────────────── PLUMBING ─────────────────────────────
@@ -293,6 +397,8 @@ export const maintenancePages: PuneLandingPageContent[] = [
     ctaHeading: 'Get Plumbing Maintenance for Your Property',
     ctaText: 'Share the number of buildings, pumps and tanks, and we will recommend the right plumbing coverage.',
     serviceType: 'Plumbing and Water System Maintenance',
+    enquiryService: 'plumbing',
+    review: REVIEWED_2026_11_17,
   },
 
   // ───────────────────────────── BUILDING MAINTENANCE ─────────────────────────────
@@ -366,6 +472,8 @@ export const maintenancePages: PuneLandingPageContent[] = [
     ctaHeading: 'Plan a Technician Team for Your Building',
     ctaText: 'Tell us what equipment your building has and how it is maintained today, and we will propose the right team.',
     serviceType: 'Building Maintenance',
+    enquiryService: 'building-technicians',
+    review: REVIEWED_2026_11_24,
   },
 
   // ───────────────────────────── STP / WTP ─────────────────────────────
@@ -431,6 +539,8 @@ export const maintenancePages: PuneLandingPageContent[] = [
     ctaHeading: 'Get an STP Operator for Your Society',
     ctaText: 'Share your plant’s capacity and current arrangement, and we will propose operator coverage.',
     serviceType: 'STP and WTP Operation and Maintenance',
+    enquiryService: 'stp-wtp',
+    review: REVIEWED_2026_11_17,
   },
 
   // ───────────────────────────── LANDSCAPING ─────────────────────────────
@@ -500,5 +610,7 @@ export const maintenancePages: PuneLandingPageContent[] = [
     ctaHeading: 'Get Garden Maintenance for Your Property',
     ctaText: 'Share the size of your green areas and what is there today, and we will propose a gardening team.',
     serviceType: 'Landscaping and Horticulture Maintenance',
+    enquiryService: 'landscaping',
+    review: REVIEWED_2026_11_17,
   },
 ];

@@ -26,11 +26,11 @@ export const serviceImages: Record<string, ImageConfig> = {
   // Hard Services
   electrical: {
     ...(baseImages.hardServices ?? defaultHeroImage),
-    alt: 'Enterprise Electrical Maintenance and HT Panels',
+    alt: 'Technicians inspecting an electrical panel',
   },
   hvac: {
     ...(baseImages.hardServices ?? defaultHeroImage),
-    alt: 'Commercial HVAC and Chiller Maintenance',
+    alt: 'Technician servicing commercial HVAC equipment',
   },
   
   // Soft Services

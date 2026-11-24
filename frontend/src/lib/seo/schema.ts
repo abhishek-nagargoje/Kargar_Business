@@ -58,11 +58,11 @@ export function buildLocalBusinessSchema() {
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '301, 3rd Floor, Unity Commercial, Baner',
-      addressLocality: 'Pune',
-      addressRegion: 'Maharashtra',
-      postalCode: '411045',
-      addressCountry: 'IN',
+      streetAddress: contactDetails.address.street,
+      addressLocality: contactDetails.address.locality,
+      addressRegion: contactDetails.address.region,
+      postalCode: contactDetails.address.postalCode,
+      addressCountry: contactDetails.address.country,
     },
   };
 }

@@ -11,12 +11,21 @@ import { securityPages } from './pages/security';
  * links and the footer directory are all derived from this list — adding a page here is the
  * only wiring step. See docs/SEO-LANDING-PAGE-ARCHITECTURE.md.
  */
-export const punePageList: PuneLandingPageContent[] = [
+/** Every authored page, including drafts. Only governance tooling should read this. */
+export const allAuthoredPunePages: PuneLandingPageContent[] = [
   ...housekeepingPages,
   ...facilityManagementPages,
   ...maintenancePages,
   ...securityPages,
 ];
+
+/**
+ * Public pages only. A page whose `review.status` is not 'published' never reaches a route,
+ * the prerender, the sitemap, a hub card, the footer or a sibling link.
+ */
+export const punePageList: PuneLandingPageContent[] = allAuthoredPunePages.filter(
+  (page) => page.review.status === 'published',
+);
 
 export const punePagesByPath: Record<string, PuneLandingPageContent> = Object.fromEntries(
   punePageList.map((page) => [page.path, page]),
@@ -35,6 +44,11 @@ export const clusters: ClusterMeta[] = [
   { id: 'maintenance', label: 'Maintenance', pillarPath: '/facility-maintenance-services-pune' },
   { id: 'security', label: 'Security', pillarPath: '/security-services-pune' },
 ];
+
+/** Pages shown in the site-wide footer for a cluster: the pillar plus pages flagged `showInFooter`. */
+export function footerClusterPages(id: ClusterId): PuneLandingPageContent[] {
+  return clusterPages(id).filter((page) => page.isPillar || page.showInFooter);
+}
 
 /** Pages in a cluster, pillar first. */
 export function clusterPages(id: ClusterId): PuneLandingPageContent[] {

@@ -8,8 +8,14 @@ import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { buildServiceBreadcrumbs } from '@/lib/seo/breadcrumbs';
 import { buildCategoryServiceSchema } from '@/lib/seo/schema';
 import { serviceImages } from '../config/images';
-import { punePageList } from '@/features/pune-landing/config/punePages';
+import { footerClusterPages } from '@/features/pune-landing/config/punePages';
+import type { ClusterId } from '@/features/pune-landing/domain/types';
 import { Container } from '@/components/ui/Container';
+
+const CATEGORY_CLUSTERS: Record<string, ClusterId[]> = {
+  'hard-services': ['maintenance'],
+  'soft-services': ['housekeeping', 'security'],
+};
 
 export function CategoryPage() {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -23,11 +29,10 @@ export function CategoryPage() {
   const services = getServicesByCategory(category.id);
   const heroImage = serviceImages[category.imageKey];
   const path = `/services/${category.slug}`;
-  // Pune pages that link to this hub or to one of its services, so the link is reciprocated.
-  const categoryPunePages = punePageList.filter((p) => {
-    const href = p.serviceDetailLink?.href;
-    return href === path || href?.startsWith(`${path}/`);
-  });
+  // The Pune pages for this category's clusters (pillar plus priority pages), so each hub routes
+  // buyers to the detailed local pages.
+  const clusterIds = CATEGORY_CLUSTERS[category.slug] ?? [];
+  const categoryPunePages = clusterIds.flatMap((id) => footerClusterPages(id));
 
   return (
     <div className="kargar-site kb-site">

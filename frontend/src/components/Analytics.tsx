@@ -2,10 +2,14 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 import { trackEvent } from '@/types/analytics';
 import { isTrackingEnabled, trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
+import { captureLandingPage } from '@/lib/landingAttribution';
 
 export function Analytics() {
   const location = useLocation();
   useEffect(() => {
+    // Lead attribution (stored with the enquiry, not sent to analytics) runs even when tracking
+    // is off, so leads from consent-blocked or ad-blocked visitors still show their landing page.
+    if (!location.pathname.startsWith('/admin')) captureLandingPage(location.pathname);
     if (!isTrackingEnabled()) {
       return;
     }

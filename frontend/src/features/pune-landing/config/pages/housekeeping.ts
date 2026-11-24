@@ -169,7 +169,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
     ctaLabel: 'Get a Housekeeping Proposal',
     serviceType: 'Housekeeping Services',
     enquiryService: 'housekeeping',
-    review: { ...REVIEWED_2026_11_24, pendingFacts: ['Named Pune/PCMC localities served (removed until confirmed)', 'Default site facilities provided by the client (storage, water, power)'] },
+    review: { ...REVIEWED_2026_11_24, pendingFacts: ['Named Pune/PCMC localities served (removed until confirmed)', 'Default site facilities provided by the client (storage, water, power)', 'Confirm KARGAR does not take one-off home or flat cleaning (FAQ states this)'] },
   },
 
   // ───────────────────────────── COMMERCIAL ─────────────────────────────

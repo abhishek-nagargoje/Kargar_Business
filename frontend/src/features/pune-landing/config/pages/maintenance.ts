@@ -222,7 +222,7 @@ export const maintenancePages: PuneLandingPageContent[] = [
     serviceType: 'Electrical Maintenance',
     enquiryService: 'electrical',
     showInFooter: true,
-    review: { ...REVIEWED_2026_11_24, pendingFacts: ['Spares billing basis', 'Confirm HT/transformer and new-installation work are outside scope'] },
+    review: { ...REVIEWED_2026_11_24, pendingFacts: ['Spares billing basis', 'Confirm HT/transformer and new-installation work are outside scope', 'Confirm electrical is contract-only (no one-off household calls)'] },
   },
 
   // ───────────────────────────── HVAC (rewritten 2026-11-24; URL, title and H1 unchanged) ─────────────────────────────
@@ -328,6 +328,7 @@ export const maintenancePages: PuneLandingPageContent[] = [
         'Chillers, cooling towers, split and cassette ACs (removed: not in brochure)',
         'Duct cleaning, system balancing, indoor-air-quality testing (removed: not in brochure)',
         'Spares and major-repair billing basis',
+        'Technical head to check the typical AHU/FCU/VRV servicing activities listed in the table',
       ],
     },
   },

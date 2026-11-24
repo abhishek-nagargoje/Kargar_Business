@@ -4,6 +4,7 @@ import { useServices } from '../hooks/useServices';
 import { ArrowRight, Star } from 'lucide-react';
 import { Link } from 'react-router';
 import { serviceImages } from '../config/images';
+import { serviceHref } from '../config/landingPaths';
 import { memo } from 'react';
 import { useContactNavigation } from '../hooks/useContactNavigation';
 import { CONTACT_LINK_HREF } from '../utils/contactNavigation';
@@ -84,7 +85,7 @@ export const ServiceCategoryCard = memo(function ServiceCategoryCard({
                 <li key={service.id} className="flex items-start text-navy-900 text-sm font-medium">
                   <span className="mr-2 text-orange-500 font-bold mt-0.5">✓</span>
                   <Link
-                    to={`/services/${category.slug}/${service.slug}`}
+                    to={serviceHref(category.slug, service.slug)}
                     className="hover:text-orange-600 hover:underline underline-offset-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
                   >
                     {service.title}

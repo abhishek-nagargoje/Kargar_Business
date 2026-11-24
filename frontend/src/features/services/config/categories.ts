@@ -44,8 +44,8 @@ export const serviceCategories: Record<string, Category> = {
     statistics: VERIFIED_COMPANY_STATISTICS,
     operations: {
       scopeOfWork: [
-        { title: 'Electrical Maintenance', description: 'LT panels, distribution boards, cabling and UPS rooms, inspected and maintained before faults cause outages.', href: '/services/hard-services/electrical-maintenance' },
-        { title: 'HVAC Maintenance', description: 'AHUs, FCUs and VRV/VRF systems serviced on schedule, with system balancing and duct cleaning.', href: '/services/hard-services/hvac-maintenance' },
+        { title: 'Electrical Maintenance', description: 'LT panels, distribution boards, cabling and UPS rooms, inspected and maintained before faults cause outages.', href: '/electrical-maintenance-services-pune' },
+        { title: 'HVAC Maintenance', description: 'AHUs, FCUs and VRV/VRF systems serviced on an OEM-aligned schedule, with breakdowns coordinated.', href: '/hvac-maintenance-services-pune' },
         { title: 'DG Sets, UPS & Batteries', description: 'Operation and maintenance of diesel generators, and UPS and battery checks, so backup power works when the grid fails.', href: '/electrical-maintenance-services-pune' },
         { title: 'Plumbing & Water Systems', description: 'Pumps, tanks, pipelines and water systems maintained by trained plumbers.', href: '/plumbing-maintenance-services-pune' },
         { title: 'STP / WTP Operation', description: 'Daily operation of sewage and water treatment plants by STP operators.', href: '/stp-operation-maintenance-pune' },

@@ -5,6 +5,7 @@ import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { getSeoEntry } from '@/features/seo/registry';
 import { ShieldCheck, Mail, MapPin, Phone, Lock } from 'lucide-react';
 import { useBusinessPhone } from '@/hooks/useBusinessPhone';
+import { contactDetails } from '@/config/contact';
 
 export function PrivacyPolicyPage() {
   const seoEntry = getSeoEntry('/privacy-policy');
@@ -104,11 +105,11 @@ export function PrivacyPolicyPage() {
               <div className="space-y-3 text-sm text-slate-700">
                 <div className="flex items-start gap-3">
                   <MapPin size={18} className="text-amber-600 shrink-0 mt-0.5" />
-                  <span><strong>Address:</strong> 301, 3rd Floor, Unity Commercial, Baner, Pune, Maharashtra 411045, India</span>
+                  <span><strong>Address:</strong> {contactDetails.address.display}, India</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail size={18} className="text-amber-600 shrink-0" />
-                  <span><strong>Email:</strong> <a href="mailto:bd@kargar.co.in" className="text-amber-600 hover:underline">bd@kargar.co.in</a></span>
+                  <span><strong>Email:</strong> <a href={`mailto:${contactDetails.email}`} className="text-amber-600 hover:underline">{contactDetails.email}</a></span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone size={18} className="text-amber-600 shrink-0" />

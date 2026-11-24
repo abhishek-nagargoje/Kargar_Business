@@ -1,5 +1,5 @@
 import { seoRegistry } from '../../src/features/seo/registry';
-import { serviceCategories, allServices } from '../../src/features/services/config';
+import { serviceCategories, allServices, SERVICE_LANDING_PATHS } from '../../src/features/services/config';
 import { punePageList } from '../../src/features/pune-landing/config/punePages';
 import { guidePageList } from '../../src/features/resources/config/guides';
 import { STATIC_ROUTES, buildCanonicalUrl, PAGE_IMAGES } from './seo.config';
@@ -86,6 +86,8 @@ export function buildRouteInventory(): RoutePage[] {
   }
 
   for (const service of Object.values(allServices)) {
+    // Consolidated into a Pune landing page: the old URL is a 301 (see REDIRECTS), not a page.
+    if (SERVICE_LANDING_PATHS[service.slug]) continue;
     const category = categories.find((c) => c.id === service.categoryId);
     const categorySlug = category?.slug ?? service.categoryId;
     const path = `/services/${categorySlug}/${service.slug}`;

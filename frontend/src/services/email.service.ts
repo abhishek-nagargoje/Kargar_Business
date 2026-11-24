@@ -35,8 +35,45 @@ export interface ProposalEmailInput {
   phone?: string;
   company?: string;
   subject?: string;
-  service?: string;
   message: string;
+  serviceLabel: string;
+  team: string;
+  details: [string, string][];
+  /** Page whose CTA opened the form. */
+  ctaPage?: string;
+  /** First page of the visitor's session. */
+  landingPage?: string;
+  referrerHost?: string;
+}
+
+/**
+ * The full lead as plain text. Placed in `{{message}}` — the one body variable the live EmailJS
+ * template renders — so the sales inbox always receives the contact details and the requested
+ * service, whatever the template contains. (Before 2026-11-24 the email carried only the name
+ * and free-text message: no phone, email, company or service.)
+ */
+export function composeLeadSummary(input: ProposalEmailInput): string {
+  const line = (label: string, value?: string) => (value ? `${label}: ${value}` : null);
+  return [
+    line('Service requested', input.serviceLabel),
+    line('Team', input.team),
+    '',
+    line('Name', input.name),
+    line('Email', input.email),
+    line('Phone', input.phone),
+    line('Company / society', input.company),
+    ...(input.details.length ? ['', 'Enquiry details:', ...input.details.map(([label, value]) => `- ${label}: ${value}`)] : []),
+    '',
+    'Message:',
+    input.message,
+    '',
+    line('Enquiry page', input.ctaPage),
+    line('First page visited', input.landingPage),
+    line('Referred by', input.referrerHost),
+  ]
+    .filter((row): row is string => row !== null)
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n');
 }
 
 export interface EmailResult {
@@ -60,9 +97,21 @@ export async function sendProposalEmail(input: ProposalEmailInput): Promise<Emai
   const now = new Date();
 
   // Variables must match the {{variable_name}} syntax in your EmailJS template
+  // `name`, `message` and `time` are what the live template uses today. The remaining variables
+  // are available for a richer template ({{service}}, {{team}}, {{reply_to}}, ...) and are ignored
+  // by EmailJS until the template references them.
   const templateParams = {
     name: input.name,
-    message: input.message,
+    message: composeLeadSummary(input),
+    subject: `[${input.team}] ${input.subject ?? input.serviceLabel}`,
+    service: input.serviceLabel,
+    team: input.team,
+    email: input.email,
+    reply_to: input.email,
+    phone: input.phone ?? '',
+    company: input.company ?? '',
+    enquiry_page: input.ctaPage ?? '',
+    landing_page: input.landingPage ?? '',
     time: now.toLocaleTimeString('en-IN', {
       hour: '2-digit',
       minute: '2-digit',

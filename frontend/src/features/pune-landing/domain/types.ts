@@ -1,3 +1,5 @@
+import type { EnquiryServiceId } from '@/features/enquiry/enquiryServices';
+
 export interface PuneFAQ {
   question: string;
   /** Plain text, or InlineText with `[anchor](/path)` links (stripped to plain text for JSON-LD). */
@@ -79,6 +81,27 @@ export interface PuneLandingPageContent {
   ctaLabel?: string;
   /** Schema.org Service serviceType value. */
   serviceType: string;
+  /** Which service the contact form preselects and which team receives the lead. */
+  enquiryService: EnquiryServiceId;
+  /** Show this page in the site-wide footer. Keep to pillars and a few priority pages per cluster. */
+  showInFooter?: boolean;
+  /** Editorial governance — internal only, never rendered. See PageReview. */
+  review: PageReview;
+}
+
+/**
+ * Internal editorial record for a public service page. Only `status: 'published'` pages are
+ * routed, prerendered, listed in the sitemap or linked; a `draft` stays out of every public
+ * surface (enforced in punePages.ts and checked by scripts/seo/validate-governance.ts).
+ */
+export interface PageReview {
+  status: 'published' | 'draft';
+  /** Role responsible for the page's accuracy (a role, not a person's name). */
+  owner: string;
+  /** ISO date the facts on the page were last checked. */
+  lastReviewed: string;
+  /** Claims on the page still awaiting business confirmation (kept off the page until confirmed). */
+  pendingFacts?: string[];
 }
 
 /** Informational guide under /resources — rendered with Article schema. */

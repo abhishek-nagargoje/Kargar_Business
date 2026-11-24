@@ -2497,8 +2497,8 @@
 .kb-mobile:focus-visible,
 .kb-contact-form input:focus-visible,
 .kb-contact-form textarea:focus-visible {
-  outline: 3px solid rgb(255 90 10 / 0.32);
-  outline-offset: 3px;
+  outline: 2px solid #c2410c;
+  outline-offset: 2px;
 }
 
 .kb-mobile {
@@ -3363,7 +3363,7 @@
 }
 
 .kb-contact-form b {
-  color: var(--kb-orange);
+  color: #c2410c;
 }
 
 .kb-contact-form input,
@@ -3405,8 +3405,134 @@
 
 .kb-contact-form small {
   gap: 8px;
-  color: #66728a;
+  color: #5a6680;
   font-size: 13px;
+}
+
+.kb-contact-form small a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Enquiry form: service select, optional details, status (2026-11-24) */
+.kb-contact-form select {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid #cfd8e5;
+  border-radius: 6px;
+  padding: 12px 14px;
+  background: #fff;
+  color: var(--kb-text);
+  font: inherit;
+  font-weight: 500;
+}
+
+.kb-contact-form select:focus-visible,
+.kb-contact-form .kb-enquiry-check input[type='checkbox']:focus-visible,
+.kb-contact-form h2:focus-visible,
+.kb-enquiry-status:focus-visible {
+  outline: 2px solid #c2410c;
+  outline-offset: 2px;
+}
+
+.kb-contact-form h2:focus:not(:focus-visible),
+.kb-enquiry-status:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.kb-contact-form button[aria-disabled='true'] {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.kb-contact-form .kb-field-hint {
+  display: block;
+  color: #5a6680;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.kb-enquiry-details {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  margin: 0;
+  border: 1px solid #e3e9f2;
+  border-radius: 10px;
+  padding: 18px;
+  background: #f7f9fc;
+}
+
+.kb-enquiry-details > legend,
+.kb-enquiry-checks > legend {
+  padding: 0 6px;
+  color: var(--kb-text);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.kb-enquiry-details > p {
+  margin: 0;
+  color: #3d4a63;
+  font-size: 14px;
+}
+
+.kb-enquiry-checks {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.kb-enquiry-checks > legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.kb-enquiry-checks > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.kb-contact-form .kb-enquiry-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.kb-contact-form .kb-enquiry-check input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--kb-orange);
+}
+
+.kb-enquiry-status {
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.kb-enquiry-status--success {
+  border: 1px solid #9fd8b4;
+  background: #edf9f1;
+  color: #14532d;
+}
+
+.kb-enquiry-status--error {
+  border: 1px solid #f3b4a6;
+  background: #fff1ee;
+  color: #8a1c0a;
 }
 
 .kb-operations {

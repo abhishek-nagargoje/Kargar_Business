@@ -5,7 +5,7 @@ import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { useManagedMediaList } from '@/features/media/hooks/useManagedImage';
 import { serviceIcons } from '../config/icons';
 import { serviceImages } from '../config/images';
-import { SERVICES_PAGE_PATH } from '../config';
+import { SERVICES_PAGE_PATH, serviceHref } from '../config';
 import type { Category, Service } from '../domain/service.types';
 
 interface ServiceCardProps {
@@ -24,7 +24,8 @@ interface ServiceCardProps {
 export const ServiceCard = memo(function ServiceCard({ service, category, headingLevel = 'h3' }: ServiceCardProps) {
   const Icon = serviceIcons[service.iconKey];
   const Heading = headingLevel;
-  const href = `/services/${category.slug}/${service.slug}`;
+  const href = serviceHref(category.slug, service.slug);
+  const isLanding = !href.startsWith('/services/');
   const fallback = serviceImages[service.imageKey] ?? serviceImages.hardServices;
   const highlights = (service.operations?.scopeOfWork ?? []).slice(0, 3);
 
@@ -91,12 +92,14 @@ export const ServiceCard = memo(function ServiceCard({ service, category, headin
           </ul>
         )}
 
+        {/* Descriptive visible text (WCAG 2.4.4): "Electrical Maintenance in Pune" says where the
+            link goes without relying on the card heading or an aria-label. */}
         <Link
           to={href}
-          aria-label={`Learn more about ${service.title}`}
+          aria-label={isLanding ? undefined : `Learn more about ${service.title}`}
           className="mt-auto inline-flex items-center gap-1.5 self-start pt-6 text-sm font-bold text-orange-700 after:absolute after:inset-0 after:content-[''] focus-visible:outline-none group-hover:text-orange-800"
         >
-          Learn More
+          {isLanding ? `${service.title} in Pune` : 'Learn More'}
           <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
         </Link>
       </div>

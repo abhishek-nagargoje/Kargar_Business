@@ -1,8 +1,7 @@
-import { type ReactNode, type SyntheticEvent, useEffect, useState } from 'react';
-import { useLocation, useNavigate, useSearchParams } from 'react-router';
+import { type ReactNode, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router';
 import { useInView } from 'react-intersection-observer';
 import CountUpModule from 'react-countup';
-import toast from 'react-hot-toast';
 import {
   ArrowRight,
   BadgeCheck,
@@ -11,7 +10,6 @@ import {
   Cpu,
   Globe,
   Scale,
-  Lock,
   Mail,
   MapPin,
   Phone,
@@ -21,13 +19,13 @@ import {
   X,
   Menu,
   type LucideIcon,
-  Send,
 } from 'lucide-react';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 import { SocialLinks } from '@/components/ui/SocialLinks';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
-import { submitContactMessage } from '@/services/contact.service';
+import { EnquiryForm } from '@/features/enquiry/components/EnquiryForm';
 import { useBusinessPhone } from '@/hooks/useBusinessPhone';
+import { contactDetails, telHref } from '@/config/contact';
 import { ReviewsSection } from '@/features/reviews/components/ReviewsSection';
 import { TrustedClientsSection } from '@/features/reviews/components/TrustedClientsSection';
 import { ServicesSection } from '@/features/home/components/ServicesSection';
@@ -41,10 +39,8 @@ import { SEO } from '@/components/seo/SEO';
 import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { getSeoEntry } from '@/features/seo/registry';
 import { PuneServicesLinksSection } from '@/features/pune-landing/components/PuneServicesLinksSection';
-import { clusterPages, clusters, punePagesByPath } from '@/features/pune-landing/config/punePages';
-import { guidePageList } from '@/features/resources/config/guides';
+import { clusters, footerClusterPages, punePagesByPath } from '@/features/pune-landing/config/punePages';
 import { serviceCategories } from '@/features/services/config';
-import { trackFormSubmission } from '@/lib/analytics';
 import { buildFAQSchema } from '@/lib/seo/schema';
 import { stripInline } from '@/features/pune-landing/utils/inlineText';
 import { SectorsContent } from '@/features/sectors/components/SectorsContent';
@@ -184,14 +180,14 @@ export function Header({ activePath }: { activePath: string }) {
       <div className="kb-topbar">
         <div className="kb-container kb-topbar__inner">
           <div className="kb-topbar__left">
-            <a href="mailto:bd@kargar.co.in"><Mail size={15} /> bd@kargar.co.in</a>
+            <a href={`mailto:${contactDetails.email}`}><Mail size={15} /> {contactDetails.email}</a>
             <span aria-hidden="true" />
             <a href={topbarPhone.href}><Phone size={15} /> {topbarPhone.display}</a>
             <span aria-hidden="true" />
             {contactPage ? (
               <a href="#contact-form"><Clock size={15} /> Mon - Sat: 09:00 AM - 06:00 PM</a>
             ) : (
-              <a href="tel:+918788726752"><Phone size={15} /> +91-8788726752</a>
+              <a href={telHref(contactDetails.alternatePhone)}><Phone size={15} /> {contactDetails.alternatePhone.display}</a>
             )}
           </div>
         </div>
@@ -489,9 +485,9 @@ function ContactPage() {
               />
             </div>
             <div className="kb-info-list">
-              <ContactInfo icon={MapPin} title="Our Office" text="301, 3rd Floor, Unity Commercial, Baner, Pune, Maharashtra 411045, India" />
-              <ContactInfo icon={Phone} title="Call Us" text={`${phone.display}|Alternate: +91 87887 26752|Mon - Sat: 09:00 AM - 06:00 PM`} />
-              <ContactInfo icon={Mail} title="Email Us" text="bd@kargar.co.in|We'll reply as soon as possible" />
+              <ContactInfo icon={MapPin} title="Our Office" text={`${contactDetails.address.display}, India`} />
+              <ContactInfo icon={Phone} title="Call Us" text={`${phone.display}|Alternate: ${contactDetails.alternatePhone.display}|${contactDetails.hours}`} />
+              <ContactInfo icon={Mail} title="Email Us" text={`${contactDetails.email}|We'll reply as soon as possible`} />
               <ContactInfo icon={Globe} title="Website" text="www.kargarbusinessservices.com|Visit our website for more information" />
             </div>
           </div>
@@ -499,7 +495,7 @@ function ContactPage() {
         </div>
 
         <div className="kb-contact-right">
-          <ContactForm />
+          <EnquiryForm />
           <OperationsCard />
         </div>
       </div>
@@ -517,115 +513,6 @@ function ContactInfo({ icon: Icon, title, text }: { icon: LucideIcon; title: str
         {lines.map((line) => <p key={line}>{line}</p>)}
       </div>
     </article>
-  );
-}
-
-function getFormString(formData: FormData, key: string): string {
-  const value = formData.get(key);
-  return typeof value === 'string' ? value : '';
-}
-
-function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [searchParams] = useSearchParams();
-  
-  const categoryParam = searchParams.get('category') ?? '';
-  const serviceParam = searchParams.get('service') ?? '';
-  const sourceParam = searchParams.get('source') ?? '';
-  const campaignParam = searchParams.get('campaign') ?? '';
-  const ctaPosition = searchParams.get('cta_position') ?? '';
-
-  // `service` may be a slug ("security-services-pune") or a page path ("/housekeeping-services-pune");
-  // only the last path segment is humanised for the subject line. The raw value is still submitted.
-  const serviceLabel = serviceParam.split('/').filter(Boolean).pop() ?? '';
-  const defaultSubject = serviceLabel
-    ? `Requesting Proposal for ${serviceLabel.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`
-    : '';
-
-  useEffect(() => {
-    // If there are search params or a hash, try to scroll and focus
-    if (window.location.hash === '#contact-form' || serviceParam) {
-      setTimeout(() => {
-        const form = document.getElementById('contact-form');
-        if (form) {
-          form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          const firstInput = form.querySelector<HTMLInputElement>('input:not([type="hidden"])');
-          if (firstInput) {
-            firstInput.focus();
-          }
-        }
-      }, 100);
-    }
-  }, [serviceParam]);
-
-  const onSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-
-    setIsSubmitting(true);
-
-    try {
-      const result = await submitContactMessage({
-        name: getFormString(formData, 'name'),
-        email: getFormString(formData, 'email'),
-        phone: getFormString(formData, 'phone'),
-        company: getFormString(formData, 'company'),
-        subject: getFormString(formData, 'subject'),
-        service: getFormString(formData, 'service'),
-        source: getFormString(formData, 'source'),
-        campaign: getFormString(formData, 'campaign'),
-        category: getFormString(formData, 'category'),
-        ctaPosition: getFormString(formData, 'cta_position'),
-        message: getFormString(formData, 'message'),
-      });
-
-      if (result.emailSent) {
-        toast.success('Proposal submitted successfully! Our team will contact you shortly.');
-      } else {
-        toast.success('Proposal received successfully! Our team has your request.\nEmail notification is temporarily unavailable.', { duration: 5000 });
-      }
-
-      // Track successful submission (only reached after the lead is saved)
-      trackFormSubmission({
-        service: getFormString(formData, 'service'),
-        source: getFormString(formData, 'source'),
-        campaign: getFormString(formData, 'campaign'),
-        cta_position: getFormString(formData, 'cta_position'),
-      });
-
-      form.reset();
-    } catch (error) {
-      const message = error instanceof Error ? error.message : 'Unable to submit request. Please try again.';
-      toast.error(message);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  return (
-    <form className="kb-contact-form" id="contact-form" onSubmit={onSubmit}>
-      <input type="hidden" name="category" value={categoryParam} />
-      <input type="hidden" name="service" value={serviceParam} />
-      <input type="hidden" name="source" value={sourceParam} />
-      <input type="hidden" name="campaign" value={campaignParam} />
-      <input type="hidden" name="cta_position" value={ctaPosition} />
-      
-      <h2>Send Us a Message</h2>
-      <p>Fill out the form below and we&apos;ll get back to you shortly.</p>
-      <div className="kb-form-grid">
-        <label>Full Name <b>*</b><input name="name" autoComplete="name" placeholder="Enter your full name" required /></label>
-        <label>Email Address <b>*</b><input name="email" type="email" autoComplete="email" placeholder="Enter your email address" required /></label>
-        <label>Phone Number <b>*</b><input name="phone" type="tel" autoComplete="tel" placeholder="Enter your phone number" required /></label>
-        <label>Company Name <b>*</b><input name="company" autoComplete="organization" placeholder="Enter your company name" required /></label>
-      </div>
-      <label>Subject <b>*</b><input name="subject" placeholder="How can we help you?" defaultValue={defaultSubject} required /></label>
-      <label>Message <b>*</b><textarea name="message" placeholder="Type your message here..." rows={5} required /></label>
-      <button className="kb-btn kb-btn--primary" type="submit" disabled={isSubmitting}>
-        {isSubmitting ? 'Sending...' : 'Send Message'} <Send size={18} />
-      </button>
-      <small><Lock size={15} /> We respect your privacy. Your information is safe with us.</small>
-    </form>
   );
 }
 
@@ -659,8 +546,10 @@ function OperationsCard() {
 }
 
 /**
- * Site-wide directory of every service, topic-cluster and guide page, generated from the same
- * config that defines the routes — so no page can exist without being linked from every page.
+ * Site-wide footer directory: each cluster's pillar plus the few pages flagged `showInFooter`,
+ * and the company pages. Every other service page is linked from its pillar (property-type
+ * cards), its siblings ("More in this topic"), the /services hub and relevant body copy, so the
+ * footer no longer repeats every page and guide on every URL. Guides live under /resources.
  */
 function FooterDirectory() {
   const linkClass = 'text-gray-300 hover:text-orange-300 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm';
@@ -678,7 +567,7 @@ function FooterDirectory() {
         <div key={cluster.id}>
           <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white">{cluster.label}</h2>
           <ul className="space-y-2 text-sm">
-            {clusterPages(cluster.id).map((page) => (
+            {footerClusterPages(cluster.id).map((page) => (
               <li key={page.path}>
                 <Link to={page.path} className={linkClass}>{page.breadcrumbLabel}</Link>
               </li>
@@ -692,11 +581,6 @@ function FooterDirectory() {
           {companyLinks.map((item) => (
             <li key={item.href}>
               <Link to={item.href} className={linkClass}>{item.label}</Link>
-            </li>
-          ))}
-          {guidePageList.map((guide) => (
-            <li key={guide.path}>
-              <Link to={guide.path} className={linkClass}>{guide.breadcrumbLabel}</Link>
             </li>
           ))}
         </ul>
@@ -882,7 +766,7 @@ function SupportPage() {
         description={
           <>
             How to reach KARGAR, what to share when you enquire, and how{' '}
-            <Link to="/services/soft-services/housekeeping" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>housekeeping</Link>
+            <Link to="/housekeeping-services-pune" style={{ color: "#A74423", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>housekeeping</Link>
             , security and maintenance requests are coordinated at sites we manage across Pune and PCMC.
           </>
         }

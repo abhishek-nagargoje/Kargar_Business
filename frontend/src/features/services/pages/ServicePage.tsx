@@ -1,4 +1,4 @@
-import { useParams, Navigate, Link } from 'react-router';
+import { useParams, Navigate } from 'react-router';
 import { useServices } from '../hooks/useServices';
 import { ServiceLayout } from '../layouts/ServiceLayout';
 import { SEO } from '@/components/seo/SEO';
@@ -8,19 +8,18 @@ import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { buildServiceBreadcrumbs } from '@/lib/seo/breadcrumbs';
 import { buildServiceSchema, buildFAQSchema } from '@/lib/seo/schema';
 import { serviceImages } from '../config/images';
-import { punePageList } from '@/features/pune-landing/config/punePages';
-import { Container } from '@/components/ui/Container';
-
-/** Maps a service-detail path (this page's own served-in-Pune equivalent, per punePages' serviceDetailLink) back to that Pune page. */
-function findPunePageFor(servicePath: string) {
-  return punePageList.find((p) => p.serviceDetailLink?.href === servicePath);
-}
+import { SERVICE_LANDING_PATHS } from '../config/landingPaths';
 
 export function ServicePage() {
   const { categoryId, serviceId } = useParams<{ categoryId: string; serviceId: string }>();
   const { getService, getCategory, getRelatedServices } = useServices();
 
   if (!serviceId || !categoryId) return <Navigate to="/services" replace />;
+
+  // Consolidated into a Pune landing page: the server answers with a 301 (vercel.json); this
+  // covers in-app navigation to an old URL.
+  const landingPath = SERVICE_LANDING_PATHS[serviceId];
+  if (landingPath) return <Navigate to={landingPath} replace />;
 
   const service = getService(serviceId);
   const category = getCategory(categoryId);
@@ -30,7 +29,6 @@ export function ServicePage() {
   const relatedServices = getRelatedServices(service.id);
   const heroImage = serviceImages[service.imageKey];
   const path = `/services/${category.slug}/${service.slug}`;
-  const punePage = findPunePageFor(path);
 
   return (
     <div className="kargar-site kb-site">
@@ -47,24 +45,7 @@ export function ServicePage() {
       />
       <Header activePath={path} />
       <main id="main-content" tabIndex={-1}>
-        <ServiceLayout
-          service={service}
-          category={category}
-          relatedServices={relatedServices}
-        />
-        {punePage && (
-          <section className="py-12 bg-white border-t border-slate-100">
-            <Container size="md" className="text-center">
-              <p className="text-slate-600">
-                Looking for {service.title.toLowerCase()} specifically in Pune? See our{' '}
-                <Link to={punePage.path} className="text-orange-600 font-semibold hover:text-orange-700 underline underline-offset-2">
-                  {punePage.h1}
-                </Link>{' '}
-                page for local coverage and FAQs.
-              </p>
-            </Container>
-          </section>
-        )}
+        <ServiceLayout service={service} category={category} relatedServices={relatedServices} />
       </main>
       <Footer />
     </div>

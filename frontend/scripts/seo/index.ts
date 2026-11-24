@@ -15,6 +15,7 @@ import { validateAltText } from './validate-alt-text';
 import { validateSchemaData } from './validate-schema';
 import { checkLinks } from './check-links';
 import { validateRouteCoverage } from './validate-route-coverage';
+import { validateGovernance } from './validate-governance';
 import { generateReport } from './seo-report';
 
 import { writeFileSync, readFileSync } from 'node:fs';
@@ -55,7 +56,11 @@ async function main() {
   const rootDir = resolve('../..').replace(/[/\\]$/, '');
   const appTsxSource = readFileSync(resolve('../../src/App.tsx'), 'utf8');
 
+  const governance = validateGovernance();
+  governance.warnings.forEach((w) => { console.warn(`[seo] validate-governance warning: ${w}`); });
+
   const results = [
+    runValidator('validate-governance', governance.errors),
     runValidator('validate-canonicals', validateCanonicals()),
     runValidator('validate-metadata', validateMetadata()),
     runValidator('validate-headings', validateHeadings(rootDir)),

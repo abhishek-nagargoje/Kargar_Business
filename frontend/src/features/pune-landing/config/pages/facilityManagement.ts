@@ -1,5 +1,6 @@
 import type { PuneLandingPageContent } from '../../domain/types';
 import { heroImages } from '../heroImages';
+import { REVIEWED_2026_11_17, REVIEWED_2026_11_24 } from '../review';
 
 const PILLAR = { label: 'Facility Management Pune', href: '/facility-management-company-pune' };
 
@@ -24,8 +25,8 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
       'One accountable partner for the people and systems that keep a property running — housekeeping, security, technical maintenance and support services — organised under a single site structure.',
     heroImage: heroImages.building,
     intro: [
-      'KARGAR Facility Management (Kargar Business Services Pvt. Ltd.) is an integrated facility management company based in Baner, Pune. We serve residential societies, commercial complexes, corporate offices, educational institutes, healthcare facilities and manufacturing sites — and we were recognised by the Hon’ble Prime Minister of India in 2024 with the Punyashlok Ahilya Devi Holkar Woman Startup Award as a women-led company in a traditionally male-dominated industry.',
-      'The reason clients move to integrated facility management is simple: dealing with multiple vendors, unstable teams and unmanaged expenses costs time, money and effort. We replace that with one organisation for the site — the right mix of skilled, semi-skilled and white-collar roles under a facility or site manager — and one point of accountability.',
+      'KARGAR is an integrated facility management company in Pune. We combine housekeeping, security, technical maintenance and support staff under one contract and one site manager, for housing societies, offices, commercial buildings, institutes, healthcare facilities and plants across Pune and Pimpri-Chinchwad. If you are weighing a move from several vendors to one contract, [request an integrated facility management proposal](/contact-us#contact-form): we survey the site and propose the org structure, scope and reporting.',
+      'Clients usually move to integrated facility management because dealing with multiple vendors, unstable teams and unmanaged expenses costs time, money and effort. We replace that with one organisation for the site, the right mix of skilled, semi-skilled and white-collar roles under a facility or site manager, and one point of accountability. KARGAR (Kargar Business Services Pvt. Ltd.) is based in Baner and was recognised by the Hon’ble Prime Minister of India in 2024 with the Punyashlok Ahilya Devi Holkar Woman Startup Award, as a women-led company in a traditionally male-dominated industry.',
     ],
     sections: [
       {
@@ -104,13 +105,20 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
         ],
       },
       {
-        kind: 'checklist',
-        heading: 'How to Evaluate a Facility Management Company in Pune',
-        groups: [
-          { title: 'Structure', items: ['Is there a named site or facility manager?', 'Is the org structure sized to your property?', 'Who escalates above the site team?'] },
-          { title: 'Proof', items: ['Can they show checklists and reports from live sites?', 'Can they speak to client retention and staff turnover?', 'Are PF and ESIC deposits provable?'] },
-          { title: 'Fit', items: ['Do they serve your property type already?', 'Can services start small and expand?', 'Is the transition from your current vendors planned?'] },
+        kind: 'table',
+        heading: 'Who Runs Your Site and How Escalation Works',
+        intro: 'Under an integrated contract you deal with one site manager, not a separate contact for each service. This is how responsibility is arranged on a typical KARGAR site; the exact structure is sized to your property.',
+        caption: 'Roles in a KARGAR integrated facility management contract and who to contact for what',
+        columns: ['Role', 'What they do', 'Contact them for'],
+        rows: [
+          ['Facility or site manager (KARGAR)', 'Owns the site relationship and coordinates every service in the contract', 'Day-to-day requests, scope changes and your first escalation'],
+          ['Service supervisors (KARGAR)', 'Run the housekeeping and security teams shift by shift against checklists and post instructions', 'Issues within one service during a shift'],
+          ['Technicians and operators (KARGAR)', 'Carry out planned maintenance and run plant such as STP/WTP', 'Through the site manager or helpdesk'],
+          ['Helpdesk and ticketing (where included)', 'Logs requests and complaints and tracks each one to closure', 'Raising and following up a request'],
+          ['KARGAR regional management', 'Reviews site performance and acts on escalations the site team cannot resolve', 'Escalation above the site manager'],
+          ['Your nominated contact', 'Approves scope changes and receives reports', 'Internal sign-off on your side'],
         ],
+        note: 'Reporting is daily, weekly and monthly, and statutory documentation and registers are maintained as part of support services. See how each service works on the [housekeeping](/housekeeping-services-pune), [security](/security-services-pune) and [facility maintenance](/facility-maintenance-services-pune) pages.',
       },
     ],
     faqs: [
@@ -118,9 +126,8 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
       { question: 'What is integrated facility management?', answer: 'Integrated facility management means one provider runs several site services, such as housekeeping, security, technical maintenance and support, under one contract, one site manager and one reporting line, instead of separate vendors for each.' },
       { question: 'Can I use KARGAR for just one service?', answer: 'Yes. Housekeeping, security, maintenance and staffing can be engaged individually or combined into integrated facility management.' },
       { question: 'What does facility management cost in Pune?', answer: 'There is no standard rate. Cost depends mainly on the roles and headcount, shifts, the services included, whether materials and consumables are part of the scope, and maintenance coverage (AMC, on-call or resident technicians). We quote after a site survey.' },
-      { question: 'Which sectors does KARGAR serve?', answer: 'Residential societies, commercial complexes, corporate offices, educational institutes, healthcare facilities and manufacturing.' },
+      { question: 'Who is my point of contact under an integrated contract?', answer: 'A KARGAR facility or site manager, who coordinates every service in the contract. Escalations the site team cannot resolve go to KARGAR’s regional management.' },
       { question: 'Where is KARGAR based?', answer: 'Our office is in Unity Commercial, near Amar Business Zone, Baner, Pune. We deploy teams to sites across Pune and Pimpri-Chinchwad.' },
-      { question: 'How do I request a facility management proposal?', answer: 'Share your property type, size and the services you need through our contact page. We will arrange a site survey and send a written proposal.' },
     ],
     serviceDetailLink: { label: 'our full range of services', href: '/services' },
     relatedLinks: [
@@ -130,10 +137,12 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
       { label: 'Facility Maintenance Services', href: '/facility-maintenance-services-pune' },
       { label: 'Company Profile', href: '/company-profile' },
     ],
-    ctaHeading: 'Get a Facility Management Proposal',
-    ctaText: 'Tell us about your property and the services you need. We will survey the site and propose an org structure and scope.',
-    ctaLabel: 'Contact Our Facility Team',
+    ctaHeading: 'Request an Integrated Facility Management Proposal',
+    ctaText: 'Tell us the property type, the services you want combined and how many vendors run the site today. We will survey the site and propose the org structure, scope and transition plan.',
+    ctaLabel: 'Request an Integrated FM Proposal',
     serviceType: 'Integrated Facility Management',
+    enquiryService: 'facility-management',
+    review: REVIEWED_2026_11_24,
   },
 
   // ───────────────────────────── SOCIETIES ─────────────────────────────
@@ -213,6 +222,9 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
     ctaText: 'Share the number of buildings, flats and amenities, and what your committee wants to hand over. We will propose a structure.',
     ctaLabel: 'Talk to KARGAR',
     serviceType: 'Residential Society Facility Management',
+    enquiryService: 'society-management',
+    showInFooter: true,
+    review: REVIEWED_2026_11_17,
   },
 
   // ───────────────────────────── OFFICE FM ─────────────────────────────
@@ -283,6 +295,8 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
     ctaHeading: 'Simplify How Your Office Is Run',
     ctaText: 'Tell us which vendors and roles you currently manage, and we will propose a single, combined scope.',
     serviceType: 'Office Facility Management',
+    enquiryService: 'facility-management',
+    review: REVIEWED_2026_11_17,
   },
 
   // ───────────────────────────── COMMERCIAL FM ─────────────────────────────
@@ -357,6 +371,8 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
     ctaHeading: 'Request a Building Audit',
     ctaText: 'Share your building size, tenant count and current vendor arrangements, and we will plan a combined scope.',
     serviceType: 'Commercial Facility Management',
+    enquiryService: 'facility-management',
+    review: REVIEWED_2026_11_17,
   },
 
   // ───────────────────────────── STAFFING ─────────────────────────────
@@ -427,5 +443,8 @@ export const facilityManagementPages: PuneLandingPageContent[] = [
     ctaText: 'Share the roles, headcount and shifts you need, and we will send a staffing proposal.',
     ctaLabel: 'Request Manpower Proposal',
     serviceType: 'Facility Staffing',
+    enquiryService: 'staffing',
+    showInFooter: true,
+    review: REVIEWED_2026_11_17,
   },
 ];

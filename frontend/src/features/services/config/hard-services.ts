@@ -8,14 +8,14 @@ export const hardServices: Record<string, Service> = {
     slug: 'electrical-maintenance',
     catalogSlug: 'electrical-systems-maintenance',
     title: 'Electrical Maintenance',
-    shortDescription: 'Comprehensive electrical system maintenance and troubleshooting.',
-    overview: 'Ensure the safety and reliability of your electrical infrastructure with our comprehensive electrical maintenance services. Our trained technicians handle everything from routine inspections and preventive maintenance to complex troubleshooting and emergency repairs. We cover lighting systems, power distribution, backup generators, and more, ensuring uninterrupted operations for your facility.',
+    shortDescription: 'Preventive and breakdown maintenance of LT panels, DBs, cabling, UPS systems and DG sets.',
+    overview: 'Planned preventive maintenance of LT panels, distribution boards, cabling, UPS rooms, UPS and battery systems, with DG operation and maintenance and coordinated breakdown support, for societies, offices, commercial buildings and plants in Pune.',
     iconKey: 'zap',
     imageKey: 'electrical',
     seo: {
       title: 'Electrical Maintenance',
-      description: 'Reliable electrical maintenance, troubleshooting, and preventive care for LT/HT panels, transformers, and backup generators across enterprise facilities.',
-      keywords: ['Electrical Maintenance', 'LT Panels', 'HT Panels', 'Preventive Maintenance', 'Facility Management'],
+      description: 'Electrical maintenance for LT panels, DBs, cabling, UPS rooms, batteries and DG sets: preventive schedules per OEM and coordinated breakdown support.',
+      keywords: ['Electrical Maintenance', 'LT Panels', 'DG Maintenance', 'Preventive Maintenance'],
     },
     serviceType: 'technical',
     layoutPreset: 'enterpriseTechnical',
@@ -28,32 +28,32 @@ export const hardServices: Record<string, Service> = {
       scopeOfWork: [
         { title: 'Preventive Maintenance', description: 'Regular inspections to identify potential issues.' },
         { title: 'Breakdown Coordination', description: 'Faults outside the preventive schedule handled through an agreed escalation process.' },
-        { title: 'System Upgrades', description: 'Modernization of outdated electrical panels.' },
-        { title: 'Energy Optimization', description: 'Solutions to reduce power consumption.' }
+        { title: 'DG Operation', description: 'Operation and maintenance of diesel generator sets.' },
+        { title: 'UPS and Battery Care', description: 'UPS and battery maintenance per OEM schedules.' }
       ],
       equipmentMaintained: [
         { name: 'LT Panels', iconKey: 'server' },
-        { name: 'HT Panels', iconKey: 'server' },
-        { name: 'Transformers', iconKey: 'zap' },
-        { name: 'DG Synchronization', iconKey: 'power' },
-        { name: 'Cabling & Earthing', iconKey: 'activity' }
+        { name: 'Distribution Boards', iconKey: 'server' },
+        { name: 'UPS & Batteries', iconKey: 'zap' },
+        { name: 'DG Sets', iconKey: 'power' },
+        { name: 'Cabling', iconKey: 'activity' }
       ]
     },
     capabilities: ['preventive-maintenance'],
     whyChooseUs: [
       { title: 'Trained Technicians', description: 'Skill and safety training throughout the year, delivered by KARGAR’s Field Trainers and Quality Managers.', iconKey: 'award' },
       { title: 'OEM-Aligned Maintenance', description: 'Preventive maintenance follows OEM schedules for each asset.', iconKey: 'clipboard-check' },
-      { title: 'Energy Savings', description: 'Proven strategies to reduce overall power consumption.', iconKey: 'trending-down' }
+      { title: 'Breakdown Coordination', description: 'Faults outside the schedule handled through an agreed escalation path, with OEMs where needed.', iconKey: 'trending-down' }
     ],
     industries: [
       { title: 'Corporate Offices', iconKey: 'building' },
       { title: 'Commercial Buildings', iconKey: 'building-2' },
       { title: 'Residential Societies', iconKey: 'home' },
       { title: 'Manufacturing', iconKey: 'factory' },
-      { title: 'Warehouses', iconKey: 'package' }
+      { title: 'Educational Institutes', iconKey: 'package' }
     ],
     faqs: [
-      { question: 'How often should electrical maintenance be performed?', answer: 'We recommend comprehensive inspections at least annually, with more frequent checks for critical systems.' },
+      { question: 'How often should electrical maintenance be performed?', answer: 'Preventive schedules follow OEM recommendations and how heavily each system is used; DG sets and UPS batteries are usually checked more often than general distribution.' },
       { question: 'What happens if there is an electrical breakdown?', answer: 'Breakdowns are coordinated through an agreed escalation process, with OEMs or specialist vendors brought in where required.' },
       { question: 'Do you handle backup generator maintenance?', answer: 'Yes, generator maintenance is a key part of our electrical services to ensure reliable backup power.' }
     ],
@@ -69,42 +69,39 @@ export const hardServices: Record<string, Service> = {
     slug: 'hvac-maintenance',
     catalogSlug: 'hvac-maintenance',
     title: 'HVAC Maintenance',
-    shortDescription: 'Expert heating, ventilation, and air conditioning services.',
-    overview: 'Maintain optimal indoor air quality and temperature with our expert HVAC maintenance services. We provide comprehensive care for all types of heating, ventilation, and air conditioning systems. From routine filter changes and coil cleaning to complex compressor repairs and system balancing, our services ensure your environment remains comfortable and energy-efficient year-round.',
+    shortDescription: 'Planned servicing and breakdown coordination for AHUs, FCUs and VRV/VRF systems.',
+    overview: 'Planned preventive maintenance of air handling units (AHU), fan coil units (FCU) and VRV/VRF systems on OEM schedules, with breakdown repairs coordinated with the OEM or a specialist vendor where needed.',
     iconKey: 'wind',
     imageKey: 'hvac',
     seo: {
-      title: 'Commercial HVAC Maintenance',
-      description: 'Professional HVAC servicing, repair, and preventive maintenance for chillers, AHUs, and cooling towers across commercial and industrial facilities.',
+      title: 'HVAC Maintenance Scope',
+      description: 'HVAC maintenance for AHUs, FCUs and VRV/VRF systems: planned preventive servicing per OEM schedules and coordinated breakdown support.',
       keywords: ['HVAC Maintenance', 'Mechanical Maintenance', 'Commercial Maintenance', 'Preventive Maintenance'],
     },
     serviceType: 'technical',
     layoutPreset: 'enterpriseTechnical',
     marketing: {
-      headline: 'Optimized Air Quality. Maximum Efficiency.',
-      summary: 'Ensure a healthy, comfortable, and energy-efficient environment for your workforce.',
+      headline: 'Planned HVAC Care, Not Breakdown Calls.',
+      summary: 'Keep AHUs, FCUs and VRV/VRF systems on a preventive schedule, with breakdowns coordinated through one team.',
       ctaText: 'Schedule HVAC Service'
     },
     operations: {
       scopeOfWork: [
-        { title: 'Scheduled Servicing', description: 'Routine cleaning, lubrication, and calibration.' },
-        { title: 'Air Quality Testing', description: 'Monitoring and improving indoor air quality.' },
-        { title: 'System Balancing', description: 'Ensuring even temperature distribution.' },
-        { title: 'Duct Cleaning', description: 'Thorough cleaning to improve airflow.' }
+        { title: 'Planned Servicing', description: 'Preventive maintenance of AHUs, FCUs and VRV/VRF systems per OEM schedules.' },
+        { title: 'Service Records', description: 'Each visit recorded against the asset list.' },
+        { title: 'Breakdown Coordination', description: 'Faults handled through an agreed escalation path, with the OEM or a specialist where needed.' }
       ],
       equipmentMaintained: [
         { name: 'VRV / VRF Systems', iconKey: 'wind' },
-        { name: 'Chillers', iconKey: 'thermometer-snowflake' },
-        { name: 'Cooling Towers', iconKey: 'droplet' },
-        { name: 'AHU & FCU', iconKey: 'fan' },
-        { name: 'Cassette & Split ACs', iconKey: 'box' }
+        { name: 'Air Handling Units (AHU)', iconKey: 'fan' },
+        { name: 'Fan Coil Units (FCU)', iconKey: 'box' }
       ]
     },
     capabilities: ['preventive-maintenance'],
     whyChooseUs: [
-      { title: 'Energy Efficiency', description: 'We tune your systems to operate at peak efficiency.', iconKey: 'battery-charging' },
-      { title: 'Health & Safety', description: 'Prioritizing indoor air quality for occupant well-being.', iconKey: 'heart' },
-      { title: 'Comprehensive Care', description: 'From split ACs to massive commercial chillers.', iconKey: 'maximize' }
+      { title: 'OEM-Aligned Schedules', description: 'Visit frequency follows OEM recommendations and how the site is used.', iconKey: 'battery-charging' },
+      { title: 'Trained Technicians', description: 'Skill and safety training throughout the year from KARGAR’s Field Trainers and Quality Managers.', iconKey: 'heart' },
+      { title: 'One Maintenance Team', description: 'HVAC can sit in the same contract as electrical, DG, plumbing and STP maintenance.', iconKey: 'maximize' }
     ],
     industries: [
       { title: 'Corporate Offices', iconKey: 'building' },
@@ -114,9 +111,8 @@ export const hardServices: Record<string, Service> = {
       { title: 'Manufacturing', iconKey: 'factory' }
     ],
     faqs: [
-      { question: 'What is included in routine HVAC maintenance?', answer: 'Changing filters, cleaning coils, checking refrigerant levels, and testing controls.' },
-      { question: 'How can I improve my building\'s indoor air quality?', answer: 'Regular duct cleaning, upgrading to high-efficiency filters, and proper ventilation.' },
-      { question: 'Do you service commercial chiller systems?', answer: 'Yes, our technicians are highly experienced in servicing large-scale commercial chillers.' }
+      { question: 'Which HVAC equipment do you maintain?', answer: 'Air handling units (AHU), fan coil units (FCU) and VRV/VRF systems.' },
+      { question: 'How are HVAC breakdowns handled?', answer: 'Through an agreed escalation path, with the OEM or a specialist vendor brought in where their involvement is required.' }
     ],
     relationships: {
       relatedServices: ['electrical']

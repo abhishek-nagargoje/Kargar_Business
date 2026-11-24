@@ -7,6 +7,7 @@ import type { ServiceBlockProps } from '../registry/BlockRenderer';
 import { useServices } from '../hooks/useServices';
 import * as LucideIcons from 'lucide-react';
 import type { Service } from '../domain/service.types';
+import { serviceHref } from '../config/landingPaths';
 
 interface ExtendedEntity {
   industries?: { title: string; iconKey?: string }[] | string[];
@@ -98,7 +99,7 @@ export const CollectionSection = memo(function CollectionSection({ entity, block
              <SectionHeading title={title} eyebrow={eyebrow} align="center" className="mb-12" />
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                {services.map((service) => (
-                 <Link key={service.id} to={`/services/${service.categoryId}-services/${service.slug}`} className="group block bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                 <Link key={service.id} to={serviceHref(`${service.categoryId}-services`, service.slug)} className="group block bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                    <div className="p-8">
                      <div className="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center text-navy-900 mb-6 group-hover:bg-navy-900 group-hover:text-white transition-colors">
                        <LucideIcons.Layers size={28} />

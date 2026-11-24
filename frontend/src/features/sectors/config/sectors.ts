@@ -76,7 +76,7 @@ export const sectorProfiles: SectorProfile[] = [
     security:
       'Trained security guards for reception, access points and after-hours cover, with front desk staff where the office needs them. See [security services in Pune](/security-services-pune).',
     technical:
-      'Scheduled maintenance of [HVAC systems](/services/hard-services/hvac-maintenance) such as AHUs, FCUs and VRV/VRF units, UPS rooms and [electrical distribution](/services/hard-services/electrical-maintenance), plus BMS monitoring where a system is installed.',
+      'Scheduled maintenance of [HVAC systems](/hvac-maintenance-services-pune) such as AHUs, FCUs and VRV/VRF units, UPS rooms and [electrical distribution](/electrical-maintenance-services-pune), plus BMS monitoring where a system is installed.',
     approach:
       'A site team set up around your working hours, with helpdesk and ticket management, mailroom operations and daily, weekly and monthly reporting available as support services. See [office facility management in Pune](/office-facility-management-pune).',
   },

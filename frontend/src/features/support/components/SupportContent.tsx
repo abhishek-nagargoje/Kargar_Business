@@ -107,7 +107,7 @@ export function SupportContent() {
               <p className="text-sm">Closed on Sundays</p>
             </ChannelCard>
             <ChannelCard icon={MapPin} title="Visit our office">
-              <p>301, 3rd Floor, Unity Commercial, Baner, Pune, Maharashtra 411045</p>
+              <p>{contactDetails.address.display}</p>
             </ChannelCard>
           </div>
         </Container>

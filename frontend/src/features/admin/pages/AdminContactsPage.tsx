@@ -107,7 +107,7 @@ export default function AdminContactsPage() {
             <thead className="border-b border-gray-200 bg-gray-50 text-xs uppercase text-gray-500">
               <tr>
                 <th className="px-6 py-4 font-semibold">Name & Company</th>
-                <th className="px-6 py-4 font-semibold">Subject</th>
+                <th className="px-6 py-4 font-semibold">Service requested</th>
                 <th className="px-6 py-4 font-semibold">Date</th>
                 <th className="px-6 py-4 font-semibold">Status</th>
                 <th className="px-6 py-4 text-right font-semibold">Actions</th>
@@ -127,7 +127,10 @@ export default function AdminContactsPage() {
                       <div className="font-medium text-navy-900">{contact.name}</div>
                       <div className="text-xs text-gray-500">{contact.company ?? 'No company provided'}</div>
                     </td>
-                    <td className="px-6 py-4 capitalize">{contact.subject}</td>
+                    <td className="px-6 py-4">
+                      <div className="text-navy-900">{contact.enquiry.serviceLabel ?? contact.subject}</div>
+                      {contact.enquiry.team ? <div className="text-xs text-gray-500">{contact.enquiry.team} team</div> : null}
+                    </td>
                     <td className="whitespace-nowrap px-6 py-4">{formatDate(contact.created_at)}</td>
                     <td className="px-6 py-4">
                       <Badge variant={statusVariant(contact.status)}>{titleCase(contact.status)}</Badge>
@@ -190,9 +193,45 @@ export default function AdminContactsPage() {
               </div>
             </div>
 
+            <div className="grid gap-4 border-t border-gray-100 pt-6 sm:grid-cols-2">
+              <div>
+                <h3 className="mb-1 text-sm font-semibold uppercase tracking-wider text-gray-500">Service requested</h3>
+                <p className="font-medium text-navy-900">{selectedContact.enquiry.serviceLabel ?? selectedContact.subject}</p>
+              </div>
+              <div>
+                <h3 className="mb-1 text-sm font-semibold uppercase tracking-wider text-gray-500">Team</h3>
+                <p className="text-navy-900">{selectedContact.enquiry.team ?? 'Not recorded'}</p>
+              </div>
+              <div>
+                <h3 className="mb-1 text-sm font-semibold uppercase tracking-wider text-gray-500">Enquiry page</h3>
+                <p className="break-all text-navy-900">{selectedContact.enquiry.enquiryPage ?? 'Contact page (direct)'}</p>
+              </div>
+              <div>
+                <h3 className="mb-1 text-sm font-semibold uppercase tracking-wider text-gray-500">First page visited</h3>
+                <p className="break-all text-navy-900">
+                  {selectedContact.enquiry.landingPage ?? 'Not recorded'}
+                  {selectedContact.enquiry.referrerHost ? ` (from ${selectedContact.enquiry.referrerHost})` : ''}
+                </p>
+              </div>
+            </div>
+
+            {selectedContact.enquiry.details.length > 0 ? (
+              <div className="border-t border-gray-100 pt-6">
+                <h3 className="mb-2 text-sm font-semibold uppercase tracking-wider text-gray-500">Enquiry details</h3>
+                <dl className="grid gap-x-4 gap-y-2 sm:grid-cols-2">
+                  {selectedContact.enquiry.details.map(([label, value]) => (
+                    <div key={label}>
+                      <dt className="text-xs text-gray-500">{label}</dt>
+                      <dd className="text-navy-900">{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ) : null}
+
             <div className="border-t border-gray-100 pt-6">
               <h4 className="mb-1 text-sm font-semibold uppercase tracking-wider text-gray-500">Subject</h4>
-              <p className="font-medium capitalize text-navy-900">{selectedContact.subject}</p>
+              <p className="font-medium text-navy-900">{selectedContact.subject}</p>
             </div>
 
             <div className="border-t border-gray-100 pt-6">

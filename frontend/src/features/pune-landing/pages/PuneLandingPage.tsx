@@ -9,6 +9,7 @@ import { buttonVariants } from '@/components/ui/Button';
 import { Breadcrumb } from '@/features/services/components/Breadcrumb';
 import { useContactNavigation } from '@/features/services/hooks/useContactNavigation';
 import { useServices } from '@/features/services/hooks/useServices';
+import { serviceSlugForLandingPath } from '@/features/services/config/landingPaths';
 import { config } from '@/config';
 import { buildCanonicalUrl } from '@/lib/seo/canonical';
 import { buildFAQSchema } from '@/lib/seo/schema';
@@ -29,10 +30,9 @@ export function PuneLandingPage() {
 
   if (!content) return <Navigate to="/404" replace />;
 
-  // e.g. "/services/soft-services/housekeeping" -> "housekeeping". Media is tagged with the
-  // Supabase catalog slug, which can differ from the URL slug.
-  const detailSegments = content.serviceDetailLink?.href.split('/').filter(Boolean) ?? [];
-  const urlSlug = detailSegments.length === 3 ? detailSegments[2] : undefined;
+  // Media is tagged with the Supabase catalog slug of the service this page replaced
+  // (e.g. "/housekeeping-services-pune" -> "housekeeping"), which can differ from the URL slug.
+  const urlSlug = serviceSlugForLandingPath(content.path);
   const serviceSlug = urlSlug ? getService(urlSlug)?.catalogSlug : undefined;
 
   const breadcrumbItems = buildPuneBreadcrumbs(content);

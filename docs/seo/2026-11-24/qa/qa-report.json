@@ -1,0 +1,530 @@
+{
+  "ranAt": "2026-11-24T10:04:25.568Z",
+  "rows": [
+    {
+      "test": "retired URL redirect",
+      "url": "/services/hard-services/electrical-maintenance",
+      "expected": "301/308 → /electrical-maintenance-services-pune",
+      "actual": "308 → /electrical-maintenance-services-pune",
+      "pass": true
+    },
+    {
+      "test": "retired URL redirect",
+      "url": "/services/hard-services/hvac-maintenance",
+      "expected": "301/308 → /hvac-maintenance-services-pune",
+      "actual": "308 → /hvac-maintenance-services-pune",
+      "pass": true
+    },
+    {
+      "test": "retired URL redirect",
+      "url": "/services/soft-services/housekeeping",
+      "expected": "301/308 → /housekeeping-services-pune",
+      "actual": "308 → /housekeeping-services-pune",
+      "pass": true
+    },
+    {
+      "test": "retired URL redirect",
+      "url": "/services/soft-services/security-services",
+      "expected": "301/308 → /security-services-pune",
+      "actual": "308 → /security-services-pune",
+      "pass": true
+    },
+    {
+      "test": "sitemap excludes retired URL",
+      "url": "/services/hard-services/electrical-maintenance",
+      "expected": "absent",
+      "actual": "absent",
+      "pass": true
+    },
+    {
+      "test": "sitemap excludes retired URL",
+      "url": "/services/hard-services/hvac-maintenance",
+      "expected": "absent",
+      "actual": "absent",
+      "pass": true
+    },
+    {
+      "test": "sitemap excludes retired URL",
+      "url": "/services/soft-services/housekeeping",
+      "expected": "absent",
+      "actual": "absent",
+      "pass": true
+    },
+    {
+      "test": "sitemap excludes retired URL",
+      "url": "/services/soft-services/security-services",
+      "expected": "absent",
+      "actual": "absent",
+      "pass": true
+    },
+    {
+      "test": "sitemap includes priority URL",
+      "url": "/security-services-pune",
+      "expected": "present",
+      "actual": "present",
+      "pass": true
+    },
+    {
+      "test": "sitemap includes priority URL",
+      "url": "/housekeeping-services-pune",
+      "expected": "present",
+      "actual": "present",
+      "pass": true
+    },
+    {
+      "test": "sitemap includes priority URL",
+      "url": "/facility-management-company-pune",
+      "expected": "present",
+      "actual": "present",
+      "pass": true
+    },
+    {
+      "test": "sitemap includes priority URL",
+      "url": "/electrical-maintenance-services-pune",
+      "expected": "present",
+      "actual": "present",
+      "pass": true
+    },
+    {
+      "test": "sitemap includes priority URL",
+      "url": "/hvac-maintenance-services-pune",
+      "expected": "present",
+      "actual": "present",
+      "pass": true
+    },
+    {
+      "test": "sitemap includes priority URL",
+      "url": "/facility-maintenance-services-pune",
+      "expected": "present",
+      "actual": "present",
+      "pass": true
+    },
+    {
+      "test": "sitemap includes priority URL",
+      "url": "/housekeeping-staff-pune",
+      "expected": "present",
+      "actual": "present",
+      "pass": true
+    },
+    {
+      "test": "sitemap includes priority URL",
+      "url": "/contact-us",
+      "expected": "present",
+      "actual": "present",
+      "pass": true
+    },
+    {
+      "test": "raw HTML (no JS)",
+      "url": "/security-services-pune",
+      "expected": "title, main copy and internal links in initial HTML",
+      "actual": "title \"Security Guard Services in Pune | KARGAR Facility Management\", 1698 words in <main>, 20 internal links",
+      "pass": true
+    },
+    {
+      "test": "raw HTML (no JS)",
+      "url": "/housekeeping-services-pune",
+      "expected": "title, main copy and internal links in initial HTML",
+      "actual": "title \"Housekeeping Services in Pune | KARGAR Facility Management\", 1808 words in <main>, 37 internal links",
+      "pass": true
+    },
+    {
+      "test": "raw HTML (no JS)",
+      "url": "/facility-management-company-pune",
+      "expected": "title, main copy and internal links in initial HTML",
+      "actual": "title \"Facility Management in Pune | KARGAR Facility Management\", 1471 words in <main>, 34 internal links",
+      "pass": true
+    },
+    {
+      "test": "raw HTML (no JS)",
+      "url": "/electrical-maintenance-services-pune",
+      "expected": "title, main copy and internal links in initial HTML",
+      "actual": "title \"Electrical Maintenance Pune | KARGAR Facility Management\", 853 words in <main>, 18 internal links",
+      "pass": true
+    },
+    {
+      "test": "raw HTML (no JS)",
+      "url": "/hvac-maintenance-services-pune",
+      "expected": "title, main copy and internal links in initial HTML",
+      "actual": "title \"HVAC Maintenance Pune | KARGAR Facility Management\", 823 words in <main>, 15 internal links",
+      "pass": true
+    },
+    {
+      "test": "raw HTML (no JS)",
+      "url": "/facility-maintenance-services-pune",
+      "expected": "title, main copy and internal links in initial HTML",
+      "actual": "title \"Facility Maintenance in Pune | KARGAR Facility Management\", 752 words in <main>, 23 internal links",
+      "pass": true
+    },
+    {
+      "test": "raw HTML (no JS)",
+      "url": "/housekeeping-staff-pune",
+      "expected": "title, main copy and internal links in initial HTML",
+      "actual": "title \"Housekeeping Manpower in Pune | KARGAR Facility Management\", 803 words in <main>, 18 internal links",
+      "pass": true
+    },
+    {
+      "test": "raw HTML (no JS)",
+      "url": "/",
+      "expected": "title, main copy and internal links in initial HTML",
+      "actual": "title \"Facility Management Company | KARGAR Facility Management\", 976 words in <main>, 42 internal links",
+      "pass": true
+    },
+    {
+      "test": "raw HTML (no JS)",
+      "url": "/contact-us",
+      "expected": "title, main copy and internal links in initial HTML",
+      "actual": "title \"Contact Us in Baner, Pune | KARGAR Facility Management\", 308 words in <main>, 3 internal links",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 360px",
+      "url": "/security-services-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 360px",
+      "url": "/housekeeping-services-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 360px",
+      "url": "/facility-management-company-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 360px",
+      "url": "/electrical-maintenance-services-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 360px",
+      "url": "/hvac-maintenance-services-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 360px",
+      "url": "/facility-maintenance-services-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 360px",
+      "url": "/housekeeping-staff-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 360px",
+      "url": "/",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 360px",
+      "url": "/contact-us",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 2, CTA false, min body font 13px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 1280px",
+      "url": "/security-services-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 1280px",
+      "url": "/housekeeping-services-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 1280px",
+      "url": "/facility-management-company-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 1280px",
+      "url": "/electrical-maintenance-services-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 1280px",
+      "url": "/hvac-maintenance-services-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 1280px",
+      "url": "/facility-maintenance-services-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 1280px",
+      "url": "/housekeeping-staff-pune",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 1280px",
+      "url": "/",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 3, CTA true, min body font 12px",
+      "pass": true
+    },
+    {
+      "test": "layout+crawl 1280px",
+      "url": "/contact-us",
+      "expected": "200, 1 H1, self canonical, no overflow, tel link, visible CTA",
+      "actual": "status 200, H1 1, canonical self, overflow 0px, tel 2, CTA false, min body font 13px",
+      "pass": true
+    },
+    {
+      "test": "mobile security journey: service preselected",
+      "url": "/security-services-pune",
+      "expected": "security",
+      "actual": "security",
+      "pass": true
+    },
+    {
+      "test": "mobile security journey: lead record",
+      "url": "/security-services-pune",
+      "expected": "enquiry_service=security, team=Security, CTA page + landing page=/security-services-pune, details saved",
+      "actual": "enquiry_service=security, team=Security, service=/security-services-pune, landing=/security-services-pune, details={\"Locality or area\":\"Baner\",\"Hours of coverage\":\"Round the clock (24 hours)\"}, subject=\"Proposal request: Security guard services\"",
+      "pass": true
+    },
+    {
+      "test": "mobile security journey: notification email",
+      "url": "/security-services-pune",
+      "expected": "message contains service, team, email, phone, details; subject prefixed with team",
+      "actual": "subject \"[Security] Proposal request: Security guard services\"; message has service true, email true, phone true, detail true",
+      "pass": true
+    },
+    {
+      "test": "mobile security journey: success message",
+      "url": "/contact-us",
+      "expected": "visible confirmation naming the team",
+      "actual": "Thank you. Your enquiry for security guard services has been sent to our security team. We will contact you to discuss the next step, usuall",
+      "pass": true
+    },
+    {
+      "test": "mobile security journey: analytics has no PII",
+      "url": "/contact-us",
+      "expected": "no name, email or phone in dataLayer",
+      "actual": "none found (tracking disabled outside production)",
+      "pass": true
+    },
+    {
+      "test": "routing housekeeping: service preselected",
+      "url": "/housekeeping-services-pune",
+      "expected": "housekeeping",
+      "actual": "housekeeping",
+      "pass": true
+    },
+    {
+      "test": "routing housekeeping: lead record",
+      "url": "/housekeeping-services-pune",
+      "expected": "enquiry_service=housekeeping, team=Housekeeping, CTA page + landing page=/housekeeping-services-pune, details saved",
+      "actual": "enquiry_service=housekeeping, team=Housekeeping, service=/housekeeping-services-pune, landing=/housekeeping-services-pune, details={\"Locality or area\":\"Baner\",\"Approximate area to be cleaned (sq ft)\":\"12000\"}, subject=\"Proposal request: Housekeeping contract (managed service)\"",
+      "pass": true
+    },
+    {
+      "test": "routing housekeeping: notification email",
+      "url": "/housekeeping-services-pune",
+      "expected": "message contains service, team, email, phone, details; subject prefixed with team",
+      "actual": "subject \"[Housekeeping] Proposal request: Housekeeping contract (managed service)\"; message has service true, email true, phone true, detail true",
+      "pass": true
+    },
+    {
+      "test": "routing housekeeping: success message",
+      "url": "/contact-us",
+      "expected": "visible confirmation naming the team",
+      "actual": "Thank you. Your enquiry for housekeeping contract (managed service) has been sent to our housekeeping team. We will contact you to discuss t",
+      "pass": true
+    },
+    {
+      "test": "routing housekeeping: analytics has no PII",
+      "url": "/contact-us",
+      "expected": "no name, email or phone in dataLayer",
+      "actual": "none found (tracking disabled outside production)",
+      "pass": true
+    },
+    {
+      "test": "routing housekeeping-manpower: service preselected",
+      "url": "/housekeeping-staff-pune",
+      "expected": "housekeeping-manpower",
+      "actual": "housekeeping-manpower",
+      "pass": true
+    },
+    {
+      "test": "routing housekeeping-manpower: lead record",
+      "url": "/housekeeping-staff-pune",
+      "expected": "enquiry_service=housekeeping-manpower, team=Housekeeping, CTA page + landing page=/housekeeping-staff-pune, details saved",
+      "actual": "enquiry_service=housekeeping-manpower, team=Housekeeping, service=/housekeeping-staff-pune, landing=/housekeeping-staff-pune, details={\"Locality or area\":\"Baner\",\"Roles and numbers needed\":\"3 housekeeping staff\"}, subject=\"Proposal request: Housekeeping staff (manpower supply)\"",
+      "pass": true
+    },
+    {
+      "test": "routing housekeeping-manpower: notification email",
+      "url": "/housekeeping-staff-pune",
+      "expected": "message contains service, team, email, phone, details; subject prefixed with team",
+      "actual": "subject \"[Housekeeping] Proposal request: Housekeeping staff (manpower supply)\"; message has service true, email true, phone true, detail true",
+      "pass": true
+    },
+    {
+      "test": "routing housekeeping-manpower: success message",
+      "url": "/contact-us",
+      "expected": "visible confirmation naming the team",
+      "actual": "Thank you. Your enquiry for housekeeping staff (manpower supply) has been sent to our housekeeping team. We will contact you to discuss the ",
+      "pass": true
+    },
+    {
+      "test": "routing housekeeping-manpower: analytics has no PII",
+      "url": "/contact-us",
+      "expected": "no name, email or phone in dataLayer",
+      "actual": "none found (tracking disabled outside production)",
+      "pass": true
+    },
+    {
+      "test": "routing facility-management: service preselected",
+      "url": "/facility-management-company-pune",
+      "expected": "facility-management",
+      "actual": "facility-management",
+      "pass": true
+    },
+    {
+      "test": "routing facility-management: lead record",
+      "url": "/facility-management-company-pune",
+      "expected": "enquiry_service=facility-management, team=Facility management, CTA page + landing page=/facility-management-company-pune, details saved",
+      "actual": "enquiry_service=facility-management, team=Facility management, service=/facility-management-company-pune, landing=/facility-management-company-pune, details={\"Locality or area\":\"Baner\",\"Vendors running the site today\":\"Two or three vendors\"}, subject=\"Proposal request: Integrated facility management\"",
+      "pass": true
+    },
+    {
+      "test": "routing facility-management: notification email",
+      "url": "/facility-management-company-pune",
+      "expected": "message contains service, team, email, phone, details; subject prefixed with team",
+      "actual": "subject \"[Facility management] Proposal request: Integrated facility management\"; message has service true, email true, phone true, detail true",
+      "pass": true
+    },
+    {
+      "test": "routing facility-management: success message",
+      "url": "/contact-us",
+      "expected": "visible confirmation naming the team",
+      "actual": "Thank you. Your enquiry for integrated facility management has been sent to our facility management team. We will contact you to discuss the",
+      "pass": true
+    },
+    {
+      "test": "routing facility-management: analytics has no PII",
+      "url": "/contact-us",
+      "expected": "no name, email or phone in dataLayer",
+      "actual": "none found (tracking disabled outside production)",
+      "pass": true
+    },
+    {
+      "test": "routing hvac: service preselected",
+      "url": "/hvac-maintenance-services-pune",
+      "expected": "hvac",
+      "actual": "hvac",
+      "pass": true
+    },
+    {
+      "test": "routing hvac: lead record",
+      "url": "/hvac-maintenance-services-pune",
+      "expected": "enquiry_service=hvac, team=Technical maintenance, CTA page + landing page=/hvac-maintenance-services-pune, details saved",
+      "actual": "enquiry_service=hvac, team=Technical maintenance, service=/hvac-maintenance-services-pune, landing=/hvac-maintenance-services-pune, details={\"Locality or area\":\"Baner\",\"Approximate number of units\":\"4 AHUs, 30 FCUs\"}, subject=\"Proposal request: HVAC maintenance\"",
+      "pass": true
+    },
+    {
+      "test": "routing hvac: notification email",
+      "url": "/hvac-maintenance-services-pune",
+      "expected": "message contains service, team, email, phone, details; subject prefixed with team",
+      "actual": "subject \"[Technical maintenance] Proposal request: HVAC maintenance\"; message has service true, email true, phone true, detail true",
+      "pass": true
+    },
+    {
+      "test": "routing hvac: success message",
+      "url": "/contact-us",
+      "expected": "visible confirmation naming the team",
+      "actual": "Thank you. Your enquiry for HVAC maintenance has been sent to our technical maintenance team. We will contact you to discuss the next step, ",
+      "pass": true
+    },
+    {
+      "test": "routing hvac: analytics has no PII",
+      "url": "/contact-us",
+      "expected": "no name, email or phone in dataLayer",
+      "actual": "none found (tracking disabled outside production)",
+      "pass": true
+    },
+    {
+      "test": "routing electrical: service preselected",
+      "url": "/electrical-maintenance-services-pune",
+      "expected": "electrical",
+      "actual": "electrical",
+      "pass": true
+    },
+    {
+      "test": "routing electrical: lead record",
+      "url": "/electrical-maintenance-services-pune",
+      "expected": "enquiry_service=electrical, team=Technical maintenance, CTA page + landing page=/electrical-maintenance-services-pune, details saved",
+      "actual": "enquiry_service=electrical, team=Technical maintenance, service=/electrical-maintenance-services-pune, landing=/electrical-maintenance-services-pune, details={\"Locality or area\":\"Baner\",\"Key equipment and quantities, if known\":\"1 DG set, 2 UPS\"}, subject=\"Proposal request: Electrical maintenance\"",
+      "pass": true
+    },
+    {
+      "test": "routing electrical: notification email",
+      "url": "/electrical-maintenance-services-pune",
+      "expected": "message contains service, team, email, phone, details; subject prefixed with team",
+      "actual": "subject \"[Technical maintenance] Proposal request: Electrical maintenance\"; message has service true, email true, phone true, detail true",
+      "pass": true
+    },
+    {
+      "test": "routing electrical: success message",
+      "url": "/contact-us",
+      "expected": "visible confirmation naming the team",
+      "actual": "Thank you. Your enquiry for electrical maintenance has been sent to our technical maintenance team. We will contact you to discuss the next ",
+      "pass": true
+    },
+    {
+      "test": "routing electrical: analytics has no PII",
+      "url": "/contact-us",
+      "expected": "no name, email or phone in dataLayer",
+      "actual": "none found (tracking disabled outside production)",
+      "pass": true
+    },
+    {
+      "test": "validation: empty submit",
+      "url": "/contact-us",
+      "expected": "blocked, no request",
+      "actual": "0 requests",
+      "pass": true
+    },
+    {
+      "test": "DB failure path",
+      "url": "/contact-us",
+      "expected": "error shown, input kept, no email sent",
+      "actual": "\"Unable to submit your request. Please try again. You can also call us or email b\", name kept true, emails 0",
+      "pass": true
+    }
+  ]
+}

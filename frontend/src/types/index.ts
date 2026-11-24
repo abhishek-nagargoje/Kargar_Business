@@ -232,8 +232,23 @@ export interface ContactMessage {
   priority: 'low' | 'medium' | 'high' | 'urgent';
   assigned_to: string | null;
   notes: string | null;
+  /** Where the lead came from ("pune_landing_cta", "header", "website"...). */
+  source: string;
+  /** Requested service, receiving team, enquiry/landing pages and optional quote details. */
+  enquiry: LeadEnquiry;
   created_at: string;
   updated_at: string;
+}
+
+/** Read-only view of `contact_messages.metadata`, normalised for the admin UI. */
+export interface LeadEnquiry {
+  serviceLabel: string | null;
+  team: string | null;
+  enquiryPage: string | null;
+  landingPage: string | null;
+  referrerHost: string | null;
+  ctaPosition: string | null;
+  details: [string, string][];
 }
 
 /** Newsletter subscriber */

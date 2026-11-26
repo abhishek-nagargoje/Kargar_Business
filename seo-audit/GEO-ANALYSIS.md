@@ -57,7 +57,7 @@ Google Search ignores llms.txt. It neither helps nor harms Google visibility or 
 - [How many housekeeping staff do you need](https://www.kargarbusinessservices.com/resources/how-many-housekeeping-staff)
 
 ## Contact
-- Phone: +91 78218 44591 · Email: bd@kargar.co.in · 301, Unity Commercial, Baner, Pune 411045
+- Phone: +91 78218 44591 · Email: admin@kargar.co.in · 301, Unity Commercial, Baner, Pune 411045
 ```
 
 ## 5. Brand Mention Analysis

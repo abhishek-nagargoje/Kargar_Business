@@ -64,14 +64,14 @@ None.
 |---|---|---|
 | Business name | KARGAR Facility Management | Every visible page, JSON-LD Organization/LocalBusiness, meta |
 | Phone | +91-7821844591 / +91 78218 44591 | Header, homepage, contact page, privacy policy, `LocalBusiness` schema (updated 2026-09-23 — consolidated to a single number site-wide, replacing the prior primary/secondary pair) |
-| Email | bd@kargar.co.in | Header, contact page, privacy policy |
+| Email | admin@kargar.co.in | Header, contact page, privacy policy |
 | Address | 301, 3rd Floor, Unity Commercial, Baner, Pune, Maharashtra 411045, India | Contact page, privacy policy, `LocalBusiness` schema (identical string in all three) |
 
 **✅ NAP is fully consistent on the live, rendered site.**
 
 ⚠️ **Finding (not live, low priority):** `frontend/src/components/layout/Footer.tsx` and `frontend/src/components/layout/Navbar.tsx` — both confirmed unused/unimported anywhere in the app (dead code, verified via repo-wide import search) — contain a **generic placeholder phone (`+91 98765 43210`) and a different email (`info@kargarfm.com`)**, neither matching the real business info. Since these components never render, this does not affect the live site, GBP, schema, or any crawlable page. Recommend either deleting these two dead files or updating their placeholder data if they're ever reactivated — flagging rather than silently fixing, since deleting files wasn't requested and touching dead code is out of this task's stated scope.
 
-**[REQUIRES VERIFICATION]** Whether `bd@kargar.co.in` and both phone numbers above are the exact, current, officially-preferred contact details for public-facing local SEO purposes (vs. e.g. a dedicated sales line) — I can't verify this against your actual business records.
+**[REQUIRES VERIFICATION]** Whether `admin@kargar.co.in` and both phone numbers above are the exact, current, officially-preferred contact details for public-facing local SEO purposes (vs. e.g. a dedicated sales line) — I can't verify this against your actual business records.
 
 ---
 
@@ -152,7 +152,7 @@ Per your note: the GBP previously received a warning/restriction after a post co
 
 **5. Review response templates:**
 - Positive: "Thank you, [Name] — we're glad the team could keep [site/facility] running smoothly. We'll pass this along to the crew."
-- Negative: "Thank you for the feedback, [Name]. This isn't the standard we hold ourselves to — please reach out to us directly at bd@kargar.co.in so we can address this properly." (Never argue publicly; always offer an offline path.)
+- Negative: "Thank you for the feedback, [Name]. This isn't the standard we hold ourselves to — please reach out to us directly at admin@kargar.co.in so we can address this properly." (Never argue publicly; always offer an offline path.)
 
 **6. Monitoring workflow:** check GBP reviews weekly; respond within 48 hours; log recurring complaint themes for internal quality review.
 

@@ -5,6 +5,7 @@ import { Lock, Send } from 'lucide-react';
 import { submitContactMessage } from '@/services/contact.service';
 import { trackFormSubmission } from '@/lib/analytics';
 import { getLandingAttribution } from '@/lib/landingAttribution';
+import { contactDetails } from '@/config/contact';
 import { punePagesByPath } from '@/features/pune-landing/config/punePages';
 import {
   LOCALITY_FIELD,
@@ -175,7 +176,7 @@ export function EnquiryForm() {
       setSelected(initialService);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unable to submit request. Please try again.';
-      setStatus({ tone: 'error', text: `${message} You can also call us or email bd@kargar.co.in.` });
+      setStatus({ tone: 'error', text: `${message} You can also call us or email ${contactDetails.email}.` });
       toast.error(message, SILENT_TOAST);
     } finally {
       setIsSubmitting(false);

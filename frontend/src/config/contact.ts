@@ -12,7 +12,7 @@ export interface PhoneNumber {
 export const contactDetails = {
   phone: { e164: '+917821844591', display: '+91 78218 44591' } satisfies PhoneNumber,
   alternatePhone: { e164: '+918788726752', display: '+91 87887 26752' } satisfies PhoneNumber,
-  email: 'bd@kargar.co.in',
+  email: 'admin@kargar.co.in',
   hours: 'Mon - Sat: 09:00 AM - 06:00 PM',
   /**
    * Registered office as published on the website and in LocalBusiness schema. The Company

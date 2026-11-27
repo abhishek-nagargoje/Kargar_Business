@@ -109,6 +109,8 @@ export function EnquiryForm() {
   const categoryParam = searchParams.get('category') ?? '';
   const ctaPosition = searchParams.get('cta_position') ?? '';
   const initialService = resolveInitialService(serviceParam, searchParams.get('enquiry') ?? '');
+  // A locality page (e.g. /housekeeping-services-baner) pre-fills its locality; the visitor can edit it.
+  const initialLocality = punePagesByPath[serviceParam]?.locality?.name ?? '';
   const [selected, setSelected] = useState<EnquiryServiceId | ''>(initialService);
 
   // A new CTA click while already on /contact-us changes the params without remounting.
@@ -170,6 +172,7 @@ export function EnquiryForm() {
         source: formString(formData, 'source'),
         campaign: formString(formData, 'campaign'),
         cta_position: formString(formData, 'cta_position'),
+        ...(initialLocality ? { locality: initialLocality } : {}),
       });
 
       form.reset();
@@ -237,7 +240,7 @@ export function EnquiryForm() {
         </label>
         <label htmlFor={`${idPrefix}-locality`}>
           {LOCALITY_FIELD.label}
-          <input id={`${idPrefix}-locality`} name={LOCALITY_FIELD.name} placeholder={LOCALITY_FIELD.placeholder} autoComplete="address-level3" maxLength={120} />
+          <input key={initialLocality} id={`${idPrefix}-locality`} name={LOCALITY_FIELD.name} defaultValue={initialLocality} placeholder={LOCALITY_FIELD.placeholder} autoComplete="address-level3" maxLength={120} />
         </label>
       </div>
 

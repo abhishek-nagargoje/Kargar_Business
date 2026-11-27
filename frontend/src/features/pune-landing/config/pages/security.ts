@@ -146,7 +146,7 @@ export const securityPages: PuneLandingPageContent[] = [
         kind: 'prose',
         heading: 'Where We Provide Security in Pune',
         paragraphs: [
-          'We operate from Baner and deploy security teams across Pune and Pimpri-Chinchwad (PCMC). That includes offices and commercial buildings in the western and eastern business districts, residential societies across the city, and industrial sites in the PCMC belt. Guards for a site are deployed to that site, so coverage is confirmed per property during the assessment rather than drawn on a fixed map.',
+          'We operate from Baner and deploy security teams across Pune and Pimpri-Chinchwad (PCMC). That includes offices and commercial buildings in the western and eastern business districts, residential societies across the city, and industrial sites in the PCMC belt. Guards for a site are deployed to that site, so coverage is confirmed per property during the assessment rather than drawn on a fixed map. For a society or office in Baner, see how we plan posts and shifts for [security guard services in Baner](/security-services-baner).',
           'Security often works best alongside other site services. When security and [housekeeping services in Pune](/housekeeping-services-pune) report to the same site manager, gate, parking and common-area issues stop bouncing between vendors. Security can also be combined with maintenance and support staff under our [integrated facility management in Pune](/facility-management-company-pune), or supplied as part of [facility staffing and manpower](/facility-staffing-services-pune).',
         ],
       },

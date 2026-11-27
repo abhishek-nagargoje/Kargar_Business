@@ -82,7 +82,7 @@ export const maintenancePages: PuneLandingPageContent[] = [
       {
         kind: 'checklist',
         heading: 'What to Send for a Maintenance Quote',
-        intro: 'You can enquire with the first group only. We complete the asset list with you during the survey.',
+        intro: 'You can enquire with the first group only. We complete the asset list with you during the survey. For a building in Baner, see an example asset scope on our [facility maintenance services in Baner](/facility-maintenance-services-baner) page.',
         groups: [
           { title: 'Enough to start', items: ['Property type and locality', 'Which systems you want maintained', 'Whether you want an AMC, resident technicians or on-call support'] },
           { title: 'Helpful if you have it', items: ['Asset list with makes, capacities and quantities, such as DG kVA or number of AHUs', 'Existing AMCs and OEM warranties', 'Recent breakdowns or recurring faults'] },

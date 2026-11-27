@@ -38,6 +38,9 @@ const PRIORITY = [
   '/hvac-maintenance-services-pune',
   '/facility-maintenance-services-pune',
   '/housekeeping-staff-pune',
+  '/housekeeping-services-baner',
+  '/security-services-baner',
+  '/facility-maintenance-services-baner',
   '/',
   '/contact-us',
 ];
@@ -50,13 +53,24 @@ const RETIRED: Record<string, string> = {
 };
 
 /** One landing page per distinct enquiry routing (service → team). */
-const ROUTING: { page: string; service: string; team: string; detail: [string, string] }[] = [
+/** Baner locality pages and the Pune parent that must link to each (crawl-discoverability check). */
+const BANER_PARENTS: Record<string, string> = {
+  '/housekeeping-services-baner': '/housekeeping-services-pune',
+  '/security-services-baner': '/security-services-pune',
+  '/facility-maintenance-services-baner': '/facility-maintenance-services-pune',
+};
+
+const ROUTING: { page: string; service: string; team: string; detail: [string, string]; locality?: string }[] = [
   { page: '/security-services-pune', service: 'security', team: 'Security', detail: ['coverage_hours', 'Round the clock (24 hours)'] },
   { page: '/housekeeping-services-pune', service: 'housekeeping', team: 'Housekeeping', detail: ['area_sqft', '12000'] },
   { page: '/housekeeping-staff-pune', service: 'housekeeping-manpower', team: 'Housekeeping', detail: ['roles_needed', '3 housekeeping staff'] },
   { page: '/facility-management-company-pune', service: 'facility-management', team: 'Facility management', detail: ['current_vendors', 'Two or three vendors'] },
   { page: '/hvac-maintenance-services-pune', service: 'hvac', team: 'Technical maintenance', detail: ['unit_count', '4 AHUs, 30 FCUs'] },
   { page: '/electrical-maintenance-services-pune', service: 'electrical', team: 'Technical maintenance', detail: ['asset_list', '1 DG set, 2 UPS'] },
+  // Baner pages: the locality must arrive pre-filled from the page (the test does not type it).
+  { page: '/housekeeping-services-baner', service: 'housekeeping', team: 'Housekeeping', detail: ['area_sqft', '8000'], locality: 'Baner' },
+  { page: '/security-services-baner', service: 'security', team: 'Security', detail: ['coverage_hours', 'Round the clock (24 hours)'], locality: 'Baner' },
+  { page: '/facility-maintenance-services-baner', service: 'facility-maintenance', team: 'Technical maintenance', detail: ['contract_model', 'Resident technician on site'], locality: 'Baner' },
 ];
 
 interface Captured { leads: Record<string, unknown>[]; emails: Record<string, unknown>[]; gaEvents: unknown[][] }
@@ -141,7 +155,12 @@ async function journey(page: Page, base: string, r: (typeof ROUTING)[number], wi
   await page.fill('#contact-form input[name="name"]', 'QA Test (do not contact)');
   await page.fill('#contact-form input[name="phone"]', '+910000000000');
   await page.fill('#contact-form input[name="email"]', 'qa-test@example.com');
-  await page.fill('#contact-form input[name="locality"]', 'Baner');
+  if (r.locality) {
+    const prefilled = await page.inputValue('#contact-form input[name="locality"]');
+    record(`${label}: locality pre-filled`, r.page, r.locality, prefilled || '(empty)', prefilled === r.locality);
+  } else {
+    await page.fill('#contact-form input[name="locality"]', 'Baner');
+  }
   const [field, value] = r.detail;
   const el = page.locator(`#contact-form [name="${field}"]`).first();
   const tag = await el.evaluate((n) => n.tagName);
@@ -189,6 +208,17 @@ async function main() {
 
     for (const p of PRIORITY) await rawHtmlCheck(baseUrl, p);
 
+    // Baner discoverability: a plain <a href> in the Pune parent's initial HTML, trailing-slash handling.
+    for (const [baner, parent] of Object.entries(BANER_PARENTS)) {
+      const html = await (await fetch(baseUrl + parent)).text();
+      const main = html.match(/<main\s[\s\S]*?<\/main>/i)?.[0] ?? '';
+      const anchor = main.match(new RegExp(`<a[^>]*href="${baner}"[^>]*>([^<]*)</a>`))?.[1] ?? '';
+      record('crawl: Pune parent links to Baner page', parent, `<a href="${baner}"> in initial HTML`, anchor ? `found, anchor "${anchor}"` : 'missing', Boolean(anchor));
+      const slash = await fetch(`${baseUrl}${baner}/`, { redirect: 'manual' });
+      const loc = slash.headers.get('location') ?? '';
+      record('trailing slash redirect', `${baner}/`, `308 → ${baner}`, `${slash.status} → ${loc}`, [301, 308].includes(slash.status) && loc.endsWith(baner));
+    }
+
     const ctx = await browser.newContext();
     for (const width of [360, 1280]) {
       for (const p of PRIORITY) {
@@ -196,6 +226,7 @@ async function main() {
         await instrument(page, { leads: [], emails: [], gaEvents: [] });
         await layoutChecks(page, baseUrl, p, width);
         if (width === 360 && p === '/security-services-pune') await page.screenshot({ path: join(outDir, 'security-mobile-landing.png'), fullPage: false });
+        if (p.endsWith('-baner')) await page.screenshot({ path: join(outDir, `${p.slice(1)}-${width}.png`), fullPage: false });
         await page.close();
       }
     }

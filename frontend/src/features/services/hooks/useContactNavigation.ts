@@ -21,6 +21,7 @@ export function useContactNavigation() {
         service: options?.service,
         category: options?.category,
         cta_position: options?.ctaPosition,
+        ...(options?.locality ? { locality: options.locality } : {}),
       });
 
       // If it's a left click without modifiers, we can handle it

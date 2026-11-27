@@ -139,6 +139,18 @@
       "destination": "/society-security-services-pune.html"
     },
     {
+      "source": "/housekeeping-services-baner",
+      "destination": "/housekeeping-services-baner.html"
+    },
+    {
+      "source": "/security-services-baner",
+      "destination": "/security-services-baner.html"
+    },
+    {
+      "source": "/facility-maintenance-services-baner",
+      "destination": "/facility-maintenance-services-baner.html"
+    },
+    {
       "source": "/resources/how-to-choose-a-housekeeping-company-pune",
       "destination": "/resources/how-to-choose-a-housekeeping-company-pune.html"
     },

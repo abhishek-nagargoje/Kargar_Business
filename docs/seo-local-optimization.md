@@ -11,7 +11,7 @@
 | Legal entity (pillar intro) | Kargar Business Services Pvt. Ltd. |
 | Address | 301, 3rd Floor, Unity Commercial, Baner, Pune 411045 |
 | Phone | +91 78218 44591 (alt +91 87887 26752) |
-| Email | bd@kargar.co.in |
+| Email | admin@kargar.co.in |
 | Hours | Mon–Sat 09:00–18:00 |
 | Service area (schema) | Pune, Pimpri-Chinchwad |
 

@@ -120,7 +120,7 @@ export const housekeepingPages: PuneLandingPageContent[] = [
         kind: 'prose',
         heading: 'Where We Work in Pune',
         paragraphs: [
-          'We operate from our office in Baner and deploy housekeeping teams to sites across Pune and Pimpri-Chinchwad (PCMC). Because the staff for a site work at that site, coverage is confirmed per property during the survey rather than drawn on a fixed map. Tell us your locality when you enquire.',
+          'We operate from our office in Baner and deploy housekeeping teams to sites across Pune and Pimpri-Chinchwad (PCMC). Because the staff for a site work at that site, coverage is confirmed per property during the survey rather than drawn on a fixed map. Tell us your locality when you enquire. For a society or office in Baner, see what to agree before a survey on our page for [housekeeping services in Baner](/housekeeping-services-baner).',
           'If housekeeping is one of several services you need, it can be combined with [security services](/security-services-pune), [facility maintenance](/facility-maintenance-services-pune) and support staff under our [integrated facility management in Pune](/facility-management-company-pune).',
         ],
       },

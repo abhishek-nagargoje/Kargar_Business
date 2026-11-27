@@ -49,6 +49,13 @@ export interface PuneLandingPageContent {
   /** URL path, e.g. '/housekeeping-services-pune' — no trailing slash, matches site convention. */
   path: string;
   cluster: ClusterId;
+  /**
+   * Set only on locality pages (e.g. Baner). A locality page is routed, prerendered and listed in
+   * the sitemap, but it is NOT added to hubs, the footer or the "More in this topic" sibling lists:
+   * it is reached through contextual links from its Pune parent, so the city pages keep their role.
+   * The contact form pre-fills this locality, and analytics events carry it.
+   */
+  locality?: { name: string; postalCode?: string };
   /** True for the one page per cluster that the rest of the cluster links up to. */
   isPillar?: boolean;
   /** Breadcrumb parent (the cluster pillar). Pillars sit directly under /services. */

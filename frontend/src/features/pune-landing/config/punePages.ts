@@ -4,6 +4,7 @@ import { housekeepingPages } from './pages/housekeeping';
 import { facilityManagementPages } from './pages/facilityManagement';
 import { maintenancePages } from './pages/maintenance';
 import { securityPages } from './pages/security';
+import { banerPages } from './pages/baner';
 
 /**
  * Single source of truth for the Pune local-commercial landing pages.
@@ -17,6 +18,7 @@ export const allAuthoredPunePages: PuneLandingPageContent[] = [
   ...facilityManagementPages,
   ...maintenancePages,
   ...securityPages,
+  ...banerPages,
 ];
 
 /**
@@ -50,9 +52,12 @@ export function footerClusterPages(id: ClusterId): PuneLandingPageContent[] {
   return clusterPages(id).filter((page) => page.isPillar || page.showInFooter);
 }
 
-/** Pages in a cluster, pillar first. */
+/**
+ * City-level pages in a cluster, pillar first. Locality pages (e.g. Baner) are excluded so hubs,
+ * the footer and sibling lists are unchanged by them; they are linked contextually instead.
+ */
 export function clusterPages(id: ClusterId): PuneLandingPageContent[] {
-  const pages = punePageList.filter((page) => page.cluster === id);
+  const pages = punePageList.filter((page) => page.cluster === id && !page.locality);
   return [...pages.filter((p) => p.isPillar), ...pages.filter((p) => !p.isPillar)];
 }
 

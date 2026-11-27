@@ -37,9 +37,12 @@ export function PuneLandingPage() {
 
   const breadcrumbItems = buildPuneBreadcrumbs(content);
   const canonicalUrl = buildCanonicalUrl(content.path);
-  const siblings = clusterPages(content.cluster).filter((page) => page.path !== content.path);
-  const ctaOptions = { source: 'pune_landing_cta', service: content.path, ctaPosition: 'page-cta' };
-  const heroCtaOptions = { source: 'pune_landing_hero', service: content.path, ctaPosition: 'hero' };
+  // Locality pages show only their curated related links, not the full list of city pages.
+  const siblings = content.locality ? [] : clusterPages(content.cluster).filter((page) => page.path !== content.path);
+  const locality = content.locality?.name;
+  const ctaOptions = { source: 'pune_landing_cta', service: content.path, ctaPosition: 'page-cta', locality };
+  const heroCtaOptions = { source: 'pune_landing_hero', service: content.path, ctaPosition: 'hero', locality };
+  const pune = { '@type': 'City', name: 'Pune' };
 
   const serviceSchema = {
     '@type': 'Service',
@@ -49,7 +52,17 @@ export function PuneLandingPage() {
     serviceType: content.serviceType,
     url: canonicalUrl,
     provider: { '@id': `${config.siteUrl}/#organization` },
-    areaServed: { '@type': 'City', name: 'Pune' },
+    // A locality page serves that locality within Pune; it is not a separate business branch.
+    areaServed: content.locality
+      ? {
+          '@type': 'Place',
+          name: `${content.locality.name}, Pune`,
+          ...(content.locality.postalCode
+            ? { address: { '@type': 'PostalAddress', addressLocality: content.locality.name, addressRegion: 'Maharashtra', postalCode: content.locality.postalCode, addressCountry: 'IN' } }
+            : {}),
+          containedInPlace: pune,
+        }
+      : pune,
   };
   const faqSchema = buildFAQSchema(content.faqs.map((faq) => ({ question: faq.question, answer: stripInline(faq.answer) })));
 
@@ -165,7 +178,7 @@ export function PuneLandingPage() {
         <section className="py-14 lg:py-20 bg-white" aria-labelledby="related-heading">
           <Container size="lg">
             <h2 id="related-heading" className="text-2xl md:text-3xl font-bold text-navy-900 mb-6 text-center">
-              Related Services in Pune
+              {content.locality ? 'Related Services and Next Steps' : 'Related Services in Pune'}
             </h2>
             <ul role="list" className="flex flex-wrap justify-center gap-3 mb-8">
               {content.relatedLinks.map((link) => (

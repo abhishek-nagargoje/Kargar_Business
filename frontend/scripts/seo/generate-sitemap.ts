@@ -42,7 +42,10 @@ const LANDING_SOURCE_BY_CLUSTER: Record<string, string> = {
 function lastModified(page: RoutePage): string | undefined {
   if (page.type === 'guide') return guidePagesByPath[page.path]?.dateModified;
   if (page.type === 'landing') {
-    const cluster = punePagesByPath[page.path]?.cluster;
+    const landing = punePagesByPath[page.path];
+    // Locality pages (Baner) live in their own file, so their lastmod tracks that file.
+    if (landing?.locality) return lastCommitDate('src/features/pune-landing/config/pages/baner.ts');
+    const cluster = landing?.cluster;
     return cluster ? lastCommitDate(LANDING_SOURCE_BY_CLUSTER[cluster] ?? '') : undefined;
   }
   if (page.type === 'category' || page.type === 'service') return lastCommitDate('src/features/services/config');
